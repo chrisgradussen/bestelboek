@@ -1,0 +1,47 @@
+unit Unit4; 
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
+  ExtCtrls, DbCtrls, DBGrids, db, IniPropStorage, unit2;
+
+type
+
+  { Tleverancier }
+
+  Tleverancier = class(TForm)
+    Datasource1: TDatasource;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    leverancierpropstorage: TIniPropStorage;
+    Panel1: TPanel;
+    procedure FormShow(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end; 
+
+var
+  leverancier: Tleverancier;
+
+implementation
+
+{ Tleverancier }
+
+procedure Tleverancier.FormShow(Sender: TObject);
+begin
+  if DM.ZleverancierTable.Active then
+    DM.ZLeverancierTable.Refresh
+  else
+    DM.ZLeverancierTable.Open;
+end;
+
+initialization
+  {$I unit4.lrs}
+
+end.
+

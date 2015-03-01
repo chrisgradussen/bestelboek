@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Compiler Value="/usr/bin/fpc" Date="1345793125"/>
+  <Params Value=" -MObjFPC -Scghi -O3 -vewnhi -l -Fi/home/chrgra/Documenten/Projects/bestelboek/util_udf/lib/x86_64-linux -Fu/home/chrgra/Documenten/Projects/bestelboek/util_udf/ -FU/home/chrgra/Documenten/Projects/bestelboek/util_udf/lib/x86_64-linux/ -olibutil_udf.so util_udf.lpr"/>
+</CONFIG>

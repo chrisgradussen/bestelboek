@@ -1,0 +1,285 @@
+object Form2: TForm2
+  Left = 282
+  Height = 473
+  Top = 125
+  Width = 931
+  Caption = 'Baklijst broodjes'
+  ClientHeight = 473
+  ClientWidth = 931
+  OnShow = FormShow
+  Position = poDefault
+  LCLVersion = '1.0.1.3'
+  WindowState = wsMaximized
+  object Panel1: TPanel
+    Left = 0
+    Height = 176
+    Top = 0
+    Width = 931
+    Align = alTop
+    ClientHeight = 176
+    ClientWidth = 931
+    TabOrder = 0
+    object Calendar: TCalendar
+      Left = 224
+      Height = 160
+      Top = 0
+      Width = 169
+      DateTime = 41168
+      OnDayChanged = CalendarDayChanged
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 297
+    Top = 176
+    Width = 931
+    Align = alClient
+    Caption = 'Panel2'
+    ClientHeight = 297
+    ClientWidth = 931
+    TabOrder = 1
+    object RxDBGrid1: TRxDBGrid
+      Left = 1
+      Height = 295
+      Top = 1
+      Width = 929
+      TitleButtons = False
+      AutoSort = True
+      Columns = <      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'PLU'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'PLU'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'NAAM'
+          Title.Orientation = toHorizontal
+          Width = 300
+          FieldName = 'NAAM'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'RDATUM'
+          Title.Orientation = toHorizontal
+          FieldName = 'RDATUM'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'UUR08_21'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'UUR08_21'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'UUR09_21'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'UUR09_21'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'UUR10_21'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'UUR10_21'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'UUR11_21'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'UUR11_21'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'UUR12_21'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'UUR12_21'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'UUR13_21'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'UUR13_21'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'UUR14_21'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'UUR14_21'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'UUR15_21'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'UUR15_21'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'UUR16_21'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'UUR16_21'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'UUR17_21'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'UUR17_21'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'UUR18_21'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'UUR18_21'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'UUR19_21'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'UUR19_21'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'UUR20_21'
+          Title.Orientation = toHorizontal
+          Width = 50
+          FieldName = 'UUR20_21'
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          EditButtons = <>
+        end>
+      KeyStrokes = <      
+        item
+          Command = rxgcShowFindDlg
+          ShortCut = 16454
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowColumnsDlg
+          ShortCut = 16471
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowFilterDlg
+          ShortCut = 16468
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowSortDlg
+          ShortCut = 16467
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowQuickFilter
+          ShortCut = 16465
+          Enabled = True
+        end      
+        item
+          Command = rxgcHideQuickFilter
+          ShortCut = 16456
+          Enabled = True
+        end>
+      OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+      Align = alClient
+      Color = clWindow
+      DrawFullLine = False
+      FocusColor = clRed
+      SelectedColor = clHighlight
+      GridLineStyle = psSolid
+      DataSource = DM.BaklijstDataSource
+      Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      ParentColor = False
+      TabOrder = 0
+    end
+  end
+end

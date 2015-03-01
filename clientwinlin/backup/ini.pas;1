@@ -1,0 +1,186 @@
+unit ini;
+
+{$mode objfpc}{$H+}
+{$I include.inc}
+
+interface
+
+uses
+  Classes, SysUtils, inifiles;
+
+
+const
+  netsection = 'net';
+  nethostname ='host';
+  netdefaulthost = '127.0.0.1';
+  netportname = 'port';
+  netdefaultport = 4701;
+  netusername = 'user';
+  netdefaultuser = 'user';
+  nettimeoutname = 'timeout';
+  netdefaulttimeout = 5;
+  netconnectretryname = 'connectretry';
+  netdefaultconnectretry = 100;
+  netsendreceiveretryname = 'sendreceiveretry';
+  netdefaultsendreceiveretry = 200;
+  
+  dbsection = 'db';
+  dbhostname= 'hostname';
+  dbdefaulthost = '127.0.0.1';
+  dbdatabasename = 'database';
+  dbdefaultdatabase = 'c:\bestelhulp1.fdb';
+  dbusername =  'user';
+  dbdefaultuser = 'sysdba';
+  dbpasswordname = 'password';
+  dbdefaultpassword = 'masterkey';
+  dbgebruiker = 'gebruiker';
+  dbdefaultgebruiker = 'user';
+
+type
+  TIni = class(tinifile)
+    protected
+      function FReadDbHost : string;
+      procedure fWriteDbHost(const aValue : string);
+      function FReadDbdatabase : string;
+      procedure fWriteDbdatabase(const aValue : string);
+      function FReadDbUser : string;
+      procedure fWriteDbUser(const aValue : string);
+      function FReadDbpassword : string;
+      procedure FWriteDbpassword(const Avalue : string);
+      function FReadDBGebruiker : string;
+    public
+      constructor create;
+      property dbhost : string read FReaddbHost write FWritedbHost;
+      property dbdatabase : string read FReaddbdatabase write FWritedbdatabase;
+      property dbuser : string read FReaddbuser write FWritedbuser;
+      property dbpassword : string read FReaddbpassword write FWritedbpassword;
+      property dbgebruiker : string read FReaddbgebruiker write FWritedbgebruiker;
+    end;
+
+implementation
+
+constructor TIni.Create;
+begin
+  inherited create(ChangeFileExt(paramstr(0),'.ini'));
+  if not fileexists(FileName) then
+  begin
+    WriteString(dbsection,dbhostname,dbdefaulthost);
+    WriteString(dbsection,dbdatabasename,dbdefaultdatabase);
+    WriteString(dbsection,dbusername,dbdefaultuser);
+    WriteString(dbsection,dbpasswordname,dbdefaultpassword);
+    WriteString(dbsection,dbgebruiker, dbdefaultgebruiker);
+  end;
+end;
+
+destructor TIni.destroy;
+begin
+  inherited destroy;
+end;
+
+function TIni.FReadnetPort : integer;
+begin
+   result := readInteger(netsection,netportname,netdefaultport);
+end;
+
+procedure TIni.FWritenetPort(const Avalue : integer);
+begin
+  WriteInteger(netsection,netportname,aValue);
+end;
+
+function TIni.FReadnetTimeOut : integer;
+begin
+   result := readInteger(netsection,netTimeOutname,netdefaultTimeOut);
+end;
+
+procedure TIni.FWritenetTimeOut(const Avalue : integer);
+begin
+  WriteInteger(netsection,netTimeOutname,aValue);
+end;
+
+function TIni.FReadnetConnectRetry : integer;
+begin
+   result := readInteger(netsection,netConnectRetryname,netdefaultConnectRetry);
+end;
+
+procedure TIni.FWritenetConnectRetry(const Avalue : integer);
+begin
+  WriteInteger(netsection,netConnectRetryname,aValue);
+end;
+
+function TIni.FReadnetSendReceiveRetry : integer;
+begin
+   result := readInteger(netsection,netSendReceiveRetryname,netdefaultSendReceiveRetry);
+end;
+
+procedure TIni.FWritenetSendReceiveRetry(const Avalue : integer);
+begin
+  WriteInteger(netsection,netSendReceiveRetryname,aValue);
+end;
+
+{$ifdef client}
+function TIni.FReadnetHost : string;
+begin
+  result := readString(netsection,nethostname,netdefaulthost);
+end;
+
+procedure TIni.fWritenetHost(const aValue : string);
+begin
+  WriteString(netsection,nethostname,aValue);
+end;
+
+
+function TIni.FReadnetUser : string;
+begin
+  result := readString(netsection,netusername,netdefaultuser);
+end;
+
+procedure TIni.FWritenetUser(const aValue : string);
+begin
+  WriteString(netsection,netusername, aValue);
+end;
+{$endif}
+{$ifdef host}
+function TIni.FReaddbHost : string;
+begin
+  result := readString(dbsection,dbhostname,dbdefaulthost);
+end;
+
+procedure TIni.fWritedbHost(const aValue : string);
+begin
+  WriteString(dbsection,dbhostname,aValue);
+end;
+
+function TIni.FReaddbdatabase : string;
+begin
+   result := readString(dbsection,dbdatabasename,dbdefaultdatabase);
+end;
+
+procedure TIni.FWritedbdatabase(const Avalue : string);
+begin
+  WriteString(dbsection,dbdatabase,aValue);
+end;
+
+function TIni.FReaddbUser : string;
+begin
+  result := readString(dbsection,dbusername,dbdefaultuser);
+end;
+
+procedure TIni.FWritedbUser(const aValue : string);
+begin
+  WriteString(dbsection,dbusername, aValue);
+end;
+
+function TIni.FReaddbPassword : string;
+begin
+  result := readString(dbsection,dbpasswordname,dbdefaultpassword);
+end;
+
+procedure TIni.FWritedbPassword(const aValue : string);
+begin
+  WriteString(dbsection,dbpasswordname, aValue);
+end;
+
+{$endif}
+
+end.
+

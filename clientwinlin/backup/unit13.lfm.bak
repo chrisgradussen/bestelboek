@@ -1,0 +1,221 @@
+object ArtikelOmzet: TArtikelOmzet
+  Left = 682
+  Height = 319
+  Top = 279
+  Width = 632
+  Caption = 'ArtikelOmzet'
+  ClientHeight = 319
+  ClientWidth = 632
+  OnShow = FormShow
+  SessionProperties = 'Width;Top;Left;Height'
+  LCLVersion = '1.0.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 291
+    Top = 0
+    Width = 632
+    Align = alClient
+    Caption = 'Panel1'
+    ClientHeight = 291
+    ClientWidth = 632
+    TabOrder = 0
+    object Panel3: TPanel
+      Left = 1
+      Height = 23
+      Top = 1
+      Width = 630
+      Align = alTop
+      ClientHeight = 23
+      ClientWidth = 630
+      TabOrder = 0
+      object DBText1: TDBText
+        Left = 7
+        Height = 1
+        Top = 4
+        Width = 1
+        DataField = 'EANUPC'
+        DataSource = OmchrijvingDataSource
+        ParentColor = False
+        OnClick = DBText1Click
+      end
+      object DBText2: TDBText
+        Left = 94
+        Height = 1
+        Top = 4
+        Width = 1
+        DataField = 'NAAM'
+        DataSource = OmchrijvingDataSource
+        ParentColor = False
+      end
+      object DBText3: TDBText
+        Left = 320
+        Height = 1
+        Top = 4
+        Width = 1
+        DataField = 'ARTIKELNUMMER'
+        DataSource = OmchrijvingDataSource
+        ParentColor = False
+      end
+      object DBText4: TDBText
+        Left = 400
+        Height = 1
+        Top = 4
+        Width = 1
+        Alignment = taRightJustify
+        DataField = 'INHOUD'
+        DataSource = OmchrijvingDataSource
+        ParentColor = False
+      end
+      object DBText5: TDBText
+        Left = 420
+        Height = 1
+        Top = 4
+        Width = 1
+        DataField = 'EENHEID'
+        DataSource = OmchrijvingDataSource
+        ParentColor = False
+      end
+      object DBText6: TDBText
+        Left = 440
+        Height = 1
+        Top = 4
+        Width = 1
+        DataField = 'BESTELINHOUD'
+        DataSource = OmchrijvingDataSource
+        ParentColor = False
+      end
+      object DBText7: TDBText
+        Left = 460
+        Height = 1
+        Top = 4
+        Width = 1
+        DataField = 'BESTELEENHEID'
+        DataSource = OmchrijvingDataSource
+        ParentColor = False
+      end
+      object DBText8: TDBText
+        Left = 480
+        Height = 1
+        Top = 4
+        Width = 1
+        DataField = 'VERKOOPPRIJS'
+        DataSource = OmchrijvingDataSource
+        ParentColor = False
+      end
+    end
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 266
+      Top = 24
+      Width = 630
+      Align = alClient
+      Color = clWindow
+      Columns = <>
+      DataSource = OmzetDataSource
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      TabOrder = 1
+      OnKeyDown = DBGrid1KeyDown
+    end
+    object RxDBGrid1: TRxDBGrid
+      AnchorSideTop.Side = asrCenter
+      Left = 416
+      Height = 220
+      Top = 48
+      Width = 200
+      AfterQuickSearch = RxDBGrid1AfterQuickSearch
+      TitleButtons = False
+      AutoSort = True
+      KeyStrokes = <      
+        item
+          Command = rxgcShowFindDlg
+          ShortCut = 16454
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowColumnsDlg
+          ShortCut = 16471
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowFilterDlg
+          ShortCut = 16468
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowSortDlg
+          ShortCut = 16467
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowQuickFilter
+          ShortCut = 16465
+          Enabled = True
+        end      
+        item
+          Command = rxgcHideQuickFilter
+          ShortCut = 16456
+          Enabled = True
+        end>
+      OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+      Anchors = [akRight, akBottom]
+      Color = clWindow
+      DrawFullLine = False
+      FocusColor = clRed
+      SelectedColor = clHighlight
+      GridLineStyle = psSolid
+      DataSource = eanupcdatasource
+      Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      ParentColor = False
+      TabOrder = 2
+      OnCellClick = RxDBGrid1CellClick
+      OnColEnter = RxDBGrid1ColEnter
+      OnDblClick = RxDBGrid1DblClick
+      OnTitleClick = RxDBGrid1TitleClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 28
+    Top = 291
+    Width = 632
+    Align = alBottom
+    Caption = 'Panel2'
+    ClientHeight = 28
+    ClientWidth = 632
+    TabOrder = 1
+    object Edit: TEdit
+      Left = 1
+      Height = 26
+      Top = 1
+      Width = 630
+      Align = alClient
+      OnKeyDown = EditKeyDown
+      OnKeyPress = EditKeyPress
+      OnKeyUp = EditKeyUp
+      TabOrder = 0
+      Text = 'Geef zoeksleutel in'
+    end
+  end
+  object OmzetDataSource: TDatasource
+    DataSet = DM.ZArtikelomzet
+    left = 344
+    top = 40
+  end
+  object OmchrijvingDataSource: TDatasource
+    DataSet = DM.ZArtikelOmschrijving
+    left = 344
+    top = 104
+  end
+  object ArtikelOmzetPropStorage: TIniPropStorage
+    StoredValues = <>
+    IniFileName = 'bestelboek.ini'
+    IniSection = 'artikelomzet'
+    left = 501
+    top = 44
+  end
+  object eanupcdatasource: TDatasource
+    DataSet = DM.ZeanQuery
+    left = 558
+    top = 129
+  end
+end

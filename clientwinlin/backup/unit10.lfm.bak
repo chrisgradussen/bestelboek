@@ -1,0 +1,209 @@
+object Bestelschema: TBestelschema
+  Left = 479
+  Height = 300
+  Top = 169
+  Width = 788
+  Caption = 'Bestelschema'
+  ClientHeight = 300
+  ClientWidth = 788
+  OnCloseQuery = FormCloseQuery
+  OnShow = FormShow
+  SessionProperties = 'Height;Left;Panel2.Height;Panel2.Left;Panel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;Panel3.Width;Panel4.Height;Panel4.Left;Panel4.Top;Panel4.Width;Position;Splitter1.Height;Splitter1.Left;Splitter1.Top;Splitter1.Width;Splitter2.Height;Splitter2.Left;Splitter2.Top;Splitter2.Width;Top;Width;WindowState'
+  LCLVersion = '0.9.29'
+  object Panel1: TPanel
+    Left = 0
+    Height = 300
+    Top = 0
+    Width = 788
+    Align = alClient
+    Caption = 'Panel1'
+    ClientHeight = 300
+    ClientWidth = 788
+    TabOrder = 0
+    object Panel2: TPanel
+      Left = 1
+      Height = 106
+      Top = 1
+      Width = 786
+      Align = alTop
+      Caption = 'Panel2'
+      ClientHeight = 106
+      ClientWidth = 786
+      TabOrder = 0
+      object DBNavigator1: TDBNavigator
+        Left = 1
+        Height = 25
+        Top = 80
+        Width = 784
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 25
+        ClientWidth = 784
+        DataSource = Datasource1
+        TabOrder = 0
+      end
+      object DBGrid1: TDBGrid
+        Left = 1
+        Height = 79
+        Top = 1
+        Width = 784
+        Align = alClient
+        DataSource = Datasource1
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+        TabOrder = 1
+      end
+    end
+    object Panel3: TPanel
+      Left = 1
+      Height = 86
+      Top = 112
+      Width = 786
+      Align = alClient
+      Caption = 'Panel3'
+      ClientHeight = 86
+      ClientWidth = 786
+      TabOrder = 1
+      object DBNavigator2: TDBNavigator
+        Left = 1
+        Height = 25
+        Top = 60
+        Width = 784
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 25
+        ClientWidth = 784
+        DataSource = Datasource2
+        TabOrder = 0
+      end
+      object DBGrid2: TDBGrid
+        Left = 1
+        Height = 59
+        Top = 1
+        Width = 784
+        Align = alClient
+        Columns = <        
+          item
+            ReadOnly = True
+            FieldName = 'ID'
+          end        
+          item
+            FieldName = 'STATUS'
+          end        
+          item
+            FieldName = 'BESTELDATUM'
+          end        
+          item
+            FieldName = 'BESTELTIJD'
+          end        
+          item
+            FieldName = 'LEVERDATUM'
+          end        
+          item
+            FieldName = 'LEVERTIJD'
+          end        
+          item
+            FieldName = 'VOLGENDELEVERDATUM'
+          end        
+          item
+            FieldName = 'VOLGENDELEVERTIJD'
+          end>
+        DataSource = Datasource2
+        TabOrder = 1
+      end
+    end
+    object Panel4: TPanel
+      Left = 1
+      Height = 96
+      Top = 203
+      Width = 786
+      Align = alBottom
+      Caption = 'Panel4'
+      ClientHeight = 96
+      ClientWidth = 786
+      TabOrder = 2
+      object DBNavigator3: TDBNavigator
+        Left = 1
+        Height = 25
+        Top = 70
+        Width = 784
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 25
+        ClientWidth = 784
+        DataSource = Datasource3
+        TabOrder = 0
+      end
+      object DBGrid3: TDBGrid
+        Left = 1
+        Height = 69
+        Top = 1
+        Width = 784
+        Align = alClient
+        Columns = <        
+          item
+            FieldName = 'ARTIKEL_EANUPC'
+          end        
+          item
+            FieldName = 'AANTAL'
+          end        
+          item
+            FieldName = 'ADVIES_AANTAL'
+          end        
+          item
+            Width = 400
+            FieldName = 'NAAM'
+          end        
+          item
+            Width = 120
+            FieldName = 'ARTIKELNUMMER'
+          end        
+          item
+            ReadOnly = True
+            FieldName = 'VOLGORDE'
+          end>
+        DataSource = Datasource3
+        TabOrder = 1
+      end
+    end
+    object Splitter1: TSplitter
+      Cursor = crVSplit
+      Left = 1
+      Height = 5
+      Top = 107
+      Width = 786
+      Align = alTop
+      ResizeAnchor = akTop
+    end
+    object Splitter2: TSplitter
+      Cursor = crVSplit
+      Left = 1
+      Height = 5
+      Top = 198
+      Width = 786
+      Align = alBottom
+      ResizeAnchor = akBottom
+    end
+  end
+  object bestelschemaPropStorage: TIniPropStorage
+    StoredValues = <>
+    IniFileName = 'bestelboek.ini'
+    left = 359
+    top = 14
+  end
+  object Datasource1: TDatasource
+    DataSet = DM.ZBestelSchema_BestelgroepTable
+    left = 326
+    top = 13
+  end
+  object Datasource2: TDatasource
+    DataSet = DM.ZBestelSchema_BestelSchemaQuery
+    left = 326
+    top = 112
+  end
+  object Datasource3: TDatasource
+    DataSet = DM.ZBestelSchema_BestRegelQuery
+    OnStateChange = Datasource3StateChange
+    left = 326
+    top = 219
+  end
+end

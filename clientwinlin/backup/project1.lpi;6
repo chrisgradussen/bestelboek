@@ -1,0 +1,483 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <PathDelim Value="\"/>
+    <Version Value="7"/>
+    <General>
+      <Flags>
+        <AlwaysBuild Value="False"/>
+        <LRSInOutputDirectory Value="False"/>
+      </Flags>
+      <MainUnit Value="0"/>
+      <TargetFileExt Value=".exe"/>
+      <Title Value="project1"/>
+      <ActiveEditorIndexAtStart Value="4"/>
+    </General>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <CurrentBuildNr Value="43"/>
+      <ProjectVersion Value="0.0.0.0"/>
+    </VersionInfo>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+        <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="5">
+      <Item1>
+        <PackageName Value="lazreport"/>
+        <MinVersion Minor="9" Release="5" Valid="True"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="rxnew"/>
+        <MinVersion Major="1" Minor="1" Release="5" Build="98" Valid="True"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="FCL"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="zcomponent"/>
+        <MinVersion Major="6" Minor="6" Release="3" Valid="True"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="LCL"/>
+      </Item5>
+    </RequiredPackages>
+    <Units Count="30">
+      <Unit0>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="project1"/>
+        <CursorPos X="40" Y="21"/>
+        <TopLine Value="1"/>
+        <EditorIndex Value="3"/>
+        <UsageCount Value="196"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="hoofdmenu"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <CursorPos X="26" Y="18"/>
+        <TopLine Value="1"/>
+        <EditorIndex Value="0"/>
+        <UsageCount Value="196"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="unit2.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="unit2"/>
+        <CursorPos X="46" Y="92"/>
+        <TopLine Value="81"/>
+        <EditorIndex Value="4"/>
+        <UsageCount Value="194"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="unit3.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="bestelgroep"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit3"/>
+        <CursorPos X="32" Y="47"/>
+        <TopLine Value="18"/>
+        <UsageCount Value="194"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="E:\lazarus0927\components\zeosdbo\src\dbc\ZDbcInterbase6Utils.pas"/>
+        <UnitName Value="ZDbcInterbase6Utils"/>
+        <CursorPos X="1" Y="817"/>
+        <TopLine Value="807"/>
+        <UsageCount Value="23"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="unit4.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="leverancier"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit4"/>
+        <CursorPos X="52" Y="24"/>
+        <TopLine Value="18"/>
+        <UsageCount Value="194"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="unit5.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="subgroep"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit5"/>
+        <CursorPos X="13" Y="45"/>
+        <TopLine Value="24"/>
+        <UsageCount Value="190"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="unit6.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dagen"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit6"/>
+        <CursorPos X="36" Y="48"/>
+        <TopLine Value="23"/>
+        <UsageCount Value="190"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="unit7.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Groep"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit7"/>
+        <CursorPos X="20" Y="20"/>
+        <TopLine Value="16"/>
+        <UsageCount Value="187"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="E:\lazarus0927\lcl\dbgrids.pas"/>
+        <UnitName Value="DBGrids"/>
+        <CursorPos X="1" Y="1376"/>
+        <TopLine Value="1366"/>
+        <UsageCount Value="15"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="E:\lazarus0927\components\zeosdbo\src\component\ZAbstractRODataset.pas"/>
+        <UnitName Value="ZAbstractRODataset"/>
+        <CursorPos X="10" Y="661"/>
+        <TopLine Value="648"/>
+        <UsageCount Value="5"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="unit8.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="bestellingafdrukken"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit8"/>
+        <CursorPos X="21" Y="57"/>
+        <TopLine Value="44"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="180"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="E:\lazarus0927\components\lazreport\source\lr_class.pas"/>
+        <UnitName Value="LR_Class"/>
+        <CursorPos X="1" Y="6572"/>
+        <TopLine Value="6562"/>
+        <UsageCount Value="5"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="E:\lazarus0927\components\lazreport\source\lr_progr.pas"/>
+        <ComponentName Value="frProgressForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="LR_progr"/>
+        <CursorPos X="1" Y="71"/>
+        <TopLine Value="61"/>
+        <UsageCount Value="5"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="E:\lazarus0927\lcl\include\customform.inc"/>
+        <CursorPos X="1" Y="2041"/>
+        <TopLine Value="2031"/>
+        <UsageCount Value="5"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="E:\lazarus0927\components\zeosdbo\src\dbc\ZDbcGenericResolver.pas"/>
+        <UnitName Value="ZDbcGenericResolver"/>
+        <CursorPos X="1" Y="288"/>
+        <TopLine Value="278"/>
+        <UsageCount Value="10"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="E:\lazarus0927\components\zeosdbo\src\dbc\ZDbcUtils.pas"/>
+        <UnitName Value="ZDbcUtils"/>
+        <CursorPos X="1" Y="371"/>
+        <TopLine Value="361"/>
+        <UsageCount Value="18"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="E:\lazarus0927\components\zeosdbo\src\component\ZAbstractDataset.pas"/>
+        <UnitName Value="ZAbstractDataset"/>
+        <CursorPos X="1" Y="416"/>
+        <TopLine Value="406"/>
+        <UsageCount Value="15"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="unit9.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="StandaardBestelschema"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit9"/>
+        <CursorPos X="36" Y="59"/>
+        <TopLine Value="47"/>
+        <UsageCount Value="160"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="E:\lazarus0927\lcl\propertystorage.pas"/>
+        <UnitName Value="PropertyStorage"/>
+        <CursorPos X="1" Y="564"/>
+        <TopLine Value="554"/>
+        <UsageCount Value="4"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="unit10.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Bestelschema"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit10"/>
+        <CursorPos X="45" Y="47"/>
+        <TopLine Value="32"/>
+        <EditorIndex Value="5"/>
+        <UsageCount Value="153"/>
+        <Loaded Value="True"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="unit2.lfm"/>
+        <UsageCount Value="1"/>
+        <SyntaxHighlighter Value="LFM"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="unit11.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ArtikelBestand"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit11"/>
+        <CursorPos X="13" Y="194"/>
+        <TopLine Value="187"/>
+        <UsageCount Value="139"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="unit12.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ZoekArtikel"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit12"/>
+        <CursorPos X="71" Y="7"/>
+        <TopLine Value="4"/>
+        <UsageCount Value="137"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="E:\lazarus0927\components\zeosdbo\src\core\ZSysUtils.pas"/>
+        <UnitName Value="ZSysUtils"/>
+        <CursorPos X="3" Y="506"/>
+        <TopLine Value="495"/>
+        <UsageCount Value="11"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="unit13.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ArtikelOmzet"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit13"/>
+        <CursorPos X="6" Y="27"/>
+        <TopLine Value="17"/>
+        <EditorIndex Value="1"/>
+        <UsageCount Value="109"/>
+        <Loaded Value="True"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="unit14.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Scripts"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit14"/>
+        <CursorPos X="60" Y="17"/>
+        <TopLine Value="9"/>
+        <UsageCount Value="82"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="..\..\..\..\..\lazarus\lcl\include\dbedit.inc"/>
+        <CursorPos X="21" Y="104"/>
+        <TopLine Value="97"/>
+        <UsageCount Value="13"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="..\..\..\..\..\lazarus\components\rxfp\rxtoolbar.pas"/>
+        <UnitName Value="rxtoolbar"/>
+        <CursorPos X="45" Y="18"/>
+        <TopLine Value="15"/>
+        <UsageCount Value="10"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="..\..\..\..\..\lazarus\components\wst\wst-0.5\ide\lazarus\wst_design.pas"/>
+        <UnitName Value="wst_design"/>
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="10"/>
+      </Unit29>
+    </Units>
+    <JumpHistory Count="28" HistoryIndex="27">
+      <Position1>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="24" Column="42" TopLine="18"/>
+      </Position1>
+      <Position2>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="23" Column="46" TopLine="18"/>
+      </Position2>
+      <Position3>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="19" Column="46" TopLine="18"/>
+      </Position3>
+      <Position4>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="24" Column="48" TopLine="18"/>
+      </Position4>
+      <Position5>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="19" Column="48" TopLine="18"/>
+      </Position5>
+      <Position6>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="25" Column="48" TopLine="18"/>
+      </Position6>
+      <Position7>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="19" Column="48" TopLine="18"/>
+      </Position7>
+      <Position8>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="26" Column="48" TopLine="18"/>
+      </Position8>
+      <Position9>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="27" Column="40" TopLine="18"/>
+      </Position9>
+      <Position10>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="42" Column="52" TopLine="18"/>
+      </Position10>
+      <Position11>
+        <Filename Value="unit13.pas"/>
+        <Caret Line="87" Column="43" TopLine="72"/>
+      </Position11>
+      <Position12>
+        <Filename Value="unit13.pas"/>
+        <Caret Line="91" Column="17" TopLine="70"/>
+      </Position12>
+      <Position13>
+        <Filename Value="unit13.pas"/>
+        <Caret Line="17" Column="22" TopLine="17"/>
+      </Position13>
+      <Position14>
+        <Filename Value="unit13.pas"/>
+        <Caret Line="43" Column="17" TopLine="34"/>
+      </Position14>
+      <Position15>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="100" Column="27" TopLine="91"/>
+      </Position15>
+      <Position16>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="18" Column="46" TopLine="18"/>
+      </Position16>
+      <Position17>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="19" Column="44" TopLine="18"/>
+      </Position17>
+      <Position18>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="18" Column="53" TopLine="18"/>
+      </Position18>
+      <Position19>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="20" Column="47" TopLine="18"/>
+      </Position19>
+      <Position20>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="19" Column="53" TopLine="18"/>
+      </Position20>
+      <Position21>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="25" Column="51" TopLine="18"/>
+      </Position21>
+      <Position22>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="288" Column="53" TopLine="252"/>
+      </Position22>
+      <Position23>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="81" Column="49" TopLine="81"/>
+      </Position23>
+      <Position24>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="82" Column="41" TopLine="81"/>
+      </Position24>
+      <Position25>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="83" Column="40" TopLine="81"/>
+      </Position25>
+      <Position26>
+        <Filename Value="unit13.pas"/>
+        <Caret Line="39" Column="17" TopLine="24"/>
+      </Position26>
+      <Position27>
+        <Filename Value="unit13.pas"/>
+        <Caret Line="88" Column="28" TopLine="78"/>
+      </Position27>
+      <Position28>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="17" Column="1" TopLine="1"/>
+      </Position28>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="8"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="bestelboek1"/>
+    </Target>
+    <Parsing>
+      <SyntaxOptions>
+        <CStyleOperator Value="False"/>
+      </SyntaxOptions>
+    </Parsing>
+    <Linking>
+      <Debugging>
+        <UseLineInfoUnit Value="False"/>
+        <StripSymbols Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Watches Count="3">
+      <Item1>
+        <Expression Value="s"/>
+      </Item1>
+      <Item2>
+        <Expression Value="fPageNumbers"/>
+      </Item2>
+      <Item3>
+        <Expression Value="FPAGES"/>
+      </Item3>
+    </Watches>
+    <Exceptions Count="2">
+      <Item1>
+        <Name Value="ECodetoolError"/>
+      </Item1>
+      <Item2>
+        <Name Value="EFOpenError"/>
+      </Item2>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

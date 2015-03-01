@@ -1,0 +1,105 @@
+object bestellingafdrukken: Tbestellingafdrukken
+  Left = 673
+  Height = 300
+  Top = 322
+  Width = 467
+  Caption = 'Bestelboek 1 Bestelling Afdrukken'
+  ClientHeight = 300
+  ClientWidth = 467
+  OnShow = FormShow
+  SessionProperties = 'Height;Left;Top;Width;WindowState'
+  LCLVersion = '1.0.14.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 300
+    Top = 0
+    Width = 467
+    Align = alClient
+    Caption = 'Panel1'
+    ClientHeight = 300
+    ClientWidth = 467
+    TabOrder = 0
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 273
+      Top = 1
+      Width = 465
+      Align = alClient
+      Color = clWindow
+      Columns = <>
+      DataSource = Datasource1
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      ReadOnly = True
+      TabOrder = 0
+      OnCellClick = DBGrid1CellClick
+      OnDblClick = DBGrid1DblClick
+    end
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Height = 25
+      Top = 274
+      Width = 465
+      Align = alBottom
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 25
+      ClientWidth = 465
+      DataSource = Datasource1
+      OnDblClick = DBNavigator1DblClick
+      Options = []
+      TabOrder = 1
+    end
+  end
+  object Datasource1: TDatasource
+    DataSet = DM.ZBestellingAfdrukkenQuery
+    left = 344
+    top = 16
+  end
+  object bestellingafdrukkenPropStorage: TIniPropStorage
+    StoredValues = <    
+      item
+        Name = 'bestellingrapport'
+        Value = 'bestelling.lrf'
+      end>
+    IniFileName = 'bestelboek.ini'
+    IniSection = 'bestellingafdrukken'
+    OnRestoreProperties = bestellingafdrukkenPropStorageRestoreProperties
+    left = 344
+    top = 64
+  end
+  object frBarCodeObject1: TfrBarCodeObject
+    left = 16
+    top = 104
+  end
+  object frDesigner1: TfrDesigner
+    TemplateDir = 'C:\Users\chrgra\Documents\automatiseringsprojecten\bestelboek\bestelboek\clientwin32'
+    left = 16
+    top = 152
+  end
+  object frDBDataSet1: TfrDBDataSet
+    DataSet = DM.ZbestellingQuery
+    OnCheckEOF = frDBDataSet1CheckEOF
+    left = 64
+    top = 104
+  end
+  object frReport1: TfrReport
+    Dataset = frDBDataSet1
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
+    DataType = dtDataSource
+    Title = 'BESTELLING PALM'
+    left = 16
+    top = 60
+  end
+  object Datasource2: TDatasource
+    DataSet = DM.ZbestellingQuery
+    left = 106
+    top = 55
+  end
+end

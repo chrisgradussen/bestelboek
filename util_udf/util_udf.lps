@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="util_udf.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="util_udf"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="81"/>
+        <CursorPos X="30" Y="89"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="util_udf.lpr"/>
+        <Caret Line="37" Column="37" TopLine="25"/>
+      </Position1>
+      <Position2>
+        <Filename Value="util_udf.lpr"/>
+        <Caret Line="33" Column="29" TopLine="29"/>
+      </Position2>
+      <Position3>
+        <Filename Value="util_udf.lpr"/>
+        <Caret Line="90" Column="5" TopLine="61"/>
+      </Position3>
+      <Position4>
+        <Filename Value="util_udf.lpr"/>
+        <Caret Line="89" Column="28" TopLine="74"/>
+      </Position4>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
