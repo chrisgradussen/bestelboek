@@ -2,29 +2,29 @@
 
 LazarusResources.Add('TDM','FORMDATA',[
   'TPF0'#3'TDM'#2'DM'#14'OldCreateOrder'#8#6'Height'#3'g'#2#16'HorizontalOffset'
-  +#3'f'#1#14'VerticalOffset'#3#211#0#5'Width'#3#166#2#0#12'TZConnection'#11'ZC'
-  +'onnection'#16'ControlsCodePage'#7#8'cCP_UTF8'#18'Properties.Strings'#1#6#18
-  +'AutoEncodeStrings='#0#22'TransactIsolationLevel'#7#15'tiReadCommitted'#9'Co'
-  +'nnected'#9#16'DesignConnection'#9#13'BeforeConnect'#7#24'ZConnectionBeforeC'
-  +'onnect'#8'HostName'#6#9'LOCALHOST'#4'Port'#2#0#8'Database'#6#11'bestelhulp1'
-  +#4'User'#6#6'sysdba'#8'Password'#6#9'masterkey'#8'Protocol'#6#12'firebird-2.'
-  +'5'#4'left'#2#8#3'top'#2#8#0#0#7'TZTable'#17'ZBestelgroepTable'#10'Connectio'
-  +'n'#7#11'ZConnection'#12'SortedFields'#6#2'ID'#14'AutoCalcFields'#8#9'TableN'
-  +'ame'#6#11'BESTELGROEP'#15'IndexFieldNames'#6#6'ID Asc'#4'left'#2'('#3'top'#2
-  +#8#0#0#7'TZTable'#17'ZLeverancierTable'#10'Connection'#7#11'ZConnection'#12
-  +'SortedFields'#6#2'ID'#14'AutoCalcFields'#8#9'TableName'#6#11'LEVERANCIER'#15
-  +'IndexFieldNames'#6#6'ID Asc'#4'left'#2'('#3'top'#2'('#0#0#7'TZTable'#14'zSu'
-  +'bgroepTable'#10'Connection'#7#11'ZConnection'#12'SortedFields'#6#2'ID'#14'A'
-  +'utoCalcFields'#8#9'TableName'#6#8'SUBGROEP'#15'IndexFieldNames'#6#6'ID Asc'
-  +#4'left'#2'('#3'top'#2'H'#0#0#7'TZTable'#11'zDagenTable'#10'Connection'#7#11
-  +'ZConnection'#12'SortedFields'#6#2'ID'#14'AutoCalcFields'#8#9'TableName'#6#5
-  +'DAGEN'#15'IndexFieldNames'#6#6'ID Asc'#4'left'#2'('#3'top'#2'h'#0#0#7'TZTab'
-  +'le'#11'ZGroepTable'#10'Connection'#7#11'ZConnection'#12'SortedFields'#6#14
-  +'BESTELGROEP_ID'#14'AutoCalcFields'#8#9'TableName'#6#5'GROEP'#15'IndexFieldN'
-  +'ames'#6#18'BESTELGROEP_ID Asc'#4'left'#2'('#3'top'#3#136#0#0#13'TLongintFie'
-  +'ld'#25'ZGroepTableLEVERANCIER_ID'#12'DisplayWidth'#2#10#9'FieldKind'#7#6'fk'
-  +'Data'#9'FieldName'#6#14'LEVERANCIER_ID'#5'Index'#2#0#11'LookupCache'#8#13'P'
-  +'roviderFlags'#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#8#8'Required'#8#0
+  +#3'f'#1#14'VerticalOffset'#2'V'#5'Width'#3#166#2#0#12'TZConnection'#11'ZConn'
+  +'ection'#16'ControlsCodePage'#7#8'cCP_UTF8'#18'Properties.Strings'#1#6#18'Au'
+  +'toEncodeStrings='#0#22'TransactIsolationLevel'#7#15'tiReadCommitted'#9'Conn'
+  +'ected'#9#16'DesignConnection'#9#13'BeforeConnect'#7#24'ZConnectionBeforeCon'
+  +'nect'#8'HostName'#6#9'LOCALHOST'#4'Port'#2#0#8'Database'#6#11'bestelhulp1'#4
+  +'User'#6#6'sysdba'#8'Password'#6#9'masterkey'#8'Protocol'#6#12'firebird-2.5'
+  +#4'left'#2#8#3'top'#2#8#0#0#7'TZTable'#17'ZBestelgroepTable'#10'Connection'#7
+  +#11'ZConnection'#12'SortedFields'#6#2'ID'#14'AutoCalcFields'#8#9'TableName'#6
+  +#11'BESTELGROEP'#15'IndexFieldNames'#6#6'ID Asc'#4'left'#2'('#3'top'#2#8#0#0
+  +#7'TZTable'#17'ZLeverancierTable'#10'Connection'#7#11'ZConnection'#12'Sorted'
+  +'Fields'#6#2'ID'#14'AutoCalcFields'#8#9'TableName'#6#11'LEVERANCIER'#15'Inde'
+  +'xFieldNames'#6#6'ID Asc'#4'left'#2'('#3'top'#2'('#0#0#7'TZTable'#14'zSubgro'
+  +'epTable'#10'Connection'#7#11'ZConnection'#12'SortedFields'#6#2'ID'#14'AutoC'
+  +'alcFields'#8#9'TableName'#6#8'SUBGROEP'#15'IndexFieldNames'#6#6'ID Asc'#4'l'
+  +'eft'#2'('#3'top'#2'H'#0#0#7'TZTable'#11'zDagenTable'#10'Connection'#7#11'ZC'
+  +'onnection'#12'SortedFields'#6#2'ID'#14'AutoCalcFields'#8#9'TableName'#6#5'D'
+  +'AGEN'#15'IndexFieldNames'#6#6'ID Asc'#4'left'#2'('#3'top'#2'h'#0#0#7'TZTabl'
+  +'e'#11'ZGroepTable'#10'Connection'#7#11'ZConnection'#12'SortedFields'#6#14'B'
+  +'ESTELGROEP_ID'#14'AutoCalcFields'#8#9'TableName'#6#5'GROEP'#15'IndexFieldNa'
+  +'mes'#6#18'BESTELGROEP_ID Asc'#4'left'#2'('#3'top'#3#136#0#0#13'TLongintFiel'
+  +'d'#25'ZGroepTableLEVERANCIER_ID'#12'DisplayWidth'#2#10#9'FieldKind'#7#6'fkD'
+  +'ata'#9'FieldName'#6#14'LEVERANCIER_ID'#5'Index'#2#0#11'LookupCache'#8#13'Pr'
+  +'oviderFlags'#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#8#8'Required'#8#0
   +#0#13'TLongintField'#22'ZGroepTableSUBGROEP_ID'#12'DisplayWidth'#2#10#9'Fiel'
   +'dKind'#7#6'fkData'#9'FieldName'#6#11'SUBGROEP_ID'#5'Index'#2#1#11'LookupCac'
   +'he'#8#13'ProviderFlags'#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#8#8'Re'
@@ -74,7 +74,7 @@ LazarusResources.Add('TDM','FORMDATA',[
   +#6#22'BESTELSCHEMA_STANDAARD'#12'MasterFields'#6#2'ID'#12'MasterSource'#7#24
   +'ZSBestelSchemaDataSource'#12'LinkedFields'#6#14'BESTELGROEP_ID'#15'IndexFie'
   +'ldNames'#6#26'LEVERDAG Asc;LEVERTIJD Asc'#4'left'#3#16#1#3'top'#3#232#0#0#0
-  +#11'TDatasource'#24'ZSBestelSchemaDataSource'#7'DataSet'#7#31'ZSBestelSchema'
+  +#11'TDataSource'#24'ZSBestelSchemaDataSource'#7'DataSet'#7#31'ZSBestelSchema'
   +'_BestelgroepTable'#4'left'#3#200#0#3'top'#3#232#0#0#0#10'TZSequence#ZSequen'
   +'ce_bestelschema_standaard_id'#10'Connection'#7#11'ZConnection'#12'SequenceN'
   +'ame'#6#29'BESTELSCHEMA_STANDAARD_ID_GEN'#4'left'#3'@'#1#3'top'#3#232#0#0#0#7
@@ -529,7 +529,7 @@ LazarusResources.Add('TDM','FORMDATA',[
   +'ngintField'#19'ZBaklijstDagQueryID'#12'DisplayWidth'#2#10#9'FieldKind'#7#6
   +'fkData'#9'FieldName'#6#2'ID'#5'Index'#2#1#11'LookupCache'#8#13'ProviderFlag'
   +'s'#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#8#8'Required'#8#0#0#0#11'TD'
-  +'atasource'#21'BaklijstDagDataSource'#7'DataSet'#7#17'ZBaklijstDagQuery'#12
+  +'ataSource'#21'BaklijstDagDataSource'#7'DataSet'#7#17'ZBaklijstDagQuery'#12
   +'OnDataChange'#7#31'BaklijstDagDataSourceDataChange'#4'left'#3#200#0#3'top'#3
   +#224#1#0#0#7'TZQuery'#14'ZBaklijstQuery'#10'Connection'#7#11'ZConnection'#10
   +'BeforeOpen'#7#27'ZBaklijstQueryBeforeRefresh'#13'BeforeRefresh'#7#27'ZBakli'
@@ -537,7 +537,7 @@ LazarusResources.Add('TDM','FORMDATA',[
   +'SQL.Strings'#1#6#30'select * from baklijst(:datum)'#0#6'Params'#14#1#8'Data'
   +'Type'#7#9'ftUnknown'#4'Name'#6#5'datum'#9'ParamType'#7#9'ptUnknown'#0#0#4'l'
   +'eft'#2'('#3'top'#3' '#2#9'ParamData'#14#1#8'DataType'#7#9'ftUnknown'#4'Name'
-  +#6#5'datum'#9'ParamType'#7#9'ptUnknown'#0#0#0#0#11'TDatasource'#18'BaklijstD'
+  +#6#5'datum'#9'ParamType'#7#9'ptUnknown'#0#0#0#0#11'TDataSource'#18'BaklijstD'
   +'ataSource'#7'DataSet'#7#14'ZBaklijstQuery'#4'left'#3#200#0#3'top'#3' '#2#0#0
   +#7'TZQuery'#26'ZBaklijstGeschiedenisQuery'#10'Connection'#7#11'ZConnection'
   +#10'BeforeOpen'#7#27'ZBaklijstQueryBeforeRefresh'#13'BeforeRefresh'#7#27'ZBa'
@@ -547,10 +547,10 @@ LazarusResources.Add('TDM','FORMDATA',[
   +'ftUnknown'#4'Name'#6#3'plu'#9'ParamType'#7#9'ptUnknown'#0#0#4'left'#2'('#3
   +'top'#3'h'#2#9'ParamData'#14#1#8'DataType'#7#9'ftUnknown'#4'Name'#6#10'lever'
   +'datum'#9'ParamType'#7#9'ptUnknown'#0#1#8'DataType'#7#9'ftUnknown'#4'Name'#6
-  +#3'plu'#9'ParamType'#7#9'ptUnknown'#0#0#0#0#11'TDatasource'#30'BaklijstGesch'
+  +#3'plu'#9'ParamType'#7#9'ptUnknown'#0#0#0#0#11'TDataSource'#30'BaklijstGesch'
   +'iedenisDataSource'#7'DataSet'#7#26'ZBaklijstGeschiedenisQuery'#12'OnDataCha'
   +'nge'#7'(BaklijstGeschiedenisDataSourceDataChange'#4'left'#3#200#0#3'top'#3
-  +'h'#2#0#0#11'TDatasource'#27'BaklijstDagLookupDataSource'#7'DataSet'#7#23'ZB'
+  +'h'#2#0#0#11'TDataSource'#27'BaklijstDagLookupDataSource'#7'DataSet'#7#23'ZB'
   +'aklijstDagLookupQuery'#12'OnDataChange'#7'%BaklijstDagLookupDataSourceDataC'
   +'hange'#4'left'#3#192#1#3'top'#3#224#1#0#0#15'TZReadOnlyQuery'#23'ZBaklijstD'
   +'agLookupQuery'#10'Connection'#7#11'ZConnection'#11'SQL.Strings'#1#6'Eselect'
@@ -584,7 +584,7 @@ LazarusResources.Add('TDM','FORMDATA',[
   +'fInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9#8'Required'#8#0#0#13'TLongintField'
   +#15'ZQuery1CHARGE_3'#12'DisplayWidth'#2#10#9'FieldKind'#7#6'fkData'#9'FieldN'
   +'ame'#6#8'CHARGE_3'#5'Index'#2#4#11'LookupCache'#8#13'ProviderFlags'#11#10'p'
-  +'fInUpdate'#9'pfInWhere'#0#8'ReadOnly'#8#8'Required'#8#0#0#0#11'TDatasource'
+  +'fInUpdate'#9'pfInWhere'#0#8'ReadOnly'#8#8'Required'#8#0#0#0#11'TDataSource'
   +#11'Datasource1'#7'DataSet'#7#7'ZQuery1'#4'left'#3'd'#1#3'top'#3#168#2#0#0#15
   +'TZReadOnlyQuery'#9'ZeanQuery'#10'Connection'#7#11'ZConnection'#11'SQL.Strin'
   +'gs'#1#6'#select eanupc from artikel a where '#6#17'x_artikelnummer ='#6#128
@@ -594,5 +594,19 @@ LazarusResources.Add('TDM','FORMDATA',[
   +'r else l_artikelnummer end from artikel a where a.eanupc = :eanupc)'#0#6'Pa'
   +'rams'#14#1#8'DataType'#7#9'ftUnknown'#4'Name'#6#6'eanupc'#9'ParamType'#7#9
   +'ptUnknown'#0#0#4'left'#3'D'#2#3'top'#3#197#0#9'ParamData'#14#1#8'DataType'#7
-  +#9'ftUnknown'#4'Name'#6#6'eanupc'#9'ParamType'#7#9'ptUnknown'#0#0#0#0#0
+  +#9'ftUnknown'#4'Name'#6#6'eanupc'#9'ParamType'#7#9'ptUnknown'#0#0#0#0#7'TZQu'
+  +'ery'#22'ZBaklijstvolgordequery'#10'Connection'#7#11'ZConnection'#12'SortedF'
+  +'ields'#6#8'VOLGORDE'#12'UpdateObject'#7#26'ZBaklijstVolgordeUpdateSql'#11'S'
+  +'QL.Strings'#1#6'-SELECT a.ARTIKEL_EANUPC, a.VOLGORDE, b.X_NAAM'#6'<FROM BAK'
+  +'EOFF a join artikel b on a.ARTIKEL_EANUPC = b.EANUPC'#0#6'Params'#14#0#15'I'
+  +'ndexFieldNames'#6#12'VOLGORDE Asc'#4'left'#3'%'#2#3'top'#3#129#1#0#0#11'TZU'
+  +'pdateSQL'#26'ZBaklijstVolgordeUpdateSql'#17'DeleteSQL.Strings'#1#6':delete '
+  +'from bakeoff where artikel_eanupc = :artikel_eanupc'#0#17'InsertSQL.Strings'
+  +#1#6'[update or insert into bakeoff (artikel_eanupc, volgorde) values(:artik'
+  +'el_eanupc, :volgorde)'#0#17'ModifySQL.Strings'#1#6'[update or insert into b'
+  +'akeoff (artikel_eanupc, volgorde) values(:artikel_eanupc, :volgorde)'#0#29
+  +'UseSequenceFieldForRefreshSQL'#8#4'left'#3'/'#2#3'top'#3#195#1#9'ParamData'
+  +#14#1#8'DataType'#7#9'ftUnknown'#4'Name'#6#14'artikel_eanupc'#9'ParamType'#7
+  +#9'ptUnknown'#0#1#8'DataType'#7#9'ftUnknown'#4'Name'#6#8'volgorde'#9'ParamTy'
+  +'pe'#7#9'ptUnknown'#0#0#0#0#0
 ]);

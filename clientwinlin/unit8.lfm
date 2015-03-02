@@ -8,7 +8,7 @@ object bestellingafdrukken: Tbestellingafdrukken
   ClientWidth = 467
   OnShow = FormShow
   SessionProperties = 'Height;Left;Top;Width;WindowState'
-  LCLVersion = '1.0.14.0'
+  LCLVersion = '1.2.6.0'
   object Panel1: TPanel
     Left = 0
     Height = 300
@@ -55,7 +55,7 @@ object bestellingafdrukken: Tbestellingafdrukken
       TabOrder = 1
     end
   end
-  object Datasource1: TDatasource
+  object Datasource1: TDataSource
     DataSet = DM.ZBestellingAfdrukkenQuery
     left = 344
     top = 16
@@ -97,7 +97,7 @@ object bestellingafdrukken: Tbestellingafdrukken
     left = 16
     top = 60
   end
-  object Datasource2: TDatasource
+  object Datasource2: TDataSource
     DataSet = DM.ZbestellingQuery
     left = 106
     top = 55

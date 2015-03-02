@@ -4,7 +4,7 @@ object hoofdmenu: Thoofdmenu
   Top = 305
   Width = 319
   Caption = 'Bestelboek 1 Hoofdmenu'
-  ClientHeight = 204
+  ClientHeight = 201
   ClientWidth = 319
   Menu = HfdMenu
   OnActivate = FormActivate
@@ -13,7 +13,7 @@ object hoofdmenu: Thoofdmenu
   OnCreate = FormCreate
   OnShow = FormShow
   SessionProperties = 'Height;Left;Position;Top;Width;WindowState'
-  LCLVersion = '1.0.4.0'
+  LCLVersion = '1.2.6.0'
   object BestelgroepButton: TButton
     Left = 8
     Height = 25
@@ -158,5 +158,9 @@ object hoofdmenu: Thoofdmenu
         OnClick = van10naar0Click
       end
     end
+    object Menu_baklijstvolgorde: TMenuItem
+      Caption = '&Volgorde baklijst'
+      OnClick = Menu_baklijstvolgordeClick
+    end
   end
-end
+end

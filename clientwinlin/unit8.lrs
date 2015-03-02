@@ -5,7 +5,7 @@ LazarusResources.Add('Tbestellingafdrukken','FORMDATA',[
   +'ght'#3','#1#3'Top'#3'B'#1#5'Width'#3#211#1#7'Caption'#6'!Bestelboek 1 Beste'
   +'lling Afdrukken'#12'ClientHeight'#3','#1#11'ClientWidth'#3#211#1#6'OnShow'#7
   +#8'FormShow'#17'SessionProperties'#6'!Height;Left;Top;Width;WindowState'#10
-  +'LCLVersion'#6#8'1.0.14.0'#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Height'#3','#1
+  +'LCLVersion'#6#7'1.2.6.0'#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Height'#3','#1
   +#3'Top'#2#0#5'Width'#3#211#1#5'Align'#7#8'alClient'#7'Caption'#6#6'Panel1'#12
   +'ClientHeight'#3','#1#11'ClientWidth'#3#211#1#8'TabOrder'#2#0#0#7'TDBGrid'#7
   +'DBGrid1'#4'Left'#2#1#6'Height'#3#17#1#3'Top'#2#1#5'Width'#3#209#1#5'Align'#7
@@ -22,7 +22,7 @@ LazarusResources.Add('Tbestellingafdrukken','FORMDATA',[
   +'hildSizing.Layout'#7#29'cclLeftToRightThenTopToBottom'#27'ChildSizing.Contr'
   +'olsPerLine'#2'd'#12'ClientHeight'#2#25#11'ClientWidth'#3#209#1#10'DataSourc'
   +'e'#7#11'Datasource1'#10'OnDblClick'#7#20'DBNavigator1DblClick'#7'Options'#11
-  +#0#8'TabOrder'#2#1#0#0#0#11'TDatasource'#11'Datasource1'#7'DataSet'#7#28'DM.'
+  +#0#8'TabOrder'#2#1#0#0#0#11'TDataSource'#11'Datasource1'#7'DataSet'#7#28'DM.'
   +'ZBestellingAfdrukkenQuery'#4'left'#3'X'#1#3'top'#2#16#0#0#15'TIniPropStorag'
   +'e'#30'bestellingafdrukkenPropStorage'#12'StoredValues'#14#1#4'Name'#6#17'be'
   +'stellingrapport'#5'Value'#6#14'bestelling.lrf'#0#0#11'IniFileName'#6#14'bes'
@@ -37,6 +37,6 @@ LazarusResources.Add('Tbestellingafdrukken','FORMDATA',[
   +'itialZoom'#7#9'pzDefault'#7'Options'#11#0#14'PreviewButtons'#11#6'pbZoom'#6
   +'pbLoad'#6'pbSave'#7'pbPrint'#6'pbFind'#6'pbHelp'#6'pbExit'#0#8'DataType'#7
   +#12'dtDataSource'#5'Title'#6#15'BESTELLING PALM'#4'left'#2#16#3'top'#2'<'#0#0
-  +#11'TDatasource'#11'Datasource2'#7'DataSet'#7#19'DM.ZbestellingQuery'#4'left'
+  +#11'TDataSource'#11'Datasource2'#7'DataSet'#7#19'DM.ZbestellingQuery'#4'left'
   +#2'j'#3'top'#2'7'#0#0#0
 ]);

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
     <Version Value="9"/>
@@ -14,10 +14,10 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <BuildNr Value="7"/>
+      <BuildNr Value="9"/>
       <StringTable ProductVersion="0.0.0.2"/>
     </VersionInfo>
-    <BuildModes Count="2" Active="Debug">
+    <BuildModes Count="2" Active="Release">
       <Item1 Name="Debug" Default="True"/>
       <Item2 Name="Release">
         <CompilerOptions>
@@ -70,35 +70,30 @@
       <local>
         <FormatVersion Value="1"/>
         <LaunchingApplication PathPlusParams="\usr\X11R6\bin\xterm -T 'Lazarus Run Output' -e $(LazarusDir)\tools\runwait.sh $(TargetCmdLine)"/>
-        <WorkingDirectory Value="\home\chrgra"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="6">
+    <RequiredPackages Count="5">
       <Item1>
-        <PackageName Value="fortes324forlaz"/>
-        <MinVersion Major="3" Minor="24" Release="2" Valid="True"/>
-      </Item1>
-      <Item2>
         <PackageName Value="lazreport"/>
         <MinVersion Minor="9" Release="5" Valid="True"/>
-      </Item2>
-      <Item3>
+      </Item1>
+      <Item2>
         <PackageName Value="rxnew"/>
         <MinVersion Major="1" Minor="1" Release="5" Build="98" Valid="True"/>
-      </Item3>
-      <Item4>
+      </Item2>
+      <Item3>
         <PackageName Value="FCL"/>
         <MinVersion Major="1" Valid="True"/>
-      </Item4>
-      <Item5>
+      </Item3>
+      <Item4>
         <PackageName Value="zcomponent"/>
         <MinVersion Major="6" Minor="6" Release="3" Valid="True"/>
-      </Item5>
-      <Item6>
+      </Item4>
+      <Item5>
         <PackageName Value="LCL"/>
-      </Item6>
+      </Item5>
     </RequiredPackages>
-    <Units Count="52">
+    <Units Count="50">
       <Unit0>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -115,12 +110,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="210"/>
-        <CursorPos X="3" Y="212"/>
+        <TopLine Value="193"/>
+        <CursorPos X="22" Y="206"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="unit2.pas"/>
@@ -129,10 +125,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="unit2"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="339"/>
-        <CursorPos X="3" Y="342"/>
+        <TopLine Value="1"/>
+        <CursorPos X="31" Y="15"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="unit3.pas"/>
@@ -150,16 +149,18 @@
         <UnitName Value="ZDbcInterbase6Utils"/>
         <TopLine Value="807"/>
         <CursorPos X="1" Y="817"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="17"/>
       </Unit4>
       <Unit5>
         <Filename Value="unit4.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="leverancier"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit4"/>
-        <TopLine Value="18"/>
-        <CursorPos X="52" Y="24"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="32"/>
+        <CursorPos X="6" Y="43"/>
         <UsageCount Value="200"/>
       </Unit5>
       <Unit6>
@@ -197,74 +198,45 @@
         <UnitName Value="DBGrids"/>
         <TopLine Value="1366"/>
         <CursorPos X="1" Y="1376"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="9"/>
       </Unit9>
       <Unit10>
-        <Filename Value="E:\lazarus0927\components\zeosdbo\src\component\ZAbstractRODataset.pas"/>
-        <UnitName Value="ZAbstractRODataset"/>
-        <TopLine Value="648"/>
-        <CursorPos X="10" Y="661"/>
-        <UsageCount Value="1"/>
-      </Unit10>
-      <Unit11>
         <Filename Value="unit8.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="bestellingafdrukken"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit8"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="50"/>
-        <CursorPos X="21" Y="59"/>
+        <TopLine Value="57"/>
+        <CursorPos X="26" Y="74"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
-      </Unit11>
-      <Unit12>
-        <Filename Value="E:\lazarus0927\components\lazreport\source\lr_class.pas"/>
-        <UnitName Value="LR_Class"/>
-        <TopLine Value="6562"/>
-        <CursorPos X="1" Y="6572"/>
-        <UsageCount Value="1"/>
-      </Unit12>
-      <Unit13>
-        <Filename Value="E:\lazarus0927\components\lazreport\source\lr_progr.pas"/>
-        <ComponentName Value="frProgressForm"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="LR_progr"/>
-        <TopLine Value="61"/>
-        <CursorPos X="1" Y="71"/>
-        <UsageCount Value="1"/>
-      </Unit13>
-      <Unit14>
-        <Filename Value="E:\lazarus0927\lcl\include\customform.inc"/>
-        <TopLine Value="2031"/>
-        <CursorPos X="1" Y="2041"/>
-        <UsageCount Value="1"/>
-      </Unit14>
-      <Unit15>
+      </Unit10>
+      <Unit11>
         <Filename Value="E:\lazarus0927\components\zeosdbo\src\dbc\ZDbcGenericResolver.pas"/>
         <UnitName Value="ZDbcGenericResolver"/>
         <TopLine Value="278"/>
         <CursorPos X="1" Y="288"/>
-        <UsageCount Value="6"/>
-      </Unit15>
-      <Unit16>
+        <UsageCount Value="4"/>
+      </Unit11>
+      <Unit12>
         <Filename Value="E:\lazarus0927\components\zeosdbo\src\dbc\ZDbcUtils.pas"/>
         <UnitName Value="ZDbcUtils"/>
         <TopLine Value="361"/>
         <CursorPos X="1" Y="371"/>
-        <UsageCount Value="14"/>
-      </Unit16>
-      <Unit17>
+        <UsageCount Value="12"/>
+      </Unit12>
+      <Unit13>
         <Filename Value="E:\lazarus0927\components\zeosdbo\src\component\ZAbstractDataset.pas"/>
         <UnitName Value="ZAbstractDataset"/>
         <TopLine Value="406"/>
         <CursorPos X="1" Y="416"/>
-        <UsageCount Value="11"/>
-      </Unit17>
-      <Unit18>
+        <UsageCount Value="9"/>
+      </Unit13>
+      <Unit14>
         <Filename Value="unit9.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="StandaardBestelschema"/>
@@ -273,50 +245,44 @@
         <TopLine Value="47"/>
         <CursorPos X="36" Y="59"/>
         <UsageCount Value="200"/>
-      </Unit18>
-      <Unit19>
+      </Unit14>
+      <Unit15>
         <Filename Value="E:\lazarus0927\lcl\propertystorage.pas"/>
         <UnitName Value="PropertyStorage"/>
         <TopLine Value="554"/>
         <CursorPos X="1" Y="564"/>
-        <UsageCount Value="10"/>
-      </Unit19>
-      <Unit20>
+        <UsageCount Value="8"/>
+      </Unit15>
+      <Unit16>
         <Filename Value="unit10.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Bestelschema"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit10"/>
-        <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="36"/>
-        <CursorPos X="50" Y="48"/>
+        <TopLine Value="64"/>
+        <CursorPos X="18" Y="83"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
-      </Unit20>
-      <Unit21>
+      </Unit16>
+      <Unit17>
         <Filename Value="unit2.lfm"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="5"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit21>
-      <Unit22>
+      </Unit17>
+      <Unit18>
         <Filename Value="unit11.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="ArtikelBestand"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit11"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="12" Y="7"/>
+        <CursorPos X="38" Y="5"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit22>
-      <Unit23>
+      </Unit18>
+      <Unit19>
         <Filename Value="unit12.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="ZoekArtikel"/>
@@ -327,15 +293,15 @@
         <TopLine Value="87"/>
         <CursorPos X="29" Y="98"/>
         <UsageCount Value="200"/>
-      </Unit23>
-      <Unit24>
+      </Unit19>
+      <Unit20>
         <Filename Value="E:\lazarus0927\components\zeosdbo\src\core\ZSysUtils.pas"/>
         <UnitName Value="ZSysUtils"/>
         <TopLine Value="495"/>
         <CursorPos X="3" Y="506"/>
-        <UsageCount Value="7"/>
-      </Unit24>
-      <Unit25>
+        <UsageCount Value="5"/>
+      </Unit20>
+      <Unit21>
         <Filename Value="unit13.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="ArtikelOmzet"/>
@@ -345,9 +311,9 @@
         <WindowIndex Value="0"/>
         <TopLine Value="106"/>
         <CursorPos X="14" Y="118"/>
-        <UsageCount Value="172"/>
-      </Unit25>
-      <Unit26>
+        <UsageCount Value="193"/>
+      </Unit21>
+      <Unit22>
         <Filename Value="unit14.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Scripts"/>
@@ -355,52 +321,52 @@
         <UnitName Value="Unit14"/>
         <TopLine Value="29"/>
         <CursorPos X="32" Y="44"/>
-        <UsageCount Value="145"/>
-      </Unit26>
-      <Unit27>
+        <UsageCount Value="166"/>
+      </Unit22>
+      <Unit23>
         <Filename Value="C:\lazarus\lcl\include\dbedit.inc"/>
         <TopLine Value="97"/>
         <CursorPos X="21" Y="104"/>
-        <UsageCount Value="9"/>
-      </Unit27>
-      <Unit28>
+        <UsageCount Value="7"/>
+      </Unit23>
+      <Unit24>
         <Filename Value="C:\lazarus\components\rxfp\rxtoolbar.pas"/>
         <UnitName Value="rxtoolbar"/>
         <TopLine Value="15"/>
         <CursorPos X="45" Y="18"/>
-        <UsageCount Value="6"/>
-      </Unit28>
-      <Unit29>
+        <UsageCount Value="4"/>
+      </Unit24>
+      <Unit25>
         <Filename Value="C:\lazarus\components\wst\wst-0.5\ide\lazarus\wst_design.pas"/>
         <UnitName Value="wst_design"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="6"/>
-      </Unit29>
-      <Unit30>
+        <UsageCount Value="4"/>
+      </Unit25>
+      <Unit26>
         <Filename Value="C:\lazarus0929\components\lazarus-ccr\components\rx\rxversinfo.pas"/>
         <UnitName Value="RxVersInfo"/>
         <TopLine Value="18"/>
         <CursorPos X="22" Y="38"/>
-        <UsageCount Value="7"/>
-      </Unit30>
-      <Unit31>
+        <UsageCount Value="5"/>
+      </Unit26>
+      <Unit27>
         <Filename Value="C:\lazarus\components\zeosdbo-6.6.6\src\dbc\ZDbcInterbase6Metadata.pas"/>
         <UnitName Value="ZDbcInterbase6Metadata"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1692"/>
         <CursorPos X="33" Y="1700"/>
-        <UsageCount Value="17"/>
-      </Unit31>
-      <Unit32>
+        <UsageCount Value="15"/>
+      </Unit27>
+      <Unit28>
         <Filename Value="..\..\..\urenregistratie\urenregistratie1.1\urenregistratie1.lpr"/>
         <UnitName Value="urenregistratie1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="71" Y="7"/>
-        <UsageCount Value="8"/>
-      </Unit32>
-      <Unit33>
+        <UsageCount Value="6"/>
+      </Unit28>
+      <Unit29>
         <Filename Value="baklijstunit.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form1"/>
@@ -411,161 +377,302 @@
         <TopLine Value="44"/>
         <CursorPos X="18" Y="65"/>
         <ComponentState Value="1"/>
-        <UsageCount Value="55"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit33>
-      <Unit34>
+        <UsageCount Value="76"/>
+      </Unit29>
+      <Unit30>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="947"/>
         <CursorPos X="1" Y="957"/>
-        <UsageCount Value="8"/>
-      </Unit34>
-      <Unit35>
+        <UsageCount Value="6"/>
+      </Unit30>
+      <Unit31>
         <Filename Value="C:\lazarus\components\zeosdborev878\src\dbc\ZDbcInterbase6Utils.pas"/>
         <UnitName Value="ZDbcInterbase6Utils"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1817"/>
         <CursorPos X="1" Y="1827"/>
-        <UsageCount Value="10"/>
-      </Unit35>
-      <Unit36>
+        <UsageCount Value="8"/>
+      </Unit31>
+      <Unit32>
         <Filename Value="C:\lazarus_09304\components\zeosdbo\src\dbc\ZDbcInterbase6Utils.pas"/>
         <UnitName Value="ZDbcInterbase6Utils"/>
         <WindowIndex Value="0"/>
         <TopLine Value="818"/>
         <CursorPos X="1" Y="838"/>
-        <UsageCount Value="9"/>
-      </Unit36>
-      <Unit37>
+        <UsageCount Value="7"/>
+      </Unit32>
+      <Unit33>
         <Filename Value="..\..\..\..\..\usr\share\lazarus\1.0\zeoslib\src\component\ZAbstractConnection.pas"/>
         <UnitName Value="ZAbstractConnection"/>
         <WindowIndex Value="0"/>
         <TopLine Value="775"/>
         <CursorPos X="1" Y="787"/>
-        <UsageCount Value="9"/>
-      </Unit37>
-      <Unit38>
+        <UsageCount Value="7"/>
+      </Unit33>
+      <Unit34>
         <Filename Value="..\..\..\..\..\usr\share\lazarus\1.0\zeoslib\src\component\ZAbstractRODataset.pas"/>
         <UnitName Value="ZAbstractRODataset"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1823"/>
         <CursorPos X="1" Y="1835"/>
-        <UsageCount Value="9"/>
-      </Unit38>
-      <Unit39>
+        <UsageCount Value="7"/>
+      </Unit34>
+      <Unit35>
         <Filename Value="..\..\..\..\..\usr\share\lazarus\1.0\zeoslib\src\plain\ZPlainLoader.pas"/>
         <UnitName Value="ZPlainLoader"/>
         <WindowIndex Value="0"/>
         <TopLine Value="205"/>
         <CursorPos X="44" Y="212"/>
-        <UsageCount Value="9"/>
-      </Unit39>
-      <Unit40>
+        <UsageCount Value="7"/>
+      </Unit35>
+      <Unit36>
         <Filename Value="..\..\..\..\..\usr\share\lazarus\1.0\zeoslib\src\core\ZCompatibility.pas"/>
         <UnitName Value="ZCompatibility"/>
         <WindowIndex Value="0"/>
         <TopLine Value="153"/>
         <CursorPos X="13" Y="161"/>
-        <UsageCount Value="9"/>
-      </Unit40>
-      <Unit41>
+        <UsageCount Value="7"/>
+      </Unit36>
+      <Unit37>
         <Filename Value="..\..\..\..\..\usr\share\lazarus\1.0\packager\registration\fcllaz.pas"/>
         <UnitName Value="fcllaz"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="43" Y="1"/>
-        <UsageCount Value="9"/>
-      </Unit41>
-      <Unit42>
+        <UsageCount Value="7"/>
+      </Unit37>
+      <Unit38>
         <Filename Value="baklijstsnelunit.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form2"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="baklijstsnelunit"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="34"/>
-        <CursorPos X="22" Y="47"/>
-        <UsageCount Value="29"/>
-      </Unit42>
-      <Unit43>
+        <TopLine Value="76"/>
+        <CursorPos X="17" Y="90"/>
+        <UsageCount Value="50"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit38>
+      <Unit39>
         <Filename Value="..\..\..\..\..\usr\share\lazarus\1.0\components\rtticontrols\rttictrls.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="RTTICtrls"/>
         <WindowIndex Value="0"/>
         <TopLine Value="4082"/>
         <CursorPos X="1" Y="4096"/>
-        <UsageCount Value="30"/>
-      </Unit43>
-      <Unit44>
+        <UsageCount Value="51"/>
+      </Unit39>
+      <Unit40>
         <Filename Value="..\..\..\..\..\usr\share\lazarus\1.0\lcl\include\customform.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="2179"/>
         <CursorPos X="1" Y="2186"/>
-        <UsageCount Value="9"/>
-      </Unit44>
-      <Unit45>
+        <UsageCount Value="7"/>
+      </Unit40>
+      <Unit41>
         <Filename Value="baklijstsnelunit.lfm"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="33" Y="274"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="7"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit45>
-      <Unit46>
+      </Unit41>
+      <Unit42>
         <Filename Value="unit12.lfm"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="7"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit46>
-      <Unit47>
+      </Unit42>
+      <Unit43>
         <Filename Value="baklijstsnelunit.lrs"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="9"/>
-      </Unit47>
-      <Unit48>
+        <UsageCount Value="7"/>
+      </Unit43>
+      <Unit44>
         <Filename Value="C:\lazarus_10_32\lcl\propertystorage.pas"/>
         <UnitName Value="PropertyStorage"/>
         <WindowIndex Value="0"/>
         <TopLine Value="552"/>
         <CursorPos X="1" Y="567"/>
-        <UsageCount Value="10"/>
-      </Unit48>
-      <Unit49>
+        <UsageCount Value="8"/>
+      </Unit44>
+      <Unit45>
         <Filename Value="C:\lazarus_10_32\lcl\interfaces\win32\win32wsbuttons.pp"/>
         <UnitName Value="Win32WSButtons"/>
         <WindowIndex Value="0"/>
         <TopLine Value="482"/>
         <CursorPos X="1" Y="491"/>
-        <UsageCount Value="9"/>
-      </Unit49>
-      <Unit50>
+        <UsageCount Value="7"/>
+      </Unit45>
+      <Unit46>
         <Filename Value="C:\lazarus_10_32\lcl\include\control.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1520"/>
         <CursorPos X="1" Y="1530"/>
-        <UsageCount Value="10"/>
-      </Unit50>
-      <Unit51>
+        <UsageCount Value="8"/>
+      </Unit46>
+      <Unit47>
         <Filename Value="C:\lazarus_10\zeoslib\src\component\ZAbstractRODataset.pas"/>
         <UnitName Value="ZAbstractRODataset"/>
         <WindowIndex Value="0"/>
         <TopLine Value="897"/>
         <CursorPos X="22" Y="911"/>
-        <UsageCount Value="11"/>
-      </Unit51>
+        <UsageCount Value="9"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="..\..\..\..\..\usr\share\lazarus\1.2.6\components\lazarus-ccr-svn\components\rx\trunk\dbdateedit.pas"/>
+        <UnitName Value="dbdateedit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="419"/>
+        <CursorPos X="23" Y="431"/>
+        <UsageCount Value="8"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="baklijstvolgordeunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Baklijstvolgordeform"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="baklijstvolgordeunit"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="24"/>
+        <CursorPos X="1" Y="37"/>
+        <UsageCount Value="40"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit49>
     </Units>
-    <JumpHistory Count="1" HistoryIndex="0">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="unit1.pas"/>
-        <Caret Line="180" Column="1" TopLine="165"/>
+        <Caret Line="266" Column="3" TopLine="264"/>
       </Position1>
+      <Position2>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="204" Column="39" TopLine="202"/>
+      </Position2>
+      <Position3>
+        <Filename Value="baklijstvolgordeunit.pas"/>
+        <Caret Line="30" Column="30" TopLine="20"/>
+      </Position3>
+      <Position4>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="9" Column="27" TopLine="1"/>
+      </Position4>
+      <Position5>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="1" Column="24" TopLine="1"/>
+      </Position5>
+      <Position6>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="23" Column="16" TopLine="4"/>
+      </Position6>
+      <Position7>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="58" Column="26" TopLine="40"/>
+      </Position7>
+      <Position8>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="127" Column="26" TopLine="108"/>
+      </Position8>
+      <Position9>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="157" Column="17" TopLine="138"/>
+      </Position9>
+      <Position10>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="158" Column="16" TopLine="139"/>
+      </Position10>
+      <Position11>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="172" Column="26" TopLine="153"/>
+      </Position11>
+      <Position12>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="213" Column="33" TopLine="194"/>
+      </Position12>
+      <Position13>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="86" Column="29" TopLine="75"/>
+      </Position13>
+      <Position14>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="205" Column="50" TopLine="194"/>
+      </Position14>
+      <Position15>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="86" Column="24" TopLine="75"/>
+      </Position15>
+      <Position16>
+        <Filename Value="baklijstvolgordeunit.pas"/>
+        <Caret Line="44" Column="28" TopLine="25"/>
+      </Position16>
+      <Position17>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="207" Column="22" TopLine="194"/>
+      </Position17>
+      <Position18>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="206" Column="22" TopLine="193"/>
+      </Position18>
+      <Position19>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="1" Column="2" TopLine="1"/>
+      </Position19>
+      <Position20>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="47" Column="22" TopLine="34"/>
+      </Position20>
+      <Position21>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="48" Column="22" TopLine="35"/>
+      </Position21>
+      <Position22>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="50" Column="22" TopLine="37"/>
+      </Position22>
+      <Position23>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="51" Column="22" TopLine="38"/>
+      </Position23>
+      <Position24>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="52" Column="22" TopLine="39"/>
+      </Position24>
+      <Position25>
+        <Filename Value="unit8.pas"/>
+        <Caret Line="2" Column="34" TopLine="1"/>
+      </Position25>
+      <Position26>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="47" Column="38" TopLine="40"/>
+      </Position26>
+      <Position27>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="92" Column="1" TopLine="75"/>
+      </Position27>
+      <Position28>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="84" Column="8" TopLine="73"/>
+      </Position28>
+      <Position29>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="88" Column="6" TopLine="75"/>
+      </Position29>
+      <Position30>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="90" Column="17" TopLine="76"/>
+      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
@@ -593,9 +700,6 @@
       </Optimizations>
     </CodeGeneration>
     <Linking>
-      <Debugging>
-        <GenerateDebugInfo Value="False"/>
-      </Debugging>
       <LinkSmart Value="True"/>
       <Options>
         <Win32>
@@ -640,4 +744,5 @@
       </Item2>
     </Exceptions>
   </Debugging>
+  <EditorMacros Count="0"/>
 </CONFIG>

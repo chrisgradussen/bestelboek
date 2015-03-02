@@ -115,6 +115,7 @@ type
     ZQuery1PLU: TLargeintField;
     ZQuery1X_NAAM: TStringField;
     ZeanQuery: TZReadOnlyQuery;
+    ZBaklijstvolgordequery: TZQuery;
     ZReclameQuery: TZQuery;
     ZReclameQueryARTIKEL_EANUPC: TLargeintField;
     ZReclameQueryBEGINDATUM: TDateField;
@@ -129,6 +130,7 @@ type
     ZBestelSchema_BestelSchemaQuery: TZQuery;
     zscripts_levering_update: TZSQLProcessor;
     ZBaklijstUpdateSQL: TZUpdateSQL;
+    ZBaklijstVolgordeUpdateSql: TZUpdateSQL;
     ZZoekArtikelQuery: TZReadOnlyQuery;
     ZSBestelSchemaDataSource: TDatasource;
     ZConnection: TZConnection;

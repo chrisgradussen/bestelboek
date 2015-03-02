@@ -4,7 +4,7 @@ object hoofdmenu: Thoofdmenu
   Top = 305
   Width = 319
   Caption = 'Bestelboek 1 Hoofdmenu'
-  ClientHeight = 204
+  ClientHeight = 201
   ClientWidth = 319
   Menu = HfdMenu
   OnActivate = FormActivate
@@ -13,7 +13,7 @@ object hoofdmenu: Thoofdmenu
   OnCreate = FormCreate
   OnShow = FormShow
   SessionProperties = 'Height;Left;Position;Top;Width;WindowState'
-  LCLVersion = '1.0.1.3'
+  LCLVersion = '1.2.6.0'
   object BestelgroepButton: TButton
     Left = 8
     Height = 25
@@ -121,6 +121,15 @@ object hoofdmenu: Thoofdmenu
     Caption = '&ZoeteSnacks'
     TabOrder = 11
   end
+  object Button1: TButton
+    Left = 33
+    Height = 25
+    Top = 107
+    Width = 75
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 12
+  end
   object HoofdmenuPropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
@@ -158,5 +167,9 @@ object hoofdmenu: Thoofdmenu
         OnClick = van10naar0Click
       end
     end
+    object Menu_baklijstvolgorde: TMenuItem
+      Caption = '&Volgorde baklijst'
+      OnClick = Menu_baklijstvolgordeClick
+    end
   end
-end
+end

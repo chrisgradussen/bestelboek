@@ -5,10 +5,10 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
+  baklijstvolgordeunit,Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   IniPropStorage, StdCtrls, Unit3, Unit4,unit5, unit6, unit7, unit8, unit9,
   Unit10, Unit2, Unit11, unit12, Unit13, Menus, Unit14,ZConnection,
-  ZDataset, db, ZSqlUpdate, ZSequence,baklijstunit,baklijstsnelunit;
+  ZDataset, db, ZSqlUpdate, ZSequence,baklijstunit,baklijstsnelunit ;
 
 type
 
@@ -16,6 +16,7 @@ type
 
   Thoofdmenu = class(TForm)
     BestelgroepButton: TButton;
+    Button1: TButton;
     ButtonBaklijst: TButton;
     ButtonZoeteSnacks: TButton;
     DagenButton: TButton;
@@ -23,6 +24,7 @@ type
     GroepButton: TButton;
     HfdMenu: TMainMenu;
     MenuItem1: TMenuItem;
+    Menu_baklijstvolgorde: TMenuItem;
     van10naar0: TMenuItem;
     van30naar10: TMenuItem;
     Van40naar30: TMenuItem;
@@ -51,6 +53,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure GroepButtonClick(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
+    procedure Menu_baklijstvolgordeClick(Sender: TObject);
     procedure NoodproceduresClick(Sender: TObject);
     procedure LeverancierButtonClick(Sender: TObject);
     procedure bestellingafdrukkenbuttonClick(Sender: TObject);
@@ -80,7 +83,7 @@ end;
 
 procedure Thoofdmenu.Button1Click(Sender: TObject);
 begin
-  unit2.DM.ZIBEventAlerter1.RegisterEvents;
+  baklijstvolgordeunit.Baklijstvolgordeform.show;
 end;
 
 procedure Thoofdmenu.Button5Click(Sender: TObject);
@@ -134,7 +137,7 @@ begin
   artikelomzet.ArtikelOmzetPropStorage.Save;
   baklijstunit.Form1.BaklijstPropStorage.save;
   dm.DBPropStorage.save;
-  dm.ZConnection.Connect;
+  //dm.ZConnection.Connect;
 end;
 
 procedure Thoofdmenu.FormCloseQuery(Sender: TObject; var CanClose: boolean);
@@ -177,6 +180,7 @@ begin
   bestelschema.bestelschemapropstorage.restore;
   scripts.ScriptsPropStorage.restore;
   artikelomzet.ArtikelOmzetPropStorage.restore;
+  bestellingafdrukken.bestellingafdrukkenPropStorage.Restore;
   baklijstunit.Form1.BaklijstPropStorage.Restore;
   baklijstunit.form1.RxDBGrid2.ColumnByFieldName('CHARGE_1').ReadOnly:= false;
 end;
@@ -194,6 +198,11 @@ begin
   dm.zscripts_levering_update.script.Add('EXECUTE PROCEDURE LEVERING_VAN_30_NAAR_40(:ID)');
   unit14.Scripts.Caption:= 'BESTELBOEK VAN BESTELD NAAR ONDERWEG';
   unit14.Scripts.showmodal;
+end;
+
+procedure Thoofdmenu.Menu_baklijstvolgordeClick(Sender: TObject);
+begin
+  baklijstvolgordeunit.Baklijstvolgordeform.Show;
 end;
 
 procedure Thoofdmenu.NoodproceduresClick(Sender: TObject);
