@@ -27,7 +27,7 @@ uses
 
 
 
-{$R *.res}
+//{$R *.res}
 
 begin
   Application.Initialize;

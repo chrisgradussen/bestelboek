@@ -10,8 +10,8 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms
   { you can add units after this }, Unit1, Unit2, zcomponent, Unit3, Unit4,
-  Unit5, Unit6, Unit7, rxnew, fortes324forlaz, Unit8, lazreport,
-  Unit9, Unit10, Unit11, Unit12, Unit13, Unit14, BaklijstUnit, baklijstsnelunit;
+  Unit5, Unit6, Unit7, rxnew, Unit8, lazreport, Unit9, Unit10, Unit11, Unit12,
+  Unit13, Unit14, BaklijstUnit, baklijstsnelunit, baklijstvolgordeunit;
 
 {$IFDEF WINDOWS}{$R project1.rc}{$ENDIF}
 
@@ -19,6 +19,8 @@ uses
 
 
 //{$R *.res}
+
+
 
 
 
@@ -45,6 +47,7 @@ begin
   Application.CreateForm(TScripts, Scripts);
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TBaklijstvolgordeform, Baklijstvolgordeform);
   Application.Run;
 end.
 
