@@ -9,7 +9,7 @@ LazarusResources.Add('TBestelschema','FORMDATA',[
   +'Panel3.Width;Panel4.Height;Panel4.Left;Panel4.Top;Panel4.Width;Position;Spl'
   +'itter1.Height;Splitter1.Left;Splitter1.Top;Splitter1.Width;Splitter2.Height'
   +';Splitter2.Left;Splitter2.Top;Splitter2.Width;Top;Width;WindowState'#10'LCL'
-  +'Version'#6#7'1.0.4.0'#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Height'#3','#1#3
+  +'Version'#6#7'1.2.6.0'#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Height'#3','#1#3
   +'Top'#2#0#5'Width'#3#20#3#5'Align'#7#8'alClient'#7'Caption'#6#6'Panel1'#12'C'
   +'lientHeight'#3','#1#11'ClientWidth'#3#20#3#8'TabOrder'#2#0#0#6'TPanel'#6'Pa'
   +'nel2'#4'Left'#2#1#6'Height'#2'j'#3'Top'#2#1#5'Width'#3#18#3#5'Align'#7#5'al'
@@ -36,45 +36,50 @@ LazarusResources.Add('TBestelschema','FORMDATA',[
   +#7#14'crsScaleChilds'#26'ChildSizing.ShrinkVertical'#7#14'crsScaleChilds'#18
   +'ChildSizing.Layout'#7#29'cclLeftToRightThenTopToBottom'#27'ChildSizing.Cont'
   +'rolsPerLine'#2'd'#12'ClientHeight'#2#25#11'ClientWidth'#3#16#3#10'DataSourc'
-  +'e'#7#11'Datasource2'#7'Options'#11#0#8'TabOrder'#2#0#0#0#7'TDBGrid'#7'DBGri'
-  +'d2'#4'Left'#2#1#6'Height'#2';'#3'Top'#2#1#5'Width'#3#16#3#5'Align'#7#8'alCl'
-  +'ient'#5'Color'#7#8'clWindow'#7'Columns'#14#1#8'ReadOnly'#9#13'Title.Caption'
-  +#6#2'ID'#9'FieldName'#6#2'ID'#0#1#13'Title.Caption'#6#6'STATUS'#9'FieldName'
-  +#6#6'STATUS'#0#1#13'Title.Caption'#6#11'BESTELDATUM'#9'FieldName'#6#11'BESTE'
-  +'LDATUM'#0#1#13'Title.Caption'#6#10'BESTELTIJD'#9'FieldName'#6#10'BESTELTIJD'
-  +#0#1#13'Title.Caption'#6#10'LEVERDATUM'#9'FieldName'#6#10'LEVERDATUM'#0#1#13
-  +'Title.Caption'#6#9'LEVERTIJD'#9'FieldName'#6#9'LEVERTIJD'#0#1#13'Title.Capt'
-  +'ion'#6#18'VOLGENDELEVERDATUM'#9'FieldName'#6#18'VOLGENDELEVERDATUM'#0#1#13
-  +'Title.Caption'#6#17'VOLGENDELEVERTIJD'#9'FieldName'#6#17'VOLGENDELEVERTIJD'
-  +#0#0#10'DataSource'#7#11'Datasource2'#8'TabOrder'#2#1#0#0#0#6'TPanel'#6'Pane'
-  +'l4'#4'Left'#2#1#6'Height'#2'`'#3'Top'#3#203#0#5'Width'#3#18#3#5'Align'#7#8
-  +'alBottom'#7'Caption'#6#6'Panel4'#12'ClientHeight'#2'`'#11'ClientWidth'#3#18
-  +#3#8'TabOrder'#2#2#0#12'TDBNavigator'#12'DBNavigator3'#4'Left'#2#1#6'Height'
-  +#2#25#3'Top'#2'F'#5'Width'#3#16#3#5'Align'#7#8'alBottom'#10'BevelOuter'#7#6
-  +'bvNone'#29'ChildSizing.EnlargeHorizontal'#7#14'crsScaleChilds'#27'ChildSizi'
-  +'ng.EnlargeVertical'#7#14'crsScaleChilds'#28'ChildSizing.ShrinkHorizontal'#7
-  +#14'crsScaleChilds'#26'ChildSizing.ShrinkVertical'#7#14'crsScaleChilds'#18'C'
-  +'hildSizing.Layout'#7#29'cclLeftToRightThenTopToBottom'#27'ChildSizing.Contr'
-  +'olsPerLine'#2'd'#12'ClientHeight'#2#25#11'ClientWidth'#3#16#3#10'DataSource'
-  +#7#11'Datasource3'#7'Options'#11#0#8'TabOrder'#2#0#0#0#7'TDBGrid'#7'DBGrid3'
-  +#4'Left'#2#1#6'Height'#2'E'#3'Top'#2#1#5'Width'#3#16#3#5'Align'#7#8'alClient'
-  +#5'Color'#7#8'clWindow'#7'Columns'#14#1#13'Title.Caption'#6#14'ARTIKEL_EANUP'
-  +'C'#9'FieldName'#6#14'ARTIKEL_EANUPC'#13'DisplayFormat'#6#1'#'#0#1#13'Title.'
-  +'Caption'#6#6'AANTAL'#9'FieldName'#6#6'AANTAL'#0#1#13'Title.Caption'#6#13'AD'
-  +'VIES_AANTAL'#9'FieldName'#6#13'ADVIES_AANTAL'#0#1#13'Title.Caption'#6#4'NAA'
-  +'M'#5'Width'#3#144#1#9'FieldName'#6#4'NAAM'#0#1#13'Title.Caption'#6#13'ARTIK'
-  +'ELNUMMER'#5'Width'#2'x'#9'FieldName'#6#13'ARTIKELNUMMER'#0#1#8'ReadOnly'#9
-  +#13'Title.Caption'#6#8'VOLGORDE'#9'FieldName'#6#8'VOLGORDE'#0#0#10'DataSourc'
-  ,'e'#7#11'Datasource3'#8'TabOrder'#2#1#0#0#0#9'TSplitter'#9'Splitter1'#6'Curs'
-  +'or'#7#8'crVSplit'#4'Left'#2#1#6'Height'#2#5#3'Top'#2'k'#5'Width'#3#18#3#5'A'
-  +'lign'#7#5'alTop'#12'ResizeAnchor'#7#5'akTop'#0#0#9'TSplitter'#9'Splitter2'#6
-  +'Cursor'#7#8'crVSplit'#4'Left'#2#1#6'Height'#2#5#3'Top'#3#198#0#5'Width'#3#18
-  +#3#5'Align'#7#8'alBottom'#12'ResizeAnchor'#7#8'akBottom'#0#0#0#15'TIniPropSt'
-  +'orage'#23'bestelschemaPropStorage'#12'StoredValues'#14#0#11'IniFileName'#6
-  +#14'bestelboek.ini'#4'left'#3'g'#1#3'top'#2#14#0#0#11'TDatasource'#11'Dataso'
-  +'urce1'#7'DataSet'#7'!DM.ZBestelSchema_BestelgroepTable'#4'left'#3'F'#1#3'to'
-  +'p'#2#13#0#0#11'TDatasource'#11'Datasource2'#7'DataSet'#7'"DM.ZBestelSchema_'
-  +'BestelSchemaQuery'#4'left'#3'F'#1#3'top'#2'p'#0#0#11'TDatasource'#11'Dataso'
-  +'urce3'#7'DataSet'#7#31'DM.ZBestelSchema_BestRegelQuery'#13'OnStateChange'#7
-  +#22'Datasource3StateChange'#4'left'#3'F'#1#3'top'#3#219#0#0#0#0
+  +'e'#7#11'Datasource2'#7'Options'#11#0#8'TabOrder'#2#0#14'VisibleButtons'#11#7
+  +'nbFirst'#7'nbPrior'#6'nbNext'#6'nbLast'#8'nbInsert'#6'nbEdit'#6'nbPost'#8'n'
+  +'bCancel'#9'nbRefresh'#0#0#0#7'TDBGrid'#7'DBGrid2'#4'Left'#2#1#6'Height'#2';'
+  +#3'Top'#2#1#5'Width'#3#16#3#5'Align'#7#8'alClient'#5'Color'#7#8'clWindow'#7
+  +'Columns'#14#1#8'ReadOnly'#9#13'Title.Caption'#6#2'ID'#9'FieldName'#6#2'ID'#0
+  +#1#13'Title.Caption'#6#6'STATUS'#9'FieldName'#6#6'STATUS'#0#1#13'Title.Capti'
+  +'on'#6#11'BESTELDATUM'#9'FieldName'#6#11'BESTELDATUM'#0#1#13'Title.Caption'#6
+  +#10'BESTELTIJD'#9'FieldName'#6#10'BESTELTIJD'#0#1#13'Title.Caption'#6#10'LEV'
+  +'ERDATUM'#9'FieldName'#6#10'LEVERDATUM'#0#1#13'Title.Caption'#6#9'LEVERTIJD'
+  +#9'FieldName'#6#9'LEVERTIJD'#0#1#13'Title.Caption'#6#18'VOLGENDELEVERDATUM'#9
+  +'FieldName'#6#18'VOLGENDELEVERDATUM'#0#1#13'Title.Caption'#6#17'VOLGENDELEVE'
+  +'RTIJD'#9'FieldName'#6#17'VOLGENDELEVERTIJD'#0#0#10'DataSource'#7#11'Datasou'
+  +'rce2'#7'Options'#11#9'dgEditing'#8'dgTitles'#11'dgIndicator'#14'dgColumnRes'
+  +'ize'#12'dgColumnMove'#10'dgColLines'#10'dgRowLines'#6'dgTabs'#21'dgAlwaysSh'
+  +'owSelection'#15'dgConfirmDelete'#14'dgCancelOnExit'#15'dgDisableDelete'#0#8
+  +'TabOrder'#2#1#0#0#0#6'TPanel'#6'Panel4'#4'Left'#2#1#6'Height'#2'`'#3'Top'#3
+  +#203#0#5'Width'#3#18#3#5'Align'#7#8'alBottom'#7'Caption'#6#6'Panel4'#12'Clie'
+  +'ntHeight'#2'`'#11'ClientWidth'#3#18#3#8'TabOrder'#2#2#0#12'TDBNavigator'#12
+  +'DBNavigator3'#4'Left'#2#1#6'Height'#2#25#3'Top'#2'F'#5'Width'#3#16#3#5'Alig'
+  +'n'#7#8'alBottom'#10'BevelOuter'#7#6'bvNone'#29'ChildSizing.EnlargeHorizonta'
+  +'l'#7#14'crsScaleChilds'#27'ChildSizing.EnlargeVertical'#7#14'crsScaleChilds'
+  +#28'ChildSizing.ShrinkHorizontal'#7#14'crsScaleChilds'#26'ChildSizing.Shrink'
+  +'Vertical'#7#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29'cclLeftToRightTh'
+  +'enTopToBottom'#27'ChildSizing.ControlsPerLine'#2'd'#12'ClientHeight'#2#25#11
+  +'ClientWidth'#3#16#3#10'DataSource'#7#11'Datasource3'#7'OnClick'#7#17'DBNavi'
+  +'gator3Click'#7'Options'#11#0#8'TabOrder'#2#0#0#0#7'TDBGrid'#7'DBGrid3'#4'Le'
+  +'ft'#2#1#6'Height'#2'E'#3'Top'#2#1#5'Width'#3#16#3#5'Align'#7#8'alClient'#5
+  +'Color'#7#8'clWindow'#7'Columns'#14#1#13'Title.Caption'#6#14'ARTIKEL_EANUPC'
+  +#9'FieldName'#6#14'ARTIKEL_EANUPC'#13'DisplayFormat'#6#1'#'#0#1#13'Title.Cap'
+  ,'tion'#6#6'AANTAL'#9'FieldName'#6#6'AANTAL'#0#1#13'Title.Caption'#6#13'ADVIE'
+  +'S_AANTAL'#9'FieldName'#6#13'ADVIES_AANTAL'#0#1#13'Title.Caption'#6#4'NAAM'#5
+  +'Width'#3#144#1#9'FieldName'#6#4'NAAM'#0#1#13'Title.Caption'#6#13'ARTIKELNUM'
+  +'MER'#5'Width'#2'x'#9'FieldName'#6#13'ARTIKELNUMMER'#0#1#8'ReadOnly'#9#13'Ti'
+  +'tle.Caption'#6#8'VOLGORDE'#9'FieldName'#6#8'VOLGORDE'#0#0#10'DataSource'#7
+  +#11'Datasource3'#8'TabOrder'#2#1#0#0#0#9'TSplitter'#9'Splitter1'#6'Cursor'#7
+  +#8'crVSplit'#4'Left'#2#1#6'Height'#2#5#3'Top'#2'k'#5'Width'#3#18#3#5'Align'#7
+  +#5'alTop'#12'ResizeAnchor'#7#5'akTop'#0#0#9'TSplitter'#9'Splitter2'#6'Cursor'
+  +#7#8'crVSplit'#4'Left'#2#1#6'Height'#2#5#3'Top'#3#198#0#5'Width'#3#18#3#5'Al'
+  +'ign'#7#8'alBottom'#12'ResizeAnchor'#7#8'akBottom'#0#0#0#15'TIniPropStorage'
+  +#23'bestelschemaPropStorage'#12'StoredValues'#14#0#11'IniFileName'#6#14'best'
+  +'elboek.ini'#4'left'#3'g'#1#3'top'#2#14#0#0#11'TDataSource'#11'Datasource1'#7
+  +'DataSet'#7'!DM.ZBestelSchema_BestelgroepTable'#4'left'#3'F'#1#3'top'#2#13#0
+  +#0#11'TDataSource'#11'Datasource2'#7'DataSet'#7'"DM.ZBestelSchema_BestelSche'
+  +'maQuery'#4'left'#3'F'#1#3'top'#2'p'#0#0#11'TDataSource'#11'Datasource3'#7'D'
+  +'ataSet'#7#31'DM.ZBestelSchema_BestRegelQuery'#13'OnStateChange'#7#22'Dataso'
+  +'urce3StateChange'#4'left'#3'F'#1#3'top'#3#219#0#0#0#0
 ]);

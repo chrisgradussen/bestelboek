@@ -3,7 +3,7 @@
 LazarusResources.Add('Thoofdmenu','FORMDATA',[
   'TPF0'#10'Thoofdmenu'#9'hoofdmenu'#4'Left'#3#16#3#6'Height'#3#224#0#3'Top'#3
   +'1'#1#5'Width'#3'?'#1#7'Caption'#6#22'Bestelboek 1 Hoofdmenu'#12'ClientHeigh'
-  +'t'#3#201#0#11'ClientWidth'#3'?'#1#4'Menu'#7#7'HfdMenu'#10'OnActivate'#7#12
+  +'t'#3#204#0#11'ClientWidth'#3'?'#1#4'Menu'#7#7'HfdMenu'#10'OnActivate'#7#12
   +'FormActivate'#7'OnClose'#7#9'FormClose'#12'OnCloseQuery'#7#14'FormCloseQuer'
   +'y'#8'OnCreate'#7#10'FormCreate'#6'OnShow'#7#8'FormShow'#17'SessionPropertie'
   +'s'#6'*Height;Left;Position;Top;Width;WindowState'#10'LCLVersion'#6#7'1.2.6.'

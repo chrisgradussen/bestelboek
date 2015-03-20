@@ -9,7 +9,7 @@ object Bestelschema: TBestelschema
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
   SessionProperties = 'Height;Left;Panel2.Height;Panel2.Left;Panel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;Panel3.Width;Panel4.Height;Panel4.Left;Panel4.Top;Panel4.Width;Position;Splitter1.Height;Splitter1.Left;Splitter1.Top;Splitter1.Width;Splitter2.Height;Splitter2.Left;Splitter2.Top;Splitter2.Width;Top;Width;WindowState'
-  LCLVersion = '0.9.29'
+  LCLVersion = '1.0.4.0'
   object Panel1: TPanel
     Left = 0
     Height = 300
@@ -37,9 +37,16 @@ object Bestelschema: TBestelschema
         Width = 784
         Align = alBottom
         BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
         ClientHeight = 25
         ClientWidth = 784
         DataSource = Datasource1
+        Options = []
         TabOrder = 0
       end
       object DBGrid1: TDBGrid
@@ -48,6 +55,8 @@ object Bestelschema: TBestelschema
         Top = 1
         Width = 784
         Align = alClient
+        Color = clWindow
+        Columns = <>
         DataSource = Datasource1
         Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
         TabOrder = 1
@@ -70,9 +79,16 @@ object Bestelschema: TBestelschema
         Width = 784
         Align = alBottom
         BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
         ClientHeight = 25
         ClientWidth = 784
         DataSource = Datasource2
+        Options = []
         TabOrder = 0
       end
       object DBGrid2: TDBGrid
@@ -81,30 +97,39 @@ object Bestelschema: TBestelschema
         Top = 1
         Width = 784
         Align = alClient
+        Color = clWindow
         Columns = <        
           item
             ReadOnly = True
+            Title.Caption = 'ID'
             FieldName = 'ID'
           end        
           item
+            Title.Caption = 'STATUS'
             FieldName = 'STATUS'
           end        
           item
+            Title.Caption = 'BESTELDATUM'
             FieldName = 'BESTELDATUM'
           end        
           item
+            Title.Caption = 'BESTELTIJD'
             FieldName = 'BESTELTIJD'
           end        
           item
+            Title.Caption = 'LEVERDATUM'
             FieldName = 'LEVERDATUM'
           end        
           item
+            Title.Caption = 'LEVERTIJD'
             FieldName = 'LEVERTIJD'
           end        
           item
+            Title.Caption = 'VOLGENDELEVERDATUM'
             FieldName = 'VOLGENDELEVERDATUM'
           end        
           item
+            Title.Caption = 'VOLGENDELEVERTIJD'
             FieldName = 'VOLGENDELEVERTIJD'
           end>
         DataSource = Datasource2
@@ -128,9 +153,16 @@ object Bestelschema: TBestelschema
         Width = 784
         Align = alBottom
         BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
         ClientHeight = 25
         ClientWidth = 784
         DataSource = Datasource3
+        Options = []
         TabOrder = 0
       end
       object DBGrid3: TDBGrid
@@ -139,26 +171,34 @@ object Bestelschema: TBestelschema
         Top = 1
         Width = 784
         Align = alClient
+        Color = clWindow
         Columns = <        
           item
+            Title.Caption = 'ARTIKEL_EANUPC'
             FieldName = 'ARTIKEL_EANUPC'
+            DisplayFormat = '#'
           end        
           item
+            Title.Caption = 'AANTAL'
             FieldName = 'AANTAL'
           end        
           item
+            Title.Caption = 'ADVIES_AANTAL'
             FieldName = 'ADVIES_AANTAL'
           end        
           item
+            Title.Caption = 'NAAM'
             Width = 400
             FieldName = 'NAAM'
           end        
           item
+            Title.Caption = 'ARTIKELNUMMER'
             Width = 120
             FieldName = 'ARTIKELNUMMER'
           end        
           item
             ReadOnly = True
+            Title.Caption = 'VOLGORDE'
             FieldName = 'VOLGORDE'
           end>
         DataSource = Datasource3

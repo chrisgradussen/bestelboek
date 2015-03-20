@@ -4,7 +4,7 @@ object hoofdmenu: Thoofdmenu
   Top = 305
   Width = 319
   Caption = 'Bestelboek 1 Hoofdmenu'
-  ClientHeight = 201
+  ClientHeight = 204
   ClientWidth = 319
   Menu = HfdMenu
   OnActivate = FormActivate
@@ -163,4 +163,4 @@ object hoofdmenu: Thoofdmenu
       OnClick = Menu_baklijstvolgordeClick
     end
   end
-end
+end

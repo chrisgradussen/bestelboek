@@ -8,7 +8,7 @@ uses
   baklijstvolgordeunit,Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   IniPropStorage, StdCtrls, Unit3, Unit4,unit5, unit6, unit7, unit8, unit9,
   Unit10, Unit2, Unit11, unit12, Unit13, Menus, Unit14,ZConnection,
-  ZDataset, db, ZSqlUpdate, ZSequence,baklijstunit,baklijstsnelunit ;
+  ZDataset, db, ZSqlUpdate, ZSequence,baklijstunit,baklijstsnelunit,versiontypes,vinfo ;
 
 type
 
@@ -160,9 +160,17 @@ begin
 end;
 
 procedure Thoofdmenu.FormCreate(Sender: TObject);
+var
+  Info: TVersionInfo;
+  Version: string;
 begin
   decimalseparator := '.';
   thousandseparator := ',';
+  Info := TVersionInfo.Create;
+  Info.Load(HINSTANCE);
+  self.Caption := Format('Bestelboek Versie %d.%d.%d build %d Hoofdmenu', [Info.FixedInfo.FileVersion[0],Info.FixedInfo.FileVersion[1],Info.FixedInfo.FileVersion[2],Info.FixedInfo.FileVersion[3]]);
+  Info.Free;
+
 end;
 
 procedure Thoofdmenu.FormShow(Sender: TObject);
@@ -285,4 +293,4 @@ initialization
   {$I unit1.lrs}
 
 end.
-
+

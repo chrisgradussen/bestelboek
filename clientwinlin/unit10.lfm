@@ -9,7 +9,7 @@ object Bestelschema: TBestelschema
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
   SessionProperties = 'Height;Left;Panel2.Height;Panel2.Left;Panel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;Panel3.Width;Panel4.Height;Panel4.Left;Panel4.Top;Panel4.Width;Position;Splitter1.Height;Splitter1.Left;Splitter1.Top;Splitter1.Width;Splitter2.Height;Splitter2.Left;Splitter2.Top;Splitter2.Width;Top;Width;WindowState'
-  LCLVersion = '1.0.4.0'
+  LCLVersion = '1.2.6.0'
   object Panel1: TPanel
     Left = 0
     Height = 300
@@ -90,6 +90,7 @@ object Bestelschema: TBestelschema
         DataSource = Datasource2
         Options = []
         TabOrder = 0
+        VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbEdit, nbPost, nbCancel, nbRefresh]
       end
       object DBGrid2: TDBGrid
         Left = 1
@@ -133,6 +134,7 @@ object Bestelschema: TBestelschema
             FieldName = 'VOLGENDELEVERTIJD'
           end>
         DataSource = Datasource2
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete]
         TabOrder = 1
       end
     end
@@ -162,6 +164,7 @@ object Bestelschema: TBestelschema
         ClientHeight = 25
         ClientWidth = 784
         DataSource = Datasource3
+        OnClick = DBNavigator3Click
         Options = []
         TabOrder = 0
       end
@@ -230,17 +233,17 @@ object Bestelschema: TBestelschema
     left = 359
     top = 14
   end
-  object Datasource1: TDatasource
+  object Datasource1: TDataSource
     DataSet = DM.ZBestelSchema_BestelgroepTable
     left = 326
     top = 13
   end
-  object Datasource2: TDatasource
+  object Datasource2: TDataSource
     DataSet = DM.ZBestelSchema_BestelSchemaQuery
     left = 326
     top = 112
   end
-  object Datasource3: TDatasource
+  object Datasource3: TDataSource
     DataSet = DM.ZBestelSchema_BestRegelQuery
     OnStateChange = Datasource3StateChange
     left = 326

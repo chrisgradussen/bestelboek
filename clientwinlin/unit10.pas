@@ -30,6 +30,7 @@ type
     Splitter1: TSplitter;
     Splitter2: TSplitter;
     procedure Datasource3StateChange(Sender: TObject);
+    procedure DBNavigator3Click(Sender: TObject; Button: TDBNavButtonType);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormShow(Sender: TObject);
   private
@@ -64,6 +65,12 @@ begin
 end;
 
 procedure TBestelschema.Datasource3StateChange(Sender: TObject);
+begin
+
+end;
+
+procedure TBestelschema.DBNavigator3Click(Sender: TObject;
+  Button: TDBNavButtonType);
 begin
 
 end;

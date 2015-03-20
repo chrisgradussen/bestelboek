@@ -3,7 +3,7 @@ program project1;
 {$mode objfpc}{$H+}
 
 uses
- // {$R *.res}
+
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
@@ -13,21 +13,11 @@ uses
   Unit5, Unit6, Unit7, rxnew, Unit8, lazreport, Unit9, Unit10, Unit11, Unit12,
   Unit13, Unit14, BaklijstUnit, baklijstsnelunit, baklijstvolgordeunit;
 
-{$IFDEF WINDOWS}{$R project1.rc}{$ENDIF}
+//{$IFDEF WINDOWS}{$R project1.rc}{$ENDIF}
+
+ {$R *.res}
 
 
-
-
-//{$R *.res}
-
-
-
-
-
-
-
-
-//{$R *.res}
 
 begin
   Application.Initialize;

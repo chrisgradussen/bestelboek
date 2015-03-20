@@ -4,7 +4,7 @@ object hoofdmenu: Thoofdmenu
   Top = 305
   Width = 319
   Caption = 'Bestelboek 1 Hoofdmenu'
-  ClientHeight = 201
+  ClientHeight = 204
   ClientWidth = 319
   Menu = HfdMenu
   OnActivate = FormActivate
@@ -121,15 +121,6 @@ object hoofdmenu: Thoofdmenu
     Caption = '&ZoeteSnacks'
     TabOrder = 11
   end
-  object Button1: TButton
-    Left = 33
-    Height = 25
-    Top = 107
-    Width = 75
-    Caption = 'Button1'
-    OnClick = Button1Click
-    TabOrder = 12
-  end
   object HoofdmenuPropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
@@ -172,4 +163,4 @@ object hoofdmenu: Thoofdmenu
       OnClick = Menu_baklijstvolgordeClick
     end
   end
-end
+end
