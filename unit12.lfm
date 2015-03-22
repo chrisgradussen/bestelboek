@@ -1,0 +1,60 @@
+object ZoekArtikel: TZoekArtikel
+  Left = 660
+  Height = 300
+  Top = 261
+  Width = 529
+  Caption = 'ZoekArtikel'
+  ClientHeight = 300
+  ClientWidth = 529
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnShow = FormShow
+  SessionProperties = 'WindowState;Width;Top;Left;Height;Grid.Columns'
+  LCLVersion = '1.0.1.3'
+  object Edit: TEdit
+    Left = 0
+    Height = 23
+    Top = 277
+    Width = 529
+    Align = alBottom
+    OnChange = EditChange
+    OnKeyDown = EditKeyDown
+    TabOrder = 0
+    Text = 'Edit'
+    Visible = False
+  end
+  object Grid: TDBGrid
+    Left = 0
+    Height = 277
+    Top = 0
+    Width = 529
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    DataSource = ZoekArtikelDataSource
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 1
+    OnDblClick = GridDblClick
+    OnKeyDown = GridKeyDown
+  end
+  object ZoekTekst: TEdit
+    Left = 176
+    Height = 23
+    Top = 16
+    Width = 80
+    TabOrder = 2
+    Text = 'ZoekTekst'
+    Visible = False
+  end
+  object ZoekArtikelDataSource: TDatasource
+    DataSet = DM.ZZoekArtikelQuery
+    left = 329
+    top = 32
+  end
+  object ZoekArtikelPropStorage: TIniPropStorage
+    StoredValues = <>
+    IniFileName = 'bestelboek.ini'
+    left = 456
+    top = 35
+  end
+end

@@ -1,0 +1,137 @@
+unit Unit12; 
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
+  StdCtrls, DBGrids, db, LclType,lclintf,lmessages, IniPropStorage;
+
+type
+
+  { TZoekArtikel }
+
+  TZoekArtikel = class(TForm)
+    ZoekArtikelPropStorage: TIniPropStorage;
+    ZoekTekst: TEdit;
+    ZoekArtikelDataSource: TDatasource;
+    Grid: TDBGrid;
+    Edit: TEdit;
+    procedure EditChange(Sender: TObject);
+    procedure EditKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure FormShow(Sender: TObject);
+    procedure GridDblClick(Sender: TObject);
+    procedure GridKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { private declarations }
+  public
+    { public declarations }
+    procedure Zoek(Sender : TObject);
+  end; 
+
+var
+  ZoekArtikel: TZoekArtikel;
+
+implementation
+
+Uses Unit2;
+
+procedure TZoekArtikel.EditKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  sendmessage(grid.Handle,CN_KEYDOWN,word(key),0);
+  if key in [vk_up, vk_down] then
+    key := 0;
+end;
+
+procedure TZoekArtikel.FormClose(Sender: TObject; var CloseAction: TCloseAction
+  );
+begin
+  if tag = 0 then
+    zoektekst.Text := '';
+end;
+
+procedure TZoekArtikel.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+begin
+
+end;
+
+procedure TZoekArtikel.EditChange(Sender: TObject);
+begin
+  zoektekst.text := edit.text;
+  dm.Zzoekartikelquery.params[0].asstring := zoektekst.text;
+  if length(zoektekst.text) > 0 then
+  begin
+    if dm.ZZoekArtikelQuery.Active then
+      dm.ZZoekArtikelQuery.refresh
+    else
+      dm.ZZoekArtikelQuery.open;
+  end;
+end;
+
+procedure TZoekArtikel.FormShow(Sender: TObject);
+begin
+  //edit.SelectAll;
+  //edit.SetFocus;
+  tag := 0;
+end;
+
+procedure TZoekArtikel.GridDblClick(Sender: TObject);
+begin
+  sendmessage(grid.Handle,CN_KEYDOWN,word(vk_return),0);
+end;
+
+procedure TZoekArtikel.GridKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if (word(key) = vk_escape) then
+  begin
+    zoektekst.Text := '';
+    tag := 1;
+    close;
+  end;
+  if (word(key) = vk_return) then
+  begin
+    zoektekst.text := dm.zzoekartikelquery.Fields[0].AsString;
+    tag := 1;
+    key := 0;
+    close;
+
+  end;
+end;
+
+procedure TZoekArtikel.zoek(Sender: TObject);
+begin
+  dm.ZZoekArtikelQuery.params[0].asstring := zoektekst.text;
+  edit.Text := zoektekst.Text;
+  if dm.ZZoekArtikelQuery.Active then
+    dm.ZZoekArtikelQuery.refresh
+  else
+    dm.ZZoekArtikelQuery.open;
+  if (dm.Zzoekartikelquery.recordcount = 1) then
+  begin
+    zoektekst.text := dm.Zzoekartikelquery.Fields[0].AsString;
+  end
+  else
+    begin
+      if not visible then
+      begin
+        if dm.Zzoekartikelquery.recordcount = 0 then
+        begin
+          showmessage('artikel niet gevonden');
+          zoektekst.text := '';
+        end
+        else
+          Showmodal;
+      end;
+    end;
+end;
+
+initialization
+  {$I unit12.lrs}
+
+end.
+

@@ -1,0 +1,1818 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 615
+  HorizontalOffset = 358
+  VerticalOffset = 86
+  Width = 678
+  object ZConnection: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    TransactIsolationLevel = tiReadCommitted
+    Connected = True
+    DesignConnection = True
+    BeforeConnect = ZConnectionBeforeConnect
+    HostName = 'LOCALHOST'
+    Port = 0
+    Database = 'bestelhulp1'
+    User = 'sysdba'
+    Password = 'masterkey'
+    Protocol = 'firebird-2.5'
+    left = 8
+    top = 8
+  end
+  object ZBestelgroepTable: TZTable
+    Connection = ZConnection
+    SortedFields = 'ID'
+    AutoCalcFields = False
+    TableName = 'BESTELGROEP'
+    IndexFieldNames = 'ID Asc'
+    left = 40
+    top = 8
+  end
+  object ZLeverancierTable: TZTable
+    Connection = ZConnection
+    SortedFields = 'ID'
+    AutoCalcFields = False
+    TableName = 'LEVERANCIER'
+    IndexFieldNames = 'ID Asc'
+    left = 40
+    top = 40
+  end
+  object zSubgroepTable: TZTable
+    Connection = ZConnection
+    SortedFields = 'ID'
+    AutoCalcFields = False
+    TableName = 'SUBGROEP'
+    IndexFieldNames = 'ID Asc'
+    left = 40
+    top = 72
+  end
+  object zDagenTable: TZTable
+    Connection = ZConnection
+    SortedFields = 'ID'
+    AutoCalcFields = False
+    TableName = 'DAGEN'
+    IndexFieldNames = 'ID Asc'
+    left = 40
+    top = 104
+  end
+  object ZGroepTable: TZTable
+    Connection = ZConnection
+    SortedFields = 'BESTELGROEP_ID'
+    AutoCalcFields = False
+    TableName = 'GROEP'
+    IndexFieldNames = 'BESTELGROEP_ID Asc'
+    left = 40
+    top = 136
+    object ZGroepTableLEVERANCIER_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'LEVERANCIER_ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZGroepTableSUBGROEP_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'SUBGROEP_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZGroepTableBESTELGROEP_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BESTELGROEP_ID'
+      Index = 2
+      KeyFields = 'BESTELGROEP_ID'
+      LookupCache = False
+      LookupDataSet = ZGroep_BestelgroepTable
+      LookupKeyFields = 'ID'
+      LookupResultField = 'ID'
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ZGroep_SubgroepTable: TZTable
+    Connection = ZConnection
+    AutoCalcFields = False
+    TableName = 'SUBGROEP'
+    left = 40
+    top = 168
+  end
+  object ZGroep_LeverancierTable: TZTable
+    Connection = ZConnection
+    AutoCalcFields = False
+    TableName = 'LEVERANCIER'
+    left = 72
+    top = 168
+  end
+  object ZGroep_BestelgroepTable: TZTable
+    Connection = ZConnection
+    SortedFields = 'ID'
+    AutoCalcFields = False
+    ReadOnly = True
+    TableName = 'BESTELGROEP'
+    IndexFieldNames = 'ID Asc'
+    left = 104
+    top = 168
+    object ZGroep_BestelgroepTableID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ZBestellingAfdrukkenQuery: TZQuery
+    Connection = ZConnection
+    AutoCalcFields = False
+    UpdateObject = zupdatestatussql
+    SQL.Strings = (
+      'select b.id,b.status,b.bestelgroep_id as groepnummer,z.naam,cast(b.besteldatum+b.besteltijd as timestamp)as besteltijd,cast(b.leverdatum+ b.levertijd as timestamp)as levertijd,cast(b.volgendeleverdatum+b.volgendelevertijd as timestamp)as volgendelevertijd from bestelschema b join bestelgroep z on b.bestelgroep_id = z.id where status = 30'
+    )
+    Params = <>
+    left = 208
+    top = 136
+  end
+  object ZbestellingQuery: TZReadOnlyQuery
+    Connection = ZConnection
+    AutoCalcFields = False
+    SQL.Strings = (
+      'select '
+      'case when l_merknaam is null then x_merknaam else l_merknaam end || '' '' ||'
+      'case when l_naam is null then x_naam else l_naam end as naam,'
+      'x_inhoud || '' '' || x_eenheid as eenheid, '
+      'i.aantal,'
+      'SRIGHT(case when l_artikelnummer is null then x_artikelnummer else l_artikelnummer end,6) as nummer'
+      'from bestelregel i join artikel p on i.artikel_eanupc = p.eanupc where i.bestelschema_id = :id and i.aantal <> 0 order by p.volgorde'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    left = 104
+    top = 200
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+  end
+  object zupdatestatussql: TZUpdateSQL
+    ModifySQL.Strings = (
+      'update bestelschema set status = 40 where id =:id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 72
+    top = 200
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZSBestelSchema_BestelgroepTable: TZTable
+    Connection = ZConnection
+    SortedFields = 'ID'
+    AutoCalcFields = False
+    ReadOnly = True
+    TableName = 'BESTELGROEP'
+    IndexFieldNames = 'ID Asc'
+    left = 80
+    top = 232
+  end
+  object ZSBestelSchema_SBestelSchemaTable: TZTable
+    Connection = ZConnection
+    SortedFields = 'LEVERDAG;LEVERTIJD'
+    AutoCalcFields = False
+    BeforePost = ZSBestelSchema_SBestelSchemaTableBeforePost
+    TableName = 'BESTELSCHEMA_STANDAARD'
+    MasterFields = 'ID'
+    MasterSource = ZSBestelSchemaDataSource
+    LinkedFields = 'BESTELGROEP_ID'
+    IndexFieldNames = 'LEVERDAG Asc;LEVERTIJD Asc'
+    left = 272
+    top = 232
+  end
+  object ZSBestelSchemaDataSource: TDataSource
+    DataSet = ZSBestelSchema_BestelgroepTable
+    left = 200
+    top = 232
+  end
+  object ZSequence_bestelschema_standaard_id: TZSequence
+    Connection = ZConnection
+    SequenceName = 'BESTELSCHEMA_STANDAARD_ID_GEN'
+    left = 320
+    top = 232
+  end
+  object ZBestelSchema_BestelgroepTable: TZTable
+    Connection = ZConnection
+    SortedFields = 'ID'
+    AutoCalcFields = False
+    AfterScroll = ZBestelSchema_BestelgroepTableAfterScroll
+    ReadOnly = True
+    TableName = 'BESTELGROEP'
+    IndexFieldNames = 'ID Asc'
+    Options = [doCalcDefaults, doSmartOpen]
+    SequenceField = 'ID'
+    left = 40
+    top = 264
+  end
+  object ZSequence_bestelschema_id: TZSequence
+    Connection = ZConnection
+    SequenceName = 'BESTELSCHEMA_ID_GEN'
+    left = 168
+    top = 264
+  end
+  object ZBestelSchema_BestRegelQuery: TZQuery
+    Connection = ZConnection
+    AutoCalcFields = False
+    BeforeOpen = ZBestelSchema_BestRegelQueryBeforeOpen
+    BeforeRefresh = ZBestelSchema_BestRegelQueryBeforeRefresh
+    AfterInsert = ZBestelSchema_BestRegelQueryAfterInsert
+    BeforePost = ZBestelSchema_BestRegelQueryBeforePost
+    AfterPost = ZBestelSchema_BestRegelQueryAfterPost
+    SQL.Strings = (
+      'select b.* ,x_merknaam || '' '' || x_naam as naam, case when l_artikelnummer is null then x_artikelnummer else l_artikelnummer end|| '''' as artikelnummer from bestelregel b left join artikel a on b.artikel_eanupc = a.eanupc where b.bestelschema_id = :id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+    Options = [doCalcDefaults, doAlwaysDetailResync, doSmartOpen]
+    left = 104
+    top = 264
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZIBEventAlerter1: TZIBEventAlerter
+    AutoRegister = False
+    Connection = ZConnection
+    Events.Strings = (
+      'BESTELSCHEMA_CHANGED_EVENT'
+    )
+    Registered = False
+    OnEventAlert = ZIBEventAlerter1EventAlert
+    left = 232
+    top = 264
+  end
+  object DBPropStorage: TIniPropStorage
+    StoredValues = <    
+      item
+        Name = 'database'
+        Value = 'c:\bestelhulp1.fdb'
+      end    
+      item
+        Name = 'user'
+        Value = 'sysdba'
+      end    
+      item
+        Name = 'password'
+        Value = 'masterkey'
+      end    
+      item
+        Name = 'hostname'
+        Value = 'localhost'
+      end    
+      item
+        Name = 'port'
+        Value = '0'
+      end>
+    IniFileName = 'bestelboek.ini'
+    IniSection = 'db'
+    left = 336
+    top = 80
+  end
+  object ZArtikelTable: TZTable
+    Connection = ZConnection
+    AutoCalcFields = False
+    TableName = 'ARTIKEL'
+    left = 344
+    top = 320
+    object ZArtikelTableEANUPC: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'EANUPC'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelTableX_LEVERANCIER_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_LEVERANCIER_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelTableL_LEVERANCIER_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'L_LEVERANCIER_ID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelTableL_SUBGROEP_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'L_SUBGROEP_ID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelTableX_SUBGROEP_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_SUBGROEP_ID'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelTableX_MERKNAAM: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'X_MERKNAAM'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelTableL_MERKNAAM: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'L_MERKNAAM'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelTableX_NAAM: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'X_NAAM'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelTableL_NAAM: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'L_NAAM'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelTableX_KASSATEKST: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'X_KASSATEKST'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelTableX_BTWCODE: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_BTWCODE'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelTableX_INKOOPPRIJS: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_INKOOPPRIJS'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##,##0.000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelTableX_VERKOOPPRIJS: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_VERKOOPPRIJS'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##,##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelTableX_INHOUD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_INHOUD'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnSetText = ZArtikelTableX_INHOUDSetText
+      DisplayFormat = '##,##0.0000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelTableX_EENHEID: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'X_EENHEID'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelTableX_BESTELINHOUD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_BESTELINHOUD'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##,##0.0000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelTableL_BESTELINHOUD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'L_BESTELINHOUD'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##,##0.0000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelTableX_BESTELEENHEID: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'X_BESTELEENHEID'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelTableL_BESTELEENHEID: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'L_BESTELEENHEID'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelTableX_ARTIKELNUMMER: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'X_ARTIKELNUMMER'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelTableL_ARTIKELNUMMER: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'L_ARTIKELNUMMER'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelTableVOORRAAD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VOORRAAD'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##,##0.0000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelTableMINIMALEVOORRAAD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'MINIMALEVOORRAAD'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##,##0.0000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelTableVOLGORDE: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VOLGORDE'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##,##0.0000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelTableX_WIJZIGINGSDATUM: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_WIJZIGINGSDATUM'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelTableX_INVOERDATUM: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_INVOERDATUM'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ZZoekArtikelQuery: TZReadOnlyQuery
+    Connection = ZConnection
+    AutoCalcFields = False
+    SQL.Strings = (
+      'select a.eanupc,case when l_merknaam is null then x_merknaam else l_merknaam end || '' '' ||'
+      'case when l_naam is null then x_naam else l_naam end as naam,'
+      'case when l_artikelnummer is null then x_artikelnummer else l_artikelnummer end as artikelnummer,'
+      'x_inhoud as inhoud,'
+      'x_eenheid as eenheid,x_wijzigingsdatum as datum ,'
+      'case when l_bestelinhoud is null then x_bestelinhoud else l_bestelinhoud end as bestelinhoud,'
+      'case when l_besteleenheid is null then x_besteleenheid else l_besteleenheid end as besteleenheid'
+      'from artikel a  join artikel_Zoek(:zoekstring,0) z on a.eanupc = z.eanupc order by x_wijzigingsdatum desc'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'zoekstring'
+        ParamType = ptUnknown
+      end>
+    left = 504
+    top = 288
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'zoekstring'
+        ParamType = ptUnknown
+      end>
+    object ZZoekArtikelQueryEANUPC: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'EANUPC'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZZoekArtikelQueryNAAM: TStringField
+      DisplayWidth = 91
+      FieldKind = fkData
+      FieldName = 'NAAM'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 91
+    end
+    object ZZoekArtikelQueryARTIKELNUMMER: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'ARTIKELNUMMER'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 45
+    end
+    object ZZoekArtikelQueryINHOUD: TFloatField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'INHOUD'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 10
+    end
+    object ZZoekArtikelQueryEENHEID: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'EENHEID'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZZoekArtikelQueryBESTELINHOUD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BESTELINHOUD'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '##0.000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 10
+    end
+    object ZZoekArtikelQueryBESTELEENHEID: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'BESTELEENHEID'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 45
+    end
+    object ZZoekArtikelQueryDATUM1: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DATUM'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ZArtikelomzet: TZReadOnlyQuery
+    Connection = ZConnection
+    AutoCalcFields = False
+    SQL.Strings = (
+      '/*select o.jaarweek,o.maa+o.din+o.woe+o.don+o.vri+o.zat+o.zon as TOT,o.maa,o.din,o.woe,o.don,o.vri,o.zat,o.zon from omzetweek o where eanupc =:eanupc order by jaarweek desc*/'
+      '/*select o.jaarweek,o.maa+o.din+o.woe+o.don+o.vri+o.zat+o.zon as TOT,o.maa,o.din,o.woe,o.don,o.vri,o.zat,o.zon, r.voordeel from omzetweek o  left join reclame r on eanupc= artikel_eanupc and f_datetoyearweek(r.begindatum)  = o.jaarweek where eanupc =:eanupc  order by jaarweek desc*/'
+      'select max(o.jaarweek),sum(o.maa)+sum(o.din)+sum(o.woe)+sum(o.don)+sum(o.vri)+sum(o.zat)+sum(o.zon) as TOT,'
+      'sum(o.maa) as MAA,sum(o.din) as DIN,sum(o.woe) as WOE ,sum(o.don) as DON ,sum(o.vri) as VRI,sum(o.zat) as ZAT,sum(o.zon) as ZON , max(r.voordeel) as VOORDEEL '
+      'from omzetweek o  left join reclame r on eanupc= artikel_eanupc and '
+      'f_datetoyearweek(r.begindatum)  = o.jaarweek where '
+      'o.EANUPC in  (:eanupc )'
+      '/*(select a.EANUPC from artikel a where a.X_ARTIKELNUMMER =(select a.X_ARTIKELNUMMER from artikel a where eanupc = 369))*/'
+      ' group by jaarweek order by jaarweek desc'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'eanupc'
+        ParamType = ptUnknown
+      end>
+    left = 48
+    top = 376
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'eanupc'
+        ParamType = ptUnknown
+      end>
+    object ZArtikelomzetJAARWEEK: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'JAARWEKEN'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelomzetTOT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOT'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetMAA: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'MAA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetDIN: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DIN'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetWOE: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'WOE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetDON: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DON'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetVRI: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VRI'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetZAT: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ZAT'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetZON: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ZON'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetVOORDEEL: TStringField
+      DisplayWidth = 128
+      FieldKind = fkData
+      FieldName = 'VOORDEEL'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 128
+    end
+  end
+  object ZArtikelOmschrijving: TZReadOnlyQuery
+    Connection = ZConnection
+    AutoCalcFields = False
+    SQL.Strings = (
+      'select cast(eanupc as varchar(14)) as eanupc ,case when l_merknaam is null then x_merknaam else l_merknaam end ||'' ''||'
+      'case when l_naam is null then x_naam else l_naam end as naam,'
+      'case when l_artikelnummer is null then x_artikelnummer else l_artikelnummer end as artikelnummer,'
+      'x_inhoud as inhoud,'
+      'x_eenheid as eenheid,'
+      'case when l_bestelinhoud is null then x_bestelinhoud else l_bestelinhoud end as bestelinhoud,'
+      'case when l_besteleenheid is null then x_besteleenheid else l_besteleenheid end as besteleenheid,'
+      'x_verkoopprijs as verkoopprijs,'
+      'case when x_btwcode = 1 then (x_verkoopprijs-x_inkoopprijs)/case when x_verkoopprijs = 0 then 0.0001 else x_verkoopprijs end else '
+      'case when x_btwcode = 2 then (x_verkoopprijs/1.06-x_inkoopprijs)/case when x_verkoopprijs = 0 then 0.0001 else x_verkoopprijs end'
+      ' else  (x_verkoopprijs/1.19-x_inkoopprijs)/case when x_verkoopprijs = 0 then 0.0001 else x_verkoopprijs end'
+      ' end end as marge'
+      'from artikel where eanupc = :zoekstring /* 8712400502603*/'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'zoekstring'
+        ParamType = ptUnknown
+      end>
+    left = 152
+    top = 376
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'zoekstring'
+        ParamType = ptUnknown
+      end>
+    object ZArtikelOmschrijvingEANUPC: TStringField
+      DisplayWidth = 14
+      FieldKind = fkData
+      FieldName = 'EANUPC'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 14
+    end
+    object ZArtikelOmschrijvingNAAM: TStringField
+      DisplayWidth = 91
+      FieldKind = fkData
+      FieldName = 'NAAM'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 91
+    end
+    object ZArtikelOmschrijvingARTIKELNUMMER: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'ARTIKELNUMMER'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 45
+    end
+    object ZArtikelOmschrijvingINHOUD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'INHOUD'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelOmschrijvingEENHEID: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'EENHEID'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelOmschrijvingBESTELINHOUD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BESTELINHOUD'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '##0.0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelOmschrijvingBESTELEENHEID: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'BESTELEENHEID'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 45
+    end
+    object ZArtikelOmschrijvingVERKOOPPRIJS: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VERKOOPPRIJS'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelOmschrijvingMARGE: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'MARGE'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object ZBestelSchema_BestelSchemaQuery: TZQuery
+    Connection = ZConnection
+    SortedFields = 'BESTELDATUM, BESTELTIJD'
+    SortType = stDescending
+    AutoCalcFields = False
+    BeforeOpen = ZBestelSchema_BestelSchemaQueryBeforeOpen
+    BeforeRefresh = ZBestelSchema_BestelSchemaQueryBeforeRefresh
+    AfterScroll = ZBestelSchema_BestelSchemaQueryAfterScroll
+    BeforePost = ZBestelSchema_BestelSchemaQueryBeforePost
+    AfterPost = ZBestelSchema_BestelSchemaQueryAfterPost
+    SQL.Strings = (
+      'select * from bestelschema where bestelgroep_id = :Bestelgroep_id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'Bestelgroep_id'
+        ParamType = ptUnknown
+      end>
+    IndexFieldNames = 'BESTELDATUM Desc, BESTELTIJD Desc'
+    left = 72
+    top = 264
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'Bestelgroep_id'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZScripts_BestelSchemaQuery: TZQuery
+    Connection = ZConnection
+    SortedFields = 'BESTELDATUM, BESTELTIJD'
+    SortType = stDescending
+    AutoCalcFields = False
+    SQL.Strings = (
+      'select * from bestelschema where bestelgroep_id = :id and status = :status order by besteltijd'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'status'
+        ParamType = ptUnknown
+      end>
+    IndexFieldNames = 'BESTELDATUM Desc, BESTELTIJD Desc'
+    left = 208
+    top = 416
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'status'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZScripts_BestelgroepQuery: TZReadOnlyQuery
+    Connection = ZConnection
+    AutoCalcFields = False
+    AfterScroll = ZScripts_BestelgroepQueryAfterScroll
+    SQL.Strings = (
+      ' select * from bestelgroep where id in (select distinct bestelgroep_id from bestelschema where status = :status) order by id '
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'status'
+        ParamType = ptUnknown
+      end>
+    left = 40
+    top = 416
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'status'
+        ParamType = ptUnknown
+      end>
+  end
+  object zscripts_levering_update: TZSQLProcessor
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'user'
+        ParamType = ptUnknown
+      end>
+    Script.Strings = (
+      'EXECUTE PROCEDURE LEVERING_VAN_30_NAAR_10(:ID, :user)'
+    )
+    Connection = ZConnection
+    Delimiter = ';'
+    left = 352
+    top = 416
+  end
+  object ZArtikelQuery: TZQuery
+    Connection = ZConnection
+    AutoCalcFields = False
+    AfterOpen = ZArtikelQueryAfterOpen
+    AfterRefresh = ZArtikelQueryAfterRefresh
+    SQL.Strings = (
+      'select * from artikel where eanupc = :eanupc'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'eanupc'
+        ParamType = ptUnknown
+      end>
+    left = 152
+    top = 320
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'eanupc'
+        ParamType = ptUnknown
+      end>
+    object ZArtikelQueryX_VERKOOPPRIJS: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_VERKOOPPRIJS'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##0.00'
+      EditFormat = '##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelQueryEANUPC: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'EANUPC'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelQueryX_LEVERANCIER_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_LEVERANCIER_ID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelQueryL_LEVERANCIER_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'L_LEVERANCIER_ID'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelQueryL_SUBGROEP_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'L_SUBGROEP_ID'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelQueryX_SUBGROEP_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_SUBGROEP_ID'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelQueryX_MERKNAAM: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'X_MERKNAAM'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelQueryL_MERKNAAM: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'L_MERKNAAM'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelQueryX_NAAM: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'X_NAAM'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelQueryL_NAAM: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'L_NAAM'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelQueryX_KASSATEKST: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'X_KASSATEKST'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelQueryX_BTWCODE: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_BTWCODE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelQueryX_INKOOPPRIJS: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_INKOOPPRIJS'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##0.00'
+      EditFormat = '##0.00'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelQueryX_INHOUD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_INHOUD'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##0.000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelQueryX_EENHEID: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'X_EENHEID'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelQueryX_BESTELINHOUD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_BESTELINHOUD'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##0.000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelQueryL_BESTELINHOUD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'L_BESTELINHOUD'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##0.000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelQueryX_BESTELEENHEID: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'X_BESTELEENHEID'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelQueryL_BESTELEENHEID: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'L_BESTELEENHEID'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelQueryX_ARTIKELNUMMER: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'X_ARTIKELNUMMER'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelQueryL_ARTIKELNUMMER: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'L_ARTIKELNUMMER'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZArtikelQueryVOORRAAD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VOORRAAD'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##0.000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelQueryMINIMALEVOORRAAD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'MINIMALEVOORRAAD'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '##0.000'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelQueryVOLGORDE: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VOLGORDE'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelQueryX_WIJZIGINGSDATUM: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_WIJZIGINGSDATUM'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZArtikelQueryX_INVOERDATUM: TDateTimeField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'X_INVOERDATUM'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object ZReclameQuery: TZQuery
+    Connection = ZConnection
+    AutoCalcFields = False
+    BeforeInsert = ZReclameQueryBeforeInsert
+    AfterInsert = ZReclameQueryBeforeInsert
+    BeforePost = ZReclameQueryBeforePost
+    SQL.Strings = (
+      'select * from reclame where artikel_eanupc = :eanupc order by begindatum,einddatum desc'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'eanupc'
+        ParamType = ptUnknown
+      end>
+    left = 256
+    top = 320
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'eanupc'
+        ParamType = ptUnknown
+      end>
+    object ZReclameQueryARTIKEL_EANUPC: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ARTIKEL_EANUPC'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZReclameQueryBEGINDATUM: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BEGINDATUM'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = 'dd-mm-yyyy'
+    end
+    object ZReclameQueryEINDDATUM: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'EINDDATUM'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayFormat = 'dd-mm-yyyy'
+    end
+    object ZReclameQueryVOORDEEL: TStringField
+      DisplayWidth = 128
+      FieldKind = fkData
+      FieldName = 'VOORDEEL'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 128
+    end
+  end
+  object ZBaklijstDagQuery: TZQuery
+    Connection = ZConnection
+    SQL.Strings = (
+      'select * from bestelschema where bestelgroep_id =  171 and status = 2'
+    )
+    Params = <>
+    left = 40
+    top = 480
+    object ZBaklijstDagQueryLEVERDATUM: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'LEVERDATUM'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZBaklijstDagQueryID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object BaklijstDagDataSource: TDataSource
+    DataSet = ZBaklijstDagQuery
+    OnDataChange = BaklijstDagDataSourceDataChange
+    left = 200
+    top = 480
+  end
+  object ZBaklijstQuery: TZQuery
+    Connection = ZConnection
+    BeforeOpen = ZBaklijstQueryBeforeRefresh
+    BeforeRefresh = ZBaklijstQueryBeforeRefresh
+    BeforeInsert = ZBaklijstQueryBeforeInsert
+    SQL.Strings = (
+      'select * from baklijst(:datum)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'datum'
+        ParamType = ptUnknown
+      end>
+    left = 40
+    top = 544
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'datum'
+        ParamType = ptUnknown
+      end>
+  end
+  object BaklijstDataSource: TDataSource
+    DataSet = ZBaklijstQuery
+    left = 200
+    top = 544
+  end
+  object ZBaklijstGeschiedenisQuery: TZQuery
+    Connection = ZConnection
+    BeforeOpen = ZBaklijstQueryBeforeRefresh
+    BeforeRefresh = ZBaklijstQueryBeforeRefresh
+    SQL.Strings = (
+      'select baklijst.* from baklijst(:leverdatum) where plu = :plu'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'leverdatum'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'plu'
+        ParamType = ptUnknown
+      end>
+    left = 40
+    top = 616
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'leverdatum'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'plu'
+        ParamType = ptUnknown
+      end>
+  end
+  object BaklijstGeschiedenisDataSource: TDataSource
+    DataSet = ZBaklijstGeschiedenisQuery
+    OnDataChange = BaklijstGeschiedenisDataSourceDataChange
+    left = 200
+    top = 616
+  end
+  object BaklijstDagLookupDataSource: TDataSource
+    DataSet = ZBaklijstDagLookupQuery
+    OnDataChange = BaklijstDagLookupDataSourceDataChange
+    left = 448
+    top = 480
+  end
+  object ZBaklijstDagLookupQuery: TZReadOnlyQuery
+    Connection = ZConnection
+    SQL.Strings = (
+      'select * from bestelschema where bestelgroep_id =  171 and status = 2'
+    )
+    Params = <>
+    left = 336
+    top = 480
+  end
+  object ZBaklijstUpdateSQL: TZUpdateSQL
+    InsertSQL.Strings = (
+      'update or insert into baklijstregel '
+      '(bestelschema_id,artikel_eanupc,charge_1,charge_2,charge_3)'
+      'values (:bestelschema_id,:artikel_eanupc,:charge_1,:charge_2;Charge_3)'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 342
+    top = 538
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'bestelschema_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'artikel_eanupc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'charge_1'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'charge_2'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection
+    SQL.Strings = (
+      'select '
+      'case when z.artikel_eanupc < 1000000000000 then z.artikel_eanupc else (z.artikel_eanupc-2200000000000)/10000000 end as plu,'
+      'a.x_NAAM, 0 as charge_1, 1 as charge_2, 3 as charge_3 from bakeoff z join artikel a on z.ARTIKEL_EANUPC = a.EANUPC order by a.VOLGORDE'
+    )
+    Params = <>
+    left = 254
+    top = 672
+    object ZQuery1PLU: TLargeintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PLU'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object ZQuery1X_NAAM: TStringField
+      DisplayWidth = 45
+      FieldKind = fkData
+      FieldName = 'X_NAAM'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 45
+    end
+    object ZQuery1CHARGE_1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CHARGE_1'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object ZQuery1CHARGE_2: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CHARGE_2'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object ZQuery1CHARGE_3: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'CHARGE_3'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object Datasource1: TDataSource
+    DataSet = ZQuery1
+    left = 356
+    top = 680
+  end
+  object ZeanQuery: TZReadOnlyQuery
+    Connection = ZConnection
+    SQL.Strings = (
+      'select eanupc from artikel a where '
+      'x_artikelnummer ='
+      '(select case when l_artikelnummer is null then x_artikelnummer else l_artikelnummer end from artikel a where a.eanupc = :eanupc)'
+      'or l_artikelnummer = '
+      '(select case when l_artikelnummer is null then x_artikelnummer else l_artikelnummer end from artikel a where a.eanupc = :eanupc)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'eanupc'
+        ParamType = ptUnknown
+      end>
+    left = 580
+    top = 197
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'eanupc'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZBaklijstvolgordequery: TZQuery
+    Connection = ZConnection
+    SortedFields = 'VOLGORDE'
+    UpdateObject = ZBaklijstVolgordeUpdateSql
+    SQL.Strings = (
+      'SELECT a.ARTIKEL_EANUPC, a.VOLGORDE, b.X_NAAM'
+      'FROM BAKEOFF a join artikel b on a.ARTIKEL_EANUPC = b.EANUPC'
+    )
+    Params = <>
+    IndexFieldNames = 'VOLGORDE Asc'
+    left = 549
+    top = 385
+  end
+  object ZBaklijstVolgordeUpdateSql: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'delete from bakeoff where artikel_eanupc = :artikel_eanupc'
+    )
+    InsertSQL.Strings = (
+      'update or insert into bakeoff (artikel_eanupc, volgorde) values(:artikel_eanupc, :volgorde)'
+    )
+    ModifySQL.Strings = (
+      'update or insert into bakeoff (artikel_eanupc, volgorde) values(:artikel_eanupc, :volgorde)'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 559
+    top = 451
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'artikel_eanupc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'volgorde'
+        ParamType = ptUnknown
+      end>
+  end
+end

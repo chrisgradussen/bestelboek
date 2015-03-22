@@ -1,0 +1,4 @@
+#!/bin/bash
+cd /home/chrgra/Documenten/Projects/ontwikkeling/bestelboek/clienwin32;
+./bestelboek1;
+
