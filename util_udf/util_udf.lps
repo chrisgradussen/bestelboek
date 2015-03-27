@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectSession>
     <Version Value="9"/>
@@ -11,8 +11,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="81"/>
-        <CursorPos X="30" Y="89"/>
+        <TopLine Value="18"/>
+        <CursorPos X="4" Y="31"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -20,7 +20,7 @@
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="4" HistoryIndex="3">
+    <JumpHistory Count="7" HistoryIndex="6">
       <Position1>
         <Filename Value="util_udf.lpr"/>
         <Caret Line="37" Column="37" TopLine="25"/>
@@ -37,6 +37,19 @@
         <Filename Value="util_udf.lpr"/>
         <Caret Line="89" Column="28" TopLine="74"/>
       </Position4>
+      <Position5>
+        <Filename Value="util_udf.lpr"/>
+        <Caret Line="144" Column="18" TopLine="131"/>
+      </Position5>
+      <Position6>
+        <Filename Value="util_udf.lpr"/>
+        <Caret Line="31" Column="6" TopLine="25"/>
+      </Position6>
+      <Position7>
+        <Filename Value="util_udf.lpr"/>
+        <Caret Line="32" Column="12" TopLine="23"/>
+      </Position7>
     </JumpHistory>
   </ProjectSession>
+  <EditorMacros Count="0"/>
 </CONFIG>
