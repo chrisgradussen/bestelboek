@@ -6,13 +6,14 @@ interface
 
 uses
   Classes, SysUtils, db, FileUtil, rxdbgrid, LResources, Forms, Controls,
-  Graphics, Dialogs, ExtCtrls, DbCtrls, unit2;
+  Graphics, Dialogs, ExtCtrls, DbCtrls, IniPropStorage, unit2;
 
 type
 
   { TBaklijstvolgordeform }
 
   TBaklijstvolgordeform = class(TForm)
+    baklijstvolgordePropStorage: TIniPropStorage;
     DataSource1: TDataSource;
     DBNavigator1: TDBNavigator;
     Panel1: TPanel;

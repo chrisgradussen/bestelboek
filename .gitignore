@@ -1,0 +1,10 @@
+################
+# Lazarus
+################
+*.o
+*.a
+*.ppu
+*.obj
+clientwinlin/backup
+
+

@@ -1,14 +1,14 @@
 object Form1: TForm1
-  Left = 791
+  Left = 306
   Height = 534
-  Top = 411
+  Top = 167
   Width = 1058
   Caption = 'Form1'
   ClientHeight = 534
   ClientWidth = 1058
   OnShow = FormShow
   SessionProperties = 'Height;Left;Panel1.Height;Panel1.Left;Panel1.Top;Panel1.Width;Panel2.Height;Panel2.Left;Panel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;Panel3.Width;RxDBGrid1.Width;RxDBGrid2.Height;RxDBGrid2.Left;RxDBGrid2.Top;RxDBGrid2.Width;Splitter1.Height;Splitter1.Left;Splitter1.Top;Splitter1.Width;Top;Width;RxDBGrid1.Columns;RxDBGrid2.Columns'
-  LCLVersion = '1.0.1.3'
+  LCLVersion = '1.2.6.0'
   object Panel1: TPanel
     Left = 0
     Height = 48
@@ -90,7 +90,7 @@ object Form1: TForm1
         0000000000FF000000000000000000000000000000FF000000FF000000FF0000
         0000000000FF000000FF000000FF000000FF000000FF
       }
-      NumGlyphs = 0
+      NumGlyphs = 1
       ParentColor = False
       ReadOnly = False
       TabOrder = 2
@@ -182,47 +182,47 @@ object Form1: TForm1
           Title.Caption = 'PLU'
           Title.Orientation = toHorizontal
           FieldName = 'PLU'
+          EditButtons = <>
           Filter.Font.Style = [fsItalic]
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
           Filter.EmptyFont.Style = [fsItalic]
           Filter.ItemIndex = -1
-          EditButtons = <>
         end      
         item
           Title.Alignment = taCenter
           Title.Caption = 'X_NAAM'
           Title.Orientation = toHorizontal
           FieldName = 'X_NAAM'
+          EditButtons = <>
           Filter.Font.Style = [fsItalic]
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
           Filter.EmptyFont.Style = [fsItalic]
           Filter.ItemIndex = -1
-          EditButtons = <>
         end      
         item
           Title.Alignment = taCenter
           Title.Caption = 'CHARGE_1'
           Title.Orientation = toHorizontal
           FieldName = 'CHARGE_1'
+          EditButtons = <>
           Filter.Font.Style = [fsItalic]
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
           Filter.EmptyFont.Style = [fsItalic]
           Filter.ItemIndex = -1
-          EditButtons = <>
         end      
         item
           Title.Alignment = taCenter
           Title.Caption = 'Title'
           Title.Orientation = toHorizontal
+          EditButtons = <>
           Filter.Font.Style = [fsItalic]
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
           Filter.EmptyFont.Style = [fsItalic]
           Filter.ItemIndex = -1
-          EditButtons = <>
         end>
       KeyStrokes = <      
         item
@@ -282,7 +282,8 @@ object Form1: TForm1
   end
   object BaklijstPropStorage: TIniPropStorage
     StoredValues = <>
+    IniFileName = 'bestelboek.ini'
     left = 360
     top = 8
   end
-end
+end

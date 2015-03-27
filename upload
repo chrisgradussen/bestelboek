@@ -1,4 +1,0 @@
-git init;
-git add *.pas *.lpi *.lpr *.lrs *.res  *.lrf bestelboek1 bestelboek1.exe bestelboek.ini bestelboek1.sh upload;
-git commit -m "added multidelete";
-git push origin master;

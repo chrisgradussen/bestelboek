@@ -7,6 +7,7 @@ object Baklijstvolgordeform: TBaklijstvolgordeform
   ClientHeight = 240
   ClientWidth = 320
   OnShow = FormShow
+  SessionProperties = 'Height;Left;Top;Width;WindowState;RxDBGrid1.Columns'
   LCLVersion = '1.2.6.0'
   object Panel1: TPanel
     Left = 0
@@ -126,5 +127,11 @@ object Baklijstvolgordeform: TBaklijstvolgordeform
     DataSet = DM.ZBaklijstvolgordequery
     left = 193
     top = 100
+  end
+  object baklijstvolgordePropStorage: TIniPropStorage
+    StoredValues = <>
+    IniFileName = 'bestelboek.ini'
+    left = 200
+    top = 16
   end
 end

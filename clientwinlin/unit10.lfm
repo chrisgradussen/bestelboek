@@ -154,6 +154,7 @@ object Bestelschema: TBestelschema
         Top = 70
         Width = 784
         Align = alBottom
+        BeforeAction = DBNavigator3BeforeAction
         BevelOuter = bvNone
         ChildSizing.EnlargeHorizontal = crsScaleChilds
         ChildSizing.EnlargeVertical = crsScaleChilds
@@ -165,6 +166,7 @@ object Bestelschema: TBestelschema
         ClientWidth = 784
         DataSource = Datasource3
         OnClick = DBNavigator3Click
+        OnMouseUp = DBNavigator3MouseUp
         Options = []
         TabOrder = 0
       end
@@ -205,6 +207,8 @@ object Bestelschema: TBestelschema
             FieldName = 'VOLGORDE'
           end>
         DataSource = Datasource3
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgMultiselect]
+        PopupMenu = PopupMenu1
         TabOrder = 1
       end
     end
@@ -249,4 +253,17 @@ object Bestelschema: TBestelschema
     left = 326
     top = 219
   end
-end
+  object PopupMenu1: TPopupMenu
+    OnPopup = PopupMenu1Popup
+    left = 438
+    top = 226
+    object MenuItem1: TMenuItem
+      Caption = 'Alle regels selecteren'
+      OnClick = MenuItem1Click
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'geselecteerde regels verwijderen'
+      OnClick = MenuItem2Click
+    end
+  end
+end
