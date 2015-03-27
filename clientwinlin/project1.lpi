@@ -264,8 +264,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="92"/>
-        <CursorPos X="7" Y="110"/>
+        <TopLine Value="103"/>
+        <CursorPos X="63" Y="113"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -693,8 +693,8 @@
       <Filename Value="bestelboek1"/>
     </Target>
     <SearchPaths>
-      <Libraries Value="\usr\share\lazarus\1.0\components\rtticontrols\"/>
-      <OtherUnitFiles Value="\usr\share\lazarus\1.0\components\rtticontrols\"/>
+      <Libraries Value="\usr\share\lazarus\1.0\components\rtticontrols"/>
+      <OtherUnitFiles Value="\usr\share\lazarus\1.0\components\rtticontrols"/>
     </SearchPaths>
     <Parsing>
       <SyntaxOptions>
@@ -756,4 +756,4 @@
     </Exceptions>
   </Debugging>
   <EditorMacros Count="0"/>
-</CONFIG>
+</CONFIG>
