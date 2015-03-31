@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, db, IniPropStorage, rxdbgrid, RLReport, DbCtrls, DBGrids, LR_Class,
+  ExtCtrls, db, IniPropStorage, rxdbgrid, DbCtrls, DBGrids, LR_Class,
   LR_BarC, LR_Desgn, LR_DBSet, unit2, LR_DSet;
 
 type
