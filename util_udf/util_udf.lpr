@@ -25,13 +25,15 @@ type
   end;
   PCTimeStructure = ^TCTimeStructure;
 
-  const
   {$IFDEF WINDOWS}
-    //  fbLIBRARY = 'fbclient.dll';
+   const
+      fbLIBRARY = 'fbclient.dll';
    {$ENDIF}
    {$IFDEF LINUX }
+      const
       fblibrary = 'libfbclient.so';
    {$ENDIF}
+
    procedure isc_decode_sql_date   (var ib_date: ISC_DATE;
                                    tm_date: PCTimeStructure);
                                 stdcall; external fblibrary;
@@ -115,6 +117,24 @@ begin
       result := 0;
 end;
 
+function f_substractweek(var jaarweekdag,weken : integer) : integer; cdecl;
+var ayear, aweekofyear, adayofweek : integer;
+begin
+   ayear := jaarweekdag div 1000;
+   aweekofyear := jaarweekdag div 10 - ayear*100;
+   adayofweek := jaarweekdag - aweekofyear*10 - ayear*1000;
+   if (aweekofyear -weken) < 1 then
+   begin
+     ayear := ayear - 1;
+     aweekofyear := WeeksinAYear(ayear)+ (aweekofyear - weken);
+   end
+   else
+   begin
+     aweekofyear := aweekofyear - weken;
+   end;
+   result := ayear*1000+ (aweekofyear)*10 + adayofweek;
+end;
+
 exports
   f_average5,
   f_average6,
@@ -122,7 +142,8 @@ exports
   f_datetoyearweek,
   f_datetoweek,
   fbudf_tijd_seconden,
-  fbudf_tijd_uren;
+  fbudf_tijd_uren,
+  f_substractweek;
 
 begin
   IsMultiThread := True;

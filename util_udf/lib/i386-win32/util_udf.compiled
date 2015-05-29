@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus_126\fpc\2.6.4\bin\i386-win32\fpc.exe" Date="1162572796"/>
+  <Params Value=" -MObjFPC -Scghi -O3 -vewnhi -FiC:\Users\chrgra\Documents\GitHub\bestelboek\util_udf\lib\i386-win32 -FuC:\Users\chrgra\Documents\GitHub\bestelboek\util_udf\ -FUC:\Users\chrgra\Documents\GitHub\bestelboek\util_udf\lib\i386-win32\ -l util_udf.lpr"/>
+</CONFIG>
