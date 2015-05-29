@@ -87,8 +87,11 @@ begin
   end;
   if datasource1.DataSet.RecordCount > 0 then
   begin
-    frreport1.ShowReport;
-    frreport1.Clear;
+
+    frreport1.CanRebuild:= true;
+    frreport1.PrepareReport;
+    frreport1.ShowPreparedReport;
+    //frreport1.Clear;
   end;
 end;
 

@@ -15,7 +15,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
-      <BuildNr Value="2"/>
+      <BuildNr Value="3"/>
       <StringTable ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="2" Active="Release">
@@ -111,10 +111,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="164"/>
         <CursorPos X="84" Y="171"/>
         <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="unit2.pas"/>
@@ -209,11 +212,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit8"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="57"/>
-        <CursorPos X="26" Y="74"/>
+        <TopLine Value="50"/>
+        <CursorPos X="21" Y="71"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -328,7 +330,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="29"/>
         <CursorPos X="32" Y="44"/>
-        <UsageCount Value="182"/>
+        <UsageCount Value="183"/>
       </Unit22>
       <Unit23>
         <Filename Value="C:\lazarus\lcl\include\dbedit.inc"/>
@@ -380,11 +382,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="BaklijstUnit"/>
+        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="44"/>
         <CursorPos X="18" Y="65"/>
         <ComponentState Value="1"/>
-        <UsageCount Value="92"/>
+        <UsageCount Value="93"/>
+        <Loaded Value="True"/>
       </Unit29>
       <Unit30>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
@@ -456,10 +460,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="baklijstsnelunit"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="76"/>
-        <CursorPos X="17" Y="90"/>
-        <UsageCount Value="66"/>
+        <TopLine Value="78"/>
+        <CursorPos X="7" Y="94"/>
+        <UsageCount Value="67"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit38>
       <Unit39>
         <Filename Value="C:\usr\share\lazarus\1.0\components\rtticontrols\rttictrls.pas"/>
@@ -468,7 +476,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="4082"/>
         <CursorPos X="1" Y="4096"/>
-        <UsageCount Value="67"/>
+        <UsageCount Value="68"/>
       </Unit39>
       <Unit40>
         <Filename Value="C:\usr\share\lazarus\1.0\lcl\include\customform.inc"/>
@@ -549,7 +557,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="25"/>
         <CursorPos X="1" Y="38"/>
-        <UsageCount Value="56"/>
+        <UsageCount Value="57"/>
       </Unit49>
       <Unit50>
         <Filename Value="..\..\Projecten\vinfo\vinfo.pas"/>
@@ -567,7 +575,20 @@
         <UsageCount Value="10"/>
       </Unit51>
     </Units>
-    <JumpHistory Count="0" HistoryIndex="-1"/>
+    <JumpHistory Count="3" HistoryIndex="2">
+      <Position1>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="90" Column="17" TopLine="76"/>
+      </Position1>
+      <Position2>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="105" Column="28" TopLine="83"/>
+      </Position2>
+      <Position3>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="80" Column="27" TopLine="78"/>
+      </Position3>
+    </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>

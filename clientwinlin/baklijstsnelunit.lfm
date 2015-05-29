@@ -1,7 +1,7 @@
 object Form2: TForm2
-  Left = 282
+  Left = 269
   Height = 473
-  Top = 125
+  Top = 200
   Width = 931
   Caption = 'Baklijst broodjes'
   ClientHeight = 473
@@ -304,7 +304,6 @@ object Form2: TForm2
   end
   object frDBDataSet1: TfrDBDataSet
     DataSet = DM.ZBaklijstvolgordequery
-    DataSource = DataSource1
     left = 566
     top = 116
   end

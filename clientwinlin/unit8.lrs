@@ -1,12 +1,12 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('Tbestellingafdrukken','FORMDATA',[
-  'TPF0'#20'Tbestellingafdrukken'#19'bestellingafdrukken'#4'Left'#3#161#2#6'Hei'
-  +'ght'#3','#1#3'Top'#3'B'#1#5'Width'#3#211#1#7'Caption'#6'!Bestelboek 1 Beste'
-  +'lling Afdrukken'#12'ClientHeight'#3','#1#11'ClientWidth'#3#211#1#6'OnShow'#7
-  +#8'FormShow'#17'SessionProperties'#6'!Height;Left;Top;Width;WindowState'#10
-  +'LCLVersion'#6#7'1.2.6.0'#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Height'#3','#1
-  +#3'Top'#2#0#5'Width'#3#211#1#5'Align'#7#8'alClient'#7'Caption'#6#6'Panel1'#12
+  'TPF0'#20'Tbestellingafdrukken'#19'bestellingafdrukken'#4'Left'#3#246#1#6'Hei'
+  +'ght'#3','#1#3'Top'#2'{'#5'Width'#3#211#1#7'Caption'#6'!Bestelboek 1 Bestell'
+  +'ing Afdrukken'#12'ClientHeight'#3','#1#11'ClientWidth'#3#211#1#6'OnShow'#7#8
+  +'FormShow'#17'SessionProperties'#6'!Height;Left;Top;Width;WindowState'#10'LC'
+  +'LVersion'#6#7'1.2.6.0'#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Height'#3','#1#3
+  +'Top'#2#0#5'Width'#3#211#1#5'Align'#7#8'alClient'#7'Caption'#6#6'Panel1'#12
   +'ClientHeight'#3','#1#11'ClientWidth'#3#211#1#8'TabOrder'#2#0#0#7'TDBGrid'#7
   +'DBGrid1'#4'Left'#2#1#6'Height'#3#17#1#3'Top'#2#1#5'Width'#3#209#1#5'Align'#7
   +#8'alClient'#5'Color'#7#8'clWindow'#7'Columns'#14#0#10'DataSource'#7#11'Data'
