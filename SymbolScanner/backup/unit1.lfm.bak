@@ -1,0 +1,77 @@
+object Form1: TForm1
+  Left = 995
+  Height = 320
+  Top = 162
+  Width = 320
+  Caption = 'Form1'
+  ClientHeight = 320
+  ClientWidth = 320
+  FormStyle = fsStayOnTop
+  OnClose = FormClose
+  OnDestroy = FormDestroy
+  Position = poScreenCenter
+  LCLVersion = '1.2.4.0'
+  object log: TMemo
+    Left = 0
+    Height = 264
+    Top = 0
+    Width = 320
+    Align = alClient
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 56
+    Top = 264
+    Width = 320
+    Align = alBottom
+    ClientHeight = 56
+    ClientWidth = 320
+    TabOrder = 1
+    object StartButton: TButton
+      Left = 8
+      Height = 25
+      Top = 0
+      Width = 75
+      Caption = 'Start Thread'
+      OnClick = StartButtonClick
+      TabOrder = 0
+    end
+    object StopButton: TButton
+      Left = 88
+      Height = 25
+      Top = 0
+      Width = 75
+      Caption = 'Stop Thread'
+      OnClick = StopButtonClick
+      TabOrder = 1
+    end
+    object Eindebutton: TButton
+      Left = 176
+      Height = 25
+      Top = 0
+      Width = 75
+      Caption = 'Eindebutton'
+      OnClick = EindebuttonClick
+      TabOrder = 2
+    end
+    object Button1: TButton
+      Left = 8
+      Height = 25
+      Top = 31
+      Width = 75
+      Caption = 'enablescanner'
+      OnClick = Button1Click
+      TabOrder = 3
+    end
+    object Button2: TButton
+      Left = 88
+      Height = 25
+      Top = 31
+      Width = 75
+      Caption = 'disabelscanner'
+      OnClick = Button2Click
+      TabOrder = 4
+    end
+  end
+end

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Wince"/>
+    <Units Count="32">
+      <Unit0>
+        <Filename Value="client_wince_lnet.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="client_wince_lnet"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="9"/>
+        <CursorPos X="1" Y="15"/>
+        <UsageCount Value="211"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="mainunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="HoofdScherm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="mainunit"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="7" Y="1"/>
+        <UsageCount Value="211"/>
+        <Bookmarks Count="1">
+          <Item0 X="3" Y="103" ID="4"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="instellingenunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormInstellingen"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="instellingenunit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="99"/>
+        <CursorPos X="56" Y="103"/>
+        <UsageCount Value="211"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="bestellingenunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormBestellen"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="bestellingenunit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="112"/>
+        <CursorPos X="3" Y="114"/>
+        <UsageCount Value="211"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="lnetclient.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="lnetclient"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="231"/>
+        <CursorPos X="26" Y="250"/>
+        <UsageCount Value="211"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="waitdlgunit.lfm"/>
+        <IsPartOfProject Value="True"/>
+        <UsageCount Value="204"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="waitdlgunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="WaitDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="WaitDlgUnit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="52"/>
+        <CursorPos X="7" Y="61"/>
+        <UsageCount Value="204"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="artikelunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ArtikelForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="artikelunit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="242"/>
+        <CursorPos X="4" Y="260"/>
+        <UsageCount Value="204"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="zoekbestellingunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ZoekBestellingForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="zoekbestellingunit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="144"/>
+        <CursorPos X="28" Y="152"/>
+        <UsageCount Value="200"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="triggersunit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="triggersunit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="141"/>
+        <CursorPos X="58" Y="151"/>
+        <UsageCount Value="92"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="indyclient.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="indyclient"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="89"/>
+        <CursorPos X="22" Y="103"/>
+        <UsageCount Value="84"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="..\..\vinfo\vinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="vinfo"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="76"/>
+        <CursorPos X="13" Y="80"/>
+        <UsageCount Value="41"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="C:\lazarus_120\components\lnet\lib\lnet.pp"/>
+        <UnitName Value="lNet"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1444"/>
+        <CursorPos X="47" Y="1462"/>
+        <UsageCount Value="99"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="C:\lazarus_120\components\lnet\lib\levents.pp"/>
+        <UnitName Value="lEvents"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="168"/>
+        <CursorPos X="67" Y="175"/>
+        <UsageCount Value="99"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="C:\lazarus_120\lcl\include\customform.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1001"/>
+        <CursorPos X="1" Y="1010"/>
+        <UsageCount Value="31"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="C:\lazarus_124\components\indy-10.2.0.1\lazarus\IdAboutVCL.pas"/>
+        <UnitName Value="IdAboutVCL"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="65"/>
+        <CursorPos X="35" Y="68"/>
+        <UsageCount Value="5"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="C:\lazarus_124\components\indy-10.2.0.1\fpc\examples\elizaweb\elizaweb.pas"/>
+        <UnitName Value="elizaweb"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="5"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="C:\lazarus_124\components\indy-10.2.0.1\fpc\examples\httpget\httpget.pas"/>
+        <UnitName Value="httpget"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="5"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="C:\lazarus_124\components\indy-10.2.0.1\lazarus\IdAntiFreeze.pas"/>
+        <UnitName Value="IdAntiFreeze"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="17" Y="1"/>
+        <UsageCount Value="5"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="C:\lazarus_124\components\Indy10_5187\package\IdIOHandler.pas"/>
+        <UnitName Value="IdIOHandler"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1991"/>
+        <CursorPos X="1" Y="2000"/>
+        <UsageCount Value="5"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="C:\lazarus_124\lcl\include\customform.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="627"/>
+        <CursorPos X="1" Y="637"/>
+        <UsageCount Value="11"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="..\..\SymbolScanner\symbolscanner.pas"/>
+        <UnitName Value="symbolscanner"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="286"/>
+        <CursorPos X="34" Y="316"/>
+        <UsageCount Value="22"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="C:\lazarus_124\lcl\include\control.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="2704"/>
+        <CursorPos X="1" Y="2713"/>
+        <UsageCount Value="13"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="C:\lazarus_124\lcl\include\buttoncontrol.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="45"/>
+        <CursorPos X="1" Y="55"/>
+        <UsageCount Value="7"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="C:\lazarus_124\lcl\include\buttons.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="160"/>
+        <CursorPos X="1" Y="170"/>
+        <UsageCount Value="7"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="C:\lazarus_124\lcl\interfaces\win32\win32listsl.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="190"/>
+        <CursorPos X="1" Y="201"/>
+        <UsageCount Value="13"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="..\..\SymbolScanner\symscanapi.pp"/>
+        <UnitName Value="SymScanAPI"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1375"/>
+        <CursorPos X="39" Y="1395"/>
+        <UsageCount Value="18"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="C:\lazarus_124\components\Indy10_5187\package\IdStream.pas"/>
+        <UnitName Value="IdStream"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="19"/>
+        <CursorPos X="14" Y="29"/>
+        <UsageCount Value="9"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="C:\lazarus_126\components\Indy10\Trunk\Lib\Protocols\IdFTPCommon.pas"/>
+        <UnitName Value="IdFTPCommon"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="656"/>
+        <CursorPos X="3" Y="666"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="C:\lazarus_126\components\Indy10\Trunk\Lib\Protocols\IdAuthenticationDigest.pas"/>
+        <UnitName Value="IdAuthenticationDigest"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="90"/>
+        <CursorPos X="38" Y="100"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="C:\lazarus_126\components\Indy10\Trunk\Lib\Protocols\IdIMAP4.pas"/>
+        <UnitName Value="IdIMAP4"/>
+        <TopLine Value="3842"/>
+        <CursorPos X="31" Y="3852"/>
+        <UsageCount Value="9"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="C:\lazarus_126\components\Indy10_5224\Lib\Protocols\IdIMAP4.pas"/>
+        <UnitName Value="IdIMAP4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="3843"/>
+        <CursorPos X="41" Y="3846"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit31>
+    </Units>
+    <CustomDefines Count="1">
+      <Define0 Value="EMULATOR"/>
+    </CustomDefines>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="5" HistoryIndex="4">
+      <Position1>
+        <Filename Value="mainunit.pas"/>
+        <Caret Line="127" Column="4" TopLine="112"/>
+      </Position1>
+      <Position2>
+        <Filename Value="mainunit.pas"/>
+        <Caret Line="158" Column="27" TopLine="144"/>
+      </Position2>
+      <Position3>
+        <Filename Value="mainunit.pas"/>
+        <Caret Line="29" Column="11" TopLine="19"/>
+      </Position3>
+      <Position4>
+        <Filename Value="mainunit.pas"/>
+        <Caret Line="42" Column="21" TopLine="27"/>
+      </Position4>
+      <Position5>
+        <Filename Value="mainunit.pas"/>
+        <Caret Line="10" Column="35" TopLine="1"/>
+      </Position5>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="7">
+      <Item1>
+        <Expression Value="Volgorde"/>
+      </Item1>
+      <Item2>
+        <Expression Value="editvolgorde.text"/>
+        <DisplayStyle Value="wdfStructure"/>
+      </Item2>
+      <Item3>
+        <Expression Value="ja"/>
+      </Item3>
+      <Item4>
+        <Expression Value="selecteditem"/>
+      </Item4>
+      <Item5>
+        <Expression Value="i"/>
+      </Item5>
+      <Item6>
+        <Expression Value="zoekbestellingform.zoekbestellinglistbox.selected"/>
+      </Item6>
+      <Item7>
+        <Expression Value="voorgaandevolgorde"/>
+      </Item7>
+    </Watches>
+  </Debugging>
+  <EditorMacros Count="0"/>
+</CONFIG>

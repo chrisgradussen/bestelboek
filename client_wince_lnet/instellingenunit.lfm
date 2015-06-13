@@ -1,0 +1,81 @@
+object FormInstellingen: TFormInstellingen
+  Left = 447
+  Height = 240
+  Top = 207
+  Width = 240
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'FormInstellingen'
+  ClientHeight = 240
+  ClientWidth = 240
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poDefault
+  SessionProperties = 'ValueListEditor.Strings'
+  LCLVersion = '1.2.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 200
+    Top = 0
+    Width = 240
+    Align = alClient
+    ClientHeight = 200
+    ClientWidth = 240
+    TabOrder = 0
+    object ValueListEditor: TValueListEditor
+      Left = 1
+      Height = 198
+      Top = 1
+      Width = 238
+      Align = alClient
+      FixedCols = 0
+      Flat = True
+      RowCount = 10
+      TabOrder = 0
+      OnClick = ValueListEditorClick
+      KeyOptions = [keyEdit]
+      Strings.Strings = (
+        'host=localhost'
+        'port=4665'
+        'terminal=lnettest'
+        'timeout=1000'
+        'extratimeout=1000'
+        'top=0'
+        'left=0'
+        'right=240'
+        'bottom=320'
+      )
+      ColWidths = (
+        64
+        156
+      )
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 40
+    Top = 200
+    Width = 240
+    Align = alBottom
+    ClientHeight = 40
+    ClientWidth = 240
+    TabOrder = 1
+    object Button1: TButton
+      Left = 8
+      Height = 25
+      Top = 8
+      Width = 224
+      Caption = 'Afsluiten'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+  end
+  object instellingenpropstorage: TIniPropStorage
+    StoredValues = <>
+    IniFileName = 'bestelboek.ini'
+    IniSection = 'network'
+    left = 181
+    top = 114
+  end
+end

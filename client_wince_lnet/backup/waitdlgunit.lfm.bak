@@ -1,0 +1,37 @@
+object WaitDlg: TWaitDlg
+  Left = 1033
+  Height = 78
+  Top = 170
+  Width = 240
+  BorderIcons = []
+  BorderStyle = bsNone
+  BorderWidth = 10
+  Caption = 'WaitDlg'
+  ClientHeight = 78
+  ClientWidth = 240
+  OnClose = FormClose
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.2.4.0'
+  object Label1: TLabel
+    Left = 16
+    Height = 28
+    Top = 24
+    Width = 204
+    Caption = 'WACHTEN   AUB.........'
+    Font.Height = -20
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Timer: TTimer
+    Enabled = False
+    Interval = 200
+    OnTimer = TimerTimer
+    OnStartTimer = TimerStartTimer
+    OnStopTimer = TimerStopTimer
+    left = 174
+    top = 21
+  end
+end

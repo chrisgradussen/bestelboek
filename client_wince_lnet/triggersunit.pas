@@ -1,0 +1,237 @@
+unit triggersunit;
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  ExtCtrls, Calendar, {$IFDEF WINCE} Notify, msgqueue, {$ENDIF} windows, WaitDlgUnit;
+
+const
+    MAX_PATH = 256;
+    bufsize = 1024;
+    lzApplicationname_connect     ='NOTIFICATION_EVENT_NET_CONNECT';
+    lzApplicationname_disconnect  ='NOTIFICATION_EVENT_NET_DISCONNECT';
+    lzApplicationname_acPowerOn   ='NOTIFICATION_EVENT_ON_AC_POWER';
+    lzApplicationname_acPowerOff  ='NOTIFICATION_EVENT_OFF_AC_POWER';
+    lzApplicationname_timechange  ='NOTIFICATION_EVENT_TIME_CHANGE';
+    lzApplicationname_wakeup      ='NOTIFICATION_EVENT_WAKEUP';
+
+type
+
+TMyThread = class(TThread)
+private
+  fStatusText: string;
+  FApplicationName : PWideChar;
+  FStop : Boolean;
+  procedure ShowStatus;
+protected
+  procedure Execute; override;
+public
+  property stop : Boolean read FStop write fStop;
+  constructor Create(CreateSuspended: boolean; lApplicationName : PTChar);
+end;
+
+function ClearSetRun(lApplicationName : PTchar; lEvent : DWord) : TMyThread;
+function clearnotify(lApplicationName : PTChar) : boolean;
+function setnotify(lApplicationName : PWidechar; lEvent : Dword) : boolean;
+
+var
+  hhandles : array [0..100] of Handle;
+  nhandles : integer;
+  FNetConnectNotifyThread : TMyThread;
+  FNetDisConnectNotifyThread : TMyThread;
+
+implementation
+
+uses mainunit, bestellingenunit, artikelunit,instellingenunit;
+
+function ClearSetRun(lApplicationName : PTchar; lEvent : DWord) : TMyThread;
+var
+  MyThread : TMyThread;
+begin
+  clearnotify(lApplicationname);
+  {$IFDEF WINCE}
+  setnotify(lApplicationname, lEvent);
+  {$ENDIF}
+  MyThread := TMyThread.Create(True,lApplicationname) ; // With the True parameter it doesn't start automatically
+  if Assigned(MyThread.FatalException) then
+    raise MyThread.FatalException;
+  MyThread.Start;
+end;
+
+function clearnotify(lApplicationName : PTChar) : boolean;
+{$IFDEF WINCE}
+var
+  sztoCompare : pwidechar;
+  buffer : pByte;
+  hNotifyHandlers : array[0..255] of HANDLE;
+  nNumHandlers : dWord;
+  i : word;
+  rc : boolean;
+  dwsize : dword;
+  pnih : PCE_NOTIFICATION_INFO_HEADER;
+  buffersize : dword;
+  h : handle;
+begin
+  nhandles := -1;
+  getmem(sztocompare,1024);
+  getmem(buffer,15000);
+  szToCompare := pWideChar(notify.NAMED_EVENT_PREFIX_TEXT+lApplicationName);
+  i :=255;
+  if  CeGetUserNotificationHandles(@hNotifyHandlers,i, @nNumHandlers) = false then
+  begin
+    result := false;
+    exit;
+  end;
+  for i := 0 to nNumHandlers -1 do
+  begin
+    buffersize := 8192;
+    h := hNotifyhandlers[i];
+    rc := CeGetUserNotification(h, buffersize, @dwSize, buffer);
+    buffersize := dwSize;
+    rc := CeGetUserNotification(h, buffersize, @dwSize, buffer);
+    if ( not rc) then
+    begin
+      continue;
+    end;
+    pnih := PCE_NOTIFICATION_INFO_HEADER(buffer);
+    if ((pnih^.pCent <> nil) and (pnih^.pcent^.lpszApplication <> nil)
+       and (widecomparestr(pnih^.pcent^.lpszApplication,szToCompare) = 0)) then
+    begin
+      CeClearUserNotification(pnih^.hNotification);
+    end;
+  end;
+  freemem(buffer);
+  freemem(szTocompare);
+  result := true;
+end;
+{$ELSE}
+begin
+end;
+{$ENDIF}
+
+function setnotify(lApplicationName : PWidechar; lEvent : Dword) : boolean;
+{$IFDEF WINCE}
+var
+  notifytrigger : CE_NOTIFICATION_TRIGGER;
+  hNotify : HANDLE;
+  pceun:CE_USER_NOTIFICATION;
+begin
+    notifyTrigger.dwSize := sizeof(CE_NOTIFICATION_TRIGGER);
+    notifyTrigger.dwType:= notify.CNT_EVENT;
+    notifyTrigger.dwEvent := lEvent;
+    notifyTrigger.lpszArguments:= nil;
+    notifyTrigger.lpszApplication := PWideChar(notify.NAMED_EVENT_PREFIX_TEXT+lApplicationName);
+    hNotify := CeSetUserNotificationEx(0, @notifyTrigger, nil);
+    if hNotify = 0 then
+    begin
+      result := false;
+    end
+    else
+    begin
+      result := true;
+    end;
+end;
+{$ELSE}
+begin
+end;
+{$ENDIF}
+
+
+procedure TMyThread.ShowStatus;
+var i : integer;
+// this method is only called by Synchronize(@ShowStatus) and therefore
+// executed by the main thread
+// The main thread can access GUI elements, for example Form1.Caption.
+begin
+  if widecomparestr(self.FApplicationName,lzApplicationname_connect) = 0  then
+  begin
+    mainunit.hoofdscherm.WIFILabel.Color:= clyellow;
+    bestellingenunit.FormBestellen.WIFILabel.Color:= clyellow;
+    artikelunit.ArtikelForm.WIFILabel.Color:= clyellow;
+    with artikelunit.ArtikelForm do
+    begin
+      if assigned(thr) then
+      begin
+        thr.startscanner;
+      end;
+    end;
+    if instellingenunit.forminstellingen.ValueListEditor.FindRow('extratimeout',i) then
+   begin
+      sleep(strtoint(instellingenunit.forminstellingen.ValueListEditor.Values['extratimeout']));
+   end
+   else
+   begin
+     showmessage('extratimeout niet gevonden');
+   end;
+    mainunit.hoofdscherm.WIFILabel.Color:= clgreen;
+    bestellingenunit.FormBestellen.WIFILabel.Color:= clgreen;
+    artikelunit.ArtikelForm.WIFILabel.Color:= clgreen;
+    waitdlg.tag := 1;
+  end;
+  if widecomparestr(self.FApplicationName,lzApplicationname_disconnect) = 0  then
+  begin
+    mainunit.hoofdscherm.WIFILabel.Color:= clRed;
+    bestellingenunit.FormBestellen.WIFILabel.Color:= clRed;
+    artikelunit.ArtikelForm.WIFILabel.Color:= clRed;
+    with artikelunit.ArtikelForm do
+    begin
+      if assigned(thr) then
+      begin
+        thr.disable
+      end;
+    end;
+    if mainunit.HoofdScherm.IsVisible then
+      waitdlg.showwait(mainunit.hoofdscherm);
+  end;
+end;
+
+procedure TMyThread.Execute;
+{$IFDEF WINCE}
+var
+  newStatus : string;
+  status : handle;
+  eventhandle : handle;
+begin
+//  Synchronize(@Showstatus);
+  Stop:= false;
+//  eventhandle := windows.CreateEvent(nil,false,false,notify.NAMED_EVENT_PREFIX_TEXT+fApplicationName));
+  eventhandle := windows.CreateEvent(nil,false,false,fApplicationName);
+  while ((not Terminated) and (Stop = false)) do
+  begin
+    //Synchronize(@Showstatus);
+    fstatustext := '';
+    status := windows.WaitForSingleObject(eventhandle,INFINITE);
+    // status := windows.MsgWaitForMultipleObjectsEx(nhandles,@hhandles, INFINITE,windows.QS_ALLEVENTS,0);
+    if status = windows.wait_object_0 then
+    begin
+      fstatustext := 'message received';
+      Synchronize(@Showstatus);
+    end
+    else
+    begin
+      application.ProcessMessages;
+    end;
+  end;
+end;
+{$ELSE}
+begin
+end;
+{$ENDIF}
+
+
+constructor TMyThread.Create(CreateSuspended: boolean; lApplicationName : PTChar);
+begin
+  {$IFDEF WINCE}
+   FreeOnTerminate := True;
+   FApplicationName := lApplicationName;
+   inherited Create(CreateSuspended);
+   {$ENDIF}
+end;
+
+
+
+
+
+end.
+

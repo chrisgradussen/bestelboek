@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus_124\fpc\2.6.4\bin\i386-win32\fpc.exe" Date="1154382129"/>
+  <Params Value=" -MObjFPC -Scghi -Twince -Parm -Xs -WG -vewnhi -FiC:\Users\chrgra\Documents\Projecten\bestelboek\client_wince_lnet\lib\arm-wince -FuC:\lazarus_126\components\Indy10_5224 -FuC:\Users\chrgra\Documents\Projecten\SymbolScanner -FuC:\Users\chrgra\Documents\Projecten\vinfo -FuC:\lazarus_124\components\rtticontrols\lib\arm-wince\wince -FuC:\lazarus_124\components\ideintf\units\arm-wince\wince -FuC:\lazarus_124\components\lazcontrols\lib\arm-wince\wince -FuC:\lazarus_124\lcl\units\arm-wince\wince -FuC:\lazarus_124\lcl\units\arm-wince -FuC:\lazarus_124\components\lazutils\lib\arm-wince -FuC:\lazarus_124\packager\units\arm-wince -FuC:\Users\chrgra\Documents\Projecten\bestelboek\client_wince_lnet\ -FUC:\Users\chrgra\Documents\Projecten\bestelboek\client_wince_lnet\lib\arm-wince\ -l -obestelboek_wince.exe -dLCL -dLCLwince client_wince_lnet.lpr"/>
+</CONFIG>

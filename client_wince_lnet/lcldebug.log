@@ -1,0 +1,173 @@
+TApplication.HandleException Invalid float value : 3,99
+  Stack trace:
+  $002A5308
+  $00041660
+  $000420E8
+  $0017FF24
+  $001B0048
+  $001B0968
+  $001B1120
+  $001AFF10
+  $0001D6E8
+  $001700B8
+  $001D71AC
+  $00123B98
+  $F000FFFC
+  $00027C8C
+TApplication.HandleException Already connected.
+  Stack trace:
+  $002C2F2C
+  $002B1CA4
+  $00044DE4
+  $00044ED4
+  $0003F024
+  $0003FDF8
+  $0002D050
+  $0002C104
+  $0001DB54
+  $00175AAC
+  $0002E384
+  $00182EB4
+  $00172E8C
+  $00172DE0
+  $00031CC0
+  $00170FEC
+  $0018F1B0
+TApplication.HandleException Already connected.
+  Stack trace:
+  $002C2F2C
+  $002B1CA4
+  $00044DE4
+  $0003EFC0
+  $0003FDF8
+  $0002D050
+  $0002C104
+  $0001DB54
+  $00175AAC
+  $0002E384
+  $00182EB4
+  $00172E8C
+  $00172DE0
+  $00031CC0
+  $00170FEC
+  $0018F1B0
+  $0018BDA4
+TApplication.HandleException Stream read error
+  Stack trace:
+  $000508AC
+  $0003F00C
+  $0003FDC0
+  $0002D050
+  $0002C104
+  $0001DB54
+  $00175A6C
+  $0002E384
+  $00182E74
+  $00172E4C
+  $00172DA0
+  $00031CC0
+  $00170FAC
+  $0018F170
+  $0018BD64
+  $0002BC2C
+  $00030DD8
+TApplication.HandleException Already connected.
+  Stack trace:
+  $002C2EEC
+  $002B1C64
+  $00044DA4
+  $00044E94
+  $0003F00C
+  $0003FDC0
+  $0002D050
+  $0002C104
+  $0001DB54
+  $00175A6C
+  $0002E384
+  $00182E74
+  $00172E4C
+  $00172DA0
+  $00031CC0
+  $00170FAC
+  $0018F170
+TApplication.HandleException [TCustomForm.SetFocus] ArtikelForm:TArtikelForm Can not focus
+  Stack trace:
+  $0002BA44
+  $0002B954
+  $0002AF64
+  $001768CC
+  $00041C90
+  $00042930
+  $0002CF60
+  $0002C014
+  $0001DA64
+  $00175FEC
+  $0002E294
+  $001833F4
+  $001733CC
+  $00173320
+  $00031BD0
+  $0017152C
+  $0018F6F0
+WARNING: TLCLComponent.Destroy with LCLRefCount>0. Hint: Maybe the component is processing an event?
+WARNING: TLCLComponent.Destroy with LCLRefCount>0. Hint: Maybe the component is processing an event?
+TApplication.HandleException [TCustomForm.SetFocus] ArtikelForm:TArtikelForm Can not focus
+  Stack trace:
+  $0002BA44
+  $0002B954
+  $0002AF64
+  $0017681C
+  $00041C90
+  $00042930
+  $0002CF60
+  $0002C014
+  $0001DA64
+  $00175F3C
+  $0002E294
+  $00183344
+  $0017331C
+  $00173270
+  $00031BD0
+  $0017147C
+  $0018F640
+TApplication.HandleException [TCustomForm.SetFocus] ArtikelForm:TArtikelForm Can not focus
+  Stack trace:
+  $0002BA44
+  $0002B954
+  $0002AF64
+  $0017681C
+  $00041C24
+  $0004245C
+  $00185DA8
+  $001B5E8C
+  $001B67AC
+  $000427B8
+  $0002CF60
+  $0002C014
+  $0001DA64
+  $00175F3C
+  $0002E294
+  $00183344
+  $0017331C
+WARNING: TLCLComponent.Destroy with LCLRefCount>0. Hint: Maybe the component is processing an event?
+TApplication.HandleException [TCustomForm.SetFocus] ArtikelForm:TArtikelForm Can not focus
+  Stack trace:
+  $0002BA44
+  $0002B954
+  $0002AF64
+  $00176C5C
+  $00042A54
+  $0002CF60
+  $0002C014
+  $0001DA64
+  $0017637C
+  $0002E294
+  $00183784
+  $0017375C
+  $001736B0
+  $00031BD0
+  $001718BC
+  $0018FA80
+  $0018C674
+WARNING: TLCLComponent.Destroy with LCLRefCount>0. Hint: Maybe the component is processing an event?
+WARNING: TLCLComponent.Destroy with LCLRefCount>0. Hint: Maybe the component is processing an event?

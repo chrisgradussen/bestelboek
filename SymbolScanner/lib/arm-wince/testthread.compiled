@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus_124\fpc\2.6.4\bin\i386-win32\fpc.exe" Date="1154382129"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -Twince -Parm -WG -vewnhi -FiC:\Users\chrgra\Documents\Projecten\SymbolScanner\lib\arm-wince -FuC:\lazarus_124\lcl\units\arm-wince\wince -FuC:\lazarus_124\lcl\units\arm-wince -FuC:\lazarus_124\components\lazutils\lib\arm-wince -FuC:\lazarus_124\packager\units\arm-wince -FuC:\Users\chrgra\Documents\Projecten\SymbolScanner\ -FUC:\Users\chrgra\Documents\Projecten\SymbolScanner\lib\arm-wince\ -l -dLCL -dLCLwince testthread.lpr"/>
+</CONFIG>

@@ -1,0 +1,716 @@
+unit artikelunit;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  Buttons, ExtCtrls, waitdlgunit, indyclient, fpjson, symbolscanner;
+
+type
+
+  { TArtikelForm }
+
+  TArtikelForm = class(TForm)
+    AfsluitenButton: TButton;
+    artikelnummer: TLabel;
+    BtnLast: TButton;
+    BtnNext: TButton;
+    Btnprevious: TButton;
+    BtnFirst: TButton;
+    Button1: TButton;
+    EditBestellen: TEdit;
+    EditVoorraad: TEdit;
+    EditMinVoorraad: TEdit;
+    EditVolgorde: TEdit;
+    Inhoud: TLabel;
+    bestelinhoud: TLabel;
+    Panel1: TPanel;
+    Verkoop: TLabel;
+    Onderweg: TLabel;
+    Advies: TLabel;
+    MIN4: TLabel;
+    Naam: TMemo;
+    EANUPC: TLabel;
+    Label10: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    MIN1: TLabel;
+    MIN2: TLabel;
+    MIN3: TLabel;
+    MIN5: TLabel;
+    MIN6: TLabel;
+    MIN7: TLabel;
+    VERKOOPPRIJS: TLabel;
+    WIFILabel: TLabel;
+    WMIN1: TLabel;
+    WMIN2: TLabel;
+    WMIN3: TLabel;
+    WMIN4: TLabel;
+    WMIN5: TLabel;
+    WMIN6: TLabel;
+    WMIN7: TLabel;
+    ZoekBestellingButton: TButton;
+    artikelZoekButton: TButton;
+    procedure AfsluitenButtonClick(Sender: TObject);
+    procedure BtnFirstClick(Sender: TObject);
+    procedure BtnLastClick(Sender: TObject);
+    procedure BtnpreviousClick(Sender: TObject);
+    procedure BtnNextClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure EditBestellenChange(Sender: TObject);
+    procedure EditMinVoorraadEditingDone(Sender: TObject);
+    procedure EditVolgordeChange(Sender: TObject);
+    procedure EditVolgordeEditingDone(Sender: TObject);
+    procedure EditVoorraadEditingDone(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
+    procedure FormWindowStateChange(Sender: TObject);
+   // procedure LTCPCLientError(const msg: string; aSocket: TLSocket);
+    procedure LaadArtikel(const aEanupc : string);
+    function SchrijfArtikel : Boolean;
+    procedure LaadZoekBestelling;
+    procedure ZoekBestellingButtonClick(Sender: TObject);
+    procedure artikelZoekButtonClick(Sender: TObject);
+  private
+    { private declarations }
+    eersteartikel : boolean;
+    voorgaandevolgorde : double;
+  public
+    { public declarations }
+    itemindex : word;
+    terminal : string;
+    Zoekbestellingstrl : TStringlist;
+    ltcp : TLTCPClient;
+    thr : TSymbolscanner;
+    Volgorde, MinVoorraad,Voorraad,Bestellen : string;
+    Procedure GetScan(barcode:String; Symbology:String);
+    Procedure GetScanError(ErrorMessage:string);
+    Procedure GetLog(LogMessage:string);
+    procedure zetfocus;
+
+  end;
+
+var
+  ArtikelForm: TArtikelForm;
+
+implementation
+
+{$R *.lfm}
+
+uses bestellingenunit, instellingenunit, zoekbestellingunit, mainunit;
+
+{ TArtikelForm }
+
+procedure TArtikelForm.zetfocus;
+var
+  ActieveEdit : Tedit;
+begin
+  if (frmArtikel AND mainunit.HoofdScherm.formoptions = frmartikel) then
+  begin
+    ActieveEdit := EditVoorraad;
+  end;
+  if (frmVolgorde AND mainunit.HoofdScherm.formoptions = frmVolgorde) then
+  begin
+    ActieveEdit := EditVolgorde;
+  end;
+  if (frmBestellen AND mainunit.HoofdScherm.formoptions = frmBestellen) then
+  begin
+    ActieveEdit := EditBestellen;
+  end;
+  actieveedit.SetFocus;
+  actieveedit.SelectAll;
+end;
+
+procedure TArtikelform.GetScan(Barcode:String; Symbology:String);
+var i:integer;
+    c:char;
+    selecteditem: string;
+Begin
+  with zoekbestellingform do
+  begin
+    ZoekEdit.Text:= Barcode;
+    zoekbestellingunit.zoekbestellingform.laadparameters;
+    zoekbestellingunit.zoekbestellingform.zoekbuttonpressed := true;
+    zoekbestellingunit.ZoekBestellingForm.Zoeken(self);
+    zoekbestellingunit.zoekbestellingform.zoekbuttonpressed := false;
+    if zoekBestellingListbox.Items.Count = 0 then
+    begin
+      showmessage('ARTIKEL NIET GEVONDEN');
+      exit;
+    end;
+    if zoekBestellingListbox.Items.Count  > 1 then
+    begin
+      artikelzoekbuttonclick(self);
+      exit;
+    end
+    else
+    begin
+      if (frmBestellen AND mainunit.HoofdScherm.formoptions = frmBestellen) then
+      begin
+        for i := 0 to zoekbestellingstrl.Count -1 do
+        begin
+          if  zoekbestellingunit.ZoekBestellingForm.ZoekBestellingListbox.items[0] = zoekbestellingstrl[i]  then
+          begin
+            itemindex := i;
+            break;
+          end;
+       end;
+    end;
+    end;
+    if not zoekbestellingform.Active then
+    begin
+      selecteditem := zoekbestellingunit.zoekbestellingform.ZoekBestellingListbox.Items[0];
+      if schrijfartikel then
+      begin
+        laadartikel(copy(selecteditem,1,length(selecteditem)-length(strscan(Pchar(selecteditem),' '))));
+        zetfocus;
+      end;
+    end
+    else
+    begin
+      // zoekbestellingform.ZoekButtonClick(nil);
+      zoekbestellingform.zoekbestellinglistbox.Selected[0] := true;
+      zoekbestellingform.afsluitenbutton.Click;
+    end;
+    //  log.Lines.Add('SCAN SUCCESS : ' + Barcode);;
+  end;
+end;
+
+procedure TArtikelform.GetLog(LogMessage:String);
+begin
+  //doet helemaal niets
+  //log.lines.add('LOG : ' + LogMessage);
+end;
+
+procedure TArtikelForm.GetScanError(Errormessage:String);
+begin
+  showmessage('FOUT IN SCANNEN : '+ ErrorMessage);
+end;
+
+function TArtikelForm.SchrijfArtikel : boolean;
+var
+  JA : TJSonArray;
+  s  : string;
+begin
+  result := false;
+
+  if ((editbestellen.tag > 0) or (Editvolgorde.Tag >0) or (Editminvoorraad.tag > 0) or (editvoorraad.tag > 0)) then
+  begin
+    if editbestellen.tag > 0 then
+    begin
+      s := s + 'update bestelling  set bestellen ='+EditBestellen.Text +' where eanupc = '+eanupc.Caption+';';
+      begin
+        if ltcp.SendMessage(s) then
+        begin
+          if (TJSonObject(ltcp.JSo).Find('STATUS').AsString) = 'OK' then
+          begin
+            result := true;
+            editbestellen.tag := 0;
+          end
+          else
+          begin
+            showmessage('Veld bestellen niet goed opgeslagen');
+            exit;
+          end;
+        end
+        else
+        begin
+          showmessage('Wijzigingen in volgorde,minvoorraad,voorrad en bestellen niet opgeslagen. Verzendprobleem');
+          exit;
+        end;
+      end
+    end;
+    if ((Editvolgorde.Tag >0) or (Editminvoorraad.tag > 0) or (editvoorraad.tag > 0)) then
+    begin
+      s := 'update artikel set ';
+      if editvolgorde.tag > 0 then
+      begin
+        s := s + ' volgorde = '+ editvolgorde.text;
+        voorgaandevolgorde := strtofloat(editvolgorde.text);
+      end;
+      if editminvoorraad.tag > 0 then
+      begin
+        if editvolgorde.Tag > 0 then
+          s := s+  ', ';
+        s := s +' minimalevoorraad =  '+editminvoorraad.text;
+      end;
+      if editvoorraad.tag > 0 then
+      begin
+        if ((editvolgorde.tag > 0) or ( editminvoorraad.tag > 0 )) then
+          s:= s + ', ';
+        s := s + ' voorraad = '+ editvoorraad.text;
+      end;
+      s := s +' where eanupc = '+eanupc.Caption+';';
+    end;
+    if ltcp.SendMessage(s) then
+    begin
+      if (TJSonObject(ltcp.JSo).Find('STATUS').AsString) = 'OK' then
+      begin
+        result := true;
+        editvolgorde.Tag := 0;
+        editminvoorraad.tag := 0;
+        editvoorraad.tag := 0;
+      end
+      else
+      begin
+        showmessage('Veld volgorde, minimale voorraad en voorraad niet goed opgeslagen');
+        exit;
+      end;
+    end
+    else
+    begin
+      showmessage('Velden volgorde, minimale voorraad en voorraad niet opgeslagen');
+      exit;
+    end;
+  end;
+  result := True;
+end;
+
+procedure TArtikelForm.LaadArtikel(const aEanupc : string);
+var
+  i : integer;
+  JA : TJSonArray;
+  volgordefloat : double;
+  volgordeint : integer;
+begin
+  if ltcp.SendMessage('select * from pda_artikel('+aEanupc+',0,'''+ terminal+''');') then
+  begin
+    ja := TJSonObject(ltcp.JSo).Arrays['data'];
+    NAAM.Text:= TJsonOBject(ja.Items[0]).Find('NAAM').AsString;
+    EANUPC.Caption  :=TJsonObject(ja.Items[0]).Find('EANUPC').AsString;
+    Editvolgorde.Text:= TJsonObject(ja.Items[0]).Find('VOLGORDE').AsString;
+    Volgorde := EditVolgorde.Text;
+    EditVolgorde.Tag := 0;
+    EditMinVoorraad.Text:= TJsonObject(ja.Items[0]).Find('MINIMALEVOORRAAD').AsString;
+    MinVoorraad := EditMinVoorraad.Text;
+    EditMinVoorraad.Tag := 0;
+    EditVoorraad.Text:= TJsonObject(ja.Items[0]).Find('VOORRAAD').AsString;
+    Voorraad := EditVoorraad.Text;
+    EditVoorraad.Tag := 0;
+    EditBestellen.Text:= TJsonObject(ja.Items[0]).Find('BESTELLEN').AsString;
+    Bestellen := EditBestellen.Text;
+    EditBestellen.Tag := 0;
+    Wmin1.Caption:= TJsonObject(ja.Items[0]).Find('WMIN1').AsString;
+    min1.Caption:= TJsonObject(ja.Items[0]).Find('MIN1').AsString;
+    Wmin2.Caption:= TJsonObject(ja.Items[0]).Find('WMIN2').AsString;
+    min2.Caption:= TJsonObject(ja.Items[0]).Find('MIN2').AsString;
+    Wmin3.Caption:= TJsonObject(ja.Items[0]).Find('WMIN3').AsString;
+    min3.Caption:= TJsonObject(ja.Items[0]).Find('MIN3').AsString;
+    Wmin4.Caption:= TJsonObject(ja.Items[0]).Find('WMIN4').AsString;
+    min4.Caption:= TJsonObject(ja.Items[0]).Find('MIN4').AsString;
+    Wmin5.Caption:= TJsonObject(ja.Items[0]).Find('WMIN5').AsString;
+    min5.Caption:= TJsonObject(ja.Items[0]).Find('MIN5').AsString;
+    Wmin6.Caption:= TJsonObject(ja.Items[0]).Find('WMIN6').AsString;
+    min6.Caption:= TJsonObject(ja.Items[0]).Find('MIN6').AsString;
+    Wmin7.Caption:= TJsonObject(ja.Items[0]).Find('WMIN7').AsString;
+    //min7.Caption:= TJsonObject(ja.Items[0]).Find('MIN7').AsString;
+    verkoop.caption := TJsonObject(ja.Items[0]).Find('VERKOOP').AsString;
+    onderweg.caption := TJsonObject(ja.Items[0]).Find('AANTAL_INBESTELLING').AsString;
+    advies.caption := TJsonObject(ja.Items[0]).Find('ADVIES').AsString;
+    artikelnummer.caption := TJsonObject(ja.Items[0]).Find('ARTIKELNUMMER').AsString;
+    verkoopprijs.caption  := floattostrf(TJsonObject(ja.Items[0]).Find('VERKOOPPRIJS').AsFloat,ffcurrency,5,2);
+    inhoud.caption := TJsonObject(ja.Items[0]).Find('INHOUD').AsString + ' '+
+    TJsonObject(ja.Items[0]).Find('EENHEID').AsString;
+    bestelinhoud.caption := 'BESTELINHOUD '+ TJsonObject(ja.Items[0]).Find('BESTELINHOUD').AsString + ' '+
+    TJsonObject(ja.Items[0]).Find('BESTELEENHEID').AsString;
+    if (frmArtikel AND mainunit.HoofdScherm.formoptions = frmartikel) then
+    begin
+      btnLast.Enabled := false;
+      btnfirst.Enabled := false;
+      btnnext.Enabled := false;
+      btnprevious.Enabled := false;
+      zoekbestellingbutton.Enabled := false;
+      artikelZoekButton.Enabled:= true;
+      editbestellen.Enabled:= false;
+      if (frmVolgorde AND mainunit.HoofdScherm.formoptions = frmvolgorde) then
+      begin
+        if eersteartikel then
+        begin
+          eersteartikel := false;
+          voorgaandevolgorde := strtofloat(editvolgorde.Text);
+       //   showmessage('eersteartikel en voorgaandevolgorde is :'+ floattostr(voorgaandevolgorde));
+        end
+        else
+        begin
+         editvolgorde.Text := floattostr(voorgaandevolgorde +10);
+          editvolgorde.Tag := 1;
+          voorgaandevolgorde := strtofloat(editvolgorde.Text);
+         // showmessage('GEEN eersteartikel en voorgaandevolgorde is :'+ floattostr(voorgaandevolgorde));
+        end;
+      end
+    end;
+    if (frmBestellen AND mainunit.HoofdScherm.formoptions = frmBestellen) then
+    begin
+      editbestellen.Enabled:= true;
+      zoekbestellingbutton.Enabled := true;
+      btnfirst.Enabled:= itemindex > 0;
+      btnPrevious.Enabled:= itemindex > 0;
+      if ((zoekbestellingstrl.Count> 0) and (itemindex < zoekbestellingstrl.Count -1)) then
+      begin
+        btnLast.Enabled:= true;
+        btnNext.Enabled := True;
+      end
+      else
+      begin
+        BtnLast.Enabled:= False;
+        BtnNext.Enabled:= false;
+      end;
+    end;
+    // Wmin7.Caption:= TJsonObject(ja.Items[0]).Find('WMIN7').AsString;
+    // min7.Caption:= TJsonObject(ja.Items[0]).Find('MIN7').AsString;
+  end
+  else
+  begin
+    showmessage('Kan artikel niet laden.');
+    close;
+    exit;
+      //loading of nieuwe bestellingelistbox failed
+  end;
+end;
+
+
+
+procedure TArtikelForm.LaadZoekBestelling;
+var
+   i   : integer;
+   JA : TJSonArray;
+begin
+  zoekbestellingstrl.Clear;
+  if hoofdscherm.FormOptions and frmBestellen = frmBestellen then
+  begin
+    if ltcp.SendMessage('select b.eanupc as EANUPC ,a.x_naam as NAAM from bestelling b join artikel a on b.EANUPC = a.EANUPC where b.LUSER = '''+terminal+''' order by a.volgorde;') then
+    begin
+      ja := TJSonObject(ltcp.JSo).Arrays['data'];
+      for i := 0 to ja.Count -1 do
+      begin
+        zoekbestellingstrl.Append(TJsonOBject(ja.Items[i]).Find('EANUPC').AsString + ' ' + TJsonObject(ja.Items[i]).Find('NAAM').AsString);
+      end;
+      zoekbestellingunit.ZoekBestellingForm.ZoekBestellingListbox.items.Assign(zoekbestellingstrl);
+    end
+    else
+    begin
+      //loading of laadozekbestelling  failed
+      showmessage('foutmelding in laadzoekbestelling sendmessage '+ inttostr(ltcp.Memorystream.Size));
+    end;
+  end
+end;
+
+procedure TArtikelForm.ZoekBestellingButtonClick(Sender: TObject);
+var
+  i : integer;
+  selecteditem : string;
+begin
+  zoekbestellingunit.zoekbestellingform.ZoekBestellingListbox.Items.Assign(zoekbestellingstrl);
+  waitdlg.showwait(ArtikelForm);
+  if zoekbestellingunit.ZoekBestellingForm.showmodal = mrok then
+  begin
+    for i := 0 to zoekbestellingunit.ZoekBestellingForm.ZoekBestellingListbox.Count -1 do
+    begin
+      if  zoekbestellingunit.ZoekBestellingForm.ZoekBestellingListbox.Selected[i] then
+      begin
+        itemindex := i;
+        selecteditem := zoekbestellingunit.zoekbestellingform.ZoekBestellingListbox.Items[i];
+        break;
+      end;
+    end;
+    if schrijfartikel then
+      laadartikel(copy(selecteditem,1,length(selecteditem)-length(strscan(Pchar(selecteditem),' '))));
+  end;
+  waitdlg.Tag := 1;;
+end;
+
+procedure TArtikelForm.artikelZoekButtonClick(Sender: TObject);
+var
+   i : integer;
+   selecteditem : string;
+
+begin
+  waitdlg.showwait(ArtikelForm);
+  zoekbestellingunit.zoekbestellingform.zoekbuttonpressed := true;
+  if zoekbestellingunit.ZoekBestellingForm.showmodal = mrok then
+  begin
+    for i := 0 to zoekbestellingunit.ZoekBestellingForm.ZoekBestellingListbox.Count -1 do
+    begin
+      if  zoekbestellingunit.ZoekBestellingForm.ZoekBestellingListbox.Selected[i] then
+      begin
+        itemindex := i;
+        selecteditem := zoekbestellingunit.zoekbestellingform.ZoekBestellingListbox.Items[i];
+        break;
+      end;
+    end;
+    if schrijfartikel then
+      laadartikel(copy(selecteditem,1,length(selecteditem)-length(strscan(Pchar(selecteditem),' '))));
+  end;
+  zoekbestellingunit.zoekbestellingform.zoekbuttonpressed := false;
+  waitdlg.Tag := 1;;
+end;
+
+
+{procedure TArtikelForm.LTCPCLientError(const msg: string; aSocket: TLSocket);
+begin
+   showmessage(msg+ ' '+ aSocket.LocalAddress + ' '+ inttostr(aSocket.LocalPort));
+   close;
+end;}
+
+procedure TArtikelForm.FormShow(Sender: TObject);
+var
+  s : string;
+  i : integer;
+begin
+  eersteartikel := true;
+  mainunit.removetaskbar(handle,instellingenunit.FormInstellingen.leesschermafmetingen);
+  waitdlg.showwait(ArtikelForm);
+  if instellingenunit.forminstellingen.ValueListEditor.FindRow('timeout',i) then
+  begin
+    ltcp.TimeOut := strtoint(instellingenunit.forminstellingen.ValueListEditor.Values['timeout']);
+  end
+  else
+  begin
+    showmessage('timeout niet gevonden');
+    close;
+  end;
+  if instellingenunit.forminstellingen.ValueListEditor.FindRow('host',i) then
+  begin
+    ltcp.host := instellingenunit.forminstellingen.ValueListEditor.Values['host'];
+  end
+  else
+  begin
+    showmessage('host niet gevonden');
+    close;
+  end;
+  if instellingenunit.forminstellingen.ValueListEditor.FindRow('port',i) then
+  begin
+    ltcp.port := strtoint(instellingenunit.forminstellingen.ValueListEditor.Values['port']);
+  end
+  else
+  begin
+    showmessage('port niet gevonden');
+    close;
+  end;
+  if instellingenunit.forminstellingen.ValueListEditor.FindRow('terminal',i) then
+  begin
+    terminal := instellingenunit.forminstellingen.ValueListEditor.Values['terminal'];
+  end
+  else
+  begin
+    showmessage('terminal niet gevonden');
+    close;
+  end;
+  laadzoekbestelling;
+  itemindex := 0;
+  {$ifdef wince}
+  thr.startscanner;
+  {$endif}
+  if hoofdscherm.FormOptions and frmArtikel = frmArtikel then
+  begin
+    artikelZoekButton.Click;
+    if zoekbestellingunit.ZoekBestellingForm.ModalResult <> mrok then
+    begin
+      close;
+      exit;
+    end;
+  end;
+  if (frmBestellen AND mainunit.HoofdScherm.formoptions = frmBestellen) then
+  begin
+    if zoekbestellingstrl.Count > 0 then
+    begin
+      laadartikel(copy(zoekbestellingstrl[0],1,length(zoekbestellingstrl[0])-length(strscan(Pchar(zoekbestellingstrl[0]),' '))));
+    end
+    else
+    begin
+      close;
+    end;
+  end;
+  waitdlg.Tag := 1;
+//  editvoorraad.Setfocus;
+//  editvoorraad.selectall;
+end;
+
+procedure TArtikelForm.FormWindowStateChange(Sender: TObject);
+begin
+
+end;
+
+procedure TArtikelForm.AfsluitenButtonClick(Sender: TObject);
+begin
+  {$ifdef wince}
+  thr.disable;
+  {$endif}
+  if schrijfartikel then
+  close;
+end;
+
+procedure TArtikelForm.BtnFirstClick(Sender: TObject);
+begin
+  if schrijfartikel then
+  begin
+    itemindex := 0;
+    laadartikel(copy(zoekbestellingstrl[itemindex],1,length(zoekbestellingstrl[itemindex])-length(strscan(Pchar(zoekbestellingstrl[itemindex]),' '))));
+    zetfocus;
+  end;
+end;
+
+procedure TArtikelForm.BtnLastClick(Sender: TObject);
+begin
+  if schrijfartikel then
+  begin
+    itemindex := zoekbestellingstrl.Count-1;
+    laadartikel(copy(zoekbestellingstrl[itemindex],1,length(zoekbestellingstrl[itemindex])-length(strscan(Pchar(zoekbestellingstrl[itemindex]),' '))));
+    zetfocus;
+  end;
+end;
+
+procedure TArtikelForm.BtnpreviousClick(Sender: TObject);
+begin
+    if schrijfartikel then
+  begin
+    itemindex := itemindex-1;
+    laadartikel(copy(zoekbestellingstrl[itemindex],1,length(zoekbestellingstrl[itemindex])-length(strscan(Pchar(zoekbestellingstrl[itemindex]),' '))));
+    zetfocus;
+  end;
+end;
+
+procedure TArtikelForm.BtnNextClick(Sender: TObject);
+begin
+  if schrijfartikel then
+  begin
+    itemindex := itemindex+1;
+    laadartikel(copy(zoekbestellingstrl[itemindex],1,length(zoekbestellingstrl[itemindex])-length(strscan(Pchar(zoekbestellingstrl[itemindex]),' '))));
+    zetfocus;
+  end;
+
+end;
+
+procedure TArtikelForm.Button1Click(Sender: TObject);
+begin
+
+  GetScan(inputbox('input', 'geeft input','369'),'hoelahoep');
+end;
+
+procedure TArtikelForm.EditBestellenChange(Sender: TObject);
+begin
+  if (comparetext(EditBestellen.Text,Bestellen) = 0) then
+  begin
+    EditBestellen.Tag := 0;
+  end
+  else
+    EditBestellen.Tag :=1;
+end;
+
+procedure TArtikelForm.EditMinVoorraadEditingDone(Sender: TObject);
+begin
+   if (comparetext(EditMinvoorraad.Text,MinVoorraad) = 0) then
+  begin
+    EditMinVoorraad.Tag := 0;
+  end
+  else
+    EditMinVoorraad.Tag :=1;
+end;
+
+procedure TArtikelForm.EditVolgordeChange(Sender: TObject);
+begin
+
+end;
+
+procedure TArtikelForm.EditVolgordeEditingDone(Sender: TObject);
+begin
+  if (comparetext(EditVolgorde.Text,Volgorde) = 0) then
+  begin
+    EditVolgorde.Tag := 0;
+  end
+  else
+    EditVolgorde.Tag :=1;
+end;
+
+procedure TArtikelForm.EditVoorraadEditingDone(Sender: TObject);
+begin
+   if (comparetext(EditVoorraad.Text,Voorraad) = 0) then
+  begin
+    EditVoorraad.Tag := 0;
+  end
+  else
+    EditVoorraad.Tag :=1;
+end;
+
+procedure TArtikelForm.FormActivate(Sender: TObject);
+begin
+
+end;
+
+procedure TArtikelForm.FormClose(Sender: TObject; var CloseAction: TCloseAction
+  );
+begin
+   //   log.Lines.add('stopbuttonclick SCANNER GESTOPT');;
+
+end;
+
+procedure TArtikelForm.FormCreate(Sender: TObject);
+begin
+  zoekbestellingstrl:= tstringlist.Create;
+  ltcp := TLTCPClient.create;
+  //ltcp.OnError:= @LTCPCLientError;
+  {$IFDEF WINCE}
+  thr := TSymbolScanner.Create(self);
+  thr.OnError := @GetScanError;
+  thr.OnScan := @GetScan;
+  thr.OnLog := @GetLog;
+  thr.open;
+  {$ENDIF}
+end;
+
+procedure TArtikelForm.FormDestroy(Sender: TObject);
+begin
+  {$IFDEF WINCE}
+  thr.free;
+  thr := nil;
+  {$ENDIF}
+  ltcp.free;
+  zoekbestellingstrl.Free;
+end;
+
+procedure TArtikelForm.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  case Key of
+    37,112: begin
+        //  if (bestellen) then
+          begin
+            if itemindex > 0 then
+               BtnPrevious.Click;
+          end;
+          key := 0;
+        end;
+    38: begin
+         // showmessage('38  up')
+          self.ActiveControl.PerformTab(false);
+        end;
+    39,113: begin
+         // if bestellen  then
+          if ((zoekbestellingstrl.Count> 0) and (itemindex < zoekbestellingstrl.Count -1)) then
+          begin
+            btnNext.Click;
+          end;
+          key := 0;
+        end;
+    40: begin  //showmessage('40  down');
+          self.ActiveControl.PerformTab(true);
+        end;
+    else
+    end;
+  end;
+
+
+end.
+

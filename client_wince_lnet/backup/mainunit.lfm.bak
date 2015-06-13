@@ -1,0 +1,105 @@
+object HoofdScherm: THoofdScherm
+  Left = 475
+  Height = 323
+  Top = 168
+  Width = 253
+  BorderStyle = bsNone
+  Caption = 'HoofdScherm'
+  ClientHeight = 323
+  ClientWidth = 253
+  OnActivate = FormActivate
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.2.4.0'
+  object BestellenButton: TButton
+    Left = 8
+    Height = 25
+    Top = 32
+    Width = 224
+    Caption = 'Bestellen'
+    Font.Height = 20
+    Font.Style = [fsBold]
+    OnClick = BestellenButtonClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object ArtikelVolgordeButton: TButton
+    Left = 8
+    Height = 25
+    Top = 64
+    Width = 224
+    Caption = 'Artikelvolgorde'
+    Font.Height = 20
+    Font.Style = [fsBold]
+    OnClick = ArtikelVolgordeButtonClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object ArtikelbestandButton: TButton
+    Left = 8
+    Height = 25
+    Top = 96
+    Width = 224
+    Caption = 'Artikelbestand'
+    Font.Height = 20
+    Font.Style = [fsBold]
+    OnClick = ArtikelbestandButtonClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object InstellingenButton: TButton
+    Left = 8
+    Height = 25
+    Top = 128
+    Width = 224
+    Caption = 'Instellingen'
+    Font.Height = 20
+    Font.Style = [fsBold]
+    OnClick = InstellingenButtonClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object EindeButton: TButton
+    Left = 8
+    Height = 25
+    Top = 160
+    Width = 224
+    Caption = 'Einde'
+    Font.Height = 20
+    Font.Style = [fsBold]
+    OnClick = EindeButtonClick
+    ParentFont = False
+    TabOrder = 4
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 18
+    Top = 305
+    Width = 253
+    Align = alBottom
+    ClientHeight = 18
+    ClientWidth = 253
+    TabOrder = 5
+    object WIFILabel: TLabel
+      Left = 0
+      Height = 15
+      Top = 0
+      Width = 93
+      Caption = 'WIFI VERBINDING'
+      Color = clRed
+      ParentColor = False
+      Transparent = False
+    end
+  end
+  object Label1: TLabel
+    Left = 11
+    Height = 15
+    Top = 11
+    Width = 34
+    Caption = 'Label1'
+    ParentColor = False
+  end
+end
