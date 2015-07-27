@@ -8,7 +8,7 @@ uses
   baklijstvolgordeunit,Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   IniPropStorage, StdCtrls, Unit3, Unit4,unit5, unit6, unit7, unit8, unit9,
   Unit10, Unit2, Unit11, unit12, Unit13, Menus, Unit14,ZConnection,
-  ZDataset, db, ZSqlUpdate, ZSequence,baklijstunit,baklijstsnelunit,versiontypes,vinfo ;
+  ZDataset, db, ZSqlUpdate, ZSequence,baklijstunit,baklijstsnelunit,versiontypes,vinfo, multiplierunit;
 
 type
 
@@ -23,6 +23,7 @@ type
     GroepButton: TButton;
     HfdMenu: TMainMenu;
     MenuItem1: TMenuItem;
+    MenuItem2: TMenuItem;
     Menu_baklijstvolgorde: TMenuItem;
     van10naar0: TMenuItem;
     van30naar10: TMenuItem;
@@ -52,6 +53,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure GroepButtonClick(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
+    procedure MenuItem2Click(Sender: TObject);
     procedure Menu_baklijstvolgordeClick(Sender: TObject);
     procedure NoodproceduresClick(Sender: TObject);
     procedure LeverancierButtonClick(Sender: TObject);
@@ -207,6 +209,11 @@ begin
   unit14.Scripts.showmodal;
 end;
 
+procedure Thoofdmenu.MenuItem2Click(Sender: TObject);
+begin
+  multiplierunit.FormMultiplier.ShowModal;
+end;
+
 procedure Thoofdmenu.Menu_baklijstvolgordeClick(Sender: TObject);
 begin
   baklijstvolgordeunit.Baklijstvolgordeform.Show;
@@ -293,4 +300,4 @@ initialization
   {$I unit1.lrs}
 
 end.
-
+

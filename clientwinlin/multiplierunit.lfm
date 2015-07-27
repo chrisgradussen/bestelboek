@@ -1,0 +1,28 @@
+object FormMultiplier: TFormMultiplier
+  Left = 511
+  Height = 240
+  Top = 298
+  Width = 320
+  Caption = 'Menu Multiplier'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnCloseQuery = FormCloseQuery
+  OnShow = FormShow
+  LCLVersion = '1.2.6.0'
+  object DBEdit1: TDBEdit
+    Left = 112
+    Height = 25
+    Top = 64
+    Width = 80
+    DataField = 'PERCENTAGE'
+    DataSource = DataSource1
+    CharCase = ecNormal
+    MaxLength = 0
+    TabOrder = 0
+  end
+  object DataSource1: TDataSource
+    DataSet = DM.ZMultiplierTable
+    left = 54
+    top = 107
+  end
+end

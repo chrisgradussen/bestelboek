@@ -1,6 +1,6 @@
 unit unit2;
 
-{$mode objfpc}{$H+}
+//{$mode objfpc}{$H+}
 
 interface
 
@@ -29,25 +29,15 @@ type
     ZArtikelOmschrijvingMARGE: TFloatField;
     ZArtikelOmschrijvingNAAM: TStringField;
     ZArtikelOmschrijvingVERKOOPPRIJS: TFloatField;
-    ZArtikelomzetDIN: TFloatField;
     ZArtikelomzetDIN1: TFloatField;
-    ZArtikelomzetDON: TFloatField;
     ZArtikelomzetDON1: TFloatField;
-    ZArtikelomzetJAARWEEK: TLongintField;
     ZArtikelomzetJAARWEEK1: TLongintField;
-    ZArtikelomzetMAA: TFloatField;
     ZArtikelomzetMAA1: TFloatField;
-    ZArtikelomzetTOT: TFloatField;
     ZArtikelomzetTOT1: TFloatField;
-    ZArtikelomzetVOORDEEL: TStringField;
     ZArtikelomzetVOORDEEL1: TStringField;
-    ZArtikelomzetVRI: TFloatField;
     ZArtikelomzetVRI1: TFloatField;
-    ZArtikelomzetWOE: TFloatField;
     ZArtikelomzetWOE1: TFloatField;
-    ZArtikelomzetZAT: TFloatField;
     ZArtikelomzetZAT1: TFloatField;
-    ZArtikelomzetZON: TFloatField;
     ZArtikelomzetZON1: TFloatField;
     ZArtikelQueryEANUPC: TLargeintField;
     ZArtikelQueryL_ARTIKELNUMMER: TStringField;
@@ -108,6 +98,7 @@ type
     ZBaklijstQuery: TZQuery;
     ZBaklijstGeschiedenisQuery: TZQuery;
     ZBaklijstDagLookupQuery: TZReadOnlyQuery;
+    ZMultiplierTablePERCENTAGE: TFloatField;
     ZQuery1: TZQuery;
     ZQuery1CHARGE_1: TLongintField;
     ZQuery1CHARGE_2: TLongintField;
@@ -131,6 +122,7 @@ type
     zscripts_levering_update: TZSQLProcessor;
     ZBaklijstUpdateSQL: TZUpdateSQL;
     ZBaklijstVolgordeUpdateSql: TZUpdateSQL;
+    ZMultiplierTable: TZTable;
     ZZoekArtikelQuery: TZReadOnlyQuery;
     ZSBestelSchemaDataSource: TDatasource;
     ZConnection: TZConnection;
@@ -168,6 +160,7 @@ type
       Field: TField);
     procedure BaklijstGeschiedenisDataSourceDataChange(Sender: TObject;
       Field: TField);
+    procedure DataModuleCreate(Sender: TObject);
     procedure ZArtikelQueryAfterOpen(DataSet: TDataSet);
     procedure ZArtikelQueryAfterRefresh(DataSet: TDataSet);
     procedure ZArtikelTableX_INHOUDSetText(Sender: TField; const aText: string);
@@ -346,6 +339,11 @@ end;
 
 procedure TDM.BaklijstGeschiedenisDataSourceDataChange(Sender: TObject;
   Field: TField);
+begin
+
+end;
+
+procedure TDM.DataModuleCreate(Sender: TObject);
 begin
 
 end;

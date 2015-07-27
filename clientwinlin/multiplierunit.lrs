@@ -1,0 +1,12 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TFormMultiplier','FORMDATA',[
+  'TPF0'#15'TFormMultiplier'#14'FormMultiplier'#4'Left'#3#255#1#6'Height'#3#240
+  +#0#3'Top'#3'*'#1#5'Width'#3'@'#1#7'Caption'#6#15'Menu Multiplier'#12'ClientH'
+  +'eight'#3#240#0#11'ClientWidth'#3'@'#1#12'OnCloseQuery'#7#14'FormCloseQuery'
+  +#6'OnShow'#7#8'FormShow'#10'LCLVersion'#6#7'1.2.6.0'#0#7'TDBEdit'#7'DBEdit1'
+  +#4'Left'#2'p'#6'Height'#2#25#3'Top'#2'@'#5'Width'#2'P'#9'DataField'#6#10'PER'
+  +'CENTAGE'#10'DataSource'#7#11'DataSource1'#8'CharCase'#7#8'ecNormal'#9'MaxLe'
+  +'ngth'#2#0#8'TabOrder'#2#0#0#0#11'TDataSource'#11'DataSource1'#7'DataSet'#7
+  +#19'DM.ZMultiplierTable'#4'left'#2'6'#3'top'#2'k'#0#0#0
+]);

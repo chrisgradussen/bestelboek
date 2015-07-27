@@ -1,7 +1,8 @@
 object DM: TDM
+  OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 615
-  HorizontalOffset = 358
+  HorizontalOffset = 353
   VerticalOffset = 86
   Width = 678
   object ZConnection: TZConnection
@@ -741,11 +742,18 @@ object DM: TDM
     SQL.Strings = (
       '/*select o.jaarweek,o.maa+o.din+o.woe+o.don+o.vri+o.zat+o.zon as TOT,o.maa,o.din,o.woe,o.don,o.vri,o.zat,o.zon from omzetweek o where eanupc =:eanupc order by jaarweek desc*/'
       '/*select o.jaarweek,o.maa+o.din+o.woe+o.don+o.vri+o.zat+o.zon as TOT,o.maa,o.din,o.woe,o.don,o.vri,o.zat,o.zon, r.voordeel from omzetweek o  left join reclame r on eanupc= artikel_eanupc and f_datetoyearweek(r.begindatum)  = o.jaarweek where eanupc =:eanupc  order by jaarweek desc*/'
-      'select max(o.jaarweek),sum(o.maa)+sum(o.din)+sum(o.woe)+sum(o.don)+sum(o.vri)+sum(o.zat)+sum(o.zon) as TOT,'
-      'sum(o.maa) as MAA,sum(o.din) as DIN,sum(o.woe) as WOE ,sum(o.don) as DON ,sum(o.vri) as VRI,sum(o.zat) as ZAT,sum(o.zon) as ZON , max(r.voordeel) as VOORDEEL '
+      'select (o.jaarweek) as jaarweek,cast(sum(o.maa)+sum(o.din)+sum(o.woe)+sum(o.don)+sum(o.vri)+sum(o.zat)+sum(o.zon) as decimal(4,0)) as TOT,'
+      'sum(o.maa) as MAA,sum(o.maa_derving) as MAA_DERVING,'
+      'sum(o.din) as DIN,sum(o.din_derving) as DIN_DERVING,'
+      'sum(o.woe) as WOE ,sum(o.woe_derving) as WOE_DERVING ,'
+      'sum(o.don) as DON ,sum(o.don_derving) as DON_DERVING ,'
+      'sum(o.vri) as VRI,sum(o.vri_derving) as VRI_DERVING,'
+      'sum(o.zat) as ZAT, sum(o.zat_derving) as ZAT_DERVING,'
+      'sum(o.zon) as ZON , sum(o.zon_derving) as ZON_DERVING ,'
+      ' max(r.voordeel) as VOORDEEL '
       'from omzetweek o  left join reclame r on eanupc= artikel_eanupc and '
       'f_datetoyearweek(r.begindatum)  = o.jaarweek where '
-      'o.EANUPC in  (:eanupc )'
+      'o.EANUPC in  (:eanupc)'
       '/*(select a.EANUPC from artikel a where a.X_ARTIKELNUMMER =(select a.X_ARTIKELNUMMER from artikel a where eanupc = 369))*/'
       ' group by jaarweek order by jaarweek desc'
     )
@@ -766,14 +774,14 @@ object DM: TDM
     object ZArtikelomzetJAARWEEK: TLongintField
       DisplayWidth = 10
       FieldKind = fkData
-      FieldName = 'JAARWEKEN'
+      FieldName = 'JAARWEEK'
       Index = 0
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
+      ReadOnly = True
       Required = False
     end
-    object ZArtikelomzetTOT: TFloatField
+    object ZArtikelomzetTOT: TLongintField
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'TOT'
@@ -782,10 +790,6 @@ object DM: TDM
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = True
       Required = False
-      DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
-      Precision = 2
     end
     object ZArtikelomzetMAA: TFloatField
       DisplayWidth = 10
@@ -794,9 +798,21 @@ object DM: TDM
       Index = 2
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
+      ReadOnly = True
       Required = False
-      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetMAA_DERVING: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'MAA_DERVING'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
       MaxValue = 0
       MinValue = 0
       Precision = 2
@@ -805,12 +821,24 @@ object DM: TDM
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'DIN'
-      Index = 3
+      Index = 4
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
+      ReadOnly = True
       Required = False
-      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetDIN_DERVING: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DIN_DERVING'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
       MaxValue = 0
       MinValue = 0
       Precision = 2
@@ -819,12 +847,24 @@ object DM: TDM
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'WOE'
-      Index = 4
+      Index = 6
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
+      ReadOnly = True
       Required = False
-      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetWOE_DERVING: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'WOE_DERVING'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
       MaxValue = 0
       MinValue = 0
       Precision = 2
@@ -833,12 +873,24 @@ object DM: TDM
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'DON'
-      Index = 5
+      Index = 8
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
+      ReadOnly = True
       Required = False
-      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetDON_DERVING: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DON_DERVING'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
       MaxValue = 0
       MinValue = 0
       Precision = 2
@@ -847,12 +899,24 @@ object DM: TDM
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'VRI'
-      Index = 6
+      Index = 10
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
+      ReadOnly = True
       Required = False
-      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetVRI_DERVING: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VRI_DERVING'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
       MaxValue = 0
       MinValue = 0
       Precision = 2
@@ -861,12 +925,24 @@ object DM: TDM
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'ZAT'
-      Index = 7
+      Index = 12
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
+      ReadOnly = True
       Required = False
-      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetZAT_DERVING: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ZAT_DERVING'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
       MaxValue = 0
       MinValue = 0
       Precision = 2
@@ -875,26 +951,38 @@ object DM: TDM
       DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'ZON'
-      Index = 8
+      Index = 14
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
+      ReadOnly = True
       Required = False
-      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelomzetZON_DERVING: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ZON_DERVING'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
       MaxValue = 0
       MinValue = 0
       Precision = 2
     end
     object ZArtikelomzetVOORDEEL: TStringField
-      DisplayWidth = 128
+      DisplayWidth = 512
       FieldKind = fkData
       FieldName = 'VOORDEEL'
-      Index = 9
+      Index = 16
       LookupCache = False
       ProviderFlags = [pfInUpdate, pfInWhere]
-      ReadOnly = False
+      ReadOnly = True
       Required = False
-      Size = 128
+      Size = 512
     end
   end
   object ZArtikelOmschrijving: TZReadOnlyQuery
@@ -1791,6 +1879,9 @@ object DM: TDM
     top = 385
   end
   object ZBaklijstVolgordeUpdateSql: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'delete from bakeoff where artikel_eanupc = :artikel_eanupc'
+    )
     InsertSQL.Strings = (
       'update or insert into bakeoff (artikel_eanupc, volgorde) values(:artikel_eanupc, :volgorde)'
     )
@@ -1811,5 +1902,26 @@ object DM: TDM
         Name = 'volgorde'
         ParamType = ptUnknown
       end>
+  end
+  object ZMultiplierTable: TZTable
+    Connection = ZConnection
+    TableName = 'MULTIPLIER'
+    left = 574
+    top = 46
+    object ZMultiplierTablePERCENTAGE: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'PERCENTAGE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayFormat = '#0'
+      EditFormat = '#0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
   end
 end

@@ -32,6 +32,8 @@ type
     Panel2: TPanel;
     Panel3: TPanel;
     RxDBGrid1: TRxDBGrid;
+    procedure ArtikelOmzetPropStorageRestoreProperties(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
     procedure DBGrid1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure DBText1Click(Sender: TObject);
     procedure EditKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -117,6 +119,17 @@ begin
     edit.setfocus;
     postmessage(edit.Handle,CN_KEYUP,word(key),0);
   end;
+end;
+
+procedure TArtikelOmzet.DBGrid1DblClick(Sender: TObject);
+begin
+  showmessage('dubbel click');
+end;
+
+procedure TArtikelOmzet.ArtikelOmzetPropStorageRestoreProperties(Sender: TObject
+  );
+begin
+
 end;
 
 procedure TArtikelOmzet.FormShow(Sender: TObject);
@@ -211,4 +224,4 @@ initialization
   {$I unit13.lrs}
 
 end.
-
+

@@ -1,103 +1,103 @@
 object ArtikelOmzet: TArtikelOmzet
-  Left = 682
+  Left = 541
   Height = 319
-  Top = 279
-  Width = 632
+  Top = 345
+  Width = 776
   Caption = 'ArtikelOmzet'
   ClientHeight = 319
-  ClientWidth = 632
+  ClientWidth = 776
   OnShow = FormShow
-  SessionProperties = 'Width;Top;Left;Height'
-  LCLVersion = '1.0.4.0'
+  SessionProperties = 'Height;Left;Top;Width;DBGrid1.Columns'
+  LCLVersion = '1.2.6.0'
   object Panel1: TPanel
     Left = 0
     Height = 291
     Top = 0
-    Width = 632
+    Width = 776
     Align = alClient
     Caption = 'Panel1'
     ClientHeight = 291
-    ClientWidth = 632
+    ClientWidth = 776
     TabOrder = 0
     object Panel3: TPanel
       Left = 1
       Height = 23
       Top = 1
-      Width = 630
+      Width = 774
       Align = alTop
       ClientHeight = 23
-      ClientWidth = 630
+      ClientWidth = 774
       TabOrder = 0
       object DBText1: TDBText
         Left = 7
-        Height = 1
+        Height = 15
         Top = 4
-        Width = 1
+        Width = 54
         DataField = 'EANUPC'
         DataSource = OmchrijvingDataSource
         ParentColor = False
         OnClick = DBText1Click
       end
       object DBText2: TDBText
-        Left = 94
-        Height = 1
+        Left = 112
+        Height = 15
         Top = 4
-        Width = 1
+        Width = 54
         DataField = 'NAAM'
         DataSource = OmchrijvingDataSource
         ParentColor = False
       end
       object DBText3: TDBText
         Left = 320
-        Height = 1
+        Height = 15
         Top = 4
-        Width = 1
+        Width = 54
         DataField = 'ARTIKELNUMMER'
         DataSource = OmchrijvingDataSource
         ParentColor = False
       end
       object DBText4: TDBText
         Left = 400
-        Height = 1
+        Height = 15
         Top = 4
-        Width = 1
+        Width = 54
         Alignment = taRightJustify
         DataField = 'INHOUD'
         DataSource = OmchrijvingDataSource
         ParentColor = False
       end
       object DBText5: TDBText
-        Left = 420
-        Height = 1
+        Left = 488
+        Height = 15
         Top = 4
-        Width = 1
+        Width = 54
         DataField = 'EENHEID'
         DataSource = OmchrijvingDataSource
         ParentColor = False
       end
       object DBText6: TDBText
-        Left = 440
-        Height = 1
+        Left = 560
+        Height = 15
         Top = 4
-        Width = 1
+        Width = 54
         DataField = 'BESTELINHOUD'
         DataSource = OmchrijvingDataSource
         ParentColor = False
       end
       object DBText7: TDBText
-        Left = 460
-        Height = 1
+        Left = 632
+        Height = 15
         Top = 4
-        Width = 1
+        Width = 54
         DataField = 'BESTELEENHEID'
         DataSource = OmchrijvingDataSource
         ParentColor = False
       end
       object DBText8: TDBText
-        Left = 480
-        Height = 1
+        Left = 696
+        Height = 15
         Top = 4
-        Width = 1
+        Width = 54
         DataField = 'VERKOOPPRIJS'
         DataSource = OmchrijvingDataSource
         ParentColor = False
@@ -107,18 +107,19 @@ object ArtikelOmzet: TArtikelOmzet
       Left = 1
       Height = 266
       Top = 24
-      Width = 630
+      Width = 774
       Align = alClient
       Color = clWindow
       Columns = <>
       DataSource = OmzetDataSource
       Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
       TabOrder = 1
+      OnDblClick = DBGrid1DblClick
       OnKeyDown = DBGrid1KeyDown
     end
     object RxDBGrid1: TRxDBGrid
       AnchorSideTop.Side = asrCenter
-      Left = 416
+      Left = 560
       Height = 220
       Top = 48
       Width = 200
@@ -131,11 +132,11 @@ object ArtikelOmzet: TArtikelOmzet
           Title.Caption = 'EANUPC'
           Title.Orientation = toHorizontal
           FieldName = 'EANUPC'
+          EditButtons = <>
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
           Filter.EmptyFont.Style = [fsItalic]
           Filter.ItemIndex = -1
-          EditButtons = <>
         end>
       KeyStrokes = <      
         item
@@ -189,17 +190,17 @@ object ArtikelOmzet: TArtikelOmzet
     Left = 0
     Height = 28
     Top = 291
-    Width = 632
+    Width = 776
     Align = alBottom
     Caption = 'Panel2'
     ClientHeight = 28
-    ClientWidth = 632
+    ClientWidth = 776
     TabOrder = 1
     object Edit: TEdit
       Left = 1
       Height = 26
       Top = 1
-      Width = 630
+      Width = 774
       Align = alClient
       OnKeyDown = EditKeyDown
       OnKeyPress = EditKeyPress
@@ -208,12 +209,12 @@ object ArtikelOmzet: TArtikelOmzet
       Text = 'Geef zoeksleutel in'
     end
   end
-  object OmzetDataSource: TDatasource
+  object OmzetDataSource: TDataSource
     DataSet = DM.ZArtikelomzet
     left = 344
     top = 40
   end
-  object OmchrijvingDataSource: TDatasource
+  object OmchrijvingDataSource: TDataSource
     DataSet = DM.ZArtikelOmschrijving
     left = 344
     top = 104
@@ -222,12 +223,13 @@ object ArtikelOmzet: TArtikelOmzet
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
     IniSection = 'artikelomzet'
+    OnRestoreProperties = ArtikelOmzetPropStorageRestoreProperties
     left = 501
     top = 44
   end
-  object eanupcdatasource: TDatasource
+  object eanupcdatasource: TDataSource
     DataSet = DM.ZeanQuery
     left = 558
     top = 129
   end
-end
+end
