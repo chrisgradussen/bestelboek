@@ -2,8 +2,8 @@ object DM: TDM
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 615
-  HorizontalOffset = 353
-  VerticalOffset = 86
+  HorizontalOffset = 362
+  VerticalOffset = 46
   Width = 678
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -303,15 +303,15 @@ object DM: TDM
       end>
     IniFileName = 'bestelboek.ini'
     IniSection = 'db'
-    left = 336
-    top = 80
+    left = 184
+    top = 16
   end
   object ZArtikelTable: TZTable
     Connection = ZConnection
     AutoCalcFields = False
     TableName = 'ARTIKEL'
-    left = 344
-    top = 320
+    left = 488
+    top = 336
     object ZArtikelTableEANUPC: TLargeintField
       DisplayWidth = 10
       FieldKind = fkData
@@ -635,8 +635,8 @@ object DM: TDM
         Name = 'zoekstring'
         ParamType = ptUnknown
       end>
-    left = 504
-    top = 288
+    left = 584
+    top = 224
     ParamData = <    
       item
         DataType = ftUnknown
@@ -736,42 +736,6 @@ object DM: TDM
       Required = False
     end
   end
-  object ZArtikelomzet: TZReadOnlyQuery
-    Connection = ZConnection
-    AutoCalcFields = False
-    SQL.Strings = (
-      '/*select o.jaarweek,o.maa+o.din+o.woe+o.don+o.vri+o.zat+o.zon as TOT,o.maa,o.din,o.woe,o.don,o.vri,o.zat,o.zon from omzetweek o where eanupc =:eanupc order by jaarweek desc*/'
-      '/*select o.jaarweek,o.maa+o.din+o.woe+o.don+o.vri+o.zat+o.zon as TOT,o.maa,o.din,o.woe,o.don,o.vri,o.zat,o.zon, r.voordeel from omzetweek o  left join reclame r on eanupc= artikel_eanupc and f_datetoyearweek(r.begindatum)  = o.jaarweek where eanupc =:eanupc  order by jaarweek desc*/'
-      'select (o.jaarweek) as jaarweek,cast(sum(o.maa)+sum(o.din)+sum(o.woe)+sum(o.don)+sum(o.vri)+sum(o.zat)+sum(o.zon) as decimal(4,0)) as TOT,'
-      'sum(o.maa) as MAA,sum(o.maa_derving) as MAA_DERVING,'
-      'sum(o.din) as DIN,sum(o.din_derving) as DIN_DERVING,'
-      'sum(o.woe) as WOE ,sum(o.woe_derving) as WOE_DERVING ,'
-      'sum(o.don) as DON ,sum(o.don_derving) as DON_DERVING ,'
-      'sum(o.vri) as VRI,sum(o.vri_derving) as VRI_DERVING,'
-      'sum(o.zat) as ZAT, sum(o.zat_derving) as ZAT_DERVING,'
-      'sum(o.zon) as ZON , sum(o.zon_derving) as ZON_DERVING ,'
-      ' max(r.voordeel) as VOORDEEL '
-      'from omzetweek o  left join reclame r on eanupc= artikel_eanupc and '
-      'f_datetoyearweek(r.begindatum)  = o.jaarweek where '
-      'o.EANUPC in  (:eanupc)'
-      '/*(select a.EANUPC from artikel a where a.X_ARTIKELNUMMER =(select a.X_ARTIKELNUMMER from artikel a where eanupc = 369))*/'
-      ' group by jaarweek order by jaarweek desc'
-    )
-    Params = <    
-      item
-        DataType = ftUnknown
-        Name = 'eanupc'
-        ParamType = ptUnknown
-      end>
-    left = 48
-    top = 376
-    ParamData = <    
-      item
-        DataType = ftUnknown
-        Name = 'eanupc'
-        ParamType = ptUnknown
-      end>
-  end
   object ZArtikelOmschrijving: TZReadOnlyQuery
     Connection = ZConnection
     AutoCalcFields = False
@@ -796,8 +760,8 @@ object DM: TDM
         Name = 'zoekstring'
         ParamType = ptUnknown
       end>
-    left = 152
-    top = 376
+    left = 584
+    top = 64
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1644,7 +1608,7 @@ object DM: TDM
         ParamType = ptUnknown
       end>
     left = 580
-    top = 197
+    top = 160
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1693,8 +1657,8 @@ object DM: TDM
   object ZMultiplierTable: TZTable
     Connection = ZConnection
     TableName = 'MULTIPLIER'
-    left = 574
-    top = 46
+    left = 580
+    top = 8
     object ZMultiplierTablePERCENTAGE: TFloatField
       DisplayWidth = 10
       FieldKind = fkData
@@ -1710,5 +1674,51 @@ object DM: TDM
       MinValue = 0
       Precision = 2
     end
+  end
+  object ZArtikelomzetReclameQuery: TZQuery
+    Connection = ZConnection
+    SQL.Strings = (
+      'select * from reclame_nieuw r where r.begindatum >= :startdatum and r.begindatum <= :einddatum  and r.artikel_artikelnummer = :artikel_artikelnummer'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'startdatum'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'einddatum'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'artikel_artikelnummer'
+        ParamType = ptUnknown
+      end>
+    left = 424
+    top = 8
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'startdatum'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'einddatum'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'artikel_artikelnummer'
+        ParamType = ptUnknown
+      end>
+  end
+  object ZArtikelOmzetQuery: TZReadOnlyQuery
+    Connection = ZConnection
+    Params = <>
+    left = 424
+    top = 64
   end
 end

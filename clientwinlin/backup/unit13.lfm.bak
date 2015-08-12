@@ -1,32 +1,110 @@
 object ArtikelOmzet: TArtikelOmzet
-  Left = 685
+  Left = 527
   Height = 319
-  Top = 345
-  Width = 632
+  Top = 323
+  Width = 776
+  ActiveControl = Panel1
   Caption = 'ArtikelOmzet'
   ClientHeight = 319
-  ClientWidth = 632
+  ClientWidth = 776
   OnShow = FormShow
-  SessionProperties = 'Height;Left;Top;Width;DBGrid1.Columns'
+  SessionProperties = 'Height;Left;Top;Width;RxArtikelOmzetGrid.Columns'
   LCLVersion = '1.2.6.0'
   object Panel1: TPanel
     Left = 0
     Height = 291
     Top = 0
-    Width = 632
+    Width = 776
     Align = alClient
     Caption = 'Panel1'
     ClientHeight = 291
-    ClientWidth = 632
+    ClientWidth = 776
     TabOrder = 0
+    object RxArtikelOmzetGrid: TRxDBGrid
+      Left = 1
+      Height = 266
+      Top = 24
+      Width = 774
+      TitleButtons = False
+      AutoSort = True
+      KeyStrokes = <      
+        item
+          Command = rxgcShowFindDlg
+          ShortCut = 16454
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowColumnsDlg
+          ShortCut = 16471
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowFilterDlg
+          ShortCut = 16468
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowSortDlg
+          ShortCut = 16467
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowQuickFilter
+          ShortCut = 16465
+          Enabled = True
+        end      
+        item
+          Command = rxgcHideQuickFilter
+          ShortCut = 16456
+          Enabled = True
+        end      
+        item
+          Command = rxgcSelectAll
+          ShortCut = 16449
+          Enabled = True
+        end      
+        item
+          Command = rxgcDeSelectAll
+          ShortCut = 16429
+          Enabled = True
+        end      
+        item
+          Command = rxgcInvertSelection
+          ShortCut = 16426
+          Enabled = True
+        end      
+        item
+          Command = rxgcOptimizeColumnsWidth
+          ShortCut = 16427
+          Enabled = True
+        end      
+        item
+          Command = rxgcCopyCellValue
+          ShortCut = 16451
+          Enabled = True
+        end>
+      OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+      Align = alClient
+      Color = clWindow
+      DrawFullLine = False
+      FocusColor = clRed
+      SelectedColor = clHighlight
+      GridLineStyle = psSolid
+      DataSource = OmzetDataSource
+      Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      ParentColor = False
+      TabOrder = 2
+      OnDblClick = RxArtikelOmzetGridDblClick
+      OnKeyDown = RxArtikelOmzetGridKeyDown
+    end
     object Panel3: TPanel
       Left = 1
       Height = 23
       Top = 1
-      Width = 630
+      Width = 774
       Align = alTop
       ClientHeight = 23
-      ClientWidth = 630
+      ClientWidth = 774
       TabOrder = 0
       object DBText1: TDBText
         Left = 7
@@ -34,7 +112,7 @@ object ArtikelOmzet: TArtikelOmzet
         Top = 4
         Width = 54
         DataField = 'EANUPC'
-        DataSource = OmchrijvingDataSource
+        DataSource = OmschrijvingDataSource
         ParentColor = False
         OnClick = DBText1Click
       end
@@ -44,7 +122,7 @@ object ArtikelOmzet: TArtikelOmzet
         Top = 4
         Width = 54
         DataField = 'NAAM'
-        DataSource = OmchrijvingDataSource
+        DataSource = OmschrijvingDataSource
         ParentColor = False
       end
       object DBText3: TDBText
@@ -53,7 +131,7 @@ object ArtikelOmzet: TArtikelOmzet
         Top = 4
         Width = 54
         DataField = 'ARTIKELNUMMER'
-        DataSource = OmchrijvingDataSource
+        DataSource = OmschrijvingDataSource
         ParentColor = False
       end
       object DBText4: TDBText
@@ -63,63 +141,49 @@ object ArtikelOmzet: TArtikelOmzet
         Width = 54
         Alignment = taRightJustify
         DataField = 'INHOUD'
-        DataSource = OmchrijvingDataSource
+        DataSource = OmschrijvingDataSource
         ParentColor = False
       end
       object DBText5: TDBText
-        Left = 420
+        Left = 488
         Height = 15
         Top = 4
         Width = 54
         DataField = 'EENHEID'
-        DataSource = OmchrijvingDataSource
+        DataSource = OmschrijvingDataSource
         ParentColor = False
       end
       object DBText6: TDBText
-        Left = 440
+        Left = 560
         Height = 15
         Top = 4
         Width = 54
         DataField = 'BESTELINHOUD'
-        DataSource = OmchrijvingDataSource
+        DataSource = OmschrijvingDataSource
         ParentColor = False
       end
       object DBText7: TDBText
-        Left = 460
+        Left = 632
         Height = 15
         Top = 4
         Width = 54
         DataField = 'BESTELEENHEID'
-        DataSource = OmchrijvingDataSource
+        DataSource = OmschrijvingDataSource
         ParentColor = False
       end
       object DBText8: TDBText
-        Left = 480
+        Left = 696
         Height = 15
         Top = 4
         Width = 54
         DataField = 'VERKOOPPRIJS'
-        DataSource = OmchrijvingDataSource
+        DataSource = OmschrijvingDataSource
         ParentColor = False
       end
     end
-    object DBGrid1: TDBGrid
-      Left = 1
-      Height = 266
-      Top = 24
-      Width = 630
-      Align = alClient
-      Color = clWindow
-      Columns = <>
-      DataSource = OmzetDataSource
-      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
-      TabOrder = 1
-      OnDblClick = DBGrid1DblClick
-      OnKeyDown = DBGrid1KeyDown
-    end
     object RxDBGrid1: TRxDBGrid
       AnchorSideTop.Side = asrCenter
-      Left = 416
+      Left = 560
       Height = 220
       Top = 48
       Width = 200
@@ -179,7 +243,7 @@ object ArtikelOmzet: TArtikelOmzet
       DataSource = eanupcdatasource
       Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
       ParentColor = False
-      TabOrder = 2
+      TabOrder = 1
       OnCellClick = RxDBGrid1CellClick
       OnColEnter = RxDBGrid1ColEnter
       OnDblClick = RxDBGrid1DblClick
@@ -190,17 +254,17 @@ object ArtikelOmzet: TArtikelOmzet
     Left = 0
     Height = 28
     Top = 291
-    Width = 632
+    Width = 776
     Align = alBottom
     Caption = 'Panel2'
     ClientHeight = 28
-    ClientWidth = 632
+    ClientWidth = 776
     TabOrder = 1
     object Edit: TEdit
       Left = 1
       Height = 26
       Top = 1
-      Width = 630
+      Width = 774
       Align = alClient
       OnKeyDown = EditKeyDown
       OnKeyPress = EditKeyPress
@@ -210,11 +274,11 @@ object ArtikelOmzet: TArtikelOmzet
     end
   end
   object OmzetDataSource: TDataSource
-    DataSet = DM.ZArtikelomzet
+    DataSet = DM.ZArtikelOmzetQuery
     left = 344
     top = 40
   end
-  object OmchrijvingDataSource: TDataSource
+  object OmschrijvingDataSource: TDataSource
     DataSet = DM.ZArtikelOmschrijving
     left = 344
     top = 104
@@ -231,5 +295,10 @@ object ArtikelOmzet: TArtikelOmzet
     DataSet = DM.ZeanQuery
     left = 558
     top = 129
+  end
+  object ZartikelOmzetDataSource: TDataSource
+    DataSet = DM.ZArtikelomzetReclameQuery
+    left = 149
+    top = 44
   end
 end

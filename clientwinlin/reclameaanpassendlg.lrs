@@ -1,0 +1,60 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TFormReclameDlg','FORMDATA',[
+  'TPF0'#15'TFormReclameDlg'#14'FormReclameDlg'#4'Left'#3#28#2#6'Height'#3#184#1
+  +#3'Top'#3'9'#1#5'Width'#3's'#2#11'BorderStyle'#7#8'bsDialog'#7'Caption'#6#30
+  +'Reclame aanpassen of toevoegen'#12'ClientHeight'#3#184#1#11'ClientWidth'#3
+  +'s'#2#9'FormStyle'#7#11'fsStayOnTop'#7'OnClose'#7#9'FormClose'#10'LCLVersion'
+  +#6#7'1.2.6.0'#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Height'#2'2'#3'Top'#3#134#1
+  +#5'Width'#3's'#2#5'Align'#7#8'alBottom'#7'Caption'#6#6'Panel1'#12'ClientHeig'
+  +'ht'#2'2'#11'ClientWidth'#3's'#2#8'TabOrder'#2#0#0#12'TDBNavigator'#12'DBNav'
+  +'igator1'#4'Left'#2#1#6'Height'#2'0'#3'Top'#2#1#5'Width'#3'q'#2#5'Align'#7#8
+  +'alClient'#10'BevelOuter'#7#6'bvNone'#29'ChildSizing.EnlargeHorizontal'#7#14
+  +'crsScaleChilds'#27'ChildSizing.EnlargeVertical'#7#14'crsScaleChilds'#28'Chi'
+  +'ldSizing.ShrinkHorizontal'#7#14'crsScaleChilds'#26'ChildSizing.ShrinkVertic'
+  +'al'#7#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29'cclLeftToRightThenTopT'
+  +'oBottom'#27'ChildSizing.ControlsPerLine'#2'd'#12'ClientHeight'#2'0'#11'Clie'
+  +'ntWidth'#3'q'#2#10'DataSource'#7#11'DataSource1'#7'Options'#11#0#8'TabOrder'
+  +#2#0#0#0#0#6'TPanel'#6'Panel2'#4'Left'#2#0#6'Height'#3#134#1#3'Top'#2#0#5'Wi'
+  +'dth'#3's'#2#5'Align'#7#8'alClient'#12'ClientHeight'#3#134#1#11'ClientWidth'
+  +#3's'#2#8'TabOrder'#2#1#0#6'TLabel'#6'Label1'#4'Left'#2#8#6'Height'#2#24#3'T'
+  +'op'#3#128#0#5'Width'#3#149#0#7'Caption'#6#10'STARTDATUM'#11'Font.Height'#2
+  +#236#10'Font.Style'#11#6'fsBold'#0#11'ParentColor'#8#10'ParentFont'#8#0#0#6
+  +'TLabel'#6'Label3'#4'Left'#3#229#1#6'Height'#2#24#3'Top'#3#128#0#5'Width'#3
+  +#135#0#7'Caption'#6#9'EINDDATUM'#11'Font.Height'#2#236#10'Font.Style'#11#6'f'
+  +'sBold'#0#11'ParentColor'#8#10'ParentFont'#8#0#0#11'TDBCalendar'#11'DBCalend'
+  +'ar1'#4'Left'#2#8#6'Height'#3#190#0#3'Top'#3#152#0#5'Width'#3#8#1#8'DateTime'
+  +#5#0#0#0#0#0#0#228#164#14'@'#8'OnChange'#7#17'DBCalendar1Change'#8'TabOrder'
+  +#2#0#9'DataField'#6#10'BEGINDATUM'#10'DataSource'#7#11'DataSource1'#0#0#11'T'
+  +'DBCalendar'#11'DBCalendar2'#4'Left'#3'h'#1#6'Height'#3#190#0#3'Top'#3#152#0
+  +#5'Width'#3#4#1#8'DateTime'#5#0#0#0#0#0#0#228#164#14'@'#8'OnChange'#7#17'DBC'
+  +'alendar2Change'#8'TabOrder'#2#1#9'DataField'#6#9'EINDDATUM'#10'DataSource'#7
+  +#11'DataSource1'#0#0#9'TRxDBGrid'#9'RxDBGrid1'#4'Left'#2#8#6'Height'#2'x'#3
+  +'Top'#2#8#5'Width'#3'h'#2#12'TitleButtons'#8#8'AutoSort'#9#7'Columns'#14#1#15
+  +'Title.Alignment'#7#8'taCenter'#13'Title.Caption'#6#8'VOORDEEL'#17'Title.Ori'
+  +'entation'#7#12'toHorizontal'#5'Width'#3'I'#2#9'FieldName'#6#8'VOORDEEL'#11
+  +'EditButtons'#14#0#19'Filter.DropDownRows'#2#0#17'Filter.EmptyValue'#6#7'(Em'
+  +'pty)'#22'Filter.EmptyFont.Style'#11#8'fsItalic'#0#16'Filter.ItemIndex'#2#255
+  +#0#0#10'KeyStrokes'#14#1#7'Command'#7#15'rxgcShowFindDlg'#8'ShortCut'#3'F@'#7
+  +'Enabled'#9#0#1#7'Command'#7#18'rxgcShowColumnsDlg'#8'ShortCut'#3'W@'#7'Enab'
+  +'led'#9#0#1#7'Command'#7#17'rxgcShowFilterDlg'#8'ShortCut'#3'T@'#7'Enabled'#9
+  +#0#1#7'Command'#7#15'rxgcShowSortDlg'#8'ShortCut'#3'S@'#7'Enabled'#9#0#1#7'C'
+  +'ommand'#7#19'rxgcShowQuickFilter'#8'ShortCut'#3'Q@'#7'Enabled'#9#0#1#7'Comm'
+  +'and'#7#19'rxgcHideQuickFilter'#8'ShortCut'#3'H@'#7'Enabled'#9#0#1#7'Command'
+  +#7#13'rxgcSelectAll'#8'ShortCut'#3'A@'#7'Enabled'#9#0#1#7'Command'#7#15'rxgc'
+  +'DeSelectAll'#8'ShortCut'#3'-@'#7'Enabled'#9#0#1#7'Command'#7#19'rxgcInvertS'
+  +'election'#8'ShortCut'#3'*@'#7'Enabled'#9#0#1#7'Command'#7#24'rxgcOptimizeCo'
+  +'lumnsWidth'#8'ShortCut'#3'+@'#7'Enabled'#9#0#1#7'Command'#7#17'rxgcCopyCell'
+  +'Value'#8'ShortCut'#3'C@'#7'Enabled'#9#0#0#9'OptionsRx'#11#19'rdgAllowColumn'
+  +'sForm'#18'rdgAllowDialogFind'#19'rdgAllowQuickFilter'#0#5'Color'#7#8'clWind'
+  +'ow'#12'DrawFullLine'#8#10'FocusColor'#7#5'clRed'#13'SelectedColor'#7#11'clH'
+  +'ighlight'#13'GridLineStyle'#7#7'psSolid'#10'DataSource'#7#11'DataSource1'#7
+  +'Options'#11#9'dgEditing'#8'dgTitles'#11'dgIndicator'#14'dgColumnResize'#12
+  +'dgColumnMove'#10'dgColLines'#10'dgRowLines'#21'dgAlwaysShowSelection'#15'dg'
+  +'ConfirmDelete'#14'dgCancelOnExit'#0#11'ParentColor'#8#8'TabOrder'#2#2#0#0#7
+  +'TDBEdit'#7'DBEdit1'#4'Left'#2#27#6'Height'#2#25#3'Top'#3'^'#1#5'Width'#3#21
+  +#2#9'DataField'#6#8'VOORDEEL'#10'DataSource'#7#11'DataSource1'#8'CharCase'#7
+  +#8'ecNormal'#9'MaxLength'#2#0#8'TabOrder'#2#3#0#0#0#11'TDataSource'#11'DataS'
+  +'ource1'#7'DataSet'#7#28'DM.ZArtikelomzetReclameQuery'#4'left'#3'('#1#3'top'
+  +#3#176#0#0#0#0
+]);

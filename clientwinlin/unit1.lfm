@@ -1,7 +1,7 @@
 object hoofdmenu: Thoofdmenu
-  Left = 787
+  Left = 788
   Height = 224
-  Top = 371
+  Top = 393
   Width = 319
   Caption = 'Bestelboek 1 Hoofdmenu'
   ClientHeight = 201

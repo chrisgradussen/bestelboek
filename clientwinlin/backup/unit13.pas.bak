@@ -7,19 +7,20 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, DBGrids, StdCtrls, db, lcltype, lclintf,lmessages,unit2, unit12, DbCtrls,
-  IniPropStorage, rxdbgrid;
+  IniPropStorage, rxdbgrid, reclameaanpassendlg, dateutils;
 
 type
 
   { TArtikelOmzet }
 
   TArtikelOmzet = class(TForm)
+    RxArtikelOmzetGrid: TRxDBGrid;
+    ZartikelOmzetDataSource: TDataSource;
     eanupcdatasource: TDatasource;
     DBText8: TDBText;
     ArtikelOmzetPropStorage: TIniPropStorage;
     OmzetDataSource: TDatasource;
-    OmchrijvingDataSource: TDatasource;
-    DBGrid1: TDBGrid;
+    OmschrijvingDataSource: TDatasource;
     DBText1: TDBText;
     DBText2: TDBText;
     DBText3: TDBText;
@@ -33,8 +34,8 @@ type
     Panel3: TPanel;
     RxDBGrid1: TRxDBGrid;
     procedure ArtikelOmzetPropStorageRestoreProperties(Sender: TObject);
-    procedure DBGrid1DblClick(Sender: TObject);
-    procedure DBGrid1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure RxArtikelOmzetGridDblClick(Sender: TObject);
+    procedure RxArtikelOmzetGridKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure DBText1Click(Sender: TObject);
     procedure EditKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure EditKeyPress(Sender: TObject; var Key: char);
@@ -103,12 +104,12 @@ procedure TArtikelOmzet.EditKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if word(key) in [vk_up,vk_down, vk_next,vk_prior] then
-      sendmessage(DbGrid1.Handle,CN_KEYDOWN,word(key),0);
+      sendmessage(self.RxArtikelOmzetGrid.Handle,CN_KEYDOWN,word(key),0);
   if word(key) in [vk_up,vk_down] then
      key := 0;
 end;
 
-procedure TArtikelOmzet.DBGrid1KeyDown(Sender: TObject; var Key: Word;
+procedure TArtikelOmzet.RxArtikelOmzetGridKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if word(key) in [vk_0,vk_1,vk_2,vk_3,vk_4,vk_5,vk_6,vk_7,vk_8,vk_9,
@@ -121,9 +122,49 @@ begin
   end;
 end;
 
-procedure TArtikelOmzet.DBGrid1DblClick(Sender: TObject);
+procedure TArtikelOmzet.rxArtikelOmzetGridDblClick(Sender: TObject);
+var
+   jaarweken : integer;
+   startdatum,einddatum,startdatumweek, einddatumweek : tDateTime;
 begin
-  showmessage('dubbel click');
+  // determine if an article has been selected.
+   if omzetdatasource.dataset.State in [dsbrowse] then
+   begin
+     if omzetdatasource.DataSet.RecordCount > 0 then
+     begin
+       jaarweken := omzetdatasource.dataset.FieldByName('JAARWEKEN' ).Asinteger;
+       // change jaarweken in startdatum (wensday) and stopdatum (tuesday next week)
+      // dateseparator := '.' ;
+       startdatum := encodedateweek(jaarweken div 100,jaarweken mod 100,3);
+       einddatum := incday(startdatum,6);
+       startdatumweek := encodedateweek(jaarweken div 100,jaarweken mod 100,1);
+       einddatumweek := incday(startdatumweek,6);
+
+       if dm.zartikelomzetreclamequery.active then
+       begin
+         dm.zartikelomzetreclamequery.Close;
+       end;
+       dm.ZArtikelomzetReclameQuery.ParamByName('startdatum').AsDateTime := startdatumweek;
+       dm.ZArtikelomzetReclameQuery.ParamByName('einddatum').asdatetime := einddatumweek;
+       dm.ZArtikelomzetReclameQuery.ParamByName('artikel_artikelnummer').AsString:=
+          omschrijvingdatasource.dataset.fieldbyname('artikelnummer').asstring;
+       dm.ZArtikelomzetReclameQuery.Open;
+       if dm.ZArtikelomzetReclameQuery.RecordCount = 0 then
+       begin
+         dm.ZArtikelomzetReclameQuery.insert;
+         dm.zartikelomzetreclamequery.FieldByName('BEGINDATUM').asdatetime := startdatum;
+         dm.zartikelomzetreclamequery.FieldByName('EINDDATUM').asdatetime := einddatum;
+         dm.zartikelomzetreclamequery.FieldByName('ARTIKEL_artikelnummer').asstring :=
+         omschrijvingdatasource.dataset.fieldbyname('artikelnummer').asstring;
+       end
+       else
+       begin
+       end;
+       reclameaanpassendlg.FormReclameDlg.ShowModal;
+      // dm.ZArtikelomzetReclameQuery.Refresh;
+       dm.ZArtikelOmzetQuery.refresh;
+     end;
+   end;
 end;
 
 procedure TArtikelOmzet.ArtikelOmzetPropStorageRestoreProperties(Sender: TObject
@@ -193,22 +234,22 @@ procedure TArtikelOmzet.OMZET(alle : boolean);
      s2,s3,s4 : string;
 
 begin
-      s2 := 'select max(o.jaarweek) as JAARWEKEN,sum(o.maa)+sum(o.din)+sum(o.woe)+sum(o.don)+sum(o.vri)+sum(o.zat)+sum(o.zon) as TOT, sum(o.maa) as MAA,sum(o.din) as DIN,sum(o.woe) as WOE ,sum(o.don) as DON ,sum(o.vri) as VRI,sum(o.zat) as ZAT,sum(o.zon) as ZON , max(r.voordeel) as VOORDEEL from omzetweek o  left join reclame r on r.artikel_eanupc in (';
-      s3 := ') and f_datetoyearweek(r.begindatum)  = o.jaarweek where o.EANUPC in  (';
+      s2 := 'select max(o.jaarweek) as JAARWEKEN,sum(o.maa)+sum(o.din)+sum(o.woe)+sum(o.don)+sum(o.vri)+sum(o.zat)+sum(o.zon) as TOT, sum(o.maa) as MAA,sum(o.din) as DIN,sum(o.woe) as WOE ,sum(o.don) as DON ,sum(o.vri) as VRI,sum(o.zat) as ZAT,sum(o.zon) as ZON , max(r.SUBTYPE|| ''\''  ''\'' ||r.voordeel ||   r.omschrijving) as voordeel from omzetweek o  left join reclameview r on o.JAARWEEK = F_DATETOYEARWEEK(r.startdatum) and o.eanupc = r.ean where o.eanupc in (';
       s4 := ') group by jaarweek order by jaarweek desc;';
       if not dm.ZeanQuery.active then
         dm.ZeanQuery.active := true
       else
         dm.zeanQuery.refresh;
       if alle then
-      dm.ZArtikelomzet.SQL.Text := s2 + geefalleplus + s3 +geefalleplus +s4
+      dm.ZArtikelomzetQuery.SQL.Text := s2 + geefalleplus + s4
       else
-        dm.ZArtikelomzet.SQL.text := s2 + geefenkeleplu + s3 + geefenkeleplu + s4;;
+        dm.ZArtikelomzetQuery.SQL.text := s2 + geefenkeleplu + s4;
 
-      if not dm.zartikelomzet.active then
-        dm.zartikelomzet.active := true
+
+      if not dm.ZArtikelOmzetQuery.active then
+        dm.ZArtikelOmzetQuery.active := true
       else
-        dm.zartikelomzet.refresh;
+        dm.ZArtikelOmzetQuery.refresh;
            dm.Zartikelomschrijving.params[0].asfloat :=
                    dm.ZeanQuery.Fields[0].AsFloat;
 

@@ -1,0 +1,200 @@
+object FormReclameDlg: TFormReclameDlg
+  Left = 540
+  Height = 440
+  Top = 313
+  Width = 627
+  BorderStyle = bsDialog
+  Caption = 'Reclame aanpassen of toevoegen'
+  ClientHeight = 440
+  ClientWidth = 627
+  FormStyle = fsStayOnTop
+  OnClose = FormClose
+  LCLVersion = '1.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 390
+    Width = 627
+    Align = alBottom
+    Caption = 'Panel1'
+    ClientHeight = 50
+    ClientWidth = 627
+    TabOrder = 0
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Height = 48
+      Top = 1
+      Width = 625
+      Align = alClient
+      BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 48
+      ClientWidth = 625
+      DataSource = DataSource1
+      Options = []
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 390
+    Top = 0
+    Width = 627
+    Align = alClient
+    ClientHeight = 390
+    ClientWidth = 627
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 8
+      Height = 24
+      Top = 128
+      Width = 149
+      Caption = 'STARTDATUM'
+      Font.Height = -20
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 485
+      Height = 24
+      Top = 128
+      Width = 135
+      Caption = 'EINDDATUM'
+      Font.Height = -20
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DBCalendar1: TDBCalendar
+      Left = 8
+      Height = 190
+      Top = 152
+      Width = 264
+      DateTime = 42212
+      OnChange = DBCalendar1Change
+      TabOrder = 0
+      DataField = 'BEGINDATUM'
+      DataSource = DataSource1
+    end
+    object DBCalendar2: TDBCalendar
+      Left = 360
+      Height = 190
+      Top = 152
+      Width = 260
+      DateTime = 42212
+      OnChange = DBCalendar2Change
+      TabOrder = 1
+      DataField = 'EINDDATUM'
+      DataSource = DataSource1
+    end
+    object RxDBGrid1: TRxDBGrid
+      Left = 8
+      Height = 120
+      Top = 8
+      Width = 616
+      TitleButtons = False
+      AutoSort = True
+      Columns = <      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'VOORDEEL'
+          Title.Orientation = toHorizontal
+          Width = 585
+          FieldName = 'VOORDEEL'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+        end>
+      KeyStrokes = <      
+        item
+          Command = rxgcShowFindDlg
+          ShortCut = 16454
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowColumnsDlg
+          ShortCut = 16471
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowFilterDlg
+          ShortCut = 16468
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowSortDlg
+          ShortCut = 16467
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowQuickFilter
+          ShortCut = 16465
+          Enabled = True
+        end      
+        item
+          Command = rxgcHideQuickFilter
+          ShortCut = 16456
+          Enabled = True
+        end      
+        item
+          Command = rxgcSelectAll
+          ShortCut = 16449
+          Enabled = True
+        end      
+        item
+          Command = rxgcDeSelectAll
+          ShortCut = 16429
+          Enabled = True
+        end      
+        item
+          Command = rxgcInvertSelection
+          ShortCut = 16426
+          Enabled = True
+        end      
+        item
+          Command = rxgcOptimizeColumnsWidth
+          ShortCut = 16427
+          Enabled = True
+        end      
+        item
+          Command = rxgcCopyCellValue
+          ShortCut = 16451
+          Enabled = True
+        end>
+      OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+      Color = clWindow
+      DrawFullLine = False
+      FocusColor = clRed
+      SelectedColor = clHighlight
+      GridLineStyle = psSolid
+      DataSource = DataSource1
+      Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      ParentColor = False
+      TabOrder = 2
+    end
+    object DBEdit1: TDBEdit
+      Left = 27
+      Height = 25
+      Top = 350
+      Width = 533
+      DataField = 'VOORDEEL'
+      DataSource = DataSource1
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 3
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = DM.ZArtikelomzetReclameQuery
+    left = 296
+    top = 176
+  end
+end

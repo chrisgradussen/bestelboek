@@ -107,6 +107,8 @@ type
     ZQuery1X_NAAM: TStringField;
     ZeanQuery: TZReadOnlyQuery;
     ZBaklijstvolgordequery: TZQuery;
+    ZArtikelomzetReclameQuery: TZQuery;
+    ZArtikelOmzetQuery: TZReadOnlyQuery;
     ZReclameQuery: TZQuery;
     ZReclameQueryARTIKEL_EANUPC: TLargeintField;
     ZReclameQueryBEGINDATUM: TDateField;
@@ -116,7 +118,6 @@ type
     ZScripts_BestelSchemaQuery: TZQuery;
     ZBestelSchema_BestRegelQuery: TZQuery;
     ZIBEventAlerter1: TZIBEventAlerter;
-    ZArtikelomzet: TZReadOnlyQuery;
     ZArtikelOmschrijving: TZReadOnlyQuery;
     ZBestelSchema_BestelSchemaQuery: TZQuery;
     zscripts_levering_update: TZSQLProcessor;
