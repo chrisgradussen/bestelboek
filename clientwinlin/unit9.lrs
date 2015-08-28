@@ -51,11 +51,11 @@ LazarusResources.Add('TStandaardBestelschema','FORMDATA',[
   +'dSizing.ControlsPerLine'#2'd'#12'ClientHeight'#2#25#11'ClientWidth'#3#140#1
   +#10'DataSource'#7#11'Datasource1'#7'Options'#11#0#8'TabOrder'#2#1#0#0#0#0#15
   +'TIniPropStorage'#24'SBestelschemaPropStorage'#12'StoredValues'#14#0#11'IniF'
-  +'ileName'#6#14'bestelboek.ini'#6'Active'#8#21'OnRestoringProperties'#7'+SBes'
-  +'telschemaPropStorageRestoringProperties'#19'OnRestoreProperties'#7')SBestel'
-  +'schemaPropStorageRestoreProperties'#4'left'#3'`'#1#3'top'#2' '#0#0#11'TData'
-  +'Source'#11'Datasource1'#7'DataSet'#7'"DM.ZSBestelSchema_BestelgroepTable'#4
-  +'left'#3'`'#1#3'top'#2'@'#0#0#11'TDataSource'#11'Datasource2'#7'DataSet'#7'$'
-  +'DM.ZSBestelSchema_SBestelSchemaTable'#13'OnStateChange'#7#22'Datasource2Sta'
-  +'teChange'#4'left'#3'`'#1#3'top'#3#200#0#0#0#0
+  +'ileName'#6#14'bestelboek.ini'#21'OnRestoringProperties'#7'+SBestelschemaPro'
+  +'pStorageRestoringProperties'#19'OnRestoreProperties'#7')SBestelschemaPropSt'
+  +'orageRestoreProperties'#4'left'#3'`'#1#3'top'#2' '#0#0#11'TDataSource'#11'D'
+  +'atasource1'#7'DataSet'#7'"DM.ZSBestelSchema_BestelgroepTable'#4'left'#3'`'#1
+  +#3'top'#2'@'#0#0#11'TDataSource'#11'Datasource2'#7'DataSet'#7'$DM.ZSBestelSc'
+  +'hema_SBestelSchemaTable'#13'OnStateChange'#7#22'Datasource2StateChange'#4'l'
+  +'eft'#3'`'#1#3'top'#3#200#0#0#0#0
 ]);

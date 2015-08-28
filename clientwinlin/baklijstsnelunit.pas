@@ -11,9 +11,9 @@ uses
 
 type
 
-  { TForm2 }
+  { TfrmBaklijstBroodjes }
 
-  TForm2 = class(TForm)
+  TfrmBaklijstBroodjes = class(TForm)
     Btn_legebaklijst: TButton;
     Calendar: TCalendar;
     DataSource1: TDataSource;
@@ -36,13 +36,13 @@ type
   end;
 
 var
-  Form2: TForm2;
+  frmBaklijstBroodjes: TfrmBaklijstBroodjes;
 
 implementation
 
-{ TForm2 }
+{ TfrmBaklijstBroodjes }
 
-procedure TForm2.FormShow(Sender: TObject);
+procedure TfrmBaklijstBroodjes.FormShow(Sender: TObject);
 begin
   if dm.ZBaklijstQuery.Active then
   begin
@@ -56,18 +56,18 @@ begin
   end;
 end;
 
-procedure TForm2.TICalendarEditingDone(Sender: TObject);
+procedure TfrmBaklijstBroodjes.TICalendarEditingDone(Sender: TObject);
 begin
 
 end;
 
-procedure TForm2.DBDateEditAcceptDate(Sender: TObject; var ADate: TDateTime;
+procedure TfrmBaklijstBroodjes.DBDateEditAcceptDate(Sender: TObject; var ADate: TDateTime;
   var AcceptDate: Boolean);
 begin
 
 end;
 
-procedure TForm2.CalendarDayChanged(Sender: TObject);
+procedure TfrmBaklijstBroodjes.CalendarDayChanged(Sender: TObject);
 begin
    dm.ZBaklijstquery.close;
   dm.ZBaklijstQuery.ParamByName('datum').AsDateTime:= calendar.DateTime;
@@ -75,7 +75,7 @@ begin
   dm.ZBaklijstQuery.open;
 end;
 
-procedure TForm2.Btn_legebaklijstClick(Sender: TObject);
+procedure TfrmBaklijstBroodjes.Btn_legebaklijstClick(Sender: TObject);
 begin
   if datasource1.DataSet.Active then
   begin
@@ -95,7 +95,7 @@ begin
   end;
 end;
 
-procedure TForm2.DBDateEditEditingDone(Sender: TObject);
+procedure TfrmBaklijstBroodjes.DBDateEditEditingDone(Sender: TObject);
 begin
 
 end;

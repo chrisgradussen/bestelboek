@@ -37,7 +37,7 @@ begin
   Application.CreateForm(TArtikelOmzet, ArtikelOmzet);
   Application.CreateForm(TScripts, Scripts);
   Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TfrmBaklijstBroodjes, frmBaklijstBroodjes);
   Application.CreateForm(TBaklijstvolgordeform, Baklijstvolgordeform);
   Application.CreateForm(TFormMultiplier, FormMultiplier);
   Application.CreateForm(TFormReclameDlg, FormReclameDlg);

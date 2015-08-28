@@ -60,7 +60,6 @@ object dagen: Tdagen
   object dagenPropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
-    Active = False
     left = 344
     top = 56
   end

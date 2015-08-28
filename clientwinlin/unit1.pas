@@ -111,7 +111,7 @@ end;
 
 procedure Thoofdmenu.ButtonBaklijstClick(Sender: TObject);
 begin
-  baklijstsnelunit.Form2.Show;
+  baklijstsnelunit.frmBaklijstBroodjes.Show;
 
 end;
 

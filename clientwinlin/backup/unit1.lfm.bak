@@ -125,7 +125,6 @@ object hoofdmenu: Thoofdmenu
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
     IniSection = 'hoofdmenu'
-    Active = False
     OnSavingProperties = HoofdmenuPropStorageSavingProperties
     OnSaveProperties = HoofdmenuPropStorageSaveProperties
     left = 252

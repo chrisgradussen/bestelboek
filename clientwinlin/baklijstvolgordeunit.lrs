@@ -38,6 +38,6 @@ LazarusResources.Add('TBaklijstvolgordeform','FORMDATA',[
   +'firmDelete'#14'dgCancelOnExit'#0#11'ParentColor'#8#8'TabOrder'#2#0#0#0#0#11
   +'TDataSource'#11'DataSource1'#7'DataSet'#7#25'DM.ZBaklijstvolgordequery'#4'l'
   +'eft'#3#193#0#3'top'#2'd'#0#0#15'TIniPropStorage'#27'baklijstvolgordePropSto'
-  +'rage'#12'StoredValues'#14#0#11'IniFileName'#6#14'bestelboek.ini'#6'Active'#8
-  +#4'left'#3#200#0#3'top'#2#16#0#0#0
+  +'rage'#12'StoredValues'#14#0#11'IniFileName'#6#14'bestelboek.ini'#4'left'#3
+  +#200#0#3'top'#2#16#0#0#0
 ]);

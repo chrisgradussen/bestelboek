@@ -1,13 +1,14 @@
 object Form2: TForm2
   Left = 269
   Height = 473
-  Top = 200
+  Top = 188
   Width = 931
   Caption = 'Baklijst broodjes'
   ClientHeight = 473
   ClientWidth = 931
   OnShow = FormShow
   Position = poDefault
+  SessionProperties = 'Width;Top;Position;Height;Left'
   LCLVersion = '1.2.6.0'
   WindowState = wsMaximized
   object Panel1: TPanel

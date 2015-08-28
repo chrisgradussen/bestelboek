@@ -55,7 +55,6 @@ object subgroep: Tsubgroep
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
     IniSection = 'subgroep'
-    Active = False
     left = 351
     top = 118
   end

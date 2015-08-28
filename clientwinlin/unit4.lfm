@@ -60,7 +60,6 @@ object leverancier: Tleverancier
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
     IniSection = 'leverancier'
-    Active = False
     left = 348
     top = 77
   end

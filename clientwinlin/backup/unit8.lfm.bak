@@ -68,6 +68,7 @@ object bestellingafdrukken: Tbestellingafdrukken
       end>
     IniFileName = 'bestelboek.ini'
     IniSection = 'bestellingafdrukken'
+    Active = False
     OnRestoreProperties = bestellingafdrukkenPropStorageRestoreProperties
     left = 344
     top = 64

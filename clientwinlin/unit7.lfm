@@ -60,7 +60,6 @@ object Groep: TGroep
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
     IniSection = 'groep'
-    Active = False
     left = 344
     top = 56
   end

@@ -772,6 +772,7 @@ object ArtikelBestand: TArtikelBestand
   object ArtikelBestandPropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
+    Active = False
     left = 296
     top = 96
   end

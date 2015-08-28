@@ -131,7 +131,6 @@ object Baklijstvolgordeform: TBaklijstvolgordeform
   object baklijstvolgordePropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
-    Active = False
     left = 200
     top = 16
   end

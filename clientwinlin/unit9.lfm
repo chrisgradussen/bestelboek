@@ -156,7 +156,6 @@ object StandaardBestelschema: TStandaardBestelschema
   object SBestelschemaPropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
-    Active = False
     OnRestoringProperties = SBestelschemaPropStorageRestoringProperties
     OnRestoreProperties = SBestelschemaPropStorageRestoreProperties
     left = 352

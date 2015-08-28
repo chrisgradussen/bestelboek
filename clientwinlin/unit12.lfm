@@ -9,7 +9,7 @@ object ZoekArtikel: TZoekArtikel
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
-  SessionProperties = 'Height;Left;Top;Width;WindowState'
+  SessionProperties = 'Height;Left;Top;Width;WindowState;Height;Width;Top;Left'
   LCLVersion = '1.2.6.0'
   object Edit: TEdit
     Left = 0
@@ -54,7 +54,6 @@ object ZoekArtikel: TZoekArtikel
   object ZoekArtikelPropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
-    Active = False
     left = 456
     top = 35
   end
