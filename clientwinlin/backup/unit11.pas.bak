@@ -15,6 +15,7 @@ type
 
   TArtikelBestand = class(TForm)
     ArtikelDataSource: TDatasource;
+    Label2: TLabel;
     ZReclameDatasource: TDatasource;
     DBEdit1: TDBEdit;
     DBEdit10: TDBEdit;

@@ -1,7 +1,7 @@
 object ArtikelOmzet: TArtikelOmzet
-  Left = 527
+  Left = 434
   Height = 319
-  Top = 323
+  Top = 299
   Width = 776
   ActiveControl = Panel1
   Caption = 'ArtikelOmzet'
@@ -287,6 +287,8 @@ object ArtikelOmzet: TArtikelOmzet
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
     IniSection = 'artikelomzet'
+    OnSavingProperties = ArtikelOmzetPropStorageSavingProperties
+    OnSaveProperties = ArtikelOmzetPropStorageSaveProperties
     OnRestoreProperties = ArtikelOmzetPropStorageRestoreProperties
     left = 501
     top = 44

@@ -1,18 +1,19 @@
 object StandaardBestelschema: TStandaardBestelschema
   Left = 458
   Height = 408
-  Top = 261
+  Top = 253
   Width = 400
   Caption = 'Bestelboek1 Standaard Bestelschema'
   ClientHeight = 408
   ClientWidth = 400
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
-  ParentFont = False
   SessionProperties = 'Height;Left;Panel2.Height;Panel2.Left;Panel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;Panel3.Width;Position;Splitter1.Top;Top;Width;WindowState'
-  LCLVersion = '0.9.27'
+  LCLVersion = '1.2.6.0'
   object Panel1: TPanel
+    Left = 0
     Height = 408
+    Top = 0
     Width = 400
     Align = alClient
     Caption = 'Panel1'
@@ -44,41 +45,46 @@ object StandaardBestelschema: TStandaardBestelschema
         Top = 1
         Width = 396
         Align = alClient
+        Color = clWindow
         Columns = <        
           item
             ReadOnly = True
+            Title.Caption = 'ID'
             FieldName = 'ID'
           end        
           item
+            Title.Caption = 'BESTELGROEP_ID'
             FieldName = 'BESTELGROEP_ID'
           end        
           item
+            Title.Caption = 'STATUS'
             FieldName = 'STATUS'
           end        
           item
+            Title.Caption = 'BESTELDAG'
             FieldName = 'BESTELDAG'
           end        
           item
+            Title.Caption = 'BESTELTIJD'
             FieldName = 'BESTELTIJD'
           end        
           item
+            Title.Caption = 'LEVERDAG'
             FieldName = 'LEVERDAG'
           end        
           item
+            Title.Caption = 'LEVERTIJD'
             FieldName = 'LEVERTIJD'
           end        
           item
+            Title.Caption = 'VOLGENDELEVERDAG'
             FieldName = 'VOLGENDELEVERDAG'
           end        
           item
+            Title.Caption = 'VOLGENDELEVERTIJD'
             FieldName = 'VOLGENDELEVERTIJD'
           end>
         DataSource = Datasource2
-        FixedColor = clBtnFace
-        FixedHotColor = cl3DLight
-        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
-        OptionsExtra = [dgeAutoColumns, dgeCheckboxColumn]
-        ParentColor = False
         TabOrder = 0
         OnCellClick = DBGrid2CellClick
       end
@@ -89,9 +95,16 @@ object StandaardBestelschema: TStandaardBestelschema
         Width = 396
         Align = alBottom
         BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
         ClientHeight = 25
         ClientWidth = 396
         DataSource = Datasource2
+        Options = []
         TabOrder = 1
       end
     end
@@ -111,12 +124,10 @@ object StandaardBestelschema: TStandaardBestelschema
         Top = 1
         Width = 396
         Align = alClient
+        Color = clWindow
+        Columns = <>
         DataSource = Datasource1
-        FixedColor = clBtnFace
-        FixedHotColor = cl3DLight
         Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
-        OptionsExtra = [dgeAutoColumns, dgeCheckboxColumn]
-        ParentColor = False
         ReadOnly = True
         TabOrder = 0
         OnDblClick = DBGrid1DblClick
@@ -128,9 +139,16 @@ object StandaardBestelschema: TStandaardBestelschema
         Width = 396
         Align = alBottom
         BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
         ClientHeight = 25
         ClientWidth = 396
         DataSource = Datasource1
+        Options = []
         TabOrder = 1
       end
     end
@@ -138,20 +156,21 @@ object StandaardBestelschema: TStandaardBestelschema
   object SBestelschemaPropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
+    Active = False
     OnRestoringProperties = SBestelschemaPropStorageRestoringProperties
     OnRestoreProperties = SBestelschemaPropStorageRestoreProperties
     left = 352
     top = 32
   end
-  object Datasource1: TDatasource
+  object Datasource1: TDataSource
     DataSet = DM.ZSBestelSchema_BestelgroepTable
     left = 352
     top = 64
   end
-  object Datasource2: TDatasource
+  object Datasource2: TDataSource
     DataSet = DM.ZSBestelSchema_SBestelSchemaTable
     OnStateChange = Datasource2StateChange
     left = 352
     top = 200
   end
-end
+end

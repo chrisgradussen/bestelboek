@@ -21,5 +21,6 @@ LazarusResources.Add('Tbestelgroep','FORMDATA',[
   +#8'TabOrder'#2#1#0#0#0#11'TDataSource'#11'Datasource1'#7'DataSet'#7#20'DM.ZB'
   +'estelgroepTable'#4'left'#3'H'#1#3'top'#2'>'#0#0#15'TIniPropStorage'#22'best'
   +'elgroepPropStorage'#12'StoredValues'#14#0#11'IniFileName'#6#14'bestelboek.i'
-  +'ni'#10'IniSection'#6#11'bestelgroep'#4'left'#3'H'#1#3'top'#2#24#0#0#0
+  +'ni'#10'IniSection'#6#11'bestelgroep'#6'Active'#8#4'left'#3'H'#1#3'top'#2#24
+  +#0#0#0
 ]);

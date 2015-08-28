@@ -60,6 +60,7 @@ object bestelgroep: Tbestelgroep
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
     IniSection = 'bestelgroep'
+    Active = False
     left = 328
     top = 24
   end

@@ -1,14 +1,14 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TArtikelOmzet','FORMDATA',[
-  'TPF0'#13'TArtikelOmzet'#12'ArtikelOmzet'#4'Left'#3#15#2#6'Height'#3'?'#1#3'T'
-  +'op'#3'C'#1#5'Width'#3#8#3#13'ActiveControl'#7#6'Panel1'#7'Caption'#6#12'Art'
-  +'ikelOmzet'#12'ClientHeight'#3'?'#1#11'ClientWidth'#3#8#3#6'OnShow'#7#8'Form'
-  +'Show'#17'SessionProperties'#6'0Height;Left;Top;Width;RxArtikelOmzetGrid.Col'
-  +'umns'#10'LCLVersion'#6#7'1.2.6.0'#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Heigh'
-  +'t'#3'#'#1#3'Top'#2#0#5'Width'#3#8#3#5'Align'#7#8'alClient'#7'Caption'#6#6'P'
-  +'anel1'#12'ClientHeight'#3'#'#1#11'ClientWidth'#3#8#3#8'TabOrder'#2#0#0#9'TR'
-  +'xDBGrid'#18'RxArtikelOmzetGrid'#4'Left'#2#1#6'Height'#3#10#1#3'Top'#2#24#5
+  'TPF0'#13'TArtikelOmzet'#12'ArtikelOmzet'#4'Left'#3#178#1#6'Height'#3'?'#1#3
+  +'Top'#3'+'#1#5'Width'#3#8#3#13'ActiveControl'#7#6'Panel1'#7'Caption'#6#12'Ar'
+  +'tikelOmzet'#12'ClientHeight'#3'?'#1#11'ClientWidth'#3#8#3#6'OnShow'#7#8'For'
+  +'mShow'#17'SessionProperties'#6'0Height;Left;Top;Width;RxArtikelOmzetGrid.Co'
+  +'lumns'#10'LCLVersion'#6#7'1.2.6.0'#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Heig'
+  +'ht'#3'#'#1#3'Top'#2#0#5'Width'#3#8#3#5'Align'#7#8'alClient'#7'Caption'#6#6
+  +'Panel1'#12'ClientHeight'#3'#'#1#11'ClientWidth'#3#8#3#8'TabOrder'#2#0#0#9'T'
+  +'RxDBGrid'#18'RxArtikelOmzetGrid'#4'Left'#2#1#6'Height'#3#10#1#3'Top'#2#24#5
   +'Width'#3#6#3#12'TitleButtons'#8#8'AutoSort'#9#10'KeyStrokes'#14#1#7'Command'
   +#7#15'rxgcShowFindDlg'#8'ShortCut'#3'F@'#7'Enabled'#9#0#1#7'Command'#7#18'rx'
   +'gcShowColumnsDlg'#8'ShortCut'#3'W@'#7'Enabled'#9#0#1#7'Command'#7#17'rxgcSh'
@@ -81,9 +81,11 @@ LazarusResources.Add('TArtikelOmzet','FORMDATA',[
   +#11'TDataSource'#22'OmschrijvingDataSource'#7'DataSet'#7#23'DM.ZArtikelOmsch'
   +'rijving'#4'left'#3'X'#1#3'top'#2'h'#0#0#15'TIniPropStorage'#23'ArtikelOmzet'
   +'PropStorage'#12'StoredValues'#14#0#11'IniFileName'#6#14'bestelboek.ini'#10
-  +'IniSection'#6#12'artikelomzet'#19'OnRestoreProperties'#7'(ArtikelOmzetPropS'
-  +'torageRestoreProperties'#4'left'#3#245#1#3'top'#2','#0#0#11'TDataSource'#16
-  +'eanupcdatasource'#7'DataSet'#7#12'DM.ZeanQuery'#4'left'#3'.'#2#3'top'#3#129
-  +#0#0#0#11'TDataSource'#23'ZartikelOmzetDataSource'#7'DataSet'#7#28'DM.ZArtik'
-  +'elomzetReclameQuery'#4'left'#3#149#0#3'top'#2','#0#0#0
+  +'IniSection'#6#12'artikelomzet'#18'OnSavingProperties'#7'''ArtikelOmzetPropS'
+  +'torageSavingProperties'#16'OnSaveProperties'#7'%ArtikelOmzetPropStorageSave'
+  +'Properties'#19'OnRestoreProperties'#7'(ArtikelOmzetPropStorageRestoreProper'
+  +'ties'#4'left'#3#245#1#3'top'#2','#0#0#11'TDataSource'#16'eanupcdatasource'#7
+  +'DataSet'#7#12'DM.ZeanQuery'#4'left'#3'.'#2#3'top'#3#129#0#0#0#11'TDataSourc'
+  +'e'#23'ZartikelOmzetDataSource'#7'DataSet'#7#28'DM.ZArtikelomzetReclameQuery'
+  +#4'left'#3#149#0#3'top'#2','#0#0#0
 ]);

@@ -54,7 +54,7 @@ begin
    if DM.ZSBestelSchema_SBestelSchemaTable.State in [dsedit,dsinsert] then
      DM.ZSBestelSchema_SBestelSchemaTable.post;
    if DM.ZSBestelSchema_BestelgroepTable.State in [dsedit,dsinsert] then
-     DM.ZSBestelSchema_SBestelgroepTable.post;
+     DM.ZSBestelSchema_BestelgroepTable.post;
 end;
 
 procedure TStandaardBestelschema.FormShow(Sender: TObject);

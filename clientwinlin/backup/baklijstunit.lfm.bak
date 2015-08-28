@@ -1,14 +1,14 @@
 object Form1: TForm1
-  Left = 797
-  Height = 586
-  Top = 375
+  Left = 306
+  Height = 534
+  Top = 167
   Width = 1058
   Caption = 'Form1'
-  ClientHeight = 586
+  ClientHeight = 534
   ClientWidth = 1058
   OnShow = FormShow
   SessionProperties = 'Height;Left;Panel1.Height;Panel1.Left;Panel1.Top;Panel1.Width;Panel2.Height;Panel2.Left;Panel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;Panel3.Width;RxDBGrid1.Width;RxDBGrid2.Height;RxDBGrid2.Left;RxDBGrid2.Top;RxDBGrid2.Width;Splitter1.Height;Splitter1.Left;Splitter1.Top;Splitter1.Width;Top;Width;RxDBGrid1.Columns;RxDBGrid2.Columns'
-  LCLVersion = '0.9.30'
+  LCLVersion = '1.2.6.0'
   object Panel1: TPanel
     Left = 0
     Height = 48
@@ -90,7 +90,7 @@ object Form1: TForm1
         0000000000FF000000000000000000000000000000FF000000FF000000FF0000
         0000000000FF000000FF000000FF000000FF000000FF
       }
-      NumGlyphs = 0
+      NumGlyphs = 1
       ParentColor = False
       ReadOnly = False
       TabOrder = 2
@@ -102,17 +102,17 @@ object Form1: TForm1
   end
   object Panel2: TPanel
     Left = 0
-    Height = 272
+    Height = 220
     Top = 48
     Width = 1058
     Align = alClient
     Caption = 'Panel2'
-    ClientHeight = 272
+    ClientHeight = 220
     ClientWidth = 1058
     TabOrder = 1
     object RxDBGrid1: TRxDBGrid
       Left = 582
-      Height = 270
+      Height = 218
       Top = 1
       Width = 475
       TitleButtons = False
@@ -148,10 +148,12 @@ object Form1: TForm1
           ShortCut = 16456
           Enabled = True
         end>
+      FooterOptions.Color = clYellow
       OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
       FooterColor = clYellow
       Align = alClient
       Color = clWindow
+      DrawFullLine = False
       FocusColor = clRed
       SelectedColor = clHighlight
       GridLineStyle = psSolid
@@ -163,13 +165,13 @@ object Form1: TForm1
     end
     object Splitter1: TSplitter
       Left = 577
-      Height = 270
+      Height = 218
       Top = 1
       Width = 5
     end
     object RxDBGrid2: TRxDBGrid
       Left = 1
-      Height = 270
+      Height = 218
       Top = 1
       Width = 576
       TitleButtons = False
@@ -180,6 +182,7 @@ object Form1: TForm1
           Title.Caption = 'PLU'
           Title.Orientation = toHorizontal
           FieldName = 'PLU'
+          EditButtons = <>
           Filter.Font.Style = [fsItalic]
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
@@ -191,6 +194,7 @@ object Form1: TForm1
           Title.Caption = 'X_NAAM'
           Title.Orientation = toHorizontal
           FieldName = 'X_NAAM'
+          EditButtons = <>
           Filter.Font.Style = [fsItalic]
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
@@ -202,6 +206,7 @@ object Form1: TForm1
           Title.Caption = 'CHARGE_1'
           Title.Orientation = toHorizontal
           FieldName = 'CHARGE_1'
+          EditButtons = <>
           Filter.Font.Style = [fsItalic]
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
@@ -212,6 +217,7 @@ object Form1: TForm1
           Title.Alignment = taCenter
           Title.Caption = 'Title'
           Title.Orientation = toHorizontal
+          EditButtons = <>
           Filter.Font.Style = [fsItalic]
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
@@ -249,10 +255,12 @@ object Form1: TForm1
           ShortCut = 16456
           Enabled = True
         end>
+      FooterOptions.Color = clYellow
       OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
       FooterColor = clYellow
       Align = alLeft
       Color = clWindow
+      DrawFullLine = False
       FocusColor = clRed
       SelectedColor = clHighlight
       GridLineStyle = psSolid
@@ -266,7 +274,7 @@ object Form1: TForm1
   object Panel3: TPanel
     Left = 0
     Height = 266
-    Top = 320
+    Top = 268
     Width = 1058
     Align = alBottom
     Caption = 'Panel3'
@@ -274,7 +282,8 @@ object Form1: TForm1
   end
   object BaklijstPropStorage: TIniPropStorage
     StoredValues = <>
+    IniFileName = 'bestelboek.ini'
     left = 360
     top = 8
   end
-end
+end

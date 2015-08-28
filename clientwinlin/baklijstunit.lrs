@@ -1,15 +1,15 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TForm1','FORMDATA',[
-  'TPF0'#6'TForm1'#5'Form1'#4'Left'#3'2'#1#6'Height'#3#22#2#3'Top'#3#167#0#5'Wi'
-  +'dth'#3'"'#4#7'Caption'#6#5'Form1'#12'ClientHeight'#3#22#2#11'ClientWidth'#3
-  +'"'#4#6'OnShow'#7#8'FormShow'#17'SessionProperties'#12'['#1#0#0'Height;Left;'
-  +'Panel1.Height;Panel1.Left;Panel1.Top;Panel1.Width;Panel2.Height;Panel2.Left'
-  +';Panel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;Panel3.Width;'
-  +'RxDBGrid1.Width;RxDBGrid2.Height;RxDBGrid2.Left;RxDBGrid2.Top;RxDBGrid2.Wid'
-  +'th;Splitter1.Height;Splitter1.Left;Splitter1.Top;Splitter1.Width;Top;Width;'
-  +'RxDBGrid1.Columns;RxDBGrid2.Columns'#10'LCLVersion'#6#7'1.2.6.0'#0#6'TPanel'
-  +#6'Panel1'#4'Left'#2#0#6'Height'#2'0'#3'Top'#2#0#5'Width'#3'"'#4#5'Align'#7#5
+  'TPF0'#6'TForm1'#5'Form1'#4'Left'#3'2'#1#6'Height'#3#22#2#3'Top'#2#127#5'Widt'
+  +'h'#3'"'#4#7'Caption'#6#5'Form1'#12'ClientHeight'#3#22#2#11'ClientWidth'#3'"'
+  +#4#6'OnShow'#7#8'FormShow'#17'SessionProperties'#12'['#1#0#0'Height;Left;Pan'
+  +'el1.Height;Panel1.Left;Panel1.Top;Panel1.Width;Panel2.Height;Panel2.Left;Pa'
+  +'nel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;Panel3.Width;RxD'
+  +'BGrid1.Width;RxDBGrid2.Height;RxDBGrid2.Left;RxDBGrid2.Top;RxDBGrid2.Width;'
+  +'Splitter1.Height;Splitter1.Left;Splitter1.Top;Splitter1.Width;Top;Width;RxD'
+  +'BGrid1.Columns;RxDBGrid2.Columns'#10'LCLVersion'#6#7'1.2.6.0'#0#6'TPanel'#6
+  +'Panel1'#4'Left'#2#0#6'Height'#2'0'#3'Top'#2#0#5'Width'#3'"'#4#5'Align'#7#5
   +'alTop'#7'Caption'#6#6'Panel1'#12'ClientHeight'#2'0'#11'ClientWidth'#3'"'#4#8
   +'TabOrder'#2#0#0#7'TBitBtn'#7'BitBtn1'#4'Left'#2'p'#6'Height'#2#30#3'Top'#2#5
   +#5'Width'#2'X'#7'Caption'#6#10'&Afdrukken'#10'Glyph.Data'#10':'#4#0#0'6'#4#0
@@ -116,5 +116,5 @@ LazarusResources.Add('TForm1','FORMDATA',[
   +'3'#4'Left'#2#0#6'Height'#3#10#1#3'Top'#3#12#1#5'Width'#3'"'#4#5'Align'#7#8
   +'alBottom'#7'Caption'#6#6'Panel3'#8'TabOrder'#2#2#0#0#15'TIniPropStorage'#19
   +'BaklijstPropStorage'#12'StoredValues'#14#0#11'IniFileName'#6#14'bestelboek.'
-  +'ini'#4'left'#3'h'#1#3'top'#2#8#0#0#0
+  +'ini'#6'Active'#8#4'left'#3'h'#1#3'top'#2#8#0#0#0
 ]);

@@ -31,7 +31,7 @@ type
    {$ENDIF}
    {$IFDEF LINUX }
       const
-      fblibrary = 'libfbclient.so';
+      fblibrary = 'libfbclient.so.2';
    {$ENDIF}
 
    procedure isc_decode_sql_date   (var ib_date: ISC_DATE;

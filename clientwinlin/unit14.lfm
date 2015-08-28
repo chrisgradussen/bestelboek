@@ -1,14 +1,14 @@
 object Scripts: TScripts
-  Left = 974
+  Left = 880
   Height = 337
-  Top = 375
+  Top = 259
   Width = 400
   Caption = 'Scripts'
   ClientHeight = 337
   ClientWidth = 400
   OnShow = FormShow
   SessionProperties = 'Height;Left;Top;Width;Panel1.Width;Panel1.Top;Panel1.Left;Panel1.Height;Panel2.Width;Panel2.Top;Panel2.Left;Panel2.Height'
-  LCLVersion = '0.9.29'
+  LCLVersion = '1.2.6.0'
   object Panel1: TPanel
     Left = 0
     Height = 168
@@ -25,6 +25,7 @@ object Scripts: TScripts
       Top = 1
       Width = 398
       Align = alClient
+      Color = clWindow
       Columns = <>
       DataSource = Datasource1
       TabOrder = 0
@@ -36,9 +37,16 @@ object Scripts: TScripts
       Width = 398
       Align = alBottom
       BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
       ClientHeight = 25
       ClientWidth = 398
       DataSource = Datasource1
+      Options = []
       TabOrder = 1
     end
   end
@@ -58,6 +66,7 @@ object Scripts: TScripts
       Top = 1
       Width = 398
       Align = alClient
+      Color = clWindow
       Columns = <>
       DataSource = Datasource2
       TabOrder = 0
@@ -70,18 +79,25 @@ object Scripts: TScripts
       Width = 398
       Align = alBottom
       BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
       ClientHeight = 25
       ClientWidth = 398
       DataSource = Datasource2
+      Options = []
       TabOrder = 1
     end
   end
-  object Datasource1: TDatasource
+  object Datasource1: TDataSource
     DataSet = DM.ZScripts_BestelgroepQuery
     left = 342
     top = 30
   end
-  object Datasource2: TDatasource
+  object Datasource2: TDataSource
     DataSet = DM.ZScripts_BestelSchemaQuery
     left = 358
     top = 186
@@ -90,7 +106,8 @@ object Scripts: TScripts
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
     IniSection = 'scripts'
+    Active = False
     left = 216
     top = 40
   end
-end
+end

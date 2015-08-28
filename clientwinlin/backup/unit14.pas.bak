@@ -57,7 +57,7 @@ begin
   dm.zscripts_levering_update.ParamByName('id').AsInteger :=
     dm.ZScripts_BestelSchemaQuery.FieldByName('id').asinteger;
     dm.zscripts_levering_update.Execute;
-  showmessage('bestelling geselecteerd' + inttostr(dm.zscripts_levering_update.parambyname('id').asinteger));
+  showmessage('De volgende bestelling is geselecteerd ' + inttostr(dm.zscripts_levering_update.parambyname('id').asinteger));
 
   close;
 

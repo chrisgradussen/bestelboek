@@ -19,6 +19,7 @@ type
     subgroepPropStorage: TIniPropStorage;
     Panel1: TPanel;
     procedure Datasource1StateChange(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormShow(Sender: TObject);
   private
     { private declarations }
@@ -36,6 +37,12 @@ implementation
 procedure Tsubgroep.Datasource1StateChange(Sender: TObject);
 begin
 
+end;
+
+procedure Tsubgroep.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+begin
+   if DM.ZSubgroepTable.State in [dsedit,dsinsert] then
+     DM.ZSubgroepTable.post;
 end;
 
 procedure Tsubgroep.FormShow(Sender: TObject);

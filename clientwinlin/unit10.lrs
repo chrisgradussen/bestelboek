@@ -80,15 +80,15 @@ LazarusResources.Add('TBestelschema','FORMDATA',[
   +#0#9'TSplitter'#9'Splitter2'#6'Cursor'#7#8'crVSplit'#4'Left'#2#1#6'Height'#2
   +#5#3'Top'#3#198#0#5'Width'#3#18#3#5'Align'#7#8'alBottom'#12'ResizeAnchor'#7#8
   +'akBottom'#0#0#0#15'TIniPropStorage'#23'bestelschemaPropStorage'#12'StoredVa'
-  +'lues'#14#0#11'IniFileName'#6#14'bestelboek.ini'#4'left'#3'g'#1#3'top'#2#14#0
-  +#0#11'TDataSource'#11'Datasource1'#7'DataSet'#7'!DM.ZBestelSchema_Bestelgroe'
-  +'pTable'#4'left'#3'F'#1#3'top'#2#13#0#0#11'TDataSource'#11'Datasource2'#7'Da'
-  +'taSet'#7'"DM.ZBestelSchema_BestelSchemaQuery'#4'left'#3'F'#1#3'top'#2'p'#0#0
-  +#11'TDataSource'#11'Datasource3'#7'DataSet'#7#31'DM.ZBestelSchema_BestRegelQ'
-  +'uery'#13'OnStateChange'#7#22'Datasource3StateChange'#4'left'#3'F'#1#3'top'#3
-  +#219#0#0#0#10'TPopupMenu'#10'PopupMenu1'#7'OnPopup'#7#15'PopupMenu1Popup'#4
-  +'left'#3#182#1#3'top'#3#226#0#0#9'TMenuItem'#9'MenuItem1'#7'Caption'#6#22'Al'
-  +'le regels selecteren'#7'OnClick'#7#14'MenuItem1Click'#0#0#9'TMenuItem'#9'Me'
-  +'nuItem2'#7'Caption'#6' geselecteerde regels verwijderen'#7'OnClick'#7#14'Me'
-  +'nuItem2Click'#0#0#0#0
+  +'lues'#14#0#11'IniFileName'#6#14'bestelboek.ini'#6'Active'#8#4'left'#3'g'#1#3
+  +'top'#2#14#0#0#11'TDataSource'#11'Datasource1'#7'DataSet'#7'!DM.ZBestelSchem'
+  +'a_BestelgroepTable'#4'left'#3'F'#1#3'top'#2#13#0#0#11'TDataSource'#11'Datas'
+  +'ource2'#7'DataSet'#7'"DM.ZBestelSchema_BestelSchemaQuery'#4'left'#3'F'#1#3
+  +'top'#2'p'#0#0#11'TDataSource'#11'Datasource3'#7'DataSet'#7#31'DM.ZBestelSch'
+  +'ema_BestRegelQuery'#13'OnStateChange'#7#22'Datasource3StateChange'#4'left'#3
+  +'F'#1#3'top'#3#219#0#0#0#10'TPopupMenu'#10'PopupMenu1'#7'OnPopup'#7#15'Popup'
+  +'Menu1Popup'#4'left'#3#182#1#3'top'#3#226#0#0#9'TMenuItem'#9'MenuItem1'#7'Ca'
+  +'ption'#6#22'Alle regels selecteren'#7'OnClick'#7#14'MenuItem1Click'#0#0#9'T'
+  +'MenuItem'#9'MenuItem2'#7'Caption'#6' geselecteerde regels verwijderen'#7'On'
+  +'Click'#7#14'MenuItem2Click'#0#0#0#0
 ]);

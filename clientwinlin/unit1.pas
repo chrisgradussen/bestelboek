@@ -52,6 +52,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure GroepButtonClick(Sender: TObject);
+    procedure HoofdmenuPropStorageSaveProperties(Sender: TObject);
+    procedure HoofdmenuPropStorageSavingProperties(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
     procedure Menu_baklijstvolgordeClick(Sender: TObject);
@@ -125,7 +127,8 @@ end;
 
 procedure Thoofdmenu.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-  leverancier.leverancierpropstorage.Save;
+
+  {leverancier.leverancierpropstorage.Save;
   subgroep.subgroepPropStorage.save;
   dagen.dagenPropStorage.save;
   bestelgroep.bestelgroepPropStorage.save;
@@ -136,7 +139,7 @@ begin
   zoekartikel.ZoekArtikelPropStorage.Save;
   scripts.ScriptsPropStorage.save;
   artikelomzet.ArtikelOmzetPropStorage.Save;
-  baklijstunit.Form1.BaklijstPropStorage.save;
+  baklijstunit.Form1.BaklijstPropStorage.save; }
   dm.DBPropStorage.save;
   //dm.ZConnection.Connect;
 end;
@@ -159,6 +162,8 @@ begin
     Leverancier.FormCloseQuery(Sender, CanClose);
   if StandaardBestelschema.Visible then
     StandaardBestelSchema.FormCloseQuery(Sender, CanClose);
+  if FormMultiplier.Visible then
+    FormMultiplier.FormCloseQuery(Sender, CanClose);
 end;
 
 procedure Thoofdmenu.FormCreate(Sender: TObject);
@@ -178,7 +183,7 @@ end;
 procedure Thoofdmenu.FormShow(Sender: TObject);
 begin
   dm.DBPropStorage.restore;
-  leverancier.leverancierpropstorage.Restore;
+ { leverancier.leverancierpropstorage.Restore;
   subgroep.subgroepPropStorage.Restore;
   dagen.dagenPropStorage.Restore;
   bestelgroep.bestelgroepPropStorage.Restore;
@@ -190,13 +195,23 @@ begin
   scripts.ScriptsPropStorage.restore;
   artikelomzet.ArtikelOmzetPropStorage.restore;
   bestellingafdrukken.bestellingafdrukkenPropStorage.Restore;
-  baklijstunit.Form1.BaklijstPropStorage.Restore;
+  baklijstunit.Form1.BaklijstPropStorage.Restore;}
   baklijstunit.form1.RxDBGrid2.ColumnByFieldName('CHARGE_1').ReadOnly:= false;
 end;
 
 procedure Thoofdmenu.GroepButtonClick(Sender: TObject);
 begin
   Groep.show;
+end;
+
+procedure Thoofdmenu.HoofdmenuPropStorageSaveProperties(Sender: TObject);
+begin
+  //showmessage('onsave');
+end;
+
+procedure Thoofdmenu.HoofdmenuPropStorageSavingProperties(Sender: TObject);
+begin
+  //showmessage('on saving');
 end;
 
 procedure Thoofdmenu.MenuItem1Click(Sender: TObject);

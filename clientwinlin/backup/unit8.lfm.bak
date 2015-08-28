@@ -1,7 +1,7 @@
 object bestellingafdrukken: Tbestellingafdrukken
-  Left = 673
+  Left = 502
   Height = 300
-  Top = 322
+  Top = 123
   Width = 467
   Caption = 'Bestelboek 1 Bestelling Afdrukken'
   ClientHeight = 300

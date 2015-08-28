@@ -74,8 +74,8 @@ end;
 
 procedure TZoekArtikel.FormShow(Sender: TObject);
 begin
-  edit.SelectAll;
-  edit.SetFocus;
+  //edit.SelectAll;
+  //edit.SetFocus;
   tag := 0;
 end;
 
@@ -134,4 +134,4 @@ initialization
   {$I unit12.lrs}
 
 end.
-
+

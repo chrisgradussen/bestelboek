@@ -1,8 +1,9 @@
 object ArtikelBestand: TArtikelBestand
-  Left = 552
+  Left = 558
   Height = 742
-  Top = 31
+  Top = 163
   Width = 483
+  ActiveControl = Panel2
   Caption = 'ArtikelBestand'
   ClientHeight = 742
   ClientWidth = 483
@@ -10,7 +11,7 @@ object ArtikelBestand: TArtikelBestand
   OnCreate = FormCreate
   OnShow = FormShow
   SessionProperties = 'Height;Left;Position;Top;Width;WindowState'
-  LCLVersion = '1.0.14.0'
+  LCLVersion = '1.2.6.0'
   object Panel1: TPanel
     Left = 0
     Height = 160
@@ -64,33 +65,33 @@ object ArtikelBestand: TArtikelBestand
           Title.Caption = 'BEGINDATUM'
           Title.Orientation = toHorizontal
           FieldName = 'BEGINDATUM'
+          EditButtons = <>
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
           Filter.EmptyFont.Style = [fsItalic]
           Filter.ItemIndex = -1
-          EditButtons = <>
         end      
         item
           Title.Alignment = taCenter
           Title.Caption = 'EINDDATUM'
           Title.Orientation = toHorizontal
           FieldName = 'EINDDATUM'
+          EditButtons = <>
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
           Filter.EmptyFont.Style = [fsItalic]
           Filter.ItemIndex = -1
-          EditButtons = <>
         end      
         item
           Title.Alignment = taCenter
           Title.Caption = 'VOORDEEL'
           Title.Orientation = toHorizontal
           FieldName = 'VOORDEEL'
+          EditButtons = <>
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
           Filter.EmptyFont.Style = [fsItalic]
           Filter.ItemIndex = -1
-          EditButtons = <>
         end>
       KeyStrokes = <      
         item
@@ -148,33 +149,33 @@ object ArtikelBestand: TArtikelBestand
     OnClick = Panel2Click
     object Label1: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 20
-      Width = 77
+      Width = 76
       Caption = 'MERKNAAM'
       ParentColor = False
     end
     object Label4: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 40
-      Width = 99
+      Width = 98
       Caption = 'OMSCHRIJVING'
       ParentColor = False
     end
     object Label5: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 60
-      Width = 114
+      Width = 113
       Caption = 'KASSABONTEKST'
       ParentColor = False
     end
     object Label6: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 80
-      Width = 55
+      Width = 54
       Caption = 'INHOUD'
       ParentColor = False
       ParentShowHint = False
@@ -182,9 +183,9 @@ object ArtikelBestand: TArtikelBestand
     end
     object Label7: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 100
-      Width = 59
+      Width = 58
       Caption = 'EENHEID'
       ParentColor = False
       ParentShowHint = False
@@ -192,113 +193,113 @@ object ArtikelBestand: TArtikelBestand
     end
     object Label8: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 120
-      Width = 103
+      Width = 102
       Caption = 'BESTELINHOUD'
       ParentColor = False
     end
     object Label9: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 140
-      Width = 107
+      Width = 106
       Caption = 'BESTELEENHEID'
       ParentColor = False
     end
     object Label10: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 160
-      Width = 113
+      Width = 112
       Caption = 'ARTIKELNUMMER'
       ParentColor = False
     end
     object Label11: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 180
-      Width = 90
+      Width = 89
       Caption = 'LEVERANCIER'
       ParentColor = False
     end
     object Label12: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 200
-      Width = 73
+      Width = 72
       Caption = 'SUBGROEP'
       ParentColor = False
     end
     object Label13: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 220
-      Width = 68
+      Width = 67
       Caption = 'BTWCODE'
       ParentColor = False
     end
     object EANCODE: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 0
-      Width = 65
+      Width = 64
       Caption = 'EANCODE'
       ParentColor = False
     end
     object Label14: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 240
-      Width = 96
+      Width = 95
       Caption = 'VERKOOPPRIJS'
       ParentColor = False
     end
     object Label15: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 260
-      Width = 84
+      Width = 83
       Caption = 'INKOOPPRIJS'
       ParentColor = False
     end
     object Label16: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 280
-      Width = 75
+      Width = 74
       Caption = 'VOORRAAD'
       ParentColor = False
     end
     object Label17: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 300
-      Width = 143
+      Width = 142
       Caption = 'MINIMALE VOORRAAD'
       ParentColor = False
     end
     object Label18: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 320
-      Width = 74
+      Width = 73
       Caption = 'VOLGORDE'
       ParentColor = False
     end
     object Label19: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 340
-      Width = 98
+      Width = 97
       Caption = 'INVOERDATUM'
       ParentColor = False
     end
     object Label20: TLabel
       Left = 8
-      Height = 16
+      Height = 15
       Top = 360
-      Width = 124
+      Width = 123
       Caption = 'WIJZIGINGSDATUM'
       ParentColor = False
     end
@@ -309,6 +310,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'EANUPC'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -324,6 +326,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_MERKNAAM'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -339,6 +342,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_NAAM'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -368,6 +372,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_INHOUD'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -383,6 +388,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_EENHEID'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -398,6 +404,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_BESTELINHOUD'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -413,6 +420,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_BESTELEENHEID'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -428,6 +436,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_ARTIKELNUMMER'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -443,6 +452,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_LEVERANCIER_ID'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -458,6 +468,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_SUBGROEP_ID'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -473,6 +484,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_BTWCODE'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -488,6 +500,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_VERKOOPPRIJS'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -504,6 +517,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_INKOOPPRIJS'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -564,6 +578,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_INVOERDATUM'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -579,6 +594,7 @@ object ArtikelBestand: TArtikelBestand
       Width = 130
       DataField = 'X_WIJZIGINGSDATUM'
       DataSource = ArtikelDataSource
+      ReadOnly = True
       CharCase = ecNormal
       Font.Height = -11
       Font.Name = 'Sans'
@@ -590,6 +606,7 @@ object ArtikelBestand: TArtikelBestand
     object DBEdit21: TDBEdit
       Left = 256
       Height = 23
+      Hint = 'VOEG HIER EXTRA TEKST TOE VOOR DE PALM'
       Top = 20
       Width = 130
       DataField = 'L_MERKNAAM'
@@ -600,6 +617,8 @@ object ArtikelBestand: TArtikelBestand
       Font.Style = [fsBold]
       MaxLength = 0
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 19
     end
     object DBEdit22: TDBEdit
@@ -735,8 +754,16 @@ object ArtikelBestand: TArtikelBestand
       ParentFont = False
       TabOrder = 27
     end
+    object Label2: TLabel
+      Left = 256
+      Height = 15
+      Top = 0
+      Width = 163
+      Caption = 'AAN TE PASSEN VELDEN!'
+      ParentColor = False
+    end
   end
-  object ArtikelDataSource: TDatasource
+  object ArtikelDataSource: TDataSource
     DataSet = DM.ZArtikelQuery
     OnDataChange = ArtikelDataSourceDataChange
     left = 333
@@ -745,10 +772,11 @@ object ArtikelBestand: TArtikelBestand
   object ArtikelBestandPropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
+    Active = False
     left = 296
     top = 96
   end
-  object ZReclameDatasource: TDatasource
+  object ZReclameDatasource: TDataSource
     DataSet = DM.ZReclameQuery
     left = 394
     top = 586

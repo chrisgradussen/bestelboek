@@ -33,6 +33,17 @@ type
     ZArtikelomzetDON1: TFloatField;
     ZArtikelomzetJAARWEEK1: TLongintField;
     ZArtikelomzetMAA1: TFloatField;
+    ZArtikelOmzetQueryDIN: TFloatField;
+    ZArtikelOmzetQueryDON: TFloatField;
+    ZArtikelOmzetQueryJAARWEKEN: TLongintField;
+    ZArtikelOmzetQueryMAA: TFloatField;
+    ZArtikelOmzetQueryOMSCHRIJVING: TStringField;
+    ZArtikelOmzetQueryTOT: TFloatField;
+    ZArtikelOmzetQueryVOORDEEL: TStringField;
+    ZArtikelOmzetQueryVRI: TFloatField;
+    ZArtikelOmzetQueryWOE: TFloatField;
+    ZArtikelOmzetQueryZAT: TFloatField;
+    ZArtikelOmzetQueryZON: TFloatField;
     ZArtikelomzetTOT1: TFloatField;
     ZArtikelomzetVOORDEEL1: TStringField;
     ZArtikelomzetVRI1: TFloatField;
@@ -151,7 +162,7 @@ type
     ZZoekArtikelQueryARTIKELNUMMER: TStringField;
     ZZoekArtikelQueryBESTELEENHEID: TStringField;
     ZZoekArtikelQueryBESTELINHOUD: TFloatField;
-    ZZoekArtikelQueryDATUM1: TDateField;
+    ZZoekArtikelQueryDATUM: TDateTimeField;
     ZZoekArtikelQueryEANUPC: TLargeintField;
     ZZoekArtikelQueryEENHEID: TStringField;
     ZZoekArtikelQueryINHOUD: TFloatField;

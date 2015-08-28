@@ -8,11 +8,12 @@ object subgroep: Tsubgroep
   ClientWidth = 400
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
-  ParentFont = False
   SessionProperties = 'Height;Left;Position;Top;Width;WindowState'
-  LCLVersion = '0.9.27'
+  LCLVersion = '1.2.6.0'
   object Panel1: TPanel
+    Left = 0
     Height = 300
+    Top = 0
     Width = 400
     Align = alClient
     Caption = 'Panel1'
@@ -25,12 +26,9 @@ object subgroep: Tsubgroep
       Top = 1
       Width = 398
       Align = alClient
+      Color = clWindow
+      Columns = <>
       DataSource = Datasource1
-      FixedColor = clBtnFace
-      FixedHotColor = cl3DLight
-      Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
-      OptionsExtra = [dgeAutoColumns, dgeCheckboxColumn]
-      ParentColor = False
       TabOrder = 0
     end
     object DBNavigator1: TDBNavigator
@@ -40,9 +38,16 @@ object subgroep: Tsubgroep
       Width = 398
       Align = alBottom
       BevelOuter = bvNone
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
       ClientHeight = 25
       ClientWidth = 398
       DataSource = Datasource1
+      Options = []
       TabOrder = 1
     end
   end
@@ -50,13 +55,14 @@ object subgroep: Tsubgroep
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
     IniSection = 'subgroep'
+    Active = False
     left = 351
     top = 118
   end
-  object Datasource1: TDatasource
+  object Datasource1: TDataSource
     DataSet = DM.zSubgroepTable
     OnStateChange = Datasource1StateChange
     left = 352
     top = 72
   end
-end
+end
