@@ -2,8 +2,8 @@ object DM: TDM
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 615
-  HorizontalOffset = 433
-  VerticalOffset = 139
+  HorizontalOffset = 432
+  VerticalOffset = 112
   Width = 678
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -1716,8 +1716,10 @@ object DM: TDM
   object ZArtikelOmzetQuery: TZReadOnlyQuery
     Connection = ZConnection
     SQL.Strings = (
-      'select max(o.jaarweek) as JAARWEKEN,sum(o.maa)+sum(o.din)+sum(o.woe)+sum(o.don)+sum(o.vri)+sum(o.zat)+sum(o.zon) as TOT, sum(o.maa) as MAA,sum(o.din) as DIN,sum(o.woe) as WOE ,sum(o.don) as DON ,sum(o.vri) as VRI,sum(o.zat) as ZAT,sum(o.zon) as ZON , max(r.omschrijving) as omschrijving ,max(voordeel) as voordeel '
-      'from omzetweek o  left join reclameview r on o.JAARWEEK = F_DATETOYEARWEEK(r.startdatum) and o.eanupc = r.ean where o.eanupc in (:eanupcs) group by jaarweek order by jaarweek desc; '
+      'select max(w.voordeel) as reclame, max(o.jaarweek) as JAARWEKEN,sum(o.maa)+sum(o.din)+sum(o.woe)+sum(o.don)+sum(o.vri)+sum(o.zat)+sum(o.zon) as TOT, sum(o.maa) as MAA,sum(o.din) as DIN,sum(o.woe) as WOE ,sum(o.don) as DON ,sum(o.vri) as VRI,sum(o.zat) as ZAT,sum(o.zon) as ZON , max(r.omschrijving) as omschrijving ,max(r.voordeel) as voordeel '
+      'from omzetweek o  left join reclameview r on o.JAARWEEK = F_DATETOYEARWEEK(r.startdatum) and o.eanupc = r.ean left join reclame w on o.jaarweek = f_datetoyearweek(w.begindatum) and o.EANUPC = w.ARTIKEL_EANUPC where o.eanupc in (:eanupcs) group by jaarweek order by jaarweek desc; '
+      '/*select max(o.jaarweek) as JAARWEKEN,sum(o.maa)+sum(o.din)+sum(o.woe)+sum(o.don)+sum(o.vri)+sum(o.zat)+sum(o.zon) as TOT, sum(o.maa) as MAA,sum(o.din) as DIN,sum(o.woe) as WOE ,sum(o.don) as DON ,sum(o.vri) as VRI,sum(o.zat) as ZAT,sum(o.zon) as ZON , max(r.omschrijving) as omschrijving ,max(voordeel) as voordeel '
+      'from omzetweek o  left join reclameview r on o.JAARWEEK = F_DATETOYEARWEEK(r.startdatum) and o.eanupc = r.ean where o.eanupc in (:eanupcs) group by jaarweek order by jaarweek desc; */'
     )
     Params = <    
       item
@@ -1856,7 +1858,7 @@ object DM: TDM
       Precision = 2
     end
     object ZArtikelOmzetQueryOMSCHRIJVING: TStringField
-      DisplayWidth = 512
+      DisplayWidth = 50
       FieldKind = fkData
       FieldName = 'OMSCHRIJVING'
       Index = 9
@@ -1876,6 +1878,17 @@ object DM: TDM
       ReadOnly = True
       Required = False
       Size = 192
+    end
+    object ZArtikelOmzetQueryRECLAME: TStringField
+      DisplayWidth = 50
+      FieldKind = fkData
+      FieldName = 'RECLAME'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 512
     end
   end
 end

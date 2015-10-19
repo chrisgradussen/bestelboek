@@ -38,6 +38,7 @@ type
     ZArtikelOmzetQueryJAARWEKEN: TLongintField;
     ZArtikelOmzetQueryMAA: TFloatField;
     ZArtikelOmzetQueryOMSCHRIJVING: TStringField;
+    ZArtikelOmzetQueryRECLAME: TStringField;
     ZArtikelOmzetQueryTOT: TFloatField;
     ZArtikelOmzetQueryVOORDEEL: TStringField;
     ZArtikelOmzetQueryVRI: TFloatField;

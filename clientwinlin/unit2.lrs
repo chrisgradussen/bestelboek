@@ -2,7 +2,7 @@
 
 LazarusResources.Add('TDM','FORMDATA',[
   'TPF0'#3'TDM'#2'DM'#8'OnCreate'#7#16'DataModuleCreate'#14'OldCreateOrder'#8#6
-  +'Height'#3'g'#2#16'HorizontalOffset'#3#173#1#14'VerticalOffset'#2'.'#5'Width'
+  +'Height'#3'g'#2#16'HorizontalOffset'#3#176#1#14'VerticalOffset'#2'p'#5'Width'
   +#3#166#2#0#12'TZConnection'#11'ZConnection'#16'ControlsCodePage'#7#8'cCP_UTF'
   +'8'#18'Properties.Strings'#1#6#18'AutoEncodeStrings='#0#22'TransactIsolation'
   +'Level'#7#15'tiReadCommitted'#9'Connected'#9#16'DesignConnection'#9#13'Befor'
@@ -566,61 +566,73 @@ LazarusResources.Add('TDM','FORMDATA',[
   +'own'#0#1#8'DataType'#7#9'ftUnknown'#4'Name'#6#9'einddatum'#9'ParamType'#7#9
   +'ptUnknown'#0#1#8'DataType'#7#9'ftUnknown'#4'Name'#6#21'artikel_artikelnumme'
   +'r'#9'ParamType'#7#9'ptUnknown'#0#0#0#0#15'TZReadOnlyQuery'#18'ZArtikelOmzet'
-  +'Query'#10'Connection'#7#11'ZConnection'#11'SQL.Strings'#1#12':'#1#0#0'selec'
-  +'t max(o.jaarweek) as JAARWEKEN,sum(o.maa)+sum(o.din)+sum(o.woe)+sum(o.don)+'
-  +'sum(o.vri)+sum(o.zat)+sum(o.zon) as TOT, sum(o.maa) as MAA,sum(o.din) as DI'
-  +'N,sum(o.woe) as WOE ,sum(o.don) as DON ,sum(o.vri) as VRI,sum(o.zat) as ZAT'
-  +',sum(o.zon) as ZON , max(r.omschrijving) as omschrijving ,max(voordeel) as '
-  +'voordeel '#6#181'from omzetweek o  left join reclameview r on o.JAARWEEK = '
-  +'F_DATETOYEARWEEK(r.startdatum) and o.eanupc = r.ean where o.eanupc in (:ean'
-  +'upcs) group by jaarweek order by jaarweek desc; '#0#6'Params'#14#1#8'DataTy'
-  +'pe'#7#8'ftString'#4'Name'#6#7'eanupcs'#9'ParamType'#7#9'ptUnknown'#0#0#4'le'
-  +'ft'#3#168#1#3'top'#2'@'#9'ParamData'#14#1#8'DataType'#7#8'ftString'#4'Name'
-  +#6#7'eanupcs'#9'ParamType'#7#9'ptUnknown'#0#0#0#13'TLongintField'#27'ZArtike'
-  ,'lOmzetQueryJAARWEKEN'#12'DisplayWidth'#2#10#9'FieldKind'#7#6'fkData'#9'Fiel'
-  +'dName'#6#9'JAARWEKEN'#5'Index'#2#0#11'LookupCache'#8#13'ProviderFlags'#11#10
-  +'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9#8'Required'#8#0#0#11'TFloatField'
-  +#21'ZArtikelOmzetQueryTOT'#12'DisplayWidth'#2#10#9'FieldKind'#7#6'fkData'#9
-  +'FieldName'#6#3'TOT'#5'Index'#2#1#11'LookupCache'#8#13'ProviderFlags'#11#10
-  +'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9#8'Required'#8#13'DisplayFormat'#6#3
+  +'Query'#10'Connection'#7#11'ZConnection'#11'SQL.Strings'#1#12'X'#1#0#0'selec'
+  +'t max(w.voordeel) as reclame, max(o.jaarweek) as JAARWEKEN,sum(o.maa)+sum(o'
+  +'.din)+sum(o.woe)+sum(o.don)+sum(o.vri)+sum(o.zat)+sum(o.zon) as TOT, sum(o.'
+  +'maa) as MAA,sum(o.din) as DIN,sum(o.woe) as WOE ,sum(o.don) as DON ,sum(o.v'
+  +'ri) as VRI,sum(o.zat) as ZAT,sum(o.zon) as ZON , max(r.omschrijving) as oms'
+  +'chrijving ,max(r.voordeel) as voordeel '#12#24#1#0#0'from omzetweek o  left'
+  +' join reclameview r on o.JAARWEEK = F_DATETOYEARWEEK(r.startdatum) and o.ea'
+  +'nupc = r.ean left join reclame w on o.jaarweek = f_datetoyearweek(w.beginda'
+  +'tum) and o.EANUPC = w.ARTIKEL_EANUPC where o.eanupc in (:eanupcs) group by '
+  +'jaarweek order by jaarweek desc; '#12'<'#1#0#0'/*select max(o.jaarweek) as '
+  +'JAARWEKEN,sum(o.maa)+sum(o.din)+sum(o.woe)+sum(o.don)+sum(o.vri)+sum(o.zat)'
+  ,'+sum(o.zon) as TOT, sum(o.maa) as MAA,sum(o.din) as DIN,sum(o.woe) as WOE ,'
+  +'sum(o.don) as DON ,sum(o.vri) as VRI,sum(o.zat) as ZAT,sum(o.zon) as ZON , '
+  +'max(r.omschrijving) as omschrijving ,max(voordeel) as voordeel '#6#183'from'
+  +' omzetweek o  left join reclameview r on o.JAARWEEK = F_DATETOYEARWEEK(r.st'
+  +'artdatum) and o.eanupc = r.ean where o.eanupc in (:eanupcs) group by jaarwe'
+  +'ek order by jaarweek desc; */'#0#6'Params'#14#1#8'DataType'#7#8'ftString'#4
+  +'Name'#6#7'eanupcs'#9'ParamType'#7#9'ptUnknown'#0#0#4'left'#3#168#1#3'top'#2
+  +'@'#9'ParamData'#14#1#8'DataType'#7#8'ftString'#4'Name'#6#7'eanupcs'#9'Param'
+  +'Type'#7#9'ptUnknown'#0#0#0#13'TLongintField'#27'ZArtikelOmzetQueryJAARWEKEN'
+  +#12'DisplayWidth'#2#8#9'FieldKind'#7#6'fkData'#9'FieldName'#6#9'JAARWEKEN'#5
+  +'Index'#2#0#11'LookupCache'#8#13'ProviderFlags'#11#10'pfInUpdate'#9'pfInWher'
+  +'e'#0#8'ReadOnly'#9#8'Required'#8#0#0#11'TFloatField'#21'ZArtikelOmzetQueryT'
+  +'OT'#12'DisplayWidth'#2#8#9'FieldKind'#7#6'fkData'#9'FieldName'#6#3'TOT'#5'I'
+  +'ndex'#2#1#11'LookupCache'#8#13'ProviderFlags'#11#10'pfInUpdate'#9'pfInWhere'
+  +#0#8'ReadOnly'#9#8'Required'#8#13'DisplayFormat'#6#3'0.#'#8'MaxValue'#5#0#0#0
+  +#0#0#0#0#0#0#0#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#9'Precision'#2#2#0#0#11'TFl'
+  +'oatField'#21'ZArtikelOmzetQueryMAA'#12'DisplayWidth'#2#8#9'FieldKind'#7#6'f'
+  +'kData'#9'FieldName'#6#3'MAA'#5'Index'#2#2#11'LookupCache'#8#13'ProviderFlag'
+  +'s'#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9#8'Required'#8#13'DisplayF'
+  +'ormat'#6#3'0.#'#8'MaxValue'#5#0#0#0#0#0#0#0#0#0#0#8'MinValue'#5#0#0#0#0#0#0
+  +#0#0#0#0#9'Precision'#2#2#0#0#11'TFloatField'#21'ZArtikelOmzetQueryDIN'#12'D'
+  +'isplayWidth'#2#8#9'FieldKind'#7#6'fkData'#9'FieldName'#6#3'DIN'#5'Index'#2#3
+  +#11'LookupCache'#8#13'ProviderFlags'#11#10'pfInUpdate'#9'pfInWhere'#0#8'Read'
+  +'Only'#9#8'Required'#8#13'DisplayFormat'#6#3'0.#'#8'MaxValue'#5#0#0#0#0#0#0#0
+  +#0#0#0#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#9'Precision'#2#2#0#0#11'TFloatField'
+  +#21'ZArtikelOmzetQueryWOE'#12'DisplayWidth'#2#8#9'FieldKind'#7#6'fkData'#9'F'
+  +'ieldName'#6#3'WOE'#5'Index'#2#4#11'LookupCache'#8#13'ProviderFlags'#11#10'p'
+  +'fInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9#8'Required'#8#13'DisplayFormat'#6#3
   +'0.#'#8'MaxValue'#5#0#0#0#0#0#0#0#0#0#0#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#9
-  +'Precision'#2#2#0#0#11'TFloatField'#21'ZArtikelOmzetQueryMAA'#12'DisplayWidt'
-  +'h'#2#10#9'FieldKind'#7#6'fkData'#9'FieldName'#6#3'MAA'#5'Index'#2#2#11'Look'
-  +'upCache'#8#13'ProviderFlags'#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9
-  +#8'Required'#8#13'DisplayFormat'#6#3'0.#'#8'MaxValue'#5#0#0#0#0#0#0#0#0#0#0#8
+  +'Precision'#2#2#0#0#11'TFloatField'#21'ZArtikelOmzetQueryDON'#12'DisplayWidt'
+  +'h'#2#8#9'FieldKind'#7#6'fkData'#9'FieldName'#6#3'DON'#5'Index'#2#5#11'Looku'
+  +'pCache'#8#13'ProviderFlags'#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9#8
+  +'Required'#8#13'DisplayFormat'#6#3'0.#'#8'MaxValue'#5#0#0#0#0#0#0#0#0#0#0#8
   +'MinValue'#5#0#0#0#0#0#0#0#0#0#0#9'Precision'#2#2#0#0#11'TFloatField'#21'ZAr'
-  +'tikelOmzetQueryDIN'#12'DisplayWidth'#2#10#9'FieldKind'#7#6'fkData'#9'FieldN'
-  +'ame'#6#3'DIN'#5'Index'#2#3#11'LookupCache'#8#13'ProviderFlags'#11#10'pfInUp'
-  +'date'#9'pfInWhere'#0#8'ReadOnly'#9#8'Required'#8#13'DisplayFormat'#6#3'0.#'
-  +#8'MaxValue'#5#0#0#0#0#0#0#0#0#0#0#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#9'Preci'
-  +'sion'#2#2#0#0#11'TFloatField'#21'ZArtikelOmzetQueryWOE'#12'DisplayWidth'#2
-  +#10#9'FieldKind'#7#6'fkData'#9'FieldName'#6#3'WOE'#5'Index'#2#4#11'LookupCac'
-  +'he'#8#13'ProviderFlags'#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9#8'Re'
-  +'quired'#8#13'DisplayFormat'#6#3'0.#'#8'MaxValue'#5#0#0#0#0#0#0#0#0#0#0#8'Mi'
-  +'nValue'#5#0#0#0#0#0#0#0#0#0#0#9'Precision'#2#2#0#0#11'TFloatField'#21'ZArti'
-  +'kelOmzetQueryDON'#12'DisplayWidth'#2#10#9'FieldKind'#7#6'fkData'#9'FieldNam'
-  +'e'#6#3'DON'#5'Index'#2#5#11'LookupCache'#8#13'ProviderFlags'#11#10'pfInUpda'
-  +'te'#9'pfInWhere'#0#8'ReadOnly'#9#8'Required'#8#13'DisplayFormat'#6#3'0.#'#8
+  +'tikelOmzetQueryVRI'#12'DisplayWidth'#2#8#9'FieldKind'#7#6'fkData'#9'FieldNa'
+  +'me'#6#3'VRI'#5'Index'#2#6#11'LookupCache'#8#13'ProviderFlags'#11#10'pfInUpd'
+  +'ate'#9'pfInWhere'#0#8'ReadOnly'#9#8'Required'#8#13'DisplayFormat'#6#3'0.#'#8
   +'MaxValue'#5#0#0#0#0#0#0#0#0#0#0#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#9'Precisi'
-  +'on'#2#2#0#0#11'TFloatField'#21'ZArtikelOmzetQueryVRI'#12'DisplayWidth'#2#10
-  +#9'FieldKind'#7#6'fkData'#9'FieldName'#6#3'VRI'#5'Index'#2#6#11'LookupCache'
-  +#8#13'ProviderFlags'#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9#8'Requir'
-  +'ed'#8#13'DisplayFormat'#6#3'0.#'#8'MaxValue'#5#0#0#0#0#0#0#0#0#0#0#8'MinVal'
-  +'ue'#5#0#0#0#0#0#0#0#0#0#0#9'Precision'#2#2#0#0#11'TFloatField'#21'ZArtikelO'
-  +'mzetQueryZAT'#12'DisplayWidth'#2#10#9'FieldKind'#7#6'fkData'#9'FieldName'#6
-  +#3'ZAT'#5'Index'#2#7#11'LookupCache'#8#13'ProviderFlags'#11#10'pfInUpdate'#9
-  +'pfInWhere'#0#8'ReadOnly'#9#8'Required'#8#13'DisplayFormat'#6#3'0.#'#8'MaxVa'
-  +'lue'#5#0#0#0#0#0#0#0#0#0#0#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#9'Precision'#2
-  +#2#0#0#11'TFloatField'#21'ZArtikelOmzetQueryZON'#12'DisplayWidth'#2#10#9'Fie'
-  +'ldKind'#7#6'fkData'#9'FieldName'#6#3'ZON'#5'Index'#2#8#11'LookupCache'#8#13
-  +'ProviderFlags'#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9#8'Required'#8
-  +#13'DisplayFormat'#6#3'0.#'#8'MaxValue'#5#0#0#0#0#0#0#0#0#0#0#8'MinValue'#5#0
-  +#0#0#0#0#0#0#0#0#0#9'Precision'#2#2#0#0#12'TStringField'#30'ZArtikelOmzetQue'
-  +'ryOMSCHRIJVING'#12'DisplayWidth'#3#0#2#9'FieldKind'#7#6'fkData'#9'FieldName'
-  +#6#12'OMSCHRIJVING'#5'Index'#2#9#11'LookupCache'#8#13'ProviderFlags'#11#10'p'
-  +'fInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9#8'Required'#8#4'Size'#3#0#2#0#0#12
-  +'TStringField'#26'ZArtikelOmzetQueryVOORDEEL'#12'DisplayWidth'#3#192#0#9'Fie'
-  +'ldKind'#7#6'fkData'#9'FieldName'#6#8'VOORDEEL'#5'Index'#2#10#11'LookupCache'
-  +#8#13'ProviderFlags'#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9#8'Requir'
-  +'ed'#8#4'Size'#3#192#0#0#0#0#0
+  +'on'#2#2#0#0#11'TFloatField'#21'ZArtikelOmzetQueryZAT'#12'DisplayWidth'#2#8#9
+  +'FieldKind'#7#6'fkData'#9'FieldName'#6#3'ZAT'#5'Index'#2#7#11'LookupCache'#8
+  +#13'ProviderFlags'#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9#8'Required'
+  +#8#13'DisplayFormat'#6#3'0.#'#8'MaxValue'#5#0#0#0#0#0#0#0#0#0#0#8'MinValue'#5
+  +#0#0#0#0#0#0#0#0#0#0#9'Precision'#2#2#0#0#11'TFloatField'#21'ZArtikelOmzetQu'
+  +'eryZON'#12'DisplayWidth'#2#8#9'FieldKind'#7#6'fkData'#9'FieldName'#6#3'ZON'
+  +#5'Index'#2#8#11'LookupCache'#8#13'ProviderFlags'#11#10'pfInUpdate'#9'pfInWh'
+  +'ere'#0#8'ReadOnly'#9#8'Required'#8#13'DisplayFormat'#6#3'0.#'#8'MaxValue'#5
+  +#0#0#0#0#0#0#0#0#0#0#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#9'Precision'#2#2#0#0
+  +#12'TStringField'#30'ZArtikelOmzetQueryOMSCHRIJVING'#12'DisplayWidth'#2#15#9
+  +'FieldKind'#7#6'fkData'#9'FieldName'#6#12'OMSCHRIJVING'#5'Index'#2#9#11'Look'
+  +'upCache'#8#13'ProviderFlags'#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9
+  +#8'Required'#8#4'Size'#3#0#2#0#0#12'TStringField'#26'ZArtikelOmzetQueryVOORD'
+  +'EEL'#12'DisplayWidth'#2#15#9'FieldKind'#7#6'fkData'#9'FieldName'#6#8'VOORDE'
+  +'EL'#5'Index'#2#10#11'LookupCache'#8#13'ProviderFlags'#11#10'pfInUpdate'#9'p'
+  +'fInWhere'#0#8'ReadOnly'#9#8'Required'#8#4'Size'#3#192#0#0#0#12'TStringField'
+  +#25'ZArtikelOmzetQueryRECLAME'#12'DisplayWidth'#2#15#9'FieldKind'#7#6'fkData'
+  +#9'FieldName'#6#7'RECLAME'#5'Index'#2#11#11'LookupCache'#8#13'ProviderFlags'
+  +#11#10'pfInUpdate'#9'pfInWhere'#0#8'ReadOnly'#9#8'Required'#8#4'Size'#3#0#2#0
+  +#0#0#0
 ]);

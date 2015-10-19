@@ -1,7 +1,7 @@
 object ArtikelOmzet: TArtikelOmzet
-  Left = 434
+  Left = 436
   Height = 319
-  Top = 299
+  Top = 343
   Width = 776
   ActiveControl = Panel1
   Caption = 'ArtikelOmzet'

@@ -244,7 +244,7 @@ procedure TArtikelOmzet.OMZET(alle : boolean);
      s2,s3,s4 : string;
 
 begin
-      s2 := 'select max(o.jaarweek) as JAARWEKEN,sum(o.maa)+sum(o.din)+sum(o.woe)+sum(o.don)+sum(o.vri)+sum(o.zat)+sum(o.zon) as TOT, sum(o.maa) as MAA,sum(o.din) as DIN,sum(o.woe) as WOE ,sum(o.don) as DON ,sum(o.vri) as VRI,sum(o.zat) as ZAT,sum(o.zon) as ZON , max(r.omschrijving) as omschrijving ,max(voordeel) as voordeel from omzetweek o  left join reclameview r on o.JAARWEEK = F_DATETOYEARWEEK(r.startdatum) and o.eanupc = r.ean where o.eanupc in (';
+      s2 := 'select max(w.voordeel) as reclame, max(o.jaarweek) as JAARWEKEN,sum(o.maa)+sum(o.din)+sum(o.woe)+sum(o.don)+sum(o.vri)+sum(o.zat)+sum(o.zon) as TOT, sum(o.maa) as MAA,sum(o.din) as DIN,sum(o.woe) as WOE ,sum(o.don) as DON ,sum(o.vri) as VRI,sum(o.zat) as ZAT,sum(o.zon) as ZON , max(r.omschrijving) as omschrijving ,max(r.voordeel) as voordeel from omzetweek o  left join reclameview r on o.JAARWEEK = F_DATETOYEARWEEK(r.startdatum) and o.eanupc = r.ean left join reclame w on o.jaarweek = f_datetoyearweek(w.begindatum) and o.EANUPC = w.ARTIKEL_EANUPC where o.eanupc in (';
       s4 := ') group by jaarweek order by jaarweek desc;';
       if not dm.ZeanQuery.active then
         dm.ZeanQuery.active := true
