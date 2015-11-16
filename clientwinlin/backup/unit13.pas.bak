@@ -33,9 +33,6 @@ type
     Panel2: TPanel;
     Panel3: TPanel;
     RxDBGrid1: TRxDBGrid;
-    procedure ArtikelOmzetPropStorageRestoreProperties(Sender: TObject);
-    procedure ArtikelOmzetPropStorageSaveProperties(Sender: TObject);
-    procedure ArtikelOmzetPropStorageSavingProperties(Sender: TObject);
     procedure RxArtikelOmzetGridDblClick(Sender: TObject);
     procedure RxArtikelOmzetGridKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure DBText1Click(Sender: TObject);
@@ -169,19 +166,6 @@ begin
    end;
 end;
 
-procedure TArtikelOmzet.ArtikelOmzetPropStorageRestoreProperties(Sender: TObject
-  );
-begin
-end;
-
-procedure TArtikelOmzet.ArtikelOmzetPropStorageSaveProperties(Sender: TObject);
-begin
-end;
-
-procedure TArtikelOmzet.ArtikelOmzetPropStorageSavingProperties(Sender: TObject
-  );
-begin
-end;
 
 procedure TArtikelOmzet.FormShow(Sender: TObject);
 begin

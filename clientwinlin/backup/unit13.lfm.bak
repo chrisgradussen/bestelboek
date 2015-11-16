@@ -1,12 +1,12 @@
 object ArtikelOmzet: TArtikelOmzet
-  Left = 436
+  Left = 305
   Height = 319
-  Top = 343
-  Width = 776
+  Top = 239
+  Width = 882
   ActiveControl = Panel1
   Caption = 'ArtikelOmzet'
   ClientHeight = 319
-  ClientWidth = 776
+  ClientWidth = 882
   OnShow = FormShow
   SessionProperties = 'Height;Left;Top;Width;RxArtikelOmzetGrid.Columns'
   LCLVersion = '1.2.6.0'
@@ -14,17 +14,17 @@ object ArtikelOmzet: TArtikelOmzet
     Left = 0
     Height = 291
     Top = 0
-    Width = 776
+    Width = 882
     Align = alClient
     Caption = 'Panel1'
     ClientHeight = 291
-    ClientWidth = 776
+    ClientWidth = 882
     TabOrder = 0
     object RxArtikelOmzetGrid: TRxDBGrid
       Left = 1
       Height = 266
       Top = 24
-      Width = 774
+      Width = 880
       TitleButtons = False
       AutoSort = True
       KeyStrokes = <      
@@ -101,10 +101,10 @@ object ArtikelOmzet: TArtikelOmzet
       Left = 1
       Height = 23
       Top = 1
-      Width = 774
+      Width = 880
       Align = alTop
       ClientHeight = 23
-      ClientWidth = 774
+      ClientWidth = 880
       TabOrder = 0
       object DBText1: TDBText
         Left = 7
@@ -126,7 +126,7 @@ object ArtikelOmzet: TArtikelOmzet
         ParentColor = False
       end
       object DBText3: TDBText
-        Left = 320
+        Left = 400
         Height = 15
         Top = 4
         Width = 54
@@ -135,7 +135,7 @@ object ArtikelOmzet: TArtikelOmzet
         ParentColor = False
       end
       object DBText4: TDBText
-        Left = 400
+        Left = 480
         Height = 15
         Top = 4
         Width = 54
@@ -145,7 +145,7 @@ object ArtikelOmzet: TArtikelOmzet
         ParentColor = False
       end
       object DBText5: TDBText
-        Left = 488
+        Left = 576
         Height = 15
         Top = 4
         Width = 54
@@ -154,7 +154,7 @@ object ArtikelOmzet: TArtikelOmzet
         ParentColor = False
       end
       object DBText6: TDBText
-        Left = 560
+        Left = 656
         Height = 15
         Top = 4
         Width = 54
@@ -163,7 +163,7 @@ object ArtikelOmzet: TArtikelOmzet
         ParentColor = False
       end
       object DBText7: TDBText
-        Left = 632
+        Left = 728
         Height = 15
         Top = 4
         Width = 54
@@ -172,7 +172,7 @@ object ArtikelOmzet: TArtikelOmzet
         ParentColor = False
       end
       object DBText8: TDBText
-        Left = 696
+        Left = 808
         Height = 15
         Top = 4
         Width = 54
@@ -183,7 +183,7 @@ object ArtikelOmzet: TArtikelOmzet
     end
     object RxDBGrid1: TRxDBGrid
       AnchorSideTop.Side = asrCenter
-      Left = 560
+      Left = 666
       Height = 220
       Top = 48
       Width = 200
@@ -254,17 +254,17 @@ object ArtikelOmzet: TArtikelOmzet
     Left = 0
     Height = 28
     Top = 291
-    Width = 776
+    Width = 882
     Align = alBottom
     Caption = 'Panel2'
     ClientHeight = 28
-    ClientWidth = 776
+    ClientWidth = 882
     TabOrder = 1
     object Edit: TEdit
       Left = 1
       Height = 26
       Top = 1
-      Width = 774
+      Width = 880
       Align = alClient
       OnKeyDown = EditKeyDown
       OnKeyPress = EditKeyPress
@@ -287,9 +287,6 @@ object ArtikelOmzet: TArtikelOmzet
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
     IniSection = 'artikelomzet'
-    OnSavingProperties = ArtikelOmzetPropStorageSavingProperties
-    OnSaveProperties = ArtikelOmzetPropStorageSaveProperties
-    OnRestoreProperties = ArtikelOmzetPropStorageRestoreProperties
     left = 501
     top = 44
   end
