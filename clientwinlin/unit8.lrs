@@ -41,7 +41,7 @@ LazarusResources.Add('Tbestellingafdrukken','FORMDATA',[
   +'?>'#10'<CONFIG>'#10'  <LazReport>'#10'    <Version Value="26"/>'#10'    <Ti'
   +'tle Value="BESTELLING PALM"/>'#10'    <Subject Value=""/>'#10'    <KeyWords'
   +' Value=""/>'#10'    <Comments Value=""/>'#10'    <ReportCreateDate Value="2'
-  +'015-03-31 13:02:38"/>'#10'    <ReportLastChange Value="2015-03-31 13:02:38"'
+  +'015-03-31 13:02:38"/>'#10'    <ReportLastChange Value="2015-11-16 15:33:51"'
   +'/>'#10'    <ReportVersionBuild Value=""/>'#10'    <ReportVersionMajor Value'
   +'=""/>'#10'    <ReportVersionMinor Value=""/>'#10'    <ReportVersionRelease '
   +'Value=""/>'#10'    <ReportAutor Value=""/>'#10'    <Script Value=""/>'#10' '

@@ -52,9 +52,9 @@ begin
     unit2.dm.ZBestellingAfdrukkenQuery.FieldByName('ID').AsInteger;
     unit2.DM.ZbestellingQuery.Open;
 
-    frreport1.FileName:= bestellingafdrukkenpropstorage.StoredValue['bestellingrapport'];
+   // frreport1.FileName:= bestellingafdrukkenpropstorage.StoredValue['bestellingrapport'];
    // application.MessageBox(pchar(frreport1.FileName),pchar(bestellingafdrukkenpropstorage.StoredValue['bestellingrapport']),0);
-    frReport1.LoadFromFile(frreport1.Filename);
+   // frReport1.LoadFromFile(frreport1.Filename);
     frreport1.ShowReport;
     frreport1.Clear;
 

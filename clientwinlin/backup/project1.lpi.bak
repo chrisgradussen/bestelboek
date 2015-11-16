@@ -110,7 +110,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="59" Y="5"/>
@@ -125,7 +125,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="unit2"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="7"/>
         <CursorPos X="37" Y="14"/>
@@ -214,10 +214,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit8"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="60"/>
-        <CursorPos X="21" Y="71"/>
+        <TopLine Value="46"/>
+        <CursorPos X="6" Y="46"/>
         <UsageCount Value="208"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="E:\lazarus0927\components\zeosdbo\src\dbc\ZDbcUtils.pas"/>
@@ -288,7 +292,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit12"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="100"/>
@@ -370,7 +373,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="60"/>
         <CursorPos X="21" Y="63"/>
-        <UsageCount Value="158"/>
+        <UsageCount Value="159"/>
       </Unit26>
       <Unit27>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
@@ -445,7 +448,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="83"/>
         <CursorPos X="7" Y="94"/>
-        <UsageCount Value="132"/>
+        <UsageCount Value="133"/>
       </Unit35>
       <Unit36>
         <Filename Value="C:\usr\share\lazarus\1.0\components\rtticontrols\rttictrls.pas"/>
@@ -454,7 +457,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="4082"/>
         <CursorPos X="1" Y="4096"/>
-        <UsageCount Value="133"/>
+        <UsageCount Value="134"/>
       </Unit36>
       <Unit37>
         <Filename Value="C:\usr\share\lazarus\1.0\lcl\include\customform.inc"/>
@@ -535,7 +538,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="26"/>
         <CursorPos X="1" Y="38"/>
-        <UsageCount Value="122"/>
+        <UsageCount Value="123"/>
       </Unit46>
       <Unit47>
         <Filename Value="..\..\Projecten\vinfo\vinfo.pas"/>
@@ -562,7 +565,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="24" Y="9"/>
-        <UsageCount Value="84"/>
+        <UsageCount Value="85"/>
       </Unit49>
       <Unit50>
         <Filename Value="reclameaanpassendlg.pas"/>
@@ -574,7 +577,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="34"/>
         <CursorPos X="47" Y="46"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="82"/>
       </Unit50>
       <Unit51>
         <Filename Value="..\util_udf\util_udf.lpr"/>
