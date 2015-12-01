@@ -234,7 +234,6 @@ object Bestelschema: TBestelschema
   object bestelschemaPropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
-    Active = False
     left = 359
     top = 14
   end

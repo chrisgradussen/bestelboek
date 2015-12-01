@@ -8,7 +8,7 @@ object ArtikelOmzet: TArtikelOmzet
   ClientHeight = 319
   ClientWidth = 882
   OnShow = FormShow
-  SessionProperties = 'Height;Left;Top;Width;RxArtikelOmzetGrid.Columns'
+  SessionProperties = 'Height;Left;RxArtikelOmzetGrid.Columns;Top;Width'
   LCLVersion = '1.2.6.0'
   object Panel1: TPanel
     Left = 0

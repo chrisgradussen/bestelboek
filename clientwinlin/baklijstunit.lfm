@@ -7,7 +7,7 @@ object Form1: TForm1
   ClientHeight = 534
   ClientWidth = 1058
   OnShow = FormShow
-  SessionProperties = 'Height;Left;Panel1.Height;Panel1.Left;Panel1.Top;Panel1.Width;Panel2.Height;Panel2.Left;Panel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;Panel3.Width;RxDBGrid1.Width;RxDBGrid2.Height;RxDBGrid2.Left;RxDBGrid2.Top;RxDBGrid2.Width;Splitter1.Height;Splitter1.Left;Splitter1.Top;Splitter1.Width;Top;Width;RxDBGrid1.Columns;RxDBGrid2.Columns'
+  SessionProperties = 'Height;Left;Panel1.Height;Panel1.Left;Panel1.Top;Panel1.Width;Panel2.Height;Panel2.Left;Panel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;Panel3.Width;Splitter1.Height;Splitter1.Left;Splitter1.Top;Splitter1.Width;Top;Width'
   LCLVersion = '1.2.6.0'
   object Panel1: TPanel
     Left = 0

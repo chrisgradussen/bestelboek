@@ -2,8 +2,8 @@ object DM: TDM
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 615
-  HorizontalOffset = 432
-  VerticalOffset = 112
+  HorizontalOffset = 1131
+  VerticalOffset = 144
   Width = 678
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -219,7 +219,7 @@ object DM: TDM
   object ZSequence_bestelschema_standaard_id: TZSequence
     Connection = ZConnection
     SequenceName = 'BESTELSCHEMA_STANDAARD_ID_GEN'
-    left = 320
+    left = 384
     top = 232
   end
   object ZBestelSchema_BestelgroepTable: TZTable
@@ -232,14 +232,14 @@ object DM: TDM
     IndexFieldNames = 'ID Asc'
     Options = [doCalcDefaults, doSmartOpen]
     SequenceField = 'ID'
-    left = 40
-    top = 264
+    left = 56
+    top = 320
   end
   object ZSequence_bestelschema_id: TZSequence
     Connection = ZConnection
     SequenceName = 'BESTELSCHEMA_ID_GEN'
-    left = 168
-    top = 264
+    left = 392
+    top = 296
   end
   object ZBestelSchema_BestRegelQuery: TZQuery
     Connection = ZConnection
@@ -259,14 +259,87 @@ object DM: TDM
         ParamType = ptUnknown
       end>
     Options = [doCalcDefaults, doAlwaysDetailResync, doSmartOpen]
-    left = 104
-    top = 264
+    left = 184
+    top = 296
     ParamData = <    
       item
         DataType = ftUnknown
         Name = 'id'
         ParamType = ptUnknown
       end>
+    object ZBestelSchema_BestRegelQueryBESTELSCHEMA_ID: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'BESTELSCHEMA_ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object ZBestelSchema_BestRegelQueryARTIKEL_EANUPC: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ARTIKEL_EANUPC'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZBestelSchema_BestRegelQueryAANTAL: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'AANTAL'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZBestelSchema_BestRegelQueryADVIES_AANTAL: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ADVIES_AANTAL'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayFormat = '0.#'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZBestelSchema_BestRegelQueryNAAM: TStringField
+      DisplayWidth = 364
+      FieldKind = fkData
+      FieldName = 'NAAM'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 364
+    end
+    object ZBestelSchema_BestRegelQueryARTIKELNUMMER: TStringField
+      DisplayWidth = 180
+      FieldKind = fkData
+      FieldName = 'ARTIKELNUMMER'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 180
+    end
   end
   object ZIBEventAlerter1: TZIBEventAlerter
     AutoRegister = False
@@ -276,14 +349,14 @@ object DM: TDM
     )
     Registered = False
     OnEventAlert = ZIBEventAlerter1EventAlert
-    left = 232
-    top = 264
+    left = 576
+    top = 280
   end
   object DBPropStorage: TIniPropStorage
     StoredValues = <    
       item
         Name = 'database'
-        Value = 'c:\bestelhulp1.fdb'
+        Value = 'bestelhulp1'
       end    
       item
         Name = 'user'
@@ -644,7 +717,7 @@ object DM: TDM
         ParamType = ptUnknown
       end>
     object ZZoekArtikelQueryEANUPC: TLargeintField
-      DisplayWidth = 10
+      DisplayWidth = 13
       FieldKind = fkData
       FieldName = 'EANUPC'
       Index = 0
@@ -654,7 +727,7 @@ object DM: TDM
       Required = True
     end
     object ZZoekArtikelQueryDATUM: TDateTimeField
-      DisplayWidth = 10
+      DisplayWidth = 8
       FieldKind = fkData
       FieldName = 'DATUM'
       Index = 1
@@ -664,7 +737,7 @@ object DM: TDM
       Required = True
     end
     object ZZoekArtikelQueryNAAM: TStringField
-      DisplayWidth = 364
+      DisplayWidth = 45
       FieldKind = fkData
       FieldName = 'NAAM'
       Index = 2
@@ -675,7 +748,7 @@ object DM: TDM
       Size = 364
     end
     object ZZoekArtikelQueryARTIKELNUMMER: TStringField
-      DisplayWidth = 180
+      DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'ARTIKELNUMMER'
       Index = 3
@@ -699,7 +772,7 @@ object DM: TDM
       Precision = 2
     end
     object ZZoekArtikelQueryEENHEID: TStringField
-      DisplayWidth = 180
+      DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'EENHEID'
       Index = 5
@@ -718,12 +791,13 @@ object DM: TDM
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = True
       Required = False
+      DisplayFormat = '0.#'
       MaxValue = 0
       MinValue = 0
       Precision = 2
     end
     object ZZoekArtikelQueryBESTELEENHEID: TStringField
-      DisplayWidth = 180
+      DisplayWidth = 10
       FieldKind = fkData
       FieldName = 'BESTELEENHEID'
       Index = 7
@@ -996,8 +1070,8 @@ object DM: TDM
         Name = 'eanupc'
         ParamType = ptUnknown
       end>
-    left = 152
-    top = 320
+    left = 144
+    top = 384
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1324,8 +1398,8 @@ object DM: TDM
         Name = 'eanupc'
         ParamType = ptUnknown
       end>
-    left = 256
-    top = 320
+    left = 264
+    top = 352
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1736,7 +1810,7 @@ object DM: TDM
         ParamType = ptUnknown
       end>
     object ZArtikelOmzetQueryJAARWEKEN: TLongintField
-      DisplayWidth = 10
+      DisplayWidth = 8
       FieldKind = fkData
       FieldName = 'JAARWEKEN'
       Index = 0
@@ -1746,7 +1820,7 @@ object DM: TDM
       Required = False
     end
     object ZArtikelOmzetQueryTOT: TFloatField
-      DisplayWidth = 10
+      DisplayWidth = 8
       FieldKind = fkData
       FieldName = 'TOT'
       Index = 1
@@ -1760,7 +1834,7 @@ object DM: TDM
       Precision = 2
     end
     object ZArtikelOmzetQueryMAA: TFloatField
-      DisplayWidth = 10
+      DisplayWidth = 8
       FieldKind = fkData
       FieldName = 'MAA'
       Index = 2
@@ -1774,7 +1848,7 @@ object DM: TDM
       Precision = 2
     end
     object ZArtikelOmzetQueryDIN: TFloatField
-      DisplayWidth = 10
+      DisplayWidth = 8
       FieldKind = fkData
       FieldName = 'DIN'
       Index = 3
@@ -1788,7 +1862,7 @@ object DM: TDM
       Precision = 2
     end
     object ZArtikelOmzetQueryWOE: TFloatField
-      DisplayWidth = 10
+      DisplayWidth = 8
       FieldKind = fkData
       FieldName = 'WOE'
       Index = 4
@@ -1802,7 +1876,7 @@ object DM: TDM
       Precision = 2
     end
     object ZArtikelOmzetQueryDON: TFloatField
-      DisplayWidth = 10
+      DisplayWidth = 8
       FieldKind = fkData
       FieldName = 'DON'
       Index = 5
@@ -1816,7 +1890,7 @@ object DM: TDM
       Precision = 2
     end
     object ZArtikelOmzetQueryVRI: TFloatField
-      DisplayWidth = 10
+      DisplayWidth = 8
       FieldKind = fkData
       FieldName = 'VRI'
       Index = 6
@@ -1830,7 +1904,7 @@ object DM: TDM
       Precision = 2
     end
     object ZArtikelOmzetQueryZAT: TFloatField
-      DisplayWidth = 10
+      DisplayWidth = 8
       FieldKind = fkData
       FieldName = 'ZAT'
       Index = 7
@@ -1844,7 +1918,7 @@ object DM: TDM
       Precision = 2
     end
     object ZArtikelOmzetQueryZON: TFloatField
-      DisplayWidth = 10
+      DisplayWidth = 8
       FieldKind = fkData
       FieldName = 'ZON'
       Index = 8
@@ -1858,7 +1932,7 @@ object DM: TDM
       Precision = 2
     end
     object ZArtikelOmzetQueryOMSCHRIJVING: TStringField
-      DisplayWidth = 50
+      DisplayWidth = 15
       FieldKind = fkData
       FieldName = 'OMSCHRIJVING'
       Index = 9
@@ -1869,7 +1943,7 @@ object DM: TDM
       Size = 512
     end
     object ZArtikelOmzetQueryVOORDEEL: TStringField
-      DisplayWidth = 192
+      DisplayWidth = 15
       FieldKind = fkData
       FieldName = 'VOORDEEL'
       Index = 10
@@ -1880,7 +1954,7 @@ object DM: TDM
       Size = 192
     end
     object ZArtikelOmzetQueryRECLAME: TStringField
-      DisplayWidth = 50
+      DisplayWidth = 15
       FieldKind = fkData
       FieldName = 'RECLAME'
       Index = 11

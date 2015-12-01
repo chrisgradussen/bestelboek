@@ -110,6 +110,12 @@ type
     ZBaklijstQuery: TZQuery;
     ZBaklijstGeschiedenisQuery: TZQuery;
     ZBaklijstDagLookupQuery: TZReadOnlyQuery;
+    ZBestelSchema_BestRegelQueryAANTAL: TFloatField;
+    ZBestelSchema_BestRegelQueryADVIES_AANTAL: TFloatField;
+    ZBestelSchema_BestRegelQueryARTIKELNUMMER: TStringField;
+    ZBestelSchema_BestRegelQueryARTIKEL_EANUPC: TFloatField;
+    ZBestelSchema_BestRegelQueryBESTELSCHEMA_ID: TLongintField;
+    ZBestelSchema_BestRegelQueryNAAM: TStringField;
     ZMultiplierTablePERCENTAGE: TFloatField;
     ZQuery1: TZQuery;
     ZQuery1CHARGE_1: TLongintField;

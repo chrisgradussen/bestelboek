@@ -9,7 +9,7 @@ object ZoekArtikel: TZoekArtikel
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
-  SessionProperties = 'Height;Left;Top;Width;WindowState;Grid.Columns'
+  SessionProperties = 'Grid.Columns;Height;Left;Top;Width;WindowState'
   LCLVersion = '1.2.6.0'
   object Edit: TEdit
     Left = 0

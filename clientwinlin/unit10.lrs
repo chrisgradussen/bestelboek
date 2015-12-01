@@ -1,8 +1,8 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TBestelschema','FORMDATA',[
-  'TPF0'#13'TBestelschema'#12'Bestelschema'#4'Left'#3#223#1#6'Height'#3','#1#3
-  +'Top'#3#169#0#5'Width'#3#20#3#7'Caption'#6#12'Bestelschema'#12'ClientHeight'
+  'TPF0'#13'TBestelschema'#12'Bestelschema'#4'Left'#3#194#2#6'Height'#3','#1#3
+  +'Top'#3#175#0#5'Width'#3#20#3#7'Caption'#6#12'Bestelschema'#12'ClientHeight'
   +#3','#1#11'ClientWidth'#3#20#3#12'OnCloseQuery'#7#14'FormCloseQuery'#6'OnSho'
   +'w'#7#8'FormShow'#17'SessionProperties'#12'<'#1#0#0'Height;Left;Panel2.Heigh'
   +'t;Panel2.Left;Panel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;'
