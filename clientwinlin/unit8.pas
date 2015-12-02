@@ -56,7 +56,7 @@ begin
    // application.MessageBox(pchar(frreport1.FileName),pchar(bestellingafdrukkenpropstorage.StoredValue['bestellingrapport']),0);
    // frReport1.LoadFromFile(frreport1.Filename);
     frreport1.ShowReport;
-    frreport1.Clear;
+   // frreport1.Clear;
 
 //    frreport1.PrepareReport;
   //  frreport1.ShowPreparedReport;
