@@ -738,8 +738,8 @@
       <Filename Value="bestelboek1"/>
     </Target>
     <SearchPaths>
-      <Libraries Value="\usr\share\lazarus\1.0\components\rtticontrols\"/>
-      <OtherUnitFiles Value="\usr\share\lazarus\1.0\components\rtticontrols\"/>
+      <Libraries Value="\usr\share\lazarus\1.0\components\rtticontrols"/>
+      <OtherUnitFiles Value="\usr\share\lazarus\1.0\components\rtticontrols"/>
     </SearchPaths>
     <Parsing>
       <SyntaxOptions>
@@ -793,4 +793,4 @@
     </Exceptions>
   </Debugging>
   <EditorMacros Count="0"/>
-</CONFIG>
+</CONFIG>
