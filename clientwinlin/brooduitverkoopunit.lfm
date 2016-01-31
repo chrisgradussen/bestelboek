@@ -1,0 +1,123 @@
+object FormBroodUitverkoop: TFormBroodUitverkoop
+  Left = 85
+  Height = 583
+  Top = 31
+  Width = 1135
+  Caption = 'BroodUitverkoop'
+  ClientHeight = 583
+  ClientWidth = 1135
+  OnShow = FormShow
+  LCLVersion = '1.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 208
+    Top = 0
+    Width = 1135
+    Align = alTop
+    ClientHeight = 208
+    ClientWidth = 1135
+    TabOrder = 0
+    object Calendar: TCalendar
+      Left = 8
+      Height = 190
+      Top = 8
+      Width = 220
+      DateTime = 42400
+      OnDayChanged = CalendarDayChanged
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 375
+    Top = 208
+    Width = 1135
+    Align = alClient
+    Caption = 'Panel2'
+    ClientHeight = 375
+    ClientWidth = 1135
+    TabOrder = 1
+    object RxDBGrid1: TRxDBGrid
+      Left = 1
+      Height = 373
+      Top = 1
+      Width = 1133
+      AfterQuickSearch = RxDBGrid1AfterQuickSearch
+      TitleButtons = False
+      AutoSort = True
+      KeyStrokes = <      
+        item
+          Command = rxgcShowFindDlg
+          ShortCut = 16454
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowColumnsDlg
+          ShortCut = 16471
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowFilterDlg
+          ShortCut = 16468
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowSortDlg
+          ShortCut = 16467
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowQuickFilter
+          ShortCut = 16465
+          Enabled = True
+        end      
+        item
+          Command = rxgcHideQuickFilter
+          ShortCut = 16456
+          Enabled = True
+        end      
+        item
+          Command = rxgcSelectAll
+          ShortCut = 16449
+          Enabled = True
+        end      
+        item
+          Command = rxgcDeSelectAll
+          ShortCut = 16429
+          Enabled = True
+        end      
+        item
+          Command = rxgcInvertSelection
+          ShortCut = 16426
+          Enabled = True
+        end      
+        item
+          Command = rxgcOptimizeColumnsWidth
+          ShortCut = 16427
+          Enabled = True
+        end      
+        item
+          Command = rxgcCopyCellValue
+          ShortCut = 16451
+          Enabled = True
+        end>
+      OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+      Align = alClient
+      Color = clWindow
+      DrawFullLine = False
+      FocusColor = clRed
+      SelectedColor = clHighlight
+      GridLineStyle = psSolid
+      DataSource = DataSource2
+      Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      ParentColor = False
+      TabOrder = 0
+    end
+  end
+  object DataSource2: TDataSource
+    DataSet = DM.ZBroodUitverkoopQuery
+    Enabled = False
+    left = 392
+    top = 40
+  end
+end

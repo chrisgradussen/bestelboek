@@ -1,9 +1,9 @@
 object DM: TDM
   OnCreate = DataModuleCreate
   OldCreateOrder = False
-  Height = 615
-  HorizontalOffset = 1131
-  VerticalOffset = 144
+  Height = 613
+  HorizontalOffset = 635
+  VerticalOffset = 31
   Width = 678
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -16,7 +16,7 @@ object DM: TDM
     BeforeConnect = ZConnectionBeforeConnect
     HostName = 'LOCALHOST'
     Port = 0
-    Database = 'bestelhulp1_eilandplein'
+    Database = 'bestelhulp1'
     User = 'sysdba'
     Password = 'masterkey'
     Protocol = 'firebird-2.5'
@@ -767,6 +767,7 @@ object DM: TDM
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
+      DisplayFormat = '0.#'
       MaxValue = 0
       MinValue = 0
       Precision = 2
@@ -1964,5 +1965,166 @@ object DM: TDM
       Required = False
       Size = 512
     end
+  end
+  object ZBroodUitverkoopQuery: TZQuery
+    Connection = ZConnection
+    SQL.Strings = (
+      'select * from  brood_uitverkoop(:datum)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'datum'
+        ParamType = ptUnknown
+      end>
+    left = 448
+    top = 552
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'datum'
+        ParamType = ptUnknown
+      end>
+    object ZBroodUitverkoopQueryBROODGROEP: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'BROODGROEP'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+    end
+    object ZBroodUitverkoopQueryTOTAAL: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TOTAAL'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZBroodUitverkoopQueryTIENUUR: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TIENUUR'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZBroodUitverkoopQueryTWAALFUUR: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TWAALFUUR'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZBroodUitverkoopQueryTWEEUUR: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'TWEEUUR'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZBroodUitverkoopQueryDRIEUUR: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'DRIEUUR'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZBroodUitverkoopQueryVIERUUR: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VIERUUR'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZBroodUitverkoopQueryVIJFUUR: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VIJFUUR'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZBroodUitverkoopQueryZESUUR: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ZESUUR'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZBroodUitverkoopQueryZEVENUUR: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'ZEVENUUR'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+  end
+  object ZBroodUitverkoopDataSoure: TDataSource
+    DataSet = ZBroodUitverkoopQuery
+    left = 576
+    top = 544
   end
 end

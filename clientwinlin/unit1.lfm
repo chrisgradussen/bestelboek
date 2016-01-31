@@ -1,7 +1,7 @@
 object hoofdmenu: Thoofdmenu
   Left = 788
   Height = 224
-  Top = 393
+  Top = 372
   Width = 319
   Caption = 'Bestelboek 1 Hoofdmenu'
   ClientHeight = 201
@@ -113,12 +113,13 @@ object hoofdmenu: Thoofdmenu
     OnClick = ButtonBaklijstClick
     TabOrder = 10
   end
-  object ButtonZoeteSnacks: TButton
+  object ButtonBroodUitverkoop: TButton
     Left = 200
     Height = 25
     Top = 136
     Width = 91
-    Caption = '&ZoeteSnacks'
+    Caption = 'Brood&Uitverkoop'
+    OnClick = ButtonBroodUitverkoopClick
     TabOrder = 11
   end
   object HoofdmenuPropStorage: TIniPropStorage

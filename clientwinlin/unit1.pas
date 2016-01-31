@@ -5,7 +5,7 @@ unit Unit1;
 interface
 
 uses
-  baklijstvolgordeunit,Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
+   brooduitverkoopunit,baklijstvolgordeunit,Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   IniPropStorage, StdCtrls, Unit3, Unit4,unit5, unit6, unit7, unit8, unit9,
   Unit10, Unit2, Unit11, unit12, Unit13, Menus, Unit14,ZConnection,
   ZDataset, db, ZSqlUpdate, ZSequence,baklijstunit,baklijstsnelunit,versiontypes,vinfo, multiplierunit;
@@ -17,7 +17,7 @@ type
   Thoofdmenu = class(TForm)
     BestelgroepButton: TButton;
     ButtonBaklijst: TButton;
-    ButtonZoeteSnacks: TButton;
+    ButtonBroodUitverkoop: TButton;
     DagenButton: TButton;
     LeverancierButton: TButton;
     GroepButton: TButton;
@@ -45,6 +45,7 @@ type
     procedure Button7Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
     procedure ButtonBaklijstClick(Sender: TObject);
+    procedure ButtonBroodUitverkoopClick(Sender: TObject);
     procedure DagenButtonClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -113,6 +114,11 @@ procedure Thoofdmenu.ButtonBaklijstClick(Sender: TObject);
 begin
   baklijstsnelunit.frmBaklijstBroodjes.Show;
 
+end;
+
+procedure Thoofdmenu.ButtonBroodUitverkoopClick(Sender: TObject);
+begin
+  FormBroodUitverkoop.ShowModal;
 end;
 
 procedure Thoofdmenu.DagenButtonClick(Sender: TObject);

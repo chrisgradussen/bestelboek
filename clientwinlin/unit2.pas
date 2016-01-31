@@ -116,6 +116,18 @@ type
     ZBestelSchema_BestRegelQueryARTIKEL_EANUPC: TFloatField;
     ZBestelSchema_BestRegelQueryBESTELSCHEMA_ID: TLongintField;
     ZBestelSchema_BestRegelQueryNAAM: TStringField;
+    ZBroodUitverkoopDataSoure: TDataSource;
+    ZBroodUitverkoopQuery: TZQuery;
+    ZBroodUitverkoopQueryBROODGROEP: TStringField;
+    ZBroodUitverkoopQueryDRIEUUR: TFloatField;
+    ZBroodUitverkoopQueryTIENUUR: TFloatField;
+    ZBroodUitverkoopQueryTOTAAL: TFloatField;
+    ZBroodUitverkoopQueryTWAALFUUR: TFloatField;
+    ZBroodUitverkoopQueryTWEEUUR: TFloatField;
+    ZBroodUitverkoopQueryVIERUUR: TFloatField;
+    ZBroodUitverkoopQueryVIJFUUR: TFloatField;
+    ZBroodUitverkoopQueryZESUUR: TFloatField;
+    ZBroodUitverkoopQueryZEVENUUR: TFloatField;
     ZMultiplierTablePERCENTAGE: TFloatField;
     ZQuery1: TZQuery;
     ZQuery1CHARGE_1: TLongintField;

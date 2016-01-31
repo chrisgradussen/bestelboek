@@ -1,7 +1,7 @@
-object Form2: TForm2
+object frmBaklijstBroodjes: TfrmBaklijstBroodjes
   Left = 269
   Height = 473
-  Top = 188
+  Top = 123
   Width = 931
   Caption = 'Baklijst broodjes'
   ClientHeight = 473
@@ -54,6 +54,7 @@ object Form2: TForm2
       Height = 295
       Top = 1
       Width = 929
+      AfterQuickSearch = RxDBGrid1AfterQuickSearch
       TitleButtons = False
       AutoSort = True
       Columns = <      

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <Compiler Value="/usr/bin/fpc" Date="1397983219"/>
-  <Params Value=" -MObjFPC -Scghi -O3 -vewnhi -Fi/home/chrgra/bestelboek/util_udf/lib/x86_64-linux -Fu/home/chrgra/bestelboek/util_udf/ -FU/home/chrgra/bestelboek/util_udf/lib/x86_64-linux/ -l -olibutil_udf.so util_udf.lpr"/>
+  <Params Value=" -MObjFPC -Scghi -O3 -vewnhi -Fi/home/chrgra/Documenten/bestelboek/util_udf/lib/x86_64-linux -Fu/home/chrgra/Documenten/bestelboek/util_udf/ -FU/home/chrgra/Documenten/bestelboek/util_udf/lib/x86_64-linux/ -l -olibutil_udf.so util_udf.lpr"/>
 </CONFIG>

@@ -28,6 +28,8 @@ type
       var AcceptDate: Boolean);
     procedure DBDateEditEditingDone(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure RxDBGrid1AfterQuickSearch(Sender: TObject; Field: TField;
+      var AValue: string);
     procedure TICalendarEditingDone(Sender: TObject);
   private
     { private declarations }
@@ -54,6 +56,12 @@ begin
     dm.ZBaklijstQuery.ParamByName('datum').AsDateTime:= now;
     dm.ZBaklijstQuery.Open;
   end;
+end;
+
+procedure TfrmBaklijstBroodjes.RxDBGrid1AfterQuickSearch(Sender: TObject;
+  Field: TField; var AValue: string);
+begin
+
 end;
 
 procedure TfrmBaklijstBroodjes.TICalendarEditingDone(Sender: TObject);
