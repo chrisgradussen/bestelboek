@@ -1968,6 +1968,7 @@ object DM: TDM
   end
   object ZBroodUitverkoopQuery: TZQuery
     Connection = ZConnection
+    Active = True
     SQL.Strings = (
       'select * from  brood_uitverkoop(:datum)'
     )
