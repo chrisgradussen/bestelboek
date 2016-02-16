@@ -1,6 +1,6 @@
 library util_udf;
 
-{$mode objfpc}{$H+}
+{$mode delphi}
 
 uses
     {$IFDEF UNIX}
@@ -34,7 +34,7 @@ type
       fblibrary = 'libfbclient.so.2';
    {$ENDIF}
 
-   procedure isc_decode_sql_date   (var ib_date: ISC_DATE;
+   procedure isc_decode_sql_date   (ib_date: PISC_DATE ;
                                    tm_date: PCTimeStructure);
                                 stdcall; external fblibrary;
 
@@ -54,54 +54,26 @@ end;
 function f_datetoyearweekday(ib_date : PISC_DATE) : longint;  cdecl;
 var
   ayear, aweekofyear,adayofweek : word;
-  pm : pctimestructure;
+  tm : tctimestructure;
   dt : tdatetime;
 
 begin
-
-  getmem(pm,sizeof(tctimestructure));
-  isc_decode_sql_date(ib_date^,pm);
-  dt := encodedate(pm^.tm_year+1900,pm^.tm_mon+1, pm^.tm_mday);
+  isc_decode_sql_date(ib_date,@tm);
+  dt := encodedate(tm.tm_year+1900,tm.tm_mon+1, tm.tm_mday);
   aweekofyear := weekoftheyear(dt,aYear);
-  result := (1900+pm^.tm_year)*10000+(1+pm^.tm_mon)*100+pm^.tm_mday;
+  result := (1900+tm.tm_year)*10000+(1+tm.tm_mon)*100+tm.tm_mday;
   result := ayear*1000+aweekofyear*10+dayoftheweek(dt);
-  freemem(pm);
 end;
 
-
 function f_datetoyearweek(ib_date : PISC_DATE) : longint; cdecl;
-var
-  ayear, aweekofyear,adayofweek : word;
-  pm : pctimestructure;
-  dt : tdatetime;
-
 begin
-
-  getmem(pm,sizeof(tctimestructure));
-  isc_decode_sql_date(ib_date^,pm);
-  dt := encodedate(pm^.tm_year+1900,pm^.tm_mon+1, pm^.tm_mday);
-  aweekofyear := weekoftheyear(dt,aYear);
-  result := (1900+pm^.tm_year)*10000+(1+pm^.tm_mon)*100+pm^.tm_mday;
-  result := ayear*100+aweekofyear;
-  freemem(pm);
+  result := f_datetoyearweekday(ib_date) div 10;
 end;
 
 function f_datetoweek(ib_date : PISC_DATE) : longint; cdecl;
 begin
 result := f_datetoyearweekday(ib_date);
 end;
-
-
-{
-    struct tm c_date;
-    char buf[255];
-    isc_decode_sql_date(ib_date,&c_date);
-    strftime(buf,sizeof(buf)-1,"%G%V%u",&c_date);
-    return atol(buf);
-}
-
-
-
 
 function fbudf_tijd_seconden(var begintijd,eindtijd,pauzetijd: longint): LongInt; cdecl;
 begin
@@ -147,7 +119,6 @@ exports
 
 begin
   IsMultiThread := True;
-
 end.
 
 

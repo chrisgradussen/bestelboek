@@ -1,6 +1,6 @@
 library util_udf;
 
-{$mode objfpc}{$H+}
+{$mode delphi}
 
 uses
     {$IFDEF UNIX}
@@ -31,10 +31,10 @@ type
    {$ENDIF}
    {$IFDEF LINUX }
       const
-      fblibrary = '/usr/lib/x86_64-linux-gnu/libfbclient.so.2';
+      fblibrary = 'libfbclient.so.2';
    {$ENDIF}
 
-   procedure isc_decode_sql_date   (var ib_date: ISC_DATE;
+   procedure isc_decode_sql_date   (ib_date: PISC_DATE ;
                                    tm_date: PCTimeStructure);
                                 stdcall; external fblibrary;
 
@@ -54,18 +54,19 @@ end;
 function f_datetoyearweekday(ib_date : PISC_DATE) : longint;  cdecl;
 var
   ayear, aweekofyear,adayofweek : word;
+  tm : tctimestructure;
   pm : pctimestructure;
   dt : tdatetime;
 
 begin
 
-  getmem(pm,sizeof(tctimestructure));
-  isc_decode_sql_date(ib_date^,pm);
-  dt := encodedate(pm^.tm_year+1900,pm^.tm_mon+1, pm^.tm_mday);
+  //getmem(pm,sizeof(tctimestructure));
+  isc_decode_sql_date(ib_date,@tm);
+  dt := encodedate(tm.tm_year+1900,tm.tm_mon+1, tm.tm_mday);
   aweekofyear := weekoftheyear(dt,aYear);
-  result := (1900+pm^.tm_year)*10000+(1+pm^.tm_mon)*100+pm^.tm_mday;
+  result := (1900+tm.tm_year)*10000+(1+tm.tm_mon)*100+tm.tm_mday;
   result := ayear*1000+aweekofyear*10+dayoftheweek(dt);
-  freemem(pm);
+  //freemem(pm);
 end;
 
 
@@ -76,14 +77,14 @@ var
   dt : tdatetime;
 
 begin
-
-  getmem(pm,sizeof(tctimestructure));
-  isc_decode_sql_date(ib_date^,pm);
+  result := f_datetoyearweekday(ib_date) div 10;
+{  getmem(pm,sizeof(tctimestructure));
+  isc_decode_sql_date(ib_date,pm);
   dt := encodedate(pm^.tm_year+1900,pm^.tm_mon+1, pm^.tm_mday);
   aweekofyear := weekoftheyear(dt,aYear);
   result := (1900+pm^.tm_year)*10000+(1+pm^.tm_mon)*100+pm^.tm_mday;
   result := ayear*100+aweekofyear;
-  freemem(pm);
+  freemem(pm); }
 end;
 
 function f_datetoweek(ib_date : PISC_DATE) : longint; cdecl;
