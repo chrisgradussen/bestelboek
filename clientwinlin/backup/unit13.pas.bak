@@ -138,29 +138,30 @@ begin
        einddatum := incday(startdatum,6);
        startdatumweek := encodedateweek(jaarweken div 100,jaarweken mod 100,1);
        einddatumweek := incday(startdatumweek,6);
-
        if dm.zartikelomzetreclamequery.active then
        begin
          dm.zartikelomzetreclamequery.Close;
        end;
        dm.ZArtikelomzetReclameQuery.ParamByName('startdatum').AsDateTime := startdatumweek;
        dm.ZArtikelomzetReclameQuery.ParamByName('einddatum').asdatetime := einddatumweek;
-       dm.ZArtikelomzetReclameQuery.ParamByName('artikel_artikelnummer').AsString:=
-          omschrijvingdatasource.dataset.fieldbyname('artikelnummer').asstring;
+       dm.ZArtikelomzetReclameQuery.SQL.Text:=
+       'select * from reclame r where r.begindatum >= :startdatum and r.begindatum <= :einddatum  and r.artikel_eanupc in (' + geefalleplus + ');';
        dm.ZArtikelomzetReclameQuery.Open;
        if dm.ZArtikelomzetReclameQuery.RecordCount = 0 then
        begin
-         dm.ZArtikelomzetReclameQuery.insert;
-         dm.zartikelomzetreclamequery.FieldByName('BEGINDATUM').asdatetime := startdatum;
-         dm.zartikelomzetreclamequery.FieldByName('EINDDATUM').asdatetime := einddatum;
-         dm.zartikelomzetreclamequery.FieldByName('ARTIKEL_artikelnummer').asstring :=
-         omschrijvingdatasource.dataset.fieldbyname('artikelnummer').asstring;
-       end
-       else
-       begin
+         eanupcdatasource.dataset.first;
+         while not eanupcdatasource.dataset.EOF do
+         begin
+           dm.ZArtikelomzetReclameQuery.insert;     //(alle plus toevoegen en de rest in reclamedlg doen)
+           dm.zartikelomzetreclamequery.FieldByName('BEGINDATUM').AsDateTime:= startdatum;
+           dm.zartikelomzetreclamequery.FieldByName('EINDDATUM').AsDateTime:= einddatum;
+           dm.zartikelomzetreclamequery.FieldByName('artikel_eanupc').asstring :=
+           eanupcdatasource.dataset.fieldbyname('eanupc').asstring;
+           dm.ZArtikelomzetReclameQuery.post;
+           eanupcdatasource.dataset.next;
+         end;
        end;
        reclameaanpassendlg.FormReclameDlg.ShowModal;
-      // dm.ZArtikelomzetReclameQuery.Refresh;
        dm.ZArtikelOmzetQuery.refresh;
      end;
    end;

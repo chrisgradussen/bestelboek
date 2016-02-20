@@ -7,6 +7,7 @@ object DM: TDM
   Width = 678
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
     Properties.Strings = (
       'AutoEncodeStrings='
     )
@@ -1750,7 +1751,7 @@ object DM: TDM
   object ZArtikelomzetReclameQuery: TZQuery
     Connection = ZConnection
     SQL.Strings = (
-      'select * from reclame_nieuw r where r.begindatum >= :startdatum and r.begindatum <= :einddatum  and r.artikel_artikelnummer = :artikel_artikelnummer'
+      'select * from reclame r where r.begindatum >= :startdatum and r.begindatum <= :einddatum  and r.artikel_eanupc in ( :eanupc)'
     )
     Params = <    
       item
@@ -1764,8 +1765,8 @@ object DM: TDM
         ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
-        Name = 'artikel_artikelnummer'
+        DataType = ftString
+        Name = 'eanupc'
         ParamType = ptUnknown
       end>
     left = 424
@@ -1782,8 +1783,8 @@ object DM: TDM
         ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
-        Name = 'artikel_artikelnummer'
+        DataType = ftString
+        Name = 'eanupc'
         ParamType = ptUnknown
       end>
   end
@@ -2125,5 +2126,11 @@ object DM: TDM
     DataSet = ZBroodUitverkoopQuery
     left = 576
     top = 544
+  end
+  object ZUpdateReclameSql: TZQuery
+    Connection = ZConnection
+    Params = <>
+    left = 441
+    top = 159
   end
 end

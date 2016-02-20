@@ -1,7 +1,7 @@
 object FormReclameDlg: TFormReclameDlg
-  Left = 540
+  Left = 436
   Height = 440
-  Top = 313
+  Top = 116
   Width = 627
   BorderStyle = bsDialog
   Caption = 'Reclame aanpassen of toevoegen'
@@ -38,6 +38,7 @@ object FormReclameDlg: TFormReclameDlg
       DataSource = DataSource1
       Options = []
       TabOrder = 0
+      VisibleButtons = [nbCancel, nbRefresh]
     end
   end
   object Panel2: TPanel
@@ -93,93 +94,6 @@ object FormReclameDlg: TFormReclameDlg
       DataField = 'EINDDATUM'
       DataSource = DataSource1
     end
-    object RxDBGrid1: TRxDBGrid
-      Left = 8
-      Height = 120
-      Top = 8
-      Width = 616
-      TitleButtons = False
-      AutoSort = True
-      Columns = <      
-        item
-          Title.Alignment = taCenter
-          Title.Caption = 'VOORDEEL'
-          Title.Orientation = toHorizontal
-          Width = 585
-          FieldName = 'VOORDEEL'
-          EditButtons = <>
-          Filter.DropDownRows = 0
-          Filter.EmptyValue = '(Empty)'
-          Filter.EmptyFont.Style = [fsItalic]
-          Filter.ItemIndex = -1
-        end>
-      KeyStrokes = <      
-        item
-          Command = rxgcShowFindDlg
-          ShortCut = 16454
-          Enabled = True
-        end      
-        item
-          Command = rxgcShowColumnsDlg
-          ShortCut = 16471
-          Enabled = True
-        end      
-        item
-          Command = rxgcShowFilterDlg
-          ShortCut = 16468
-          Enabled = True
-        end      
-        item
-          Command = rxgcShowSortDlg
-          ShortCut = 16467
-          Enabled = True
-        end      
-        item
-          Command = rxgcShowQuickFilter
-          ShortCut = 16465
-          Enabled = True
-        end      
-        item
-          Command = rxgcHideQuickFilter
-          ShortCut = 16456
-          Enabled = True
-        end      
-        item
-          Command = rxgcSelectAll
-          ShortCut = 16449
-          Enabled = True
-        end      
-        item
-          Command = rxgcDeSelectAll
-          ShortCut = 16429
-          Enabled = True
-        end      
-        item
-          Command = rxgcInvertSelection
-          ShortCut = 16426
-          Enabled = True
-        end      
-        item
-          Command = rxgcOptimizeColumnsWidth
-          ShortCut = 16427
-          Enabled = True
-        end      
-        item
-          Command = rxgcCopyCellValue
-          ShortCut = 16451
-          Enabled = True
-        end>
-      OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
-      Color = clWindow
-      DrawFullLine = False
-      FocusColor = clRed
-      SelectedColor = clHighlight
-      GridLineStyle = psSolid
-      DataSource = DataSource1
-      Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
-      ParentColor = False
-      TabOrder = 2
-    end
     object DBEdit1: TDBEdit
       Left = 27
       Height = 25
@@ -189,6 +103,15 @@ object FormReclameDlg: TFormReclameDlg
       DataSource = DataSource1
       CharCase = ecNormal
       MaxLength = 0
+      TabOrder = 2
+    end
+    object Button1: TButton
+      Left = 8
+      Height = 96
+      Top = 8
+      Width = 612
+      Caption = '&SLUITEN'
+      OnClick = Button1Click
       TabOrder = 3
     end
   end

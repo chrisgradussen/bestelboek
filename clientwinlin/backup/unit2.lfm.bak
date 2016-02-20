@@ -7,11 +7,11 @@ object DM: TDM
   Width = 678
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
     Properties.Strings = (
       'AutoEncodeStrings='
     )
     TransactIsolationLevel = tiReadCommitted
-    Connected = True
     DesignConnection = True
     BeforeConnect = ZConnectionBeforeConnect
     HostName = 'LOCALHOST'
@@ -1751,7 +1751,7 @@ object DM: TDM
   object ZArtikelomzetReclameQuery: TZQuery
     Connection = ZConnection
     SQL.Strings = (
-      'select * from reclame_nieuw r where r.begindatum >= :startdatum and r.begindatum <= :einddatum  and r.artikel_artikelnummer = :artikel_artikelnummer'
+      'select * from reclame r where r.begindatum >= :startdatum and r.begindatum <= :einddatum  and r.artikel_eanupc in ( :eanupc)'
     )
     Params = <    
       item
@@ -1765,8 +1765,8 @@ object DM: TDM
         ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
-        Name = 'artikel_artikelnummer'
+        DataType = ftString
+        Name = 'eanupc'
         ParamType = ptUnknown
       end>
     left = 424
@@ -1783,8 +1783,8 @@ object DM: TDM
         ParamType = ptUnknown
       end    
       item
-        DataType = ftUnknown
-        Name = 'artikel_artikelnummer'
+        DataType = ftString
+        Name = 'eanupc'
         ParamType = ptUnknown
       end>
   end
@@ -1968,7 +1968,6 @@ object DM: TDM
   end
   object ZBroodUitverkoopQuery: TZQuery
     Connection = ZConnection
-    Active = True
     SQL.Strings = (
       'select * from  brood_uitverkoop(:datum)'
     )

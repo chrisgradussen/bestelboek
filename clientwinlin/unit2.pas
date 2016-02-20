@@ -139,6 +139,7 @@ type
     ZBaklijstvolgordequery: TZQuery;
     ZArtikelomzetReclameQuery: TZQuery;
     ZArtikelOmzetQuery: TZReadOnlyQuery;
+    ZUpdateReclameSql: TZQuery;
     ZReclameQuery: TZQuery;
     ZReclameQueryARTIKEL_EANUPC: TLargeintField;
     ZReclameQueryBEGINDATUM: TDateField;

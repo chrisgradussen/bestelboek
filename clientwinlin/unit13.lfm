@@ -23,6 +23,7 @@ object ArtikelOmzet: TArtikelOmzet
     object RxArtikelOmzetGrid: TRxDBGrid
       Left = 1
       Height = 266
+      Hint = 'Dubbelklik op de week om aktie toe te voegen'
       Top = 24
       Width = 880
       TitleButtons = False
@@ -93,6 +94,8 @@ object ArtikelOmzet: TArtikelOmzet
       DataSource = OmzetDataSource
       Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
       ParentColor = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 2
       OnDblClick = RxArtikelOmzetGridDblClick
       OnKeyDown = RxArtikelOmzetGridKeyDown
@@ -183,18 +186,23 @@ object ArtikelOmzet: TArtikelOmzet
     end
     object RxDBGrid1: TRxDBGrid
       AnchorSideTop.Side = asrCenter
-      Left = 666
-      Height = 220
-      Top = 48
-      Width = 200
+      Left = 712
+      Height = 132
+      Top = 136
+      Width = 162
       AfterQuickSearch = RxDBGrid1AfterQuickSearch
       TitleButtons = False
       AutoSort = True
       Columns = <      
         item
+          Alignment = taRightJustify
+          DropDownRows = 8
+          MinSize = 100
+          ReadOnly = True
           Title.Alignment = taCenter
           Title.Caption = 'EANUPC'
           Title.Orientation = toHorizontal
+          Width = 115
           FieldName = 'EANUPC'
           EditButtons = <>
           Filter.DropDownRows = 0
@@ -235,6 +243,7 @@ object ArtikelOmzet: TArtikelOmzet
         end>
       OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
       Anchors = [akRight, akBottom]
+      BiDiMode = bdRightToLeft
       Color = clWindow
       DrawFullLine = False
       FocusColor = clRed
@@ -242,6 +251,7 @@ object ArtikelOmzet: TArtikelOmzet
       GridLineStyle = psSolid
       DataSource = eanupcdatasource
       Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      ParentBiDiMode = False
       ParentColor = False
       TabOrder = 1
       OnCellClick = RxDBGrid1CellClick
