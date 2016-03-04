@@ -7,7 +7,7 @@ interface
 uses
    brooduitverkoopunit,baklijstvolgordeunit,Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   IniPropStorage, StdCtrls, Unit3, Unit4,unit5, unit6, unit7, unit8, unit9,
-  Unit10, Unit2, Unit11, unit12, Unit13, Menus, Unit14,ZConnection,
+  Unit10, Unit2, Unit11, unit12, Unit13, Menus, Unit14,ZConnection,aktielijstunit,
   ZDataset, db, ZSqlUpdate, ZSequence,baklijstunit,baklijstsnelunit,versiontypes,vinfo, multiplierunit;
 
 type
@@ -16,6 +16,7 @@ type
 
   Thoofdmenu = class(TForm)
     BestelgroepButton: TButton;
+    Aktielijst: TButton;
     ButtonBaklijst: TButton;
     ButtonBroodUitverkoop: TButton;
     DagenButton: TButton;
@@ -38,6 +39,7 @@ type
     bestellingafdrukkenbutton: TButton;
     Button9: TButton;
     HoofdmenuPropStorage: TIniPropStorage;
+    procedure AktielijstClick(Sender: TObject);
     procedure BestelgroepButtonClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
@@ -83,6 +85,11 @@ implementation
 procedure Thoofdmenu.BestelgroepButtonClick(Sender: TObject);
 begin
   bestelgroep.show;
+end;
+
+procedure Thoofdmenu.AktielijstClick(Sender: TObject);
+begin
+  aktielijstunit.FormAktielijst.ShowModal;
 end;
 
 procedure Thoofdmenu.Button1Click(Sender: TObject);

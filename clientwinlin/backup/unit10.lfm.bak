@@ -1,7 +1,7 @@
 object Bestelschema: TBestelschema
-  Left = 479
+  Left = 706
   Height = 300
-  Top = 169
+  Top = 175
   Width = 788
   Caption = 'Bestelschema'
   ClientHeight = 300

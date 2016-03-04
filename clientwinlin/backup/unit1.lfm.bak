@@ -122,6 +122,15 @@ object hoofdmenu: Thoofdmenu
     OnClick = ButtonBroodUitverkoopClick
     TabOrder = 11
   end
+  object Aktielijst: TButton
+    Left = 104
+    Height = 25
+    Top = 168
+    Width = 91
+    Caption = 'Aktielijst'
+    OnClick = AktielijstClick
+    TabOrder = 12
+  end
   object HoofdmenuPropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
