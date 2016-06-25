@@ -7,11 +7,11 @@ object DM: TDM
   Width = 678
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
     Properties.Strings = (
       'AutoEncodeStrings='
     )
     TransactIsolationLevel = tiReadCommitted
-    DesignConnection = True
     BeforeConnect = ZConnectionBeforeConnect
     HostName = 'LOCALHOST'
     Port = 0

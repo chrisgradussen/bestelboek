@@ -11,7 +11,6 @@ object DM: TDM
       'AutoEncodeStrings='
     )
     TransactIsolationLevel = tiReadCommitted
-    Connected = True
     DesignConnection = True
     BeforeConnect = ZConnectionBeforeConnect
     HostName = 'LOCALHOST'
@@ -140,7 +139,6 @@ object DM: TDM
     Connection = ZConnection
     AutoCalcFields = False
     UpdateObject = zupdatestatussql
-    Active = True
     SQL.Strings = (
       'select b.id,b.status,b.bestelgroep_id as groepnummer,z.naam,cast(b.besteldatum+b.besteltijd as timestamp)as besteltijd,cast(b.leverdatum+ b.levertijd as timestamp)as levertijd,cast(b.volgendeleverdatum+b.volgendelevertijd as timestamp)as volgendelevertijd from bestelschema b join bestelgroep z on b.bestelgroep_id = z.id where status = 30'
     )

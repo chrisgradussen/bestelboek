@@ -4,9 +4,9 @@ LazarusResources.Add('TDM','FORMDATA',[
   'TPF0'#3'TDM'#2'DM'#8'OnCreate'#7#16'DataModuleCreate'#14'OldCreateOrder'#8#6
   +'Height'#3'e'#2#16'HorizontalOffset'#3'{'#2#14'VerticalOffset'#2#31#5'Width'
   +#3#166#2#0#12'TZConnection'#11'ZConnection'#16'ControlsCodePage'#7#8'cCP_UTF'
-  +'8'#18'Properties.Strings'#1#6#18'AutoEncodeStrings='#0#22'TransactIsolation'
-  +'Level'#7#15'tiReadCommitted'#16'DesignConnection'#9#13'BeforeConnect'#7#24
-  +'ZConnectionBeforeConnect'#8'HostName'#6#9'LOCALHOST'#4'Port'#2#0#8'Database'
+  +'8'#17'AutoEncodeStrings'#8#18'Properties.Strings'#1#6#18'AutoEncodeStrings='
+  +#0#22'TransactIsolationLevel'#7#15'tiReadCommitted'#13'BeforeConnect'#7#24'Z'
+  +'ConnectionBeforeConnect'#8'HostName'#6#9'LOCALHOST'#4'Port'#2#0#8'Database'
   +#6#11'bestelhulp1'#4'User'#6#6'sysdba'#8'Password'#6#9'masterkey'#8'Protocol'
   +#6#12'firebird-2.5'#4'left'#2#8#3'top'#2#8#0#0#7'TZTable'#17'ZBestelgroepTab'
   +'le'#10'Connection'#7#11'ZConnection'#12'SortedFields'#6#2'ID'#14'AutoCalcFi'
