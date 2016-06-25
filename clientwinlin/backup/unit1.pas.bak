@@ -7,7 +7,7 @@ interface
 uses
    brooduitverkoopunit,baklijstvolgordeunit,Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   IniPropStorage, StdCtrls, Unit3, Unit4,unit5, unit6, unit7, unit8, unit9,
-  Unit10, Unit2, Unit11, unit12, Unit13, Menus, Unit14,ZConnection,aktielijstunit,
+  Unit10, Unit2, Unit11, unit12, Unit13, Menus, Unit14,ZConnection,aktielijstunit,gebruikersunit,
   ZDataset, db, ZSqlUpdate, ZSequence,baklijstunit,baklijstsnelunit,versiontypes,vinfo, multiplierunit;
 
 type
@@ -25,6 +25,7 @@ type
     HfdMenu: TMainMenu;
     MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
+    MenuItem3: TMenuItem;
     Menu_baklijstvolgorde: TMenuItem;
     van10naar0: TMenuItem;
     van30naar10: TMenuItem;
@@ -59,6 +60,7 @@ type
     procedure HoofdmenuPropStorageSavingProperties(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
+    procedure MenuItem3Click(Sender: TObject);
     procedure Menu_baklijstvolgordeClick(Sender: TObject);
     procedure NoodproceduresClick(Sender: TObject);
     procedure LeverancierButtonClick(Sender: TObject);
@@ -89,7 +91,7 @@ end;
 
 procedure Thoofdmenu.AktielijstClick(Sender: TObject);
 begin
-  aktielijst..Show;
+  aktielijstunit.FormAktielijst.ShowModal;
 end;
 
 procedure Thoofdmenu.Button1Click(Sender: TObject);
@@ -240,6 +242,11 @@ end;
 procedure Thoofdmenu.MenuItem2Click(Sender: TObject);
 begin
   multiplierunit.FormMultiplier.ShowModal;
+end;
+
+procedure Thoofdmenu.MenuItem3Click(Sender: TObject);
+begin
+   gebruikersunit..show;
 end;
 
 procedure Thoofdmenu.Menu_baklijstvolgordeClick(Sender: TObject);

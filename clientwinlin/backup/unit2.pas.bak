@@ -29,6 +29,7 @@ type
     ZArtikelOmschrijvingMARGE: TFloatField;
     ZArtikelOmschrijvingNAAM: TStringField;
     ZArtikelOmschrijvingVERKOOPPRIJS: TFloatField;
+    ZArtikelOmschrijvingVOORRAAD: TFloatField;
     ZArtikelomzetDIN1: TFloatField;
     ZArtikelomzetDON1: TFloatField;
     ZArtikelomzetJAARWEEK1: TLongintField;
@@ -139,6 +140,8 @@ type
     ZBaklijstvolgordequery: TZQuery;
     ZArtikelomzetReclameQuery: TZQuery;
     ZArtikelOmzetQuery: TZReadOnlyQuery;
+    ZGebruikersQuery: TZReadOnlyQuery;
+    ZUpdateReclameSql: TZQuery;
     ZReclameQuery: TZQuery;
     ZReclameQueryARTIKEL_EANUPC: TLargeintField;
     ZReclameQueryBEGINDATUM: TDateField;

@@ -12,7 +12,8 @@ uses
   { you can add units after this }, Unit1, Unit2, zcomponent, Unit3, Unit4,
   Unit5, Unit6, Unit7, rxnew, Unit8, lazreport, Unit9, Unit10, Unit11, Unit12,
   Unit13, Unit14, BaklijstUnit, baklijstsnelunit, baklijstvolgordeunit,
-  multiplierunit, reclameaanpassendlg, brooduitverkoopunit, aktielijstunit;
+  multiplierunit, reclameaanpassendlg, brooduitverkoopunit, aktielijstunit,
+  gebruikersunit;
 
 //{$IFDEF WINDOWS}{$R project1.rc}{$ENDIF}
 
@@ -43,6 +44,7 @@ begin
   Application.CreateForm(TFormReclameDlg, FormReclameDlg);
   Application.CreateForm(TFormBroodUitverkoop, FormBroodUitverkoop);
   Application.CreateForm(TFormAktielijst, FormAktielijst);
+  Application.CreateForm(TGebruikersForm, GebruikersForm);
   Application.Run;
 end.
 

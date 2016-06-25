@@ -52,8 +52,9 @@ LazarusResources.Add('Thoofdmenu','FORMDATA',[
   +#7#16'Van40naar30Click'#0#0#9'TMenuItem'#11'van30naar10'#7'Caption'#6'8Beste'
   +'llingen van Besteld naar Bestellen (van 30 naar 10)'#0#0#9'TMenuItem'#10'va'
   +'n10naar0'#7'Caption'#6'5Bestellingen van Bestellen naar Nieuw (van 10 naar '
-  +'0)'#7'OnClick'#7#15'van10naar0Click'#0#0#9'TMenuItem'#9'MenuItem2'#7'Captio'
-  +'n'#6#20'Multiplier aanpassen'#7'OnClick'#7#14'MenuItem2Click'#0#0#0#9'TMenu'
-  +'Item'#21'Menu_baklijstvolgorde'#7'Caption'#6#18'&Volgorde baklijst'#7'OnCli'
-  +'ck'#7#26'Menu_baklijstvolgordeClick'#0#0#0#0
+  +'0)'#7'OnClick'#7#15'van10naar0Click'#0#0#9'TMenuItem'#9'MenuItem3'#7'Captio'
+  +'n'#6#10'Gebruikers'#7'OnClick'#7#14'MenuItem3Click'#0#0#9'TMenuItem'#9'Menu'
+  +'Item2'#7'Caption'#6#20'Multiplier aanpassen'#7'OnClick'#7#14'MenuItem2Click'
+  +#0#0#0#9'TMenuItem'#21'Menu_baklijstvolgorde'#7'Caption'#6#18'&Volgorde bakl'
+  +'ijst'#7'OnClick'#7#26'Menu_baklijstvolgordeClick'#0#0#0#0
 ]);

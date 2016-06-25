@@ -14,6 +14,7 @@ type
   { TArtikelOmzet }
 
   TArtikelOmzet = class(TForm)
+    DBText9BLBLBLBLA: TDBText;
     RxArtikelOmzetGrid: TRxDBGrid;
     ZartikelOmzetDataSource: TDataSource;
     eanupcdatasource: TDatasource;

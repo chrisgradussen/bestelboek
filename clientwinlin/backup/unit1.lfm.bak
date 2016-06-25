@@ -169,6 +169,10 @@ object hoofdmenu: Thoofdmenu
         Caption = 'Bestellingen van Bestellen naar Nieuw (van 10 naar 0)'
         OnClick = van10naar0Click
       end
+      object MenuItem3: TMenuItem
+        Caption = 'Gebruikers'
+        OnClick = MenuItem3Click
+      end
       object MenuItem2: TMenuItem
         Caption = 'Multiplier aanpassen'
         OnClick = MenuItem2Click

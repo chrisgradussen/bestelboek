@@ -7,11 +7,11 @@ object DM: TDM
   Width = 678
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
-    AutoEncodeStrings = False
     Properties.Strings = (
       'AutoEncodeStrings='
     )
     TransactIsolationLevel = tiReadCommitted
+    Connected = True
     DesignConnection = True
     BeforeConnect = ZConnectionBeforeConnect
     HostName = 'LOCALHOST'
@@ -140,6 +140,7 @@ object DM: TDM
     Connection = ZConnection
     AutoCalcFields = False
     UpdateObject = zupdatestatussql
+    Active = True
     SQL.Strings = (
       'select b.id,b.status,b.bestelgroep_id as groepnummer,z.naam,cast(b.besteldatum+b.besteltijd as timestamp)as besteltijd,cast(b.leverdatum+ b.levertijd as timestamp)as levertijd,cast(b.volgendeleverdatum+b.volgendelevertijd as timestamp)as volgendelevertijd from bestelschema b join bestelgroep z on b.bestelgroep_id = z.id where status = 30'
     )
@@ -158,6 +159,15 @@ object DM: TDM
       'i.aantal,'
       'SRIGHT(case when l_artikelnummer is null then x_artikelnummer else l_artikelnummer end,6) as nummer'
       'from bestelregel i join artikel p on i.artikel_eanupc = p.eanupc where i.bestelschema_id = :id and i.aantal <> 0 order by p.volgorde'
+      ''
+      '/*select '
+      'case when l_merknaam is null then x_merknaam else l_merknaam end || '' '' ||'
+      'case when l_naam is null then x_naam else l_naam end as naam,'
+      'x_inhoud || '' '' || x_eenheid as eenheid, '
+      'i.aantal,'
+      'SRIGHT(case when l_artikelnummer is null then x_artikelnummer else l_artikelnummer end,6) as nummer'
+      'from bestelregel i join artikel p on i.artikel_eanupc = p.eanupc where i.bestelschema_id = 42482 and i.aantal <> 0 order by p.volgorde*/'
+      ''
     )
     Params = <    
       item
@@ -824,7 +834,7 @@ object DM: TDM
       'case when x_btwcode = 1 then (x_verkoopprijs-x_inkoopprijs)/case when x_verkoopprijs = 0 then 0.0001 else x_verkoopprijs end else '
       'case when x_btwcode = 2 then (x_verkoopprijs/1.06-x_inkoopprijs)/case when x_verkoopprijs = 0 then 0.0001 else x_verkoopprijs end'
       ' else  (x_verkoopprijs/1.19-x_inkoopprijs)/case when x_verkoopprijs = 0 then 0.0001 else x_verkoopprijs end'
-      ' end end as marge'
+      ' end end as marge, voorraad'
       'from artikel where eanupc = :zoekstring /* 8712400502603*/'
     )
     Params = <    
@@ -947,6 +957,20 @@ object DM: TDM
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = True
       Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZArtikelOmschrijvingVOORRAAD: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'VOORRAAD'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayFormat = '########0.00'
       MaxValue = 0
       MinValue = 0
       Precision = 2
@@ -2126,5 +2150,20 @@ object DM: TDM
     DataSet = ZBroodUitverkoopQuery
     left = 576
     top = 544
+  end
+  object ZUpdateReclameSql: TZQuery
+    Connection = ZConnection
+    Params = <>
+    left = 441
+    top = 159
+  end
+  object ZGebruikersQuery: TZReadOnlyQuery
+    Connection = ZConnection
+    SQL.Strings = (
+      'select distinct luser from bestelling'
+    )
+    Params = <>
+    left = 184
+    top = 80
   end
 end

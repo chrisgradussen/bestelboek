@@ -1,0 +1,59 @@
+object GebruikersForm: TGebruikersForm
+  Left = 649
+  Height = 240
+  Top = 203
+  Width = 320
+  Caption = 'Gebruikers'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnShow = FormShow
+  LCLVersion = '1.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 208
+    Top = 0
+    Width = 320
+    Align = alClient
+    Caption = 'Panel1'
+    ClientHeight = 208
+    ClientWidth = 320
+    TabOrder = 0
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 206
+      Top = 1
+      Width = 318
+      Align = alClient
+      Color = clWindow
+      Columns = <>
+      DataSource = DataSource1
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 32
+    Top = 208
+    Width = 320
+    Align = alBottom
+    Caption = 'Panel2'
+    ClientHeight = 32
+    ClientWidth = 320
+    TabOrder = 1
+    OnClick = Panel2Click
+    object Button1: TButton
+      Left = 128
+      Height = 25
+      Top = 0
+      Width = 75
+      Caption = 'Sluiten'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = DM.ZGebruikersQuery
+    left = 49
+    top = 109
+  end
+end

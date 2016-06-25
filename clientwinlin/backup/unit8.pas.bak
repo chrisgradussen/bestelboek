@@ -30,6 +30,7 @@ type
     procedure DBNavigator1DblClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure frDBDataSet1CheckEOF(Sender: TObject; var Eof: Boolean);
+    procedure frDesigner1LoadReport(Report: TfrReport; var ReportName: String);
   private
     { private declarations }
   public
@@ -48,29 +49,17 @@ begin
   if dm.zBestellingAfdrukkenQuery.RecordCount > 0 then
   begin
       unit2.dm.zbestellingquery.close;
-    unit2.dm.zbestellingquery.Params[0].AsInteger:=
-    unit2.dm.ZBestellingAfdrukkenQuery.FieldByName('ID').AsInteger;
+   // unit2.dm.zbestellingquery.Params[0].AsInteger:=
+   // unit2.dm.ZBestellingAfdrukkenQuery.FieldByName('ID').AsInteger;
     unit2.DM.ZbestellingQuery.Open;
 
-   // frreport1.FileName:= bestellingafdrukkenpropstorage.StoredValue['bestellingrapport'];
-   // application.MessageBox(pchar(frreport1.FileName),pchar(bestellingafdrukkenpropstorage.StoredValue['bestellingrapport']),0);
-   // frReport1.LoadFromFile(frreport1.Filename);
     frreport1.ShowReport;
-    frreport1.Clear;
-
-//    frreport1.PrepareReport;
-  //  frreport1.ShowPreparedReport;
-
-//    frreport1.PrintToDefault:=;
-
-
-    //frreport1.PrintPreparedReport('1-99',1);
-    unit2.dm.zBestellingAfdrukkenQuery.Edit;
-    unit2.dm.zBestellingAfdrukkenQuery.FieldByName('Status').asinteger := 40;
-    unit2.dm.zBestellingAfdrukkenQuery.Post;
-    unit2.dm.zBestellingAfdrukkenQuery.Refresh;
-    unit2.dm.ZBestellingQuery.Close;
-    Close;
+ //   unit2.dm.zBestellingAfdrukkenQuery.Edit;
+ //   unit2.dm.zBestellingAfdrukkenQuery.FieldByName('Status').asinteger := 40;
+ //   unit2.dm.zBestellingAfdrukkenQuery.Post;
+ //   unit2.dm.zBestellingAfdrukkenQuery.Refresh;
+ //   unit2.dm.ZBestellingQuery.Close;
+ //   Close;
   end;
 
 end;
@@ -89,6 +78,12 @@ end;
 
 procedure Tbestellingafdrukken.frDBDataSet1CheckEOF(Sender: TObject;
   var Eof: Boolean);
+begin
+
+end;
+
+procedure Tbestellingafdrukken.frDesigner1LoadReport(Report: TfrReport;
+  var ReportName: String);
 begin
 
 end;

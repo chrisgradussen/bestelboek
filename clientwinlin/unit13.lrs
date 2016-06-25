@@ -1,28 +1,28 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TArtikelOmzet','FORMDATA',[
-  'TPF0'#13'TArtikelOmzet'#12'ArtikelOmzet'#4'Left'#3'1'#1#6'Height'#3'?'#1#3'T'
-  +'op'#3#239#0#5'Width'#3'r'#3#13'ActiveControl'#7#6'Panel1'#7'Caption'#6#12'A'
-  +'rtikelOmzet'#12'ClientHeight'#3'?'#1#11'ClientWidth'#3'r'#3#6'OnShow'#7#8'F'
-  +'ormShow'#17'SessionProperties'#6#21'Height;Left;Top;Width'#10'LCLVersion'#6
-  +#7'1.2.6.0'#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Height'#3'#'#1#3'Top'#2#0#5
-  +'Width'#3'r'#3#5'Align'#7#8'alClient'#7'Caption'#6#6'Panel1'#12'ClientHeight'
-  +#3'#'#1#11'ClientWidth'#3'r'#3#8'TabOrder'#2#0#0#9'TRxDBGrid'#18'RxArtikelOm'
-  +'zetGrid'#4'Left'#2#1#6'Height'#3#10#1#4'Hint'#6',Dubbelklik op de week om a'
-  +'ktie toe te voegen'#3'Top'#2#24#5'Width'#3'p'#3#12'TitleButtons'#8#8'AutoSo'
-  +'rt'#9#10'KeyStrokes'#14#1#7'Command'#7#15'rxgcShowFindDlg'#8'ShortCut'#3'F@'
-  +#7'Enabled'#9#0#1#7'Command'#7#18'rxgcShowColumnsDlg'#8'ShortCut'#3'W@'#7'En'
-  +'abled'#9#0#1#7'Command'#7#17'rxgcShowFilterDlg'#8'ShortCut'#3'T@'#7'Enabled'
-  +#9#0#1#7'Command'#7#15'rxgcShowSortDlg'#8'ShortCut'#3'S@'#7'Enabled'#9#0#1#7
-  +'Command'#7#19'rxgcShowQuickFilter'#8'ShortCut'#3'Q@'#7'Enabled'#9#0#1#7'Com'
-  +'mand'#7#19'rxgcHideQuickFilter'#8'ShortCut'#3'H@'#7'Enabled'#9#0#1#7'Comman'
-  +'d'#7#13'rxgcSelectAll'#8'ShortCut'#3'A@'#7'Enabled'#9#0#1#7'Command'#7#15'r'
-  +'xgcDeSelectAll'#8'ShortCut'#3'-@'#7'Enabled'#9#0#1#7'Command'#7#19'rxgcInve'
-  +'rtSelection'#8'ShortCut'#3'*@'#7'Enabled'#9#0#1#7'Command'#7#24'rxgcOptimiz'
-  +'eColumnsWidth'#8'ShortCut'#3'+@'#7'Enabled'#9#0#1#7'Command'#7#17'rxgcCopyC'
-  +'ellValue'#8'ShortCut'#3'C@'#7'Enabled'#9#0#0#9'OptionsRx'#11#19'rdgAllowCol'
-  +'umnsForm'#18'rdgAllowDialogFind'#19'rdgAllowQuickFilter'#0#5'Align'#7#8'alC'
-  +'lient'#5'Color'#7#8'clWindow'#12'DrawFullLine'#8#10'FocusColor'#7#5'clRed'
+  'TPF0'#13'TArtikelOmzet'#12'ArtikelOmzet'#4'Left'#2'p'#6'Height'#3'?'#1#3'Top'
+  +#3'R'#1#5'Width'#3#133#4#13'ActiveControl'#7#6'Panel1'#7'Caption'#6#12'Artik'
+  +'elOmzet'#12'ClientHeight'#3'?'#1#11'ClientWidth'#3#133#4#6'OnShow'#7#8'Form'
+  +'Show'#17'SessionProperties'#6#21'Height;Left;Top;Width'#10'LCLVersion'#6#7
+  +'1.2.6.0'#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Height'#3'#'#1#3'Top'#2#0#5'Wi'
+  +'dth'#3#133#4#5'Align'#7#8'alClient'#7'Caption'#6#6'Panel1'#12'ClientHeight'
+  +#3'#'#1#11'ClientWidth'#3#133#4#8'TabOrder'#2#0#0#9'TRxDBGrid'#18'RxArtikelO'
+  +'mzetGrid'#4'Left'#2#1#6'Height'#3#10#1#4'Hint'#6',Dubbelklik op de week om '
+  +'aktie toe te voegen'#3'Top'#2#24#5'Width'#3#131#4#12'TitleButtons'#8#8'Auto'
+  +'Sort'#9#10'KeyStrokes'#14#1#7'Command'#7#15'rxgcShowFindDlg'#8'ShortCut'#3
+  +'F@'#7'Enabled'#9#0#1#7'Command'#7#18'rxgcShowColumnsDlg'#8'ShortCut'#3'W@'#7
+  +'Enabled'#9#0#1#7'Command'#7#17'rxgcShowFilterDlg'#8'ShortCut'#3'T@'#7'Enabl'
+  +'ed'#9#0#1#7'Command'#7#15'rxgcShowSortDlg'#8'ShortCut'#3'S@'#7'Enabled'#9#0
+  +#1#7'Command'#7#19'rxgcShowQuickFilter'#8'ShortCut'#3'Q@'#7'Enabled'#9#0#1#7
+  +'Command'#7#19'rxgcHideQuickFilter'#8'ShortCut'#3'H@'#7'Enabled'#9#0#1#7'Com'
+  +'mand'#7#13'rxgcSelectAll'#8'ShortCut'#3'A@'#7'Enabled'#9#0#1#7'Command'#7#15
+  +'rxgcDeSelectAll'#8'ShortCut'#3'-@'#7'Enabled'#9#0#1#7'Command'#7#19'rxgcInv'
+  +'ertSelection'#8'ShortCut'#3'*@'#7'Enabled'#9#0#1#7'Command'#7#24'rxgcOptimi'
+  +'zeColumnsWidth'#8'ShortCut'#3'+@'#7'Enabled'#9#0#1#7'Command'#7#17'rxgcCopy'
+  +'CellValue'#8'ShortCut'#3'C@'#7'Enabled'#9#0#0#9'OptionsRx'#11#19'rdgAllowCo'
+  +'lumnsForm'#18'rdgAllowDialogFind'#19'rdgAllowQuickFilter'#0#5'Align'#7#8'al'
+  +'Client'#5'Color'#7#8'clWindow'#12'DrawFullLine'#8#10'FocusColor'#7#5'clRed'
   +#13'SelectedColor'#7#11'clHighlight'#13'GridLineStyle'#7#7'psSolid'#10'DataS'
   +'ource'#7#15'OmzetDataSource'#7'Options'#11#9'dgEditing'#8'dgTitles'#11'dgIn'
   +'dicator'#14'dgColumnResize'#12'dgColumnMove'#10'dgColLines'#10'dgRowLines'
@@ -30,8 +30,8 @@ LazarusResources.Add('TArtikelOmzet','FORMDATA',[
   +'tColor'#8#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#10'OnDblClick'
   +#7#26'RxArtikelOmzetGridDblClick'#9'OnKeyDown'#7#25'RxArtikelOmzetGridKeyDow'
   +'n'#0#0#6'TPanel'#6'Panel3'#4'Left'#2#1#6'Height'#2#23#3'Top'#2#1#5'Width'#3
-  +'p'#3#5'Align'#7#5'alTop'#12'ClientHeight'#2#23#11'ClientWidth'#3'p'#3#8'Tab'
-  +'Order'#2#0#0#7'TDBText'#7'DBText1'#4'Left'#2#7#6'Height'#2#15#3'Top'#2#4#5
+  +#131#4#5'Align'#7#5'alTop'#12'ClientHeight'#2#23#11'ClientWidth'#3#131#4#8'T'
+  +'abOrder'#2#0#0#7'TDBText'#7'DBText1'#4'Left'#2#7#6'Height'#2#15#3'Top'#2#4#5
   +'Width'#2'6'#9'DataField'#6#6'EANUPC'#10'DataSource'#7#22'OmschrijvingDataSo'
   +'urce'#11'ParentColor'#8#7'OnClick'#7#12'DBText1Click'#0#0#7'TDBText'#7'DBTe'
   +'xt2'#4'Left'#2'p'#6'Height'#2#15#3'Top'#2#4#5'Width'#2'6'#9'DataField'#6#4
@@ -50,42 +50,45 @@ LazarusResources.Add('TArtikelOmzet','FORMDATA',[
   +'DataSource'#7#22'OmschrijvingDataSource'#11'ParentColor'#8#0#0#7'TDBText'#7
   +'DBText8'#4'Left'#3'('#3#6'Height'#2#15#3'Top'#2#4#5'Width'#2'6'#9'DataField'
   +#6#12'VERKOOPPRIJS'#10'DataSource'#7#22'OmschrijvingDataSource'#11'ParentCol'
-  +'or'#8#0#0#0#9'TRxDBGrid'#9'RxDBGrid1'#18'AnchorSideTop.Side'#7#9'asrCenter'
-  +#4'Left'#3#200#2#6'Height'#3#132#0#3'Top'#3#136#0#5'Width'#3#162#0#16'AfterQ'
-  +'uickSearch'#7#25'RxDBGrid1AfterQuickSearch'#12'TitleButtons'#8#8'AutoSort'#9
-  +#7'Columns'#14#1#9'Alignment'#7#14'taRightJustify'#12'DropDownRows'#2#8#7'Mi'
-  +'nSize'#2'd'#8'ReadOnly'#9#15'Title.Alignment'#7#8'taCenter'#13'Title.Captio'
-  +'n'#6#6'EANUPC'#17'Title.Orientation'#7#12'toHorizontal'#5'Width'#2's'#9'Fie'
-  +'ldName'#6#6'EANUPC'#11'EditButtons'#14#0#19'Filter.DropDownRows'#2#0#17'Fil'
-  +'ter.EmptyValue'#6#7'(Empty)'#22'Filter.EmptyFont.Style'#11#8'fsItalic'#0#16
-  +'Filter.ItemIndex'#2#255#0#0#10'KeyStrokes'#14#1#7'Command'#7#15'rxgcShowFin'
-  +'dDlg'#8'ShortCut'#3'F@'#7'Enabled'#9#0#1#7'Command'#7#18'rxgcShowColumnsDlg'
-  +#8'ShortCut'#3'W@'#7'Enabled'#9#0#1#7'Command'#7#17'rxgcShowFilterDlg'#8'Sho'
-  +'rtCut'#3'T@'#7'Enabled'#9#0#1#7'Command'#7#15'rxgcShowSortDlg'#8'ShortCut'#3
-  +'S@'#7'Enabled'#9#0#1#7'Command'#7#19'rxgcShowQuickFilter'#8'ShortCut'#3'Q@'
-  +#7'Enabled'#9#0#1#7'Command'#7#19'rxgcHideQuickFilter'#8'ShortCut'#3'H@'#7'E'
-  +'nabled'#9#0#0#9'OptionsRx'#11#19'rdgAllowColumnsForm'#18'rdgAllowDialogFind'
-  ,#19'rdgAllowQuickFilter'#0#7'Anchors'#11#7'akRight'#8'akBottom'#0#8'BiDiMode'
-  +#7#13'bdRightToLeft'#5'Color'#7#8'clWindow'#12'DrawFullLine'#8#10'FocusColor'
-  +#7#5'clRed'#13'SelectedColor'#7#11'clHighlight'#13'GridLineStyle'#7#7'psSoli'
-  +'d'#10'DataSource'#7#16'eanupcdatasource'#7'Options'#11#9'dgEditing'#8'dgTit'
-  +'les'#11'dgIndicator'#14'dgColumnResize'#12'dgColumnMove'#10'dgColLines'#10
-  +'dgRowLines'#21'dgAlwaysShowSelection'#15'dgConfirmDelete'#14'dgCancelOnExit'
-  +#0#14'ParentBiDiMode'#8#11'ParentColor'#8#8'TabOrder'#2#1#11'OnCellClick'#7
-  +#18'RxDBGrid1CellClick'#10'OnColEnter'#7#17'RxDBGrid1ColEnter'#10'OnDblClick'
-  +#7#17'RxDBGrid1DblClick'#12'OnTitleClick'#7#19'RxDBGrid1TitleClick'#0#0#0#6
-  +'TPanel'#6'Panel2'#4'Left'#2#0#6'Height'#2#28#3'Top'#3'#'#1#5'Width'#3'r'#3#5
-  +'Align'#7#8'alBottom'#7'Caption'#6#6'Panel2'#12'ClientHeight'#2#28#11'Client'
-  +'Width'#3'r'#3#8'TabOrder'#2#1#0#5'TEdit'#4'Edit'#4'Left'#2#1#6'Height'#2#26
-  +#3'Top'#2#1#5'Width'#3'p'#3#5'Align'#7#8'alClient'#9'OnKeyDown'#7#11'EditKey'
-  +'Down'#10'OnKeyPress'#7#12'EditKeyPress'#7'OnKeyUp'#7#9'EditKeyUp'#8'TabOrde'
-  +'r'#2#0#4'Text'#6#19'Geef zoeksleutel in'#0#0#0#11'TDataSource'#15'OmzetData'
-  +'Source'#7'DataSet'#7#21'DM.ZArtikelOmzetQuery'#4'left'#3'X'#1#3'top'#2'('#0
-  +#0#11'TDataSource'#22'OmschrijvingDataSource'#7'DataSet'#7#23'DM.ZArtikelOms'
-  +'chrijving'#4'left'#3'X'#1#3'top'#2'h'#0#0#15'TIniPropStorage'#23'ArtikelOmz'
-  +'etPropStorage'#12'StoredValues'#14#0#11'IniFileName'#6#14'bestelboek.ini'#10
-  +'IniSection'#6#12'artikelomzet'#4'left'#3#245#1#3'top'#2','#0#0#11'TDataSour'
-  +'ce'#16'eanupcdatasource'#7'DataSet'#7#12'DM.ZeanQuery'#4'left'#3'.'#2#3'top'
-  +#3#129#0#0#0#11'TDataSource'#23'ZartikelOmzetDataSource'#7'DataSet'#7#28'DM.'
-  +'ZArtikelomzetReclameQuery'#4'left'#3#176#0#3'top'#2'('#0#0#0
+  +'or'#8#0#0#7'TDBText'#16'DBText9BLBLBLBLA'#4'Left'#3#128#3#6'Height'#2#15#3
+  +'Top'#2#6#5'Width'#2#127#9'DataField'#6#8'VOORRAAD'#10'DataSource'#7#22'Omsc'
+  +'hrijvingDataSource'#11'ParentColor'#8#0#0#0#9'TRxDBGrid'#9'RxDBGrid1'#18'An'
+  +'chorSideTop.Side'#7#9'asrCenter'#4'Left'#3#219#3#6'Height'#3#132#0#3'Top'#3
+  +#136#0#5'Width'#3#162#0#16'AfterQuickSearch'#7#25'RxDBGrid1AfterQuickSearch'
+  +#12'TitleButtons'#8#8'AutoSort'#9#7'Columns'#14#1#9'Alignment'#7#14'taRightJ'
+  +'ustify'#12'DropDownRows'#2#8#7'MinSize'#2'd'#8'ReadOnly'#9#15'Title.Alignme'
+  +'nt'#7#8'taCenter'#13'Title.Caption'#6#6'EANUPC'#17'Title.Orientation'#7#12
+  +'toHorizontal'#5'Width'#2's'#9'FieldName'#6#6'EANUPC'#11'EditButtons'#14#0#19
+  +'Filter.DropDownRows'#2#0#17'Filter.EmptyValue'#6#7'(Empty)'#22'Filter.Empty'
+  +'Font.Style'#11#8'fsItalic'#0#16'Filter.ItemIndex'#2#255#0#0#10'KeyStrokes'
+  +#14#1#7'Command'#7#15'rxgcShowFindDlg'#8'ShortCut'#3'F@'#7'Enabled'#9#0#1#7
+  +'Command'#7#18'rxgcShowColumnsDlg'#8'ShortCut'#3'W@'#7'Enabled'#9#0#1#7'Comm'
+  +'and'#7#17'rxgcShowFilterDlg'#8'ShortCut'#3'T@'#7'Enabled'#9#0#1#7'Command'#7
+  +#15'rxgcShowSortDlg'#8'ShortCut'#3'S@'#7'Enabled'#9#0#1#7'Command'#7#19'rxgc'
+  ,'ShowQuickFilter'#8'ShortCut'#3'Q@'#7'Enabled'#9#0#1#7'Command'#7#19'rxgcHid'
+  +'eQuickFilter'#8'ShortCut'#3'H@'#7'Enabled'#9#0#0#9'OptionsRx'#11#19'rdgAllo'
+  +'wColumnsForm'#18'rdgAllowDialogFind'#19'rdgAllowQuickFilter'#0#7'Anchors'#11
+  +#7'akRight'#8'akBottom'#0#8'BiDiMode'#7#13'bdRightToLeft'#5'Color'#7#8'clWin'
+  +'dow'#12'DrawFullLine'#8#10'FocusColor'#7#5'clRed'#13'SelectedColor'#7#11'cl'
+  +'Highlight'#13'GridLineStyle'#7#7'psSolid'#10'DataSource'#7#16'eanupcdatasou'
+  +'rce'#7'Options'#11#9'dgEditing'#8'dgTitles'#11'dgIndicator'#14'dgColumnResi'
+  +'ze'#12'dgColumnMove'#10'dgColLines'#10'dgRowLines'#21'dgAlwaysShowSelection'
+  +#15'dgConfirmDelete'#14'dgCancelOnExit'#0#14'ParentBiDiMode'#8#11'ParentColo'
+  +'r'#8#8'TabOrder'#2#1#11'OnCellClick'#7#18'RxDBGrid1CellClick'#10'OnColEnter'
+  +#7#17'RxDBGrid1ColEnter'#10'OnDblClick'#7#17'RxDBGrid1DblClick'#12'OnTitleCl'
+  +'ick'#7#19'RxDBGrid1TitleClick'#0#0#0#6'TPanel'#6'Panel2'#4'Left'#2#0#6'Heig'
+  +'ht'#2#28#3'Top'#3'#'#1#5'Width'#3#133#4#5'Align'#7#8'alBottom'#7'Caption'#6
+  +#6'Panel2'#12'ClientHeight'#2#28#11'ClientWidth'#3#133#4#8'TabOrder'#2#1#0#5
+  +'TEdit'#4'Edit'#4'Left'#2#1#6'Height'#2#26#3'Top'#2#1#5'Width'#3#131#4#5'Ali'
+  +'gn'#7#8'alClient'#9'OnKeyDown'#7#11'EditKeyDown'#10'OnKeyPress'#7#12'EditKe'
+  +'yPress'#7'OnKeyUp'#7#9'EditKeyUp'#8'TabOrder'#2#0#4'Text'#6#19'Geef zoeksle'
+  +'utel in'#0#0#0#11'TDataSource'#15'OmzetDataSource'#7'DataSet'#7#21'DM.ZArti'
+  +'kelOmzetQuery'#4'left'#3'X'#1#3'top'#2'('#0#0#11'TDataSource'#22'Omschrijvi'
+  +'ngDataSource'#7'DataSet'#7#23'DM.ZArtikelOmschrijving'#4'left'#3'X'#1#3'top'
+  +#2'h'#0#0#15'TIniPropStorage'#23'ArtikelOmzetPropStorage'#12'StoredValues'#14
+  +#0#11'IniFileName'#6#14'bestelboek.ini'#10'IniSection'#6#12'artikelomzet'#4
+  +'left'#3#245#1#3'top'#2','#0#0#11'TDataSource'#16'eanupcdatasource'#7'DataSe'
+  +'t'#7#12'DM.ZeanQuery'#4'left'#3'.'#2#3'top'#3#129#0#0#0#11'TDataSource'#23
+  +'ZartikelOmzetDataSource'#7'DataSet'#7#28'DM.ZArtikelomzetReclameQuery'#4'le'
+  +'ft'#3#176#0#3'top'#2'('#0#0#0
 ]);
