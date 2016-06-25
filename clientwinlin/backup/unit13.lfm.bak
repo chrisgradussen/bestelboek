@@ -186,10 +186,10 @@ object ArtikelOmzet: TArtikelOmzet
     end
     object RxDBGrid1: TRxDBGrid
       AnchorSideTop.Side = asrCenter
-      Left = 696
+      Left = 712
       Height = 132
       Top = 136
-      Width = 170
+      Width = 162
       AfterQuickSearch = RxDBGrid1AfterQuickSearch
       TitleButtons = False
       AutoSort = True

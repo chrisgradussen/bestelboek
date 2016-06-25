@@ -307,7 +307,7 @@ object ArtikelOmzet: TArtikelOmzet
   end
   object ZartikelOmzetDataSource: TDataSource
     DataSet = DM.ZArtikelomzetReclameQuery
-    left = 149
-    top = 44
+    left = 176
+    top = 40
   end
 end
