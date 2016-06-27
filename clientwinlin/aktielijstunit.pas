@@ -61,6 +61,7 @@ begin
    DecodeDateMonthWeek(now,ayear,amonth,aweekofmonth,adayofweek);
    Calendarstart.DateTime := encodedatemonthweek(ayear,amonth,aweekofmonth,daywednesday);
    Calendarstop.DateTime := incday(Calendarstart.DateTime,6);
+   zreadonlyquery1.Active:=true;
 end;
 
 procedure TFormAktielijst.AfdrukkenButtonClick(Sender: TObject);
