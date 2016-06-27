@@ -197,7 +197,7 @@ end;
 
 procedure Thoofdmenu.FormShow(Sender: TObject);
 begin
-  dm.DBPropStorage.restore;
+
  { leverancier.leverancierpropstorage.Restore;
   subgroep.subgroepPropStorage.Restore;
   dagen.dagenPropStorage.Restore;

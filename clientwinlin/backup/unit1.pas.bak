@@ -197,7 +197,7 @@ end;
 
 procedure Thoofdmenu.FormShow(Sender: TObject);
 begin
-  dm.DBPropStorage.restore;
+  //dm.DBPropStorage.restore;
  { leverancier.leverancierpropstorage.Restore;
   subgroep.subgroepPropStorage.Restore;
   dagen.dagenPropStorage.Restore;
@@ -246,7 +246,7 @@ end;
 
 procedure Thoofdmenu.MenuItem3Click(Sender: TObject);
 begin
-   gebruikersunit..show;
+   gebruikersunit.GebruikersForm.ShowModal;
 end;
 
 procedure Thoofdmenu.Menu_baklijstvolgordeClick(Sender: TObject);

@@ -49,17 +49,17 @@ begin
   if dm.zBestellingAfdrukkenQuery.RecordCount > 0 then
   begin
       unit2.dm.zbestellingquery.close;
-   // unit2.dm.zbestellingquery.Params[0].AsInteger:=
-   // unit2.dm.ZBestellingAfdrukkenQuery.FieldByName('ID').AsInteger;
-    unit2.DM.ZbestellingQuery.Open;
+      unit2.dm.zbestellingquery.Params[0].AsInteger:=
+      unit2.dm.ZBestellingAfdrukkenQuery.FieldByName('ID').AsInteger;
+      unit2.DM.ZbestellingQuery.Open;
 
     frreport1.ShowReport;
- //   unit2.dm.zBestellingAfdrukkenQuery.Edit;
- //   unit2.dm.zBestellingAfdrukkenQuery.FieldByName('Status').asinteger := 40;
- //   unit2.dm.zBestellingAfdrukkenQuery.Post;
- //   unit2.dm.zBestellingAfdrukkenQuery.Refresh;
- //   unit2.dm.ZBestellingQuery.Close;
- //   Close;
+    unit2.dm.zBestellingAfdrukkenQuery.Edit;
+    unit2.dm.zBestellingAfdrukkenQuery.FieldByName('Status').asinteger := 40;
+    unit2.dm.zBestellingAfdrukkenQuery.Post;
+    unit2.dm.zBestellingAfdrukkenQuery.Refresh;
+    unit2.dm.ZBestellingQuery.Close;
+    Close;
   end;
 
 end;

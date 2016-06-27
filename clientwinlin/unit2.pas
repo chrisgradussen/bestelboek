@@ -285,6 +285,7 @@ end;
 
 procedure TDM.ZConnectionBeforeConnect(Sender: TObject);
 begin
+  DBPropStorage.restore;
   ZConnection.HostName:= dbpropstorage.StoredValue['hostname'];
   ZConnection.User:=dbpropstorage.StoredValue['user'];
   ZConnection.Password:= dbpropstorage.StoredValue['password'];
