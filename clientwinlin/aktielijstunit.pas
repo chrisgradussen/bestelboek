@@ -5,7 +5,7 @@ unit aktielijstunit;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, LR_Class, LR_DBSet, ZDataset, rxdbgrid,
+  Classes, SysUtils, FileUtil, LR_Class, LR_DBSet, LR_BarC, ZDataset, rxdbgrid,
   LResources, Forms, Controls, Graphics, Dialogs, ExtCtrls, Calendar, StdCtrls,
   db, DateUtils, strutils;
 
@@ -16,6 +16,7 @@ type
   TFormAktielijst = class(TForm)
     AfdrukkenButton: TButton;
     DataSource1: TDataSource;
+    frBarCodeObject1: TfrBarCodeObject;
     frDBDataSet1: TfrDBDataSet;
     frReport1: TfrReport;
     SluitenButton: TButton;
