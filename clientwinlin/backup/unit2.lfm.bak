@@ -7,11 +7,11 @@ object DM: TDM
   Width = 678
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
-    AutoEncodeStrings = False
     Properties.Strings = (
       'AutoEncodeStrings='
     )
     TransactIsolationLevel = tiReadCommitted
+    Connected = True
     DesignConnection = True
     BeforeConnect = ZConnectionBeforeConnect
     HostName = 'LOCALHOST'
@@ -150,38 +150,28 @@ object DM: TDM
   object ZbestellingQuery: TZReadOnlyQuery
     Connection = ZConnection
     AutoCalcFields = False
+    Active = True
     SQL.Strings = (
-      'select '
-      'case when l_merknaam is null then x_merknaam else l_merknaam end || '' '' ||'
-      'case when l_naam is null then x_naam else l_naam end as naam,'
-      'x_inhoud || '' '' || x_eenheid as eenheid, '
-      'i.aantal,'
-      'SRIGHT(case when l_artikelnummer is null then x_artikelnummer else l_artikelnummer end,6) as nummer'
-      'from bestelregel i join artikel p on i.artikel_eanupc = p.eanupc where i.bestelschema_id = :id and i.aantal <> 0 order by p.volgorde'
-      ''
       '/*select '
       'case when l_merknaam is null then x_merknaam else l_merknaam end || '' '' ||'
       'case when l_naam is null then x_naam else l_naam end as naam,'
       'x_inhoud || '' '' || x_eenheid as eenheid, '
       'i.aantal,'
       'SRIGHT(case when l_artikelnummer is null then x_artikelnummer else l_artikelnummer end,6) as nummer'
-      'from bestelregel i join artikel p on i.artikel_eanupc = p.eanupc where i.bestelschema_id = 42482 and i.aantal <> 0 order by p.volgorde*/'
+      'from bestelregel i join artikel p on i.artikel_eanupc = p.eanupc where i.bestelschema_id = :id and i.aantal <> 0 order by p.volgorde*/'
+      ''
+      'select '
+      'case when l_merknaam is null then x_merknaam else l_merknaam end || '' '' ||'
+      'case when l_naam is null then x_naam else l_naam end as naam,'
+      'x_inhoud || '' '' || x_eenheid as eenheid, '
+      'i.aantal,'
+      'SRIGHT(case when l_artikelnummer is null then x_artikelnummer else l_artikelnummer end,6) as nummer'
+      'from bestelregel i join artikel p on i.artikel_eanupc = p.eanupc where i.bestelschema_id = 42482 and i.aantal <> 0 order by p.volgorde'
       ''
     )
-    Params = <    
-      item
-        DataType = ftUnknown
-        Name = 'id'
-        ParamType = ptUnknown
-      end>
+    Params = <>
     left = 104
     top = 200
-    ParamData = <    
-      item
-        DataType = ftUnknown
-        Name = 'id'
-        ParamType = ptUnknown
-      end>
   end
   object zupdatestatussql: TZUpdateSQL
     ModifySQL.Strings = (

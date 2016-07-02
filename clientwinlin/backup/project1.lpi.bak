@@ -127,10 +127,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="unit2"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="286"/>
-        <CursorPos X="3" Y="290"/>
+        <CursorPos X="26" Y="293"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -202,11 +203,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit8"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="46"/>
-        <CursorPos X="36" Y="52"/>
+        <TopLine Value="80"/>
+        <CursorPos X="30" Y="101"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -389,10 +389,10 @@
         <WindowIndex Value="0"/>
         <TopLine Value="34"/>
         <CursorPos X="20" Y="43"/>
-        <UsageCount Value="28"/>
+        <UsageCount Value="31"/>
       </Unit23>
     </Units>
-    <JumpHistory Count="27" HistoryIndex="26">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="unit1.pas"/>
         <Caret Line="1" Column="11" TopLine="1"/>
@@ -501,6 +501,18 @@
         <Filename Value="aktielijstunit.pas"/>
         <Caret Line="70" Column="17" TopLine="57"/>
       </Position27>
+      <Position28>
+        <Filename Value="unit8.pas"/>
+        <Caret Line="57" Column="17" TopLine="47"/>
+      </Position28>
+      <Position29>
+        <Filename Value="unit8.pas"/>
+        <Caret Line="106" Column="3" TopLine="91"/>
+      </Position29>
+      <Position30>
+        <Filename Value="unit8.pas"/>
+        <Caret Line="83" Column="36" TopLine="80"/>
+      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

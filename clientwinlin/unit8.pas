@@ -25,6 +25,7 @@ type
     frReport1: TfrReport;
     Panel1: TPanel;
     procedure bestellingafdrukkenPropStorageRestoreProperties(Sender: TObject);
+    procedure Datasource1DataChange(Sender: TObject; Field: TField);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure DBGrid1DblClick(Sender: TObject);
     procedure DBNavigator1DblClick(Sender: TObject);
@@ -95,6 +96,12 @@ end;
 
 procedure Tbestellingafdrukken.bestellingafdrukkenPropStorageRestoreProperties(
   Sender: TObject);
+begin
+
+end;
+
+procedure Tbestellingafdrukken.Datasource1DataChange(Sender: TObject;
+  Field: TField);
 begin
 
 end;

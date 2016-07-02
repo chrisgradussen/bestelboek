@@ -150,7 +150,6 @@ object DM: TDM
   object ZbestellingQuery: TZReadOnlyQuery
     Connection = ZConnection
     AutoCalcFields = False
-    Active = True
     SQL.Strings = (
       'select '
       'case when l_merknaam is null then x_merknaam else l_merknaam end || '' '' ||'
