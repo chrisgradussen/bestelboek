@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <General>
+      <Flags>
+        <MainUnitHasCreateFormStatements Value="False"/>
+      </Flags>
+      <MainUnit Value="0"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="1" Active="Default">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+        <LaunchingApplication PathPlusParams="/usr/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="salestobestelhulp1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="121"/>
+        <CursorPos X="19" Y="131"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="../util/util.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="util"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="23" Y="10"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit1>
+    </Units>
+    <JumpHistory Count="17" HistoryIndex="16">
+      <Position1>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="28" Column="29" TopLine="13"/>
+      </Position1>
+      <Position2>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="11" Column="7" TopLine="1"/>
+      </Position2>
+      <Position3>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="12" Column="31" TopLine="1"/>
+      </Position3>
+      <Position4>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="28" Column="23" TopLine="15"/>
+      </Position4>
+      <Position5>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="11" Column="17" TopLine="1"/>
+      </Position5>
+      <Position6>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="148" Column="2" TopLine="145"/>
+      </Position6>
+      <Position7>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="85" Column="15" TopLine="73"/>
+      </Position7>
+      <Position8>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="84" Column="14" TopLine="80"/>
+      </Position8>
+      <Position9>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="106" Column="19" TopLine="93"/>
+      </Position9>
+      <Position10>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="86" Column="22" TopLine="66"/>
+      </Position10>
+      <Position11>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="205" Column="1" TopLine="179"/>
+      </Position11>
+      <Position12>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="110" Column="15" TopLine="95"/>
+      </Position12>
+      <Position13>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="86" Column="8" TopLine="84"/>
+      </Position13>
+      <Position14>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="171" Column="1" TopLine="158"/>
+      </Position14>
+      <Position15>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="117" Column="3" TopLine="117"/>
+      </Position15>
+      <Position16>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="53" Column="41" TopLine="33"/>
+      </Position16>
+      <Position17>
+        <Filename Value="salestobestelhulp1.lpr"/>
+        <Caret Line="126" Column="19" TopLine="103"/>
+      </Position17>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="9"/>
+    <Target>
+      <Filename Value="salestobestelhulp1"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="../util"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Other>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>
