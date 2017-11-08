@@ -18,6 +18,7 @@ type
     BestelgroepButton: TButton;
     Aktielijst: TButton;
     ButtonBaklijst: TButton;
+    ButtonUuromzet: TButton;
     ButtonBroodUitverkoop: TButton;
     DagenButton: TButton;
     LeverancierButton: TButton;
@@ -49,6 +50,7 @@ type
     procedure Button9Click(Sender: TObject);
     procedure ButtonBaklijstClick(Sender: TObject);
     procedure ButtonBroodUitverkoopClick(Sender: TObject);
+    procedure ButtonUuromzetClick(Sender: TObject);
     procedure DagenButtonClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -121,6 +123,7 @@ end;
 
 procedure Thoofdmenu.ButtonBaklijstClick(Sender: TObject);
 begin
+  baklijstsnelunit.frmBaklijstBroodjes.Tag := 0;;
   baklijstsnelunit.frmBaklijstBroodjes.Show;
 
 end;
@@ -128,6 +131,12 @@ end;
 procedure Thoofdmenu.ButtonBroodUitverkoopClick(Sender: TObject);
 begin
   FormBroodUitverkoop.ShowModal;
+end;
+
+procedure Thoofdmenu.ButtonUuromzetClick(Sender: TObject);
+begin
+   baklijstsnelunit.frmBaklijstBroodjes.Tag := 1;
+  baklijstsnelunit.frmBaklijstBroodjes.Show;
 end;
 
 procedure Thoofdmenu.DagenButtonClick(Sender: TObject);

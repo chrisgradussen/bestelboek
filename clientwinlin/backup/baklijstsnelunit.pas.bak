@@ -52,8 +52,18 @@ begin
   end
   else
   begin
-    Calendar.Datetime:= now;
-    dm.ZBaklijstQuery.ParamByName('datum').AsDateTime:= now;
+    case tag of
+    0:  begin
+           Calendar.Datetime:= now;
+           panel1.Visible:= true ;
+        end;
+
+    1:  begin
+         Calendar.Datetime := now+7;
+         panel1.Visible:= false;
+        end;
+    end;
+    dm.ZBaklijstQuery.ParamByName('datum').AsDateTime:= Calendar.datetime;
     dm.ZBaklijstQuery.Open;
   end;
 end;

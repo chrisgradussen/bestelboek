@@ -36,25 +36,28 @@ LazarusResources.Add('Thoofdmenu','FORMDATA',[
   +'rood&Uitverkoop'#7'OnClick'#7#26'ButtonBroodUitverkoopClick'#8'TabOrder'#2
   +#11#0#0#7'TButton'#10'Aktielijst'#4'Left'#2'h'#6'Height'#2#25#3'Top'#3#168#0
   +#5'Width'#2'['#7'Caption'#6#10'Aktielijst'#7'OnClick'#7#15'AktielijstClick'#8
-  +'TabOrder'#2#12#0#0#15'TIniPropStorage'#20'HoofdmenuPropStorage'#12'StoredVa'
-  +'lues'#14#0#11'IniFileName'#6#14'bestelboek.ini'#10'IniSection'#6#9'hoofdmen'
-  +'u'#18'OnSavingProperties'#7'$HoofdmenuPropStorageSavingProperties'#16'OnSav'
-  +'eProperties'#7'"HoofdmenuPropStorageSaveProperties'#4'left'#3#252#0#3'top'#2
-  +'0'#0#0#9'TMainMenu'#7'HfdMenu'#4'left'#3#138#0#3'top'#2'8'#0#9'TMenuItem'#14
-  +'Noodprocedures'#7'Caption'#6#14'Noodprocedures'#7'OnClick'#7#19'Noodprocedu'
-  +'resClick'#0#9'TMenuItem'#11'van40naar50'#7'Caption'#6'8Bestellingen van Ond'
-  +'erweg naar Geleverd (van 40 naar 50)'#7'OnClick'#7#16'van40naar50Click'#0#0
-  +#9'TMenuItem'#11'van50naar40'#7'Caption'#6'8Bestellingen van Geleverd naar O'
-  +'nderweg( van 50 naar 40)'#7'OnClick'#7#16'van50naar40Click'#0#0#9'TMenuItem'
-  +#9'MenuItem1'#7'Caption'#6'7Bestellingen van Besteld naar Onderweg (van 30 n'
-  +'aar 40)'#7'OnClick'#7#14'MenuItem1Click'#0#0#9'TMenuItem'#11'Van40naar30'#7
-  +'Caption'#6'4Bestellen van Onderweg naar Besteld (van 40 naar 30)'#7'OnClick'
-  +#7#16'Van40naar30Click'#0#0#9'TMenuItem'#11'van30naar10'#7'Caption'#6'8Beste'
-  +'llingen van Besteld naar Bestellen (van 30 naar 10)'#0#0#9'TMenuItem'#10'va'
-  +'n10naar0'#7'Caption'#6'5Bestellingen van Bestellen naar Nieuw (van 10 naar '
-  +'0)'#7'OnClick'#7#15'van10naar0Click'#0#0#9'TMenuItem'#9'MenuItem3'#7'Captio'
-  +'n'#6#10'Gebruikers'#7'OnClick'#7#14'MenuItem3Click'#0#0#9'TMenuItem'#9'Menu'
-  +'Item2'#7'Caption'#6#20'Multiplier aanpassen'#7'OnClick'#7#14'MenuItem2Click'
-  +#0#0#0#9'TMenuItem'#21'Menu_baklijstvolgorde'#7'Caption'#6#18'&Volgorde bakl'
-  +'ijst'#7'OnClick'#7#26'Menu_baklijstvolgordeClick'#0#0#0#0
+  +'TabOrder'#2#12#0#0#7'TButton'#14'ButtonUuromzet'#4'Left'#3#200#0#6'Height'#2
+  +'!'#3'Top'#2'@'#5'Width'#2'X'#7'Caption'#6#20'&Uuromzet op artikel'#7'OnClic'
+  +'k'#7#19'ButtonUuromzetClick'#8'TabOrder'#2#13#0#0#15'TIniPropStorage'#20'Ho'
+  +'ofdmenuPropStorage'#12'StoredValues'#14#0#11'IniFileName'#6#14'bestelboek.i'
+  +'ni'#10'IniSection'#6#9'hoofdmenu'#18'OnSavingProperties'#7'$HoofdmenuPropSt'
+  +'orageSavingProperties'#16'OnSaveProperties'#7'"HoofdmenuPropStorageSaveProp'
+  +'erties'#4'left'#3#252#0#3'top'#2'0'#0#0#9'TMainMenu'#7'HfdMenu'#4'left'#3
+  +#138#0#3'top'#2'8'#0#9'TMenuItem'#14'Noodprocedures'#7'Caption'#6#14'Noodpro'
+  +'cedures'#7'OnClick'#7#19'NoodproceduresClick'#0#9'TMenuItem'#11'van40naar50'
+  +#7'Caption'#6'8Bestellingen van Onderweg naar Geleverd (van 40 naar 50)'#7'O'
+  +'nClick'#7#16'van40naar50Click'#0#0#9'TMenuItem'#11'van50naar40'#7'Caption'#6
+  +'8Bestellingen van Geleverd naar Onderweg( van 50 naar 40)'#7'OnClick'#7#16
+  +'van50naar40Click'#0#0#9'TMenuItem'#9'MenuItem1'#7'Caption'#6'7Bestellingen '
+  +'van Besteld naar Onderweg (van 30 naar 40)'#7'OnClick'#7#14'MenuItem1Click'
+  +#0#0#9'TMenuItem'#11'Van40naar30'#7'Caption'#6'4Bestellen van Onderweg naar '
+  +'Besteld (van 40 naar 30)'#7'OnClick'#7#16'Van40naar30Click'#0#0#9'TMenuItem'
+  +#11'van30naar10'#7'Caption'#6'8Bestellingen van Besteld naar Bestellen (van '
+  +'30 naar 10)'#0#0#9'TMenuItem'#10'van10naar0'#7'Caption'#6'5Bestellingen van'
+  +' Bestellen naar Nieuw (van 10 naar 0)'#7'OnClick'#7#15'van10naar0Click'#0#0
+  +#9'TMenuItem'#9'MenuItem3'#7'Caption'#6#10'Gebruikers'#7'OnClick'#7#14'MenuI'
+  +'tem3Click'#0#0#9'TMenuItem'#9'MenuItem2'#7'Caption'#6#20'Multiplier aanpass'
+  +'en'#7'OnClick'#7#14'MenuItem2Click'#0#0#0#9'TMenuItem'#21'Menu_baklijstvolg'
+  +'orde'#7'Caption'#6#18'&Volgorde baklijst'#7'OnClick'#7#26'Menu_baklijstvolg'
+  +'ordeClick'#0#0#0#0
 ]);

@@ -46,14 +46,26 @@ implementation
 
 procedure TfrmBaklijstBroodjes.FormShow(Sender: TObject);
 begin
+     case tag of
+    0:  begin
+           Calendar.Datetime:= now;
+           panel1.Visible:= true ;
+        end;
+
+    1:  begin
+         Calendar.Datetime := now+7;
+         panel1.Visible:= false;
+        end;
+    end;
+    dm.ZBaklijstQuery.ParamByName('datum').AsDateTime:= Calendar.datetime;
+
   if dm.ZBaklijstQuery.Active then
   begin
     dm.ZBaklijstQuery.Refresh;
   end
   else
   begin
-    Calendar.Datetime:= now;
-    dm.ZBaklijstQuery.ParamByName('datum').AsDateTime:= now;
+
     dm.ZBaklijstQuery.Open;
   end;
 end;
