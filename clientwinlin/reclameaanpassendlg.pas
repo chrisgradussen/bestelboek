@@ -5,7 +5,7 @@ unit reclameaanpassendlg;
 interface
 
 uses
-  Classes, SysUtils, db, FileUtil, dbdateedit, rxdbgrid, LResources, Forms,
+  Classes, SysUtils, db, FileUtil, dbExtCtrls, rxdbgrid, rxpickdate,LResources, Forms,
   Controls, Graphics, Dialogs, DbCtrls, ExtCtrls, StdCtrls;
 
 type

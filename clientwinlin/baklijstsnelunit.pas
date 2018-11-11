@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LR_Class, LR_DBSet, LResources, Forms, Controls,
-  Graphics, Dialogs, ExtCtrls, pickdate, rxdbgrid, dbdateedit, unit2, db,
+  Graphics, Dialogs, ExtCtrls, rxpickdate, rxdbgrid, DbExtCtrls, unit2, db,
   EditBtn, Calendar, StdCtrls;
 
 type
@@ -124,4 +124,4 @@ initialization
   {$I baklijstsnelunit.lrs}
 
 end.
-
+

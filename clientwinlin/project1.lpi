@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="9"/>
+    <Version Value="10"/>
     <PathDelim Value="\"/>
     <General>
       <Flags>
@@ -9,14 +9,12 @@
       </Flags>
       <MainUnit Value="0"/>
       <Title Value="project1"/>
-      <ActiveWindowIndexAtStart Value="0"/>
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
       <BuildNr Value="10"/>
-      <StringTable ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="2" Active="Release">
       <Item1 Name="Debug" Default="True"/>
@@ -53,9 +51,8 @@
           </Linking>
           <Other>
             <CompilerMessages>
-              <UseMsgFile Value="True"/>
+              <IgnoredMessages idx11031="True" idx11030="True" idx11017="True" idx11007="True" idx7039="True" idx6048="True" idx5062="True" idx5060="True" idx5058="True" idx5057="True" idx5039="True" idx5028="True" idx5026="True" idx5024="True" idx5023="True" idx5003="True" idx4081="True" idx4080="True" idx4079="True" idx4055="True" idx4049="True" idx4047="True" idx4035="True" idx4015="True" idx3280="True" idx3274="True" idx3270="True" idx3189="True" idx3187="True" idx3126="True" idx3124="True" idx3123="True" idx2026="True"/>
             </CompilerMessages>
-            <CompilerPath Value="$(CompPath)"/>
           </Other>
         </CompilerOptions>
       </Item2>
@@ -93,13 +90,11 @@
         <PackageName Value="LCL"/>
       </Item5>
     </RequiredPackages>
-    <Units Count="24">
+    <Units Count="25">
       <Unit0>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="project1"/>
-        <EditorIndex Value="2"/>
-        <WindowIndex Value="0"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="4"/>
         <CursorPos X="20" Y="19"/>
         <UsageCount Value="201"/>
@@ -112,10 +107,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <EditorIndex Value="0"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="136"/>
-        <CursorPos X="49" Y="138"/>
+        <CursorPos X="18" Y="151"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -126,11 +119,10 @@
         <ComponentName Value="DM"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <UnitName Value="unit2"/>
-        <EditorIndex Value="4"/>
-        <WindowIndex Value="0"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="286"/>
-        <CursorPos X="26" Y="293"/>
+        <CursorPos X="3" Y="288"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -142,7 +134,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit3"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="34"/>
         <CursorPos X="3" Y="46"/>
         <UsageCount Value="200"/>
@@ -154,7 +145,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit4"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="31"/>
         <CursorPos X="6" Y="43"/>
         <UsageCount Value="200"/>
@@ -166,7 +156,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit5"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="33"/>
         <CursorPos X="13" Y="45"/>
         <UsageCount Value="201"/>
@@ -178,7 +167,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit6"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="36"/>
         <CursorPos X="36" Y="48"/>
         <UsageCount Value="201"/>
@@ -190,7 +178,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit7"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="15"/>
         <CursorPos X="20" Y="20"/>
         <UsageCount Value="200"/>
@@ -202,8 +189,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit8"/>
-        <EditorIndex Value="6"/>
-        <WindowIndex Value="0"/>
+        <EditorIndex Value="10"/>
         <TopLine Value="80"/>
         <CursorPos X="30" Y="101"/>
         <UsageCount Value="208"/>
@@ -217,10 +203,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit9"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="47"/>
-        <CursorPos X="36" Y="59"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="15"/>
+        <CursorPos X="32" Y="29"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="unit10.pas"/>
@@ -229,7 +216,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit10"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="103"/>
         <CursorPos X="23" Y="109"/>
         <UsageCount Value="200"/>
@@ -241,10 +227,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit11"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="5"/>
-        <CursorPos X="101" Y="17"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="65"/>
+        <CursorPos X="51" Y="77"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit11>
       <Unit12>
         <Filename Value="unit12.pas"/>
@@ -253,7 +240,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit12"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="100"/>
         <CursorPos X="50" Y="107"/>
         <UsageCount Value="200"/>
@@ -265,9 +251,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit13"/>
-        <EditorIndex Value="5"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
+        <EditorIndex Value="9"/>
         <CursorPos X="28" Y="12"/>
         <UsageCount Value="205"/>
         <Loaded Value="True"/>
@@ -280,7 +264,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit14"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="32"/>
         <CursorPos X="66" Y="41"/>
         <UsageCount Value="201"/>
@@ -292,10 +275,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="BaklijstUnit"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="50"/>
-        <CursorPos X="21" Y="63"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="57" Y="9"/>
         <UsageCount Value="401"/>
+        <Loaded Value="True"/>
       </Unit15>
       <Unit16>
         <Filename Value="baklijstsnelunit.pas"/>
@@ -303,12 +286,8 @@
         <ComponentName Value="frmBaklijstBroodjes"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="baklijstsnelunit"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="46"/>
-        <CursorPos X="76" Y="60"/>
+        <CursorPos X="65" Y="9"/>
         <UsageCount Value="375"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -316,10 +295,9 @@
       <Unit17>
         <Filename Value="C:\usr\share\lazarus\1.0\components\rtticontrols\rttictrls.pas"/>
         <UnitName Value="RTTICtrls"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="4082"/>
-        <CursorPos X="1" Y="4096"/>
-        <UsageCount Value="342"/>
+        <CursorPos Y="4096"/>
+        <UsageCount Value="341"/>
       </Unit17>
       <Unit18>
         <Filename Value="baklijstvolgordeunit.pas"/>
@@ -327,8 +305,6 @@
         <ComponentName Value="Baklijstvolgordeform"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="baklijstvolgordeunit"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="26"/>
         <CursorPos X="30" Y="35"/>
         <UsageCount Value="365"/>
@@ -339,9 +315,6 @@
         <ComponentName Value="FormMultiplier"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="multiplierunit"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
         <CursorPos X="24" Y="9"/>
         <UsageCount Value="327"/>
       </Unit19>
@@ -351,22 +324,18 @@
         <ComponentName Value="FormReclameDlg"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="reclameaanpassendlg"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="2"/>
-        <CursorPos X="53" Y="5"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="69" Y="8"/>
         <UsageCount Value="324"/>
+        <Loaded Value="True"/>
       </Unit20>
       <Unit21>
         <Filename Value="aktielijst.pas"/>
         <ComponentName Value="FormAktielijst"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="aktielijst"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
         <CursorPos X="15" Y="5"/>
-        <UsageCount Value="207"/>
+        <UsageCount Value="206"/>
       </Unit21>
       <Unit22>
         <Filename Value="aktielijstunit.pas"/>
@@ -374,9 +343,7 @@
         <ComponentName Value="FormAktielijst"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="aktielijstunit"/>
-        <EditorIndex Value="3"/>
-        <WindowIndex Value="0"/>
+        <EditorIndex Value="7"/>
         <TopLine Value="58"/>
         <CursorPos X="91" Y="64"/>
         <UsageCount Value="361"/>
@@ -388,133 +355,138 @@
         <IsPartOfProject Value="True"/>
         <ComponentName Value="GebruikersForm"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="gebruikersunit"/>
-        <WindowIndex Value="0"/>
         <TopLine Value="34"/>
         <CursorPos X="20" Y="43"/>
-        <UsageCount Value="31"/>
+        <UsageCount Value="44"/>
       </Unit23>
+      <Unit24>
+        <Filename Value="C:\lazarus\components\onlinepackagemanager\Rx\rxtools\rxdateutil.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="88"/>
+        <CursorPos X="25" Y="116"/>
+        <UsageCount Value="10"/>
+      </Unit24>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="unit8.pas"/>
-        <Caret Line="100" Column="3" TopLine="96"/>
+        <Caret Line="57" Column="17" TopLine="47"/>
       </Position1>
       <Position2>
         <Filename Value="unit8.pas"/>
-        <Caret Line="102" Column="17" TopLine="95"/>
+        <Caret Line="106" Column="3" TopLine="91"/>
       </Position2>
       <Position3>
         <Filename Value="unit8.pas"/>
-        <Caret Line="105" Column="4" TopLine="96"/>
+        <Caret Line="83" Column="36" TopLine="80"/>
       </Position3>
       <Position4>
-        <Filename Value="unit8.pas"/>
-        <Caret Line="102" Column="11" TopLine="96"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="209" Column="37" TopLine="198"/>
       </Position4>
       <Position5>
-        <Filename Value="unit8.pas"/>
-        <Caret Line="51" Column="25" TopLine="46"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="210" Column="37" TopLine="199"/>
       </Position5>
       <Position6>
-        <Filename Value="unit13.pas"/>
-        <Caret Line="1" Column="20" TopLine="1"/>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="27" Column="28" TopLine="6"/>
       </Position6>
       <Position7>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="8" Column="21" TopLine="1"/>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="64" Column="74" TopLine="47"/>
       </Position7>
       <Position8>
-        <Filename Value="unit13.pas"/>
-        <Caret Line="8" Column="27" TopLine="1"/>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="57" Column="33" TopLine="44"/>
       </Position8>
       <Position9>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="9" Column="25" TopLine="1"/>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="100" Column="27" TopLine="92"/>
       </Position9>
       <Position10>
         <Filename Value="unit1.pas"/>
-        <Caret Line="275" Column="13" TopLine="267"/>
+        <Caret Line="125" Column="2" TopLine="123"/>
       </Position10>
       <Position11>
         <Filename Value="unit1.pas"/>
-        <Caret Line="140" Column="3" TopLine="138"/>
+        <Caret Line="122" Column="3" TopLine="117"/>
       </Position11>
       <Position12>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="189" Column="3" TopLine="184"/>
-      </Position12>
-      <Position13>
-        <Filename Value="unit8.pas"/>
-        <Caret Line="58" Column="14" TopLine="46"/>
-      </Position13>
-      <Position14>
-        <Filename Value="aktielijstunit.pas"/>
-        <Caret Line="106" Column="26" TopLine="86"/>
-      </Position14>
-      <Position15>
-        <Filename Value="aktielijstunit.pas"/>
-        <Caret Line="74" Column="21" TopLine="66"/>
-      </Position15>
-      <Position16>
-        <Filename Value="aktielijstunit.pas"/>
-        <Caret Line="64" Column="32" TopLine="57"/>
-      </Position16>
-      <Position17>
-        <Filename Value="aktielijstunit.pas"/>
-        <Caret Line="70" Column="17" TopLine="57"/>
-      </Position17>
-      <Position18>
-        <Filename Value="unit8.pas"/>
-        <Caret Line="57" Column="17" TopLine="47"/>
-      </Position18>
-      <Position19>
-        <Filename Value="unit8.pas"/>
-        <Caret Line="106" Column="3" TopLine="91"/>
-      </Position19>
-      <Position20>
-        <Filename Value="unit8.pas"/>
-        <Caret Line="83" Column="36" TopLine="80"/>
-      </Position20>
-      <Position21>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="209" Column="37" TopLine="198"/>
-      </Position21>
-      <Position22>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="210" Column="37" TopLine="199"/>
-      </Position22>
-      <Position23>
-        <Filename Value="baklijstsnelunit.pas"/>
-        <Caret Line="27" Column="28" TopLine="6"/>
-      </Position23>
-      <Position24>
-        <Filename Value="baklijstsnelunit.pas"/>
-        <Caret Line="64" Column="74" TopLine="47"/>
-      </Position24>
-      <Position25>
-        <Filename Value="baklijstsnelunit.pas"/>
-        <Caret Line="57" Column="33" TopLine="44"/>
-      </Position25>
-      <Position26>
-        <Filename Value="baklijstsnelunit.pas"/>
-        <Caret Line="100" Column="27" TopLine="92"/>
-      </Position26>
-      <Position27>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="125" Column="2" TopLine="123"/>
-      </Position27>
-      <Position28>
-        <Filename Value="unit1.pas"/>
-        <Caret Line="122" Column="3" TopLine="117"/>
-      </Position28>
-      <Position29>
         <Filename Value="baklijstsnelunit.pas"/>
         <Caret Line="60" Column="31" TopLine="46"/>
-      </Position29>
-      <Position30>
+      </Position12>
+      <Position13>
         <Filename Value="baklijstsnelunit.pas"/>
         <Caret Line="57" Column="32" TopLine="49"/>
+      </Position13>
+      <Position14>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="60" Column="76" TopLine="46"/>
+      </Position14>
+      <Position15>
+        <Filename Value="reclameaanpassendlg.pas"/>
+        <Caret Line="8" Column="36"/>
+      </Position15>
+      <Position16>
+        <Filename Value="unit11.pas"/>
+        <Caret Line="77" Column="51" TopLine="65"/>
+      </Position16>
+      <Position17>
+        <Filename Value="unit9.pas"/>
+        <Caret Line="29" Column="32" TopLine="15"/>
+      </Position17>
+      <Position18>
+        <Filename Value="reclameaanpassendlg.pas"/>
+        <Caret Line="8" Column="46"/>
+      </Position18>
+      <Position19>
+        <Filename Value="baklijstunit.pas"/>
+        <Caret Line="9" Column="57"/>
+      </Position19>
+      <Position20>
+        <Filename Value="reclameaanpassendlg.pas"/>
+        <Caret Line="8" Column="69"/>
+      </Position20>
+      <Position21>
+        <Filename Value="baklijstsnelunit.pas"/>
+        <Caret Line="9" Column="34"/>
+      </Position21>
+      <Position22>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="293" Column="25" TopLine="286"/>
+      </Position22>
+      <Position23>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="363" Column="20" TopLine="339"/>
+      </Position23>
+      <Position24>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="365" Column="12" TopLine="341"/>
+      </Position24>
+      <Position25>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="366" Column="12" TopLine="342"/>
+      </Position25>
+      <Position26>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="369" Column="20" TopLine="345"/>
+      </Position26>
+      <Position27>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="375" Column="20" TopLine="351"/>
+      </Position27>
+      <Position28>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="396" Column="21" TopLine="372"/>
+      </Position28>
+      <Position29>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="401" Column="21" TopLine="377"/>
+      </Position29>
+      <Position30>
+        <Filename Value="unit2.pas"/>
+        <Caret Line="398" Column="21" TopLine="384"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
@@ -525,8 +497,8 @@
       <Filename Value="bestelboek1"/>
     </Target>
     <SearchPaths>
-      <Libraries Value="\usr\share\lazarus\1.0\components\rtticontrols\"/>
-      <OtherUnitFiles Value="\usr\share\lazarus\1.0\components\rtticontrols\"/>
+      <Libraries Value="\usr\share\lazarus\1.0\components\rtticontrols"/>
+      <OtherUnitFiles Value="\usr\share\lazarus\1.0\components\rtticontrols"/>
     </SearchPaths>
     <Parsing>
       <SyntaxOptions>
@@ -554,10 +526,6 @@
       <Verbosity>
         <ShowDebugInfo Value="True"/>
       </Verbosity>
-      <CompilerMessages>
-        <UseMsgFile Value="True"/>
-      </CompilerMessages>
-      <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>
   <Debugging>
@@ -579,5 +547,4 @@
       </Item2>
     </Exceptions>
   </Debugging>
-  <EditorMacros Count="0"/>
-</CONFIG>
+</CONFIG>

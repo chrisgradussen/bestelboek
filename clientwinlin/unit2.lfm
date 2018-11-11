@@ -5,21 +5,22 @@ object DM: TDM
   HorizontalOffset = 635
   VerticalOffset = 31
   Width = 678
+  PPI = 96
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
     Properties.Strings = (
       'AutoEncodeStrings='
     )
     TransactIsolationLevel = tiReadCommitted
-    Connected = True
     DesignConnection = True
     BeforeConnect = ZConnectionBeforeConnect
-    HostName = 'LOCALHOST'
+    HostName = 'localhost'
     Port = 0
     Database = 'bestelhulp1'
     User = 'sysdba'
     Password = 'masterkey'
     Protocol = 'firebird-2.5'
+    LibraryLocation = 'C:\Program Files\Firebird\Firebird_2_5\bin\fbclient.dll'
     left = 8
     top = 8
   end
@@ -2165,4 +2166,4 @@ object DM: TDM
     left = 184
     top = 80
   end
-end
+end

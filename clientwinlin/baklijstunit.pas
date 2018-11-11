@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, StdCtrls, Buttons, DbCtrls, IniPropStorage, dbdateedit, rxlookup,
+  ExtCtrls, StdCtrls, Buttons, DbCtrls, IniPropStorage, DbExtCtrls, rxlookup,
   rxdbcomb, rxdbgrid, unit2;
 
 type
