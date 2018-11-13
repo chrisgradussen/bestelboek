@@ -1,15 +1,16 @@
 object ArtikelOmzet: TArtikelOmzet
-  Left = 112
+  Left = 583
   Height = 319
-  Top = 338
+  Top = 357
   Width = 1157
   ActiveControl = Panel1
   Caption = 'ArtikelOmzet'
   ClientHeight = 319
   ClientWidth = 1157
+  OnCreate = FormCreate
   OnShow = FormShow
   SessionProperties = 'Height;Left;Top;Width'
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.8.4.0'
   object Panel1: TPanel
     Left = 0
     Height = 291
@@ -26,6 +27,7 @@ object ArtikelOmzet: TArtikelOmzet
       Hint = 'Dubbelklik op de week om aktie toe te voegen'
       Top = 24
       Width = 1155
+      ColumnDefValues.BlobText = '(blob)'
       TitleButtons = False
       AutoSort = True
       KeyStrokes = <      
@@ -84,6 +86,9 @@ object ArtikelOmzet: TArtikelOmzet
           ShortCut = 16451
           Enabled = True
         end>
+      FooterOptions.DrawFullLine = False
+      SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+      SearchOptions.FromStart = False
       OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
       Align = alClient
       Color = clWindow
@@ -93,7 +98,6 @@ object ArtikelOmzet: TArtikelOmzet
       GridLineStyle = psSolid
       DataSource = OmzetDataSource
       Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
-      ParentColor = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
@@ -113,7 +117,7 @@ object ArtikelOmzet: TArtikelOmzet
         Left = 7
         Height = 15
         Top = 4
-        Width = 54
+        Width = 41
         DataField = 'EANUPC'
         DataSource = OmschrijvingDataSource
         ParentColor = False
@@ -123,7 +127,7 @@ object ArtikelOmzet: TArtikelOmzet
         Left = 112
         Height = 15
         Top = 4
-        Width = 54
+        Width = 41
         DataField = 'NAAM'
         DataSource = OmschrijvingDataSource
         ParentColor = False
@@ -132,7 +136,7 @@ object ArtikelOmzet: TArtikelOmzet
         Left = 400
         Height = 15
         Top = 4
-        Width = 54
+        Width = 41
         DataField = 'ARTIKELNUMMER'
         DataSource = OmschrijvingDataSource
         ParentColor = False
@@ -141,7 +145,7 @@ object ArtikelOmzet: TArtikelOmzet
         Left = 480
         Height = 15
         Top = 4
-        Width = 54
+        Width = 41
         Alignment = taRightJustify
         DataField = 'INHOUD'
         DataSource = OmschrijvingDataSource
@@ -151,7 +155,7 @@ object ArtikelOmzet: TArtikelOmzet
         Left = 576
         Height = 15
         Top = 4
-        Width = 54
+        Width = 41
         DataField = 'EENHEID'
         DataSource = OmschrijvingDataSource
         ParentColor = False
@@ -160,7 +164,7 @@ object ArtikelOmzet: TArtikelOmzet
         Left = 656
         Height = 15
         Top = 4
-        Width = 54
+        Width = 41
         DataField = 'BESTELINHOUD'
         DataSource = OmschrijvingDataSource
         ParentColor = False
@@ -169,7 +173,7 @@ object ArtikelOmzet: TArtikelOmzet
         Left = 728
         Height = 15
         Top = 4
-        Width = 54
+        Width = 41
         DataField = 'BESTELEENHEID'
         DataSource = OmschrijvingDataSource
         ParentColor = False
@@ -178,7 +182,7 @@ object ArtikelOmzet: TArtikelOmzet
         Left = 808
         Height = 15
         Top = 4
-        Width = 54
+        Width = 41
         DataField = 'VERKOOPPRIJS'
         DataSource = OmschrijvingDataSource
         ParentColor = False
@@ -187,7 +191,7 @@ object ArtikelOmzet: TArtikelOmzet
         Left = 896
         Height = 15
         Top = 6
-        Width = 127
+        Width = 101
         DataField = 'VOORRAAD'
         DataSource = OmschrijvingDataSource
         ParentColor = False
@@ -200,6 +204,7 @@ object ArtikelOmzet: TArtikelOmzet
       Top = 136
       Width = 162
       AfterQuickSearch = RxDBGrid1AfterQuickSearch
+      ColumnDefValues.BlobText = '(blob)'
       TitleButtons = False
       AutoSort = True
       Columns = <      
@@ -209,15 +214,18 @@ object ArtikelOmzet: TArtikelOmzet
           MinSize = 100
           ReadOnly = True
           Title.Alignment = taCenter
-          Title.Caption = 'EANUPC'
           Title.Orientation = toHorizontal
+          Title.Caption = 'EANUPC'
           Width = 115
           FieldName = 'EANUPC'
           EditButtons = <>
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
           Filter.EmptyFont.Style = [fsItalic]
           Filter.ItemIndex = -1
+          Footers = <>
         end>
       KeyStrokes = <      
         item
@@ -250,6 +258,9 @@ object ArtikelOmzet: TArtikelOmzet
           ShortCut = 16456
           Enabled = True
         end>
+      FooterOptions.DrawFullLine = False
+      SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+      SearchOptions.FromStart = False
       OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
       Anchors = [akRight, akBottom]
       BiDiMode = bdRightToLeft
@@ -261,7 +272,6 @@ object ArtikelOmzet: TArtikelOmzet
       DataSource = eanupcdatasource
       Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
       ParentBiDiMode = False
-      ParentColor = False
       TabOrder = 1
       OnCellClick = RxDBGrid1CellClick
       OnColEnter = RxDBGrid1ColEnter
@@ -306,6 +316,7 @@ object ArtikelOmzet: TArtikelOmzet
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
     IniSection = 'artikelomzet'
+    OnRestoreProperties = ArtikelOmzetPropStorageRestoreProperties
     left = 501
     top = 44
   end
@@ -319,4 +330,4 @@ object ArtikelOmzet: TArtikelOmzet
     left = 176
     top = 40
   end
-end
+end

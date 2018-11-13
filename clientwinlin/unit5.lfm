@@ -7,9 +7,10 @@ object subgroep: Tsubgroep
   ClientHeight = 300
   ClientWidth = 400
   OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
   OnShow = FormShow
   SessionProperties = 'Height;Left;Position;Top;Width;WindowState'
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.8.4.0'
   object Panel1: TPanel
     Left = 0
     Height = 300
@@ -64,4 +65,4 @@ object subgroep: Tsubgroep
     left = 352
     top = 72
   end
-end
+end

@@ -23,6 +23,7 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     procedure DBGrid2DblClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
     { private declarations }
@@ -61,6 +62,11 @@ begin
 
   close;
 
+end;
+
+procedure TScripts.FormCreate(Sender: TObject);
+begin
+  scriptspropstorage.IniFileName:=getappconfigfile(false);
 end;
 
 initialization

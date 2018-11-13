@@ -6,9 +6,10 @@ object Form1: TForm1
   Caption = 'Form1'
   ClientHeight = 534
   ClientWidth = 1058
+  OnCreate = FormCreate
   OnShow = FormShow
   SessionProperties = 'Height;Left;Panel1.Height;Panel1.Left;Panel1.Top;Panel1.Width;Panel2.Height;Panel2.Left;Panel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;Panel3.Width;Splitter1.Height;Splitter1.Left;Splitter1.Top;Splitter1.Width;Top;Width'
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.8.4.0'
   object Panel1: TPanel
     Left = 0
     Height = 48
@@ -115,6 +116,7 @@ object Form1: TForm1
       Height = 218
       Top = 1
       Width = 475
+      ColumnDefValues.BlobText = '(blob)'
       TitleButtons = False
       AutoSort = True
       KeyStrokes = <      
@@ -149,6 +151,9 @@ object Form1: TForm1
           Enabled = True
         end>
       FooterOptions.Color = clYellow
+      FooterOptions.DrawFullLine = False
+      SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+      SearchOptions.FromStart = False
       OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
       FooterColor = clYellow
       Align = alClient
@@ -159,7 +164,6 @@ object Form1: TForm1
       GridLineStyle = psSolid
       DataSource = DM.BaklijstGeschiedenisDataSource
       Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
-      ParentColor = False
       TabOrder = 0
       TitleStyle = tsNative
     end
@@ -174,55 +178,68 @@ object Form1: TForm1
       Height = 218
       Top = 1
       Width = 576
+      ColumnDefValues.BlobText = '(blob)'
       TitleButtons = False
       AutoSort = True
       Columns = <      
         item
           Title.Alignment = taCenter
-          Title.Caption = 'PLU'
           Title.Orientation = toHorizontal
+          Title.Caption = 'PLU'
           FieldName = 'PLU'
           EditButtons = <>
           Filter.Font.Style = [fsItalic]
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
           Filter.EmptyFont.Style = [fsItalic]
           Filter.ItemIndex = -1
+          Footers = <>
         end      
         item
           Title.Alignment = taCenter
-          Title.Caption = 'X_NAAM'
           Title.Orientation = toHorizontal
+          Title.Caption = 'X_NAAM'
           FieldName = 'X_NAAM'
           EditButtons = <>
           Filter.Font.Style = [fsItalic]
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
           Filter.EmptyFont.Style = [fsItalic]
           Filter.ItemIndex = -1
+          Footers = <>
         end      
         item
           Title.Alignment = taCenter
-          Title.Caption = 'CHARGE_1'
           Title.Orientation = toHorizontal
+          Title.Caption = 'CHARGE_1'
           FieldName = 'CHARGE_1'
           EditButtons = <>
           Filter.Font.Style = [fsItalic]
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
           Filter.EmptyFont.Style = [fsItalic]
           Filter.ItemIndex = -1
+          Footers = <>
         end      
         item
           Title.Alignment = taCenter
-          Title.Caption = 'Title'
           Title.Orientation = toHorizontal
+          Title.Caption = 'Title'
           EditButtons = <>
           Filter.Font.Style = [fsItalic]
           Filter.DropDownRows = 0
           Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
           Filter.EmptyFont.Style = [fsItalic]
           Filter.ItemIndex = -1
+          Footers = <>
         end>
       KeyStrokes = <      
         item
@@ -256,6 +273,9 @@ object Form1: TForm1
           Enabled = True
         end>
       FooterOptions.Color = clYellow
+      FooterOptions.DrawFullLine = False
+      SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+      SearchOptions.FromStart = False
       OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
       FooterColor = clYellow
       Align = alLeft
@@ -266,7 +286,6 @@ object Form1: TForm1
       GridLineStyle = psSolid
       DataSource = DM.BaklijstDataSource
       Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
-      ParentColor = False
       TabOrder = 2
       TitleStyle = tsNative
     end
@@ -287,4 +306,4 @@ object Form1: TForm1
     left = 360
     top = 8
   end
-end
+end

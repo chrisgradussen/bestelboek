@@ -198,6 +198,7 @@ end;
 
 procedure TArtikelBestand.FormCreate(Sender: TObject);
 begin
+  artikelbestandpropstorage.IniFileName:=getappconfigfile(false);
 end;
 
 procedure TArtikelBestand.EditChange(Sender: TObject);

@@ -6,9 +6,10 @@ object Scripts: TScripts
   Caption = 'Scripts'
   ClientHeight = 337
   ClientWidth = 400
+  OnCreate = FormCreate
   OnShow = FormShow
   SessionProperties = 'Height;Left;Top;Width;Panel1.Width;Panel1.Top;Panel1.Left;Panel1.Height;Panel2.Width;Panel2.Top;Panel2.Left;Panel2.Height'
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.8.4.0'
   object Panel1: TPanel
     Left = 0
     Height = 168
@@ -110,4 +111,4 @@ object Scripts: TScripts
     left = 216
     top = 40
   end
-end
+end

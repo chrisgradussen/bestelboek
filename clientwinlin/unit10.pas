@@ -39,6 +39,7 @@ type
     procedure DBNavigator3MouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
     procedure MenuItem2Click(Sender: TObject);
@@ -168,8 +169,13 @@ begin
 
 end;
 
+procedure TBestelschema.FormCreate(Sender: TObject);
+begin
+  bestelschemapropstorage.IniFileName:=getappconfigfile(false);
+end;
+
 initialization
   {$I unit10.lrs}
 
 end.
-
+

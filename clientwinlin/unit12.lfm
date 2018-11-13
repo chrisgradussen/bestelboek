@@ -8,13 +8,14 @@ object ZoekArtikel: TZoekArtikel
   ClientWidth = 529
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
   OnShow = FormShow
   SessionProperties = 'Height;Left;Top;Width;WindowState'
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.8.4.0'
   object Edit: TEdit
     Left = 0
-    Height = 25
-    Top = 275
+    Height = 23
+    Top = 277
     Width = 529
     Align = alBottom
     OnChange = EditChange
@@ -25,7 +26,7 @@ object ZoekArtikel: TZoekArtikel
   end
   object Grid: TDBGrid
     Left = 0
-    Height = 275
+    Height = 277
     Top = 0
     Width = 529
     Align = alClient
@@ -39,7 +40,7 @@ object ZoekArtikel: TZoekArtikel
   end
   object ZoekTekst: TEdit
     Left = 176
-    Height = 25
+    Height = 23
     Top = 16
     Width = 80
     TabOrder = 2
@@ -57,4 +58,4 @@ object ZoekArtikel: TZoekArtikel
     left = 456
     top = 35
   end
-end
+end

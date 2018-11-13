@@ -58,6 +58,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure GroepButtonClick(Sender: TObject);
+    procedure HoofdmenuPropStorageRestoringProperties(Sender: TObject);
     procedure HoofdmenuPropStorageSaveProperties(Sender: TObject);
     procedure HoofdmenuPropStorageSavingProperties(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
@@ -201,7 +202,7 @@ begin
   Info.Load(HINSTANCE);
   self.Caption := Format('Bestelboek Versie %d.%d.%d build %d Hoofdmenu', [Info.FixedInfo.FileVersion[0],Info.FixedInfo.FileVersion[1],Info.FixedInfo.FileVersion[2],Info.FixedInfo.FileVersion[3]]);
   Info.Free;
-
+  hoofdmenupropstorage.IniFileName:=getappconfigfile(false);
 end;
 
 procedure Thoofdmenu.FormShow(Sender: TObject);
@@ -226,6 +227,11 @@ end;
 procedure Thoofdmenu.GroepButtonClick(Sender: TObject);
 begin
   Groep.show;
+end;
+
+procedure Thoofdmenu.HoofdmenuPropStorageRestoringProperties(Sender: TObject);
+begin
+  tinipropstorage(sender).IniFileName:=getappconfigfile(false);
 end;
 
 procedure Thoofdmenu.HoofdmenuPropStorageSaveProperties(Sender: TObject);
@@ -344,4 +350,4 @@ initialization
   {$I unit1.lrs}
 
 end.
-
+

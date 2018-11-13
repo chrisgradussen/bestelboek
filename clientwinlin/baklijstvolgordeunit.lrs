@@ -3,41 +3,43 @@
 LazarusResources.Add('TBaklijstvolgordeform','FORMDATA',[
   'TPF0'#21'TBaklijstvolgordeform'#20'Baklijstvolgordeform'#4'Left'#3#26#2#6'He'
   +'ight'#3#240#0#3'Top'#3#242#0#5'Width'#3'@'#1#7'Caption'#6#17'Baklijst Volgo'
-  +'rde'#12'ClientHeight'#3#240#0#11'ClientWidth'#3'@'#1#6'OnShow'#7#8'FormShow'
-  +#17'SessionProperties'#6'3Height;Left;Top;Width;WindowState;RxDBGrid1.Column'
-  +'s'#10'LCLVersion'#6#7'1.2.6.0'#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Height'#2
-  +' '#3'Top'#3#208#0#5'Width'#3'@'#1#5'Align'#7#8'alBottom'#12'ClientHeight'#2
-  +' '#11'ClientWidth'#3'@'#1#8'TabOrder'#2#0#0#12'TDBNavigator'#12'DBNavigator'
-  +'1'#4'Left'#2#1#6'Height'#2#30#3'Top'#2#1#5'Width'#3'>'#1#5'Align'#7#8'alCli'
-  +'ent'#10'BevelOuter'#7#6'bvNone'#29'ChildSizing.EnlargeHorizontal'#7#14'crsS'
-  +'caleChilds'#27'ChildSizing.EnlargeVertical'#7#14'crsScaleChilds'#28'ChildSi'
-  +'zing.ShrinkHorizontal'#7#14'crsScaleChilds'#26'ChildSizing.ShrinkVertical'#7
-  +#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29'cclLeftToRightThenTopToBotto'
-  +'m'#27'ChildSizing.ControlsPerLine'#2'd'#12'ClientHeight'#2#30#11'ClientWidt'
-  +'h'#3'>'#1#10'DataSource'#7#11'DataSource1'#7'Options'#11#0#8'TabOrder'#2#0#0
-  +#0#0#6'TPanel'#6'Panel2'#4'Left'#2#0#6'Height'#3#208#0#3'Top'#2#0#5'Width'#3
-  +'@'#1#5'Align'#7#8'alClient'#12'ClientHeight'#3#208#0#11'ClientWidth'#3'@'#1
-  +#8'TabOrder'#2#1#0#9'TRxDBGrid'#9'RxDBGrid1'#4'Left'#2#1#6'Height'#3#206#0#3
-  +'Top'#2#1#5'Width'#3'>'#1#12'TitleButtons'#8#8'AutoSort'#9#10'KeyStrokes'#14
-  +#1#7'Command'#7#15'rxgcShowFindDlg'#8'ShortCut'#3'F@'#7'Enabled'#9#0#1#7'Com'
-  +'mand'#7#18'rxgcShowColumnsDlg'#8'ShortCut'#3'W@'#7'Enabled'#9#0#1#7'Command'
-  +#7#17'rxgcShowFilterDlg'#8'ShortCut'#3'T@'#7'Enabled'#9#0#1#7'Command'#7#15
-  +'rxgcShowSortDlg'#8'ShortCut'#3'S@'#7'Enabled'#9#0#1#7'Command'#7#19'rxgcSho'
-  +'wQuickFilter'#8'ShortCut'#3'Q@'#7'Enabled'#9#0#1#7'Command'#7#19'rxgcHideQu'
-  +'ickFilter'#8'ShortCut'#3'H@'#7'Enabled'#9#0#1#7'Command'#7#13'rxgcSelectAll'
-  +#8'ShortCut'#3'A@'#7'Enabled'#9#0#1#7'Command'#7#15'rxgcDeSelectAll'#8'Short'
-  +'Cut'#3'-@'#7'Enabled'#9#0#1#7'Command'#7#19'rxgcInvertSelection'#8'ShortCut'
-  +#3'*@'#7'Enabled'#9#0#1#7'Command'#7#24'rxgcOptimizeColumnsWidth'#8'ShortCut'
-  +#3'+@'#7'Enabled'#9#0#1#7'Command'#7#17'rxgcCopyCellValue'#8'ShortCut'#3'C@'
-  +#7'Enabled'#9#0#0#9'OptionsRx'#11#19'rdgAllowColumnsForm'#18'rdgAllowDialogF'
-  +'ind'#19'rdgAllowQuickFilter'#0#5'Align'#7#8'alClient'#5'Color'#7#8'clWindow'
-  +#12'DrawFullLine'#8#10'FocusColor'#7#5'clRed'#13'SelectedColor'#7#11'clHighl'
-  +'ight'#13'GridLineStyle'#7#7'psSolid'#10'DataSource'#7#11'DataSource1'#7'Opt'
-  +'ions'#11#9'dgEditing'#8'dgTitles'#11'dgIndicator'#14'dgColumnResize'#12'dgC'
-  +'olumnMove'#10'dgColLines'#10'dgRowLines'#21'dgAlwaysShowSelection'#15'dgCon'
-  +'firmDelete'#14'dgCancelOnExit'#0#11'ParentColor'#8#8'TabOrder'#2#0#0#0#0#11
-  +'TDataSource'#11'DataSource1'#7'DataSet'#7#25'DM.ZBaklijstvolgordequery'#4'l'
-  +'eft'#3#193#0#3'top'#2'd'#0#0#15'TIniPropStorage'#27'baklijstvolgordePropSto'
-  +'rage'#12'StoredValues'#14#0#11'IniFileName'#6#14'bestelboek.ini'#4'left'#3
-  +#200#0#3'top'#2#16#0#0#0
+  +'rde'#12'ClientHeight'#3#240#0#11'ClientWidth'#3'@'#1#8'OnCreate'#7#10'FormC'
+  +'reate'#6'OnShow'#7#8'FormShow'#17'SessionProperties'#6'3Height;Left;Top;Wid'
+  +'th;WindowState;RxDBGrid1.Columns'#10'LCLVersion'#6#7'1.8.4.0'#0#6'TPanel'#6
+  +'Panel1'#4'Left'#2#0#6'Height'#2' '#3'Top'#3#208#0#5'Width'#3'@'#1#5'Align'#7
+  +#8'alBottom'#12'ClientHeight'#2' '#11'ClientWidth'#3'@'#1#8'TabOrder'#2#0#0
+  +#12'TDBNavigator'#12'DBNavigator1'#4'Left'#2#1#6'Height'#2#30#3'Top'#2#1#5'W'
+  +'idth'#3'>'#1#5'Align'#7#8'alClient'#10'BevelOuter'#7#6'bvNone'#29'ChildSizi'
+  +'ng.EnlargeHorizontal'#7#14'crsScaleChilds'#27'ChildSizing.EnlargeVertical'#7
+  +#14'crsScaleChilds'#28'ChildSizing.ShrinkHorizontal'#7#14'crsScaleChilds'#26
+  +'ChildSizing.ShrinkVertical'#7#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29
+  +'cclLeftToRightThenTopToBottom'#27'ChildSizing.ControlsPerLine'#2'd'#12'Clie'
+  +'ntHeight'#2#30#11'ClientWidth'#3'>'#1#10'DataSource'#7#11'DataSource1'#7'Op'
+  +'tions'#11#0#8'TabOrder'#2#0#0#0#0#6'TPanel'#6'Panel2'#4'Left'#2#0#6'Height'
+  +#3#208#0#3'Top'#2#0#5'Width'#3'@'#1#5'Align'#7#8'alClient'#12'ClientHeight'#3
+  +#208#0#11'ClientWidth'#3'@'#1#8'TabOrder'#2#1#0#9'TRxDBGrid'#9'RxDBGrid1'#4
+  +'Left'#2#1#6'Height'#3#206#0#3'Top'#2#1#5'Width'#3'>'#1#24'ColumnDefValues.B'
+  +'lobText'#6#6'(blob)'#12'TitleButtons'#8#8'AutoSort'#9#10'KeyStrokes'#14#1#7
+  +'Command'#7#15'rxgcShowFindDlg'#8'ShortCut'#3'F@'#7'Enabled'#9#0#1#7'Command'
+  +#7#18'rxgcShowColumnsDlg'#8'ShortCut'#3'W@'#7'Enabled'#9#0#1#7'Command'#7#17
+  +'rxgcShowFilterDlg'#8'ShortCut'#3'T@'#7'Enabled'#9#0#1#7'Command'#7#15'rxgcS'
+  +'howSortDlg'#8'ShortCut'#3'S@'#7'Enabled'#9#0#1#7'Command'#7#19'rxgcShowQuic'
+  +'kFilter'#8'ShortCut'#3'Q@'#7'Enabled'#9#0#1#7'Command'#7#19'rxgcHideQuickFi'
+  +'lter'#8'ShortCut'#3'H@'#7'Enabled'#9#0#1#7'Command'#7#13'rxgcSelectAll'#8'S'
+  +'hortCut'#3'A@'#7'Enabled'#9#0#1#7'Command'#7#15'rxgcDeSelectAll'#8'ShortCut'
+  +#3'-@'#7'Enabled'#9#0#1#7'Command'#7#19'rxgcInvertSelection'#8'ShortCut'#3'*'
+  +'@'#7'Enabled'#9#0#1#7'Command'#7#24'rxgcOptimizeColumnsWidth'#8'ShortCut'#3
+  +'+@'#7'Enabled'#9#0#1#7'Command'#7#17'rxgcCopyCellValue'#8'ShortCut'#3'C@'#7
+  +'Enabled'#9#0#0#26'FooterOptions.DrawFullLine'#8' SearchOptions.QuickSearchO'
+  +'ptions'#11#17'loCaseInsensitive'#12'loPartialKey'#0#23'SearchOptions.FromSt'
+  +'art'#8#9'OptionsRx'#11#19'rdgAllowColumnsForm'#18'rdgAllowDialogFind'#19'rd'
+  +'gAllowQuickFilter'#0#5'Align'#7#8'alClient'#5'Color'#7#8'clWindow'#12'DrawF'
+  +'ullLine'#8#10'FocusColor'#7#5'clRed'#13'SelectedColor'#7#11'clHighlight'#13
+  +'GridLineStyle'#7#7'psSolid'#10'DataSource'#7#11'DataSource1'#7'Options'#11#9
+  +'dgEditing'#8'dgTitles'#11'dgIndicator'#14'dgColumnResize'#12'dgColumnMove'
+  +#10'dgColLines'#10'dgRowLines'#21'dgAlwaysShowSelection'#15'dgConfirmDelete'
+  +#14'dgCancelOnExit'#0#8'TabOrder'#2#0#0#0#0#11'TDataSource'#11'DataSource1'#7
+  +'DataSet'#7#25'DM.ZBaklijstvolgordequery'#4'left'#3#193#0#3'top'#2'd'#0#0#15
+  +'TIniPropStorage'#27'baklijstvolgordePropStorage'#12'StoredValues'#14#0#11'I'
+  +'niFileName'#6#14'bestelboek.ini'#4'left'#3#200#0#3'top'#2#16#0#0#0
 ]);

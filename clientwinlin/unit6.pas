@@ -20,6 +20,7 @@ type
     Panel1: TPanel;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
     { private declarations }
@@ -46,6 +47,11 @@ procedure Tdagen.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
    if DM.ZDagenTable.State in [dsedit,dsinsert] then
      DM.ZDagenTable.post;
+end;
+
+procedure Tdagen.FormCreate(Sender: TObject);
+begin
+  dagenpropstorage.IniFileName:=getappconfigfile(false);
 end;
 
 procedure Tdagen.FormClose(Sender: TObject; var CloseAction: TCloseAction);

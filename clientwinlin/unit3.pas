@@ -19,6 +19,7 @@ type
     bestelgroepPropStorage: TIniPropStorage;
     Panel2: TPanel;
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
     { private declarations }
@@ -45,6 +46,11 @@ procedure Tbestelgroep.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
    if DM.ZBestelgroepTable.State in [dsedit,dsinsert] then
      DM.ZBestelgroepTable.post;
+end;
+
+procedure Tbestelgroep.FormCreate(Sender: TObject);
+begin
+  bestelgroeppropstorage.IniFileName:=getappconfigfile(false);
 end;
 
 initialization

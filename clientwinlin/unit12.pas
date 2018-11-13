@@ -22,6 +22,7 @@ type
     procedure EditKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure GridDblClick(Sender: TObject);
     procedure GridKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -57,6 +58,11 @@ end;
 procedure TZoekArtikel.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
 
+end;
+
+procedure TZoekArtikel.FormCreate(Sender: TObject);
+begin
+  zoekartikelpropstorage.IniFileName:=getappconfigfile(false);
 end;
 
 procedure TZoekArtikel.EditChange(Sender: TObject);

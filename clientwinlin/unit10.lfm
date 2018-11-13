@@ -7,9 +7,10 @@ object Bestelschema: TBestelschema
   ClientHeight = 300
   ClientWidth = 788
   OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
   OnShow = FormShow
   SessionProperties = 'Height;Left;Panel2.Height;Panel2.Left;Panel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;Panel3.Width;Panel4.Height;Panel4.Left;Panel4.Top;Panel4.Width;Position;Splitter1.Height;Splitter1.Left;Splitter1.Top;Splitter1.Width;Splitter2.Height;Splitter2.Left;Splitter2.Top;Splitter2.Width;Top;Width;WindowState'
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.8.4.0'
   object Panel1: TPanel
     Left = 0
     Height = 300
@@ -234,8 +235,8 @@ object Bestelschema: TBestelschema
   object bestelschemaPropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
-    left = 359
-    top = 14
+    left = 472
+    top = 16
   end
   object Datasource1: TDataSource
     DataSet = DM.ZBestelSchema_BestelgroepTable
@@ -266,4 +267,4 @@ object Bestelschema: TBestelschema
       OnClick = MenuItem2Click
     end
   end
-end
+end

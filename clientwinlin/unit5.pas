@@ -20,6 +20,7 @@ type
     Panel1: TPanel;
     procedure Datasource1StateChange(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
     { private declarations }
@@ -43,6 +44,11 @@ procedure Tsubgroep.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
    if DM.ZSubgroepTable.State in [dsedit,dsinsert] then
      DM.ZSubgroepTable.post;
+end;
+
+procedure Tsubgroep.FormCreate(Sender: TObject);
+begin
+  subgroeppropstorage.IniFileName:=getappconfigfile(false);
 end;
 
 procedure Tsubgroep.FormShow(Sender: TObject);

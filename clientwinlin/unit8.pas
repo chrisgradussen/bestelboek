@@ -29,6 +29,7 @@ type
     procedure DBGrid1CellClick(Column: TColumn);
     procedure DBGrid1DblClick(Sender: TObject);
     procedure DBNavigator1DblClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure frDBDataSet1CheckEOF(Sender: TObject; var Eof: Boolean);
     procedure frDesigner1LoadReport(Report: TfrReport; var ReportName: String);
@@ -67,6 +68,11 @@ end;
 
 procedure Tbestellingafdrukken.DBNavigator1DblClick(Sender: TObject);
 begin
+end;
+
+procedure Tbestellingafdrukken.FormCreate(Sender: TObject);
+begin
+  bestellingafdrukkenpropstorage.IniFileName:=getappconfigfile(false);
 end;
 
 procedure Tbestellingafdrukken.FormShow(Sender: TObject);
@@ -110,4 +116,4 @@ initialization
   {$I unit8.lrs}
 
 end.
-
+

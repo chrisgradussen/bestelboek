@@ -19,6 +19,7 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     RxDBGrid1: TRxDBGrid;
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
     { private declarations }
@@ -39,6 +40,11 @@ begin
     dm.zbaklijstvolgordequery.Refresh
   else
     dm.ZBaklijstvolgordequery.Open;
+end;
+
+procedure TBaklijstvolgordeform.FormCreate(Sender: TObject);
+begin
+  baklijstvolgordepropstorage.IniFileName:=getappconfigfile(false);
 end;
 
 initialization

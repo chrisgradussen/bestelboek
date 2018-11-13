@@ -7,9 +7,10 @@ object StandaardBestelschema: TStandaardBestelschema
   ClientHeight = 408
   ClientWidth = 400
   OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
   OnShow = FormShow
   SessionProperties = 'Height;Left;Panel2.Height;Panel2.Left;Panel2.Top;Panel2.Width;Panel3.Height;Panel3.Left;Panel3.Top;Panel3.Width;Position;Splitter1.Top;Top;Width;WindowState'
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.8.4.0'
   object Panel1: TPanel
     Left = 0
     Height = 408
@@ -172,4 +173,4 @@ object StandaardBestelschema: TStandaardBestelschema
     left = 352
     top = 200
   end
-end
+end

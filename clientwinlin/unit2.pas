@@ -195,6 +195,7 @@ type
     procedure BaklijstGeschiedenisDataSourceDataChange(Sender: TObject;
       Field: TField);
     procedure DataModuleCreate(Sender: TObject);
+    procedure DBPropStorageRestoringProperties(Sender: TObject);
     procedure ZArtikelQueryAfterOpen(DataSet: TDataSet);
     procedure ZArtikelQueryAfterRefresh(DataSet: TDataSet);
     procedure ZArtikelTableX_INHOUDSetText(Sender: TField; const aText: string);
@@ -285,6 +286,7 @@ end;
 
 procedure TDM.ZConnectionBeforeConnect(Sender: TObject);
 begin
+  dbpropstorage.IniFileName:=getappconfigfile(false);
   DBPropStorage.restore;
   ZConnection.HostName:= dbpropstorage.StoredValue['hostname'];
   ZConnection.User:=dbpropstorage.StoredValue['user'];
@@ -380,6 +382,11 @@ end;
 
 procedure TDM.DataModuleCreate(Sender: TObject);
 begin
+  dbpropstorage.IniFileName:=getappconfigfile(false);
+end;
+
+procedure TDM.DBPropStorageRestoringProperties(Sender: TObject);
+begin
 
 end;
 
@@ -409,4 +416,4 @@ initialization
   {$I unit2.lrs}
 
 end.
-
+

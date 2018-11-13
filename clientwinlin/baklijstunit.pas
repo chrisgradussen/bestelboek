@@ -24,6 +24,7 @@ type
     RxDBGrid2: TRxDBGrid;
     RxDBLookupCombo1: TRxDBLookupCombo;
     Splitter1: TSplitter;
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
     { private declarations }
@@ -64,6 +65,11 @@ begin
     dm.zquery1.refresh
     else
   dm.zquery1.open;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  baklijstpropstorage.IniFileName:=getappconfigfile(false);
 end;
 
 initialization

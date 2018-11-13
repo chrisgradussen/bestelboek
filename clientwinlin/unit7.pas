@@ -19,6 +19,7 @@ type
     GroepPropStorage: TIniPropStorage;
     Panel1: TPanel;
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure RxDBGrid1GetBtnParams(Sender: TObject; Field: TField;
       AFont: TFont; var Background: TColor; var SortMarker: TSortMarker;
@@ -55,6 +56,11 @@ procedure TGroep.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
    if DM.ZGroepTable.State in [dsedit,dsinsert] then
      DM.ZGroepTable.post;
+end;
+
+procedure TGroep.FormCreate(Sender: TObject);
+begin
+  groeppropstorage.IniFileName:=getappconfigfile(false);
 end;
 
 initialization

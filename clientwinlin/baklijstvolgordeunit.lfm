@@ -6,9 +6,10 @@ object Baklijstvolgordeform: TBaklijstvolgordeform
   Caption = 'Baklijst Volgorde'
   ClientHeight = 240
   ClientWidth = 320
+  OnCreate = FormCreate
   OnShow = FormShow
   SessionProperties = 'Height;Left;Top;Width;WindowState;RxDBGrid1.Columns'
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.8.4.0'
   object Panel1: TPanel
     Left = 0
     Height = 32
@@ -52,6 +53,7 @@ object Baklijstvolgordeform: TBaklijstvolgordeform
       Height = 206
       Top = 1
       Width = 318
+      ColumnDefValues.BlobText = '(blob)'
       TitleButtons = False
       AutoSort = True
       KeyStrokes = <      
@@ -110,6 +112,9 @@ object Baklijstvolgordeform: TBaklijstvolgordeform
           ShortCut = 16451
           Enabled = True
         end>
+      FooterOptions.DrawFullLine = False
+      SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+      SearchOptions.FromStart = False
       OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
       Align = alClient
       Color = clWindow
@@ -119,7 +124,6 @@ object Baklijstvolgordeform: TBaklijstvolgordeform
       GridLineStyle = psSolid
       DataSource = DataSource1
       Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
-      ParentColor = False
       TabOrder = 0
     end
   end

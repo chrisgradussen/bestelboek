@@ -2,12 +2,13 @@ object DM: TDM
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 613
-  HorizontalOffset = 635
-  VerticalOffset = 31
+  HorizontalOffset = 649
+  VerticalOffset = 24
   Width = 678
   PPI = 96
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
     Properties.Strings = (
       'AutoEncodeStrings='
     )
@@ -386,6 +387,7 @@ object DM: TDM
       end>
     IniFileName = 'bestelboek.ini'
     IniSection = 'db'
+    OnRestoringProperties = DBPropStorageRestoringProperties
     left = 184
     top = 16
   end

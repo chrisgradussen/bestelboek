@@ -28,6 +28,7 @@ type
     procedure DBGrid1DblClick(Sender: TObject);
     procedure DBGrid2CellClick(Column: TColumn);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure SBestelschemaPropStorageRestoreProperties(Sender: TObject);
     procedure SBestelschemaPropStorageRestoringProperties(Sender: TObject);
@@ -55,6 +56,11 @@ begin
      DM.ZSBestelSchema_SBestelSchemaTable.post;
    if DM.ZSBestelSchema_BestelgroepTable.State in [dsedit,dsinsert] then
      DM.ZSBestelSchema_BestelgroepTable.post;
+end;
+
+procedure TStandaardBestelschema.FormCreate(Sender: TObject);
+begin
+  sbestelschemapropstorage.IniFileName:=getappconfigfile(false);
 end;
 
 procedure TStandaardBestelschema.FormShow(Sender: TObject);

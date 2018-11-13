@@ -19,6 +19,7 @@ type
     leverancierpropstorage: TIniPropStorage;
     Panel1: TPanel;
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
     { private declarations }
@@ -45,6 +46,11 @@ procedure Tleverancier.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 begin
    if DM.ZLeverancierTable.State in [dsedit,dsinsert] then
      DM.ZLeverancierTable.post;
+end;
+
+procedure Tleverancier.FormCreate(Sender: TObject);
+begin
+  leverancierpropstorage.IniFileName:=getappconfigfile(false);
 end;
 
 initialization
