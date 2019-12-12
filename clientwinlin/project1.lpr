@@ -13,7 +13,7 @@ uses
   Unit5, Unit6, Unit7, rxnew, Unit8, lazreport, Unit9, Unit10, Unit11, Unit12,
   Unit13, Unit14, BaklijstUnit, baklijstsnelunit, baklijstvolgordeunit,
   multiplierunit, reclameaanpassendlg, brooduitverkoopunit, aktielijstunit,
-  gebruikersunit;
+  gebruikersunit, feestdagenunit;
 
 //{$IFDEF WINDOWS}{$R project1.rc}{$ENDIF}
 
@@ -45,6 +45,7 @@ begin
   Application.CreateForm(TFormBroodUitverkoop, FormBroodUitverkoop);
   Application.CreateForm(TFormAktielijst, FormAktielijst);
   Application.CreateForm(TGebruikersForm, GebruikersForm);
+  Application.CreateForm(TFeestdagenform, Feestdagenform);
   Application.Run;
 end.
-
+

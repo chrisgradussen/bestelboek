@@ -19,6 +19,8 @@ type
     BaklijstGeschiedenisDataSource: TDatasource;
     BaklijstDagLookupDataSource: TDatasource;
     Datasource1: TDatasource;
+    Afdelingsdatasource: TDataSource;
+    feestdagendatasource: TDataSource;
     DBPropStorage: TIniPropStorage;
     ZArtikelOmschrijvingARTIKELNUMMER: TStringField;
     ZArtikelOmschrijvingBESTELEENHEID: TStringField;
@@ -129,6 +131,17 @@ type
     ZBroodUitverkoopQueryVIJFUUR: TFloatField;
     ZBroodUitverkoopQueryZESUUR: TFloatField;
     ZBroodUitverkoopQueryZEVENUUR: TFloatField;
+    ZFeestdagenqueryARTIKELNUMMER: TStringField;
+    ZFeestdagenqueryDIN: TFloatField;
+    ZFeestdagenqueryDON: TFloatField;
+    ZFeestdagenqueryJAARWEEK: TLongintField;
+    ZFeestdagenqueryMAA: TFloatField;
+    ZFeestdagenqueryNAAM: TStringField;
+    ZFeestdagenqueryTOT: TFloatField;
+    ZFeestdagenqueryVRI: TFloatField;
+    ZFeestdagenqueryWOE: TFloatField;
+    ZFeestdagenqueryZAT: TFloatField;
+    ZFeestdagenqueryZON: TFloatField;
     ZMultiplierTablePERCENTAGE: TFloatField;
     ZQuery1: TZQuery;
     ZQuery1CHARGE_1: TLongintField;
@@ -141,6 +154,8 @@ type
     ZArtikelomzetReclameQuery: TZQuery;
     ZArtikelOmzetQuery: TZReadOnlyQuery;
     ZGebruikersQuery: TZReadOnlyQuery;
+    Afdelingstable: TZTable;
+    ZFeestdagenquery: TZReadOnlyQuery;
     ZUpdateReclameSql: TZQuery;
     ZReclameQuery: TZQuery;
     ZReclameQueryARTIKEL_EANUPC: TLargeintField;
@@ -212,7 +227,9 @@ type
     procedure ZBestelSchema_BestRegelQueryBeforeOpen(DataSet: TDataSet);
     procedure ZBestelSchema_BestRegelQueryBeforePost(DataSet: TDataSet);
     procedure ZBestelSchema_BestRegelQueryBeforeRefresh(DataSet: TDataSet);
+    procedure ZConnectionAfterConnect(Sender: TObject);
     procedure ZConnectionBeforeConnect(Sender: TObject);
+    procedure ZFeestdagenqueryZONChange(Sender: TField);
     procedure ZIBEventAlerter1EventAlert(Sender: TObject; EventName: string;
       EventCount: longint; var CancelAlerts: boolean);
     procedure ZReclameQueryBeforeInsert(DataSet: TDataSet);
@@ -284,6 +301,11 @@ begin
     ZBestelSchema_BestelSchemaQuery.FieldByName('id').AsInteger;
 end;
 
+procedure TDM.ZConnectionAfterConnect(Sender: TObject);
+begin
+
+end;
+
 procedure TDM.ZConnectionBeforeConnect(Sender: TObject);
 begin
   dbpropstorage.IniFileName:=getappconfigfile(false);
@@ -293,6 +315,11 @@ begin
   ZConnection.Password:= dbpropstorage.StoredValue['password'];
   ZConnection.Database:= dbpropstorage.storedvalue['database'];
   ZConnection.Port:= strtoint(dbpropstorage.StoredValue['port']);
+end;
+
+procedure TDM.ZFeestdagenqueryZONChange(Sender: TField);
+begin
+
 end;
 
 procedure TDM.ZIBEventAlerter1EventAlert(Sender: TObject; EventName: string;

@@ -2,26 +2,26 @@ object DM: TDM
   OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 744
-  HorizontalOffset = 649
-  VerticalOffset = 24
+  HorizontalOffset = 1135
+  VerticalOffset = 31
   Width = 678
   PPI = 96
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
-    AutoEncodeStrings = False
     Properties.Strings = (
       'AutoEncodeStrings='
     )
     TransactIsolationLevel = tiReadCommitted
+    Connected = True
     DesignConnection = True
     BeforeConnect = ZConnectionBeforeConnect
+    AfterConnect = ZConnectionAfterConnect
     HostName = 'localhost'
     Port = 0
-    Database = 'bestelhulp1'
+    Database = 'bestelhulp1_eilandplein'
     User = 'sysdba'
     Password = 'masterkey'
     Protocol = 'firebird-2.5'
-    LibraryLocation = 'C:\Program Files\Firebird\Firebird_2_5\bin\fbclient.dll'
     left = 8
     top = 8
   end
@@ -1626,6 +1626,7 @@ object DM: TDM
   end
   object ZQuery1: TZQuery
     Connection = ZConnection
+    Filtered = True
     SQL.Strings = (
       'select '
       'case when z.artikel_eanupc < 1000000000000 then z.artikel_eanupc else (z.artikel_eanupc-2200000000000)/10000000 end as plu,'
@@ -2167,5 +2168,201 @@ object DM: TDM
     Params = <>
     left = 184
     top = 80
+  end
+  object feestdagendatasource: TDataSource
+    DataSet = ZFeestdagenquery
+    left = 600
+    top = 672
+  end
+  object Afdelingstable: TZTable
+    Connection = ZConnection
+    Active = True
+    TableName = 'AFDELINGSNUMMER'
+    left = 482
+    top = 625
+  end
+  object Afdelingsdatasource: TDataSource
+    DataSet = Afdelingstable
+    left = 564
+    top = 626
+  end
+  object ZFeestdagenquery: TZReadOnlyQuery
+    Connection = ZConnection
+    SQL.Strings = (
+      '/*SELECT *'
+      'FROM FEESTDAGEN (:afdelingsnummer,:jaarweek)'
+      '*/'
+      'select jaarweek,artikelnummer,naam,ROUND(tot) as tot, round(maa) as maa, round(din) as din, round(woe) as woe, round(don) as don, round(vri) as vri, round(zat) as zat, round(zon) as zon from feestdagen(:afdelingsnummer,:jaarweek )'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'afdelingsnummer'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'jaarweek'
+        ParamType = ptUnknown
+      end>
+    left = 462
+    top = 689
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'afdelingsnummer'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'jaarweek'
+        ParamType = ptUnknown
+      end>
+    object ZFeestdagenqueryJAARWEEK: TLongintField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'JAARWEEK'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+    end
+    object ZFeestdagenqueryARTIKELNUMMER: TStringField
+      DisplayWidth = 6
+      FieldKind = fkData
+      FieldName = 'ARTIKELNUMMER'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 180
+    end
+    object ZFeestdagenqueryNAAM: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'NAAM'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      Size = 180
+    end
+    object ZFeestdagenqueryTOT: TFloatField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'TOT'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZFeestdagenqueryMAA: TFloatField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'MAA'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZFeestdagenqueryDIN: TFloatField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'DIN'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZFeestdagenqueryWOE: TFloatField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'WOE'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZFeestdagenqueryDON: TFloatField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'DON'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZFeestdagenqueryVRI: TFloatField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'VRI'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZFeestdagenqueryZAT: TFloatField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'ZAT'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
+    object ZFeestdagenqueryZON: TFloatField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'ZON'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = True
+      Required = False
+      OnChange = ZFeestdagenqueryZONChange
+      DisplayFormat = '0'
+      MaxValue = 0
+      MinValue = 0
+      Precision = 2
+    end
   end
 end

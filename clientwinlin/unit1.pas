@@ -8,7 +8,7 @@ uses
    brooduitverkoopunit,baklijstvolgordeunit,Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   IniPropStorage, StdCtrls, Unit3, Unit4,unit5, unit6, unit7, unit8, unit9,
   Unit10, Unit2, Unit11, unit12, Unit13, Menus, Unit14,ZConnection,aktielijstunit,gebruikersunit,
-  ZDataset, db, ZSqlUpdate, ZSequence,baklijstunit,baklijstsnelunit,versiontypes,vinfo, multiplierunit;
+  ZDataset, db, ZSqlUpdate, ZSequence,baklijstunit,baklijstsnelunit,versiontypes,vinfo, multiplierunit,feestdagenunit;
 
 type
 
@@ -17,6 +17,7 @@ type
   Thoofdmenu = class(TForm)
     BestelgroepButton: TButton;
     Aktielijst: TButton;
+    Feestdagen: TButton;
     ButtonBaklijst: TButton;
     ButtonUuromzet: TButton;
     ButtonBroodUitverkoop: TButton;
@@ -52,6 +53,7 @@ type
     procedure ButtonBroodUitverkoopClick(Sender: TObject);
     procedure ButtonUuromzetClick(Sender: TObject);
     procedure DagenButtonClick(Sender: TObject);
+    procedure FeestdagenClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
@@ -143,6 +145,11 @@ end;
 procedure Thoofdmenu.DagenButtonClick(Sender: TObject);
 begin
   dagen.show;
+end;
+
+procedure Thoofdmenu.FeestdagenClick(Sender: TObject);
+begin
+  feestdagenform.show;
 end;
 
 procedure Thoofdmenu.FormActivate(Sender: TObject);

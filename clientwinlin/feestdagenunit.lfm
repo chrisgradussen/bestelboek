@@ -1,0 +1,469 @@
+object Feestdagenform: TFeestdagenform
+  Left = 1160
+  Height = 610
+  Top = 262
+  Width = 565
+  Caption = 'Feestdagenform'
+  ClientHeight = 610
+  ClientWidth = 565
+  OnCreate = FormCreate
+  LCLVersion = '1.8.0.6'
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 560
+    Width = 565
+    Align = alBottom
+    Caption = 'Panel1'
+    ClientHeight = 50
+    ClientWidth = 565
+    TabOrder = 0
+    object Button1: TButton
+      Left = 8
+      Height = 25
+      Top = 8
+      Width = 224
+      Caption = 'exporteernaarspreadsheet'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 248
+      Height = 25
+      Top = 8
+      Width = 296
+      Caption = 'Exporteer alle afdelingen naar spreadsheet'
+      OnClick = Button2Click
+      TabOrder = 1
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 390
+    Top = 170
+    Width = 565
+    Align = alClient
+    Caption = 'Panel2'
+    ClientHeight = 390
+    ClientWidth = 565
+    TabOrder = 1
+    object RxDBGrid1: TRxDBGrid
+      Left = 1
+      Height = 388
+      Top = 1
+      Width = 563
+      AfterQuickSearch = RxDBGrid1AfterQuickSearch
+      ColumnDefValues.BlobText = '(blob)'
+      TitleButtons = False
+      AutoSort = True
+      Columns = <      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'JAARWEEK'
+          Width = 40
+          FieldName = 'JAARWEEK'
+          DisplayFormat = '0'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'ARTIKELNUMMER'
+          Width = 40
+          FieldName = 'ARTIKELNUMMER'
+          DisplayFormat = '0'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'NAAM'
+          Width = 155
+          FieldName = 'NAAM'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'TOT'
+          Width = 35
+          FieldName = 'TOT'
+          DisplayFormat = '0'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'MAA'
+          Width = 29
+          FieldName = 'MAA'
+          DisplayFormat = '0'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'DIN'
+          Width = 29
+          FieldName = 'DIN'
+          DisplayFormat = '0'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'WOE'
+          Width = 29
+          FieldName = 'WOE'
+          DisplayFormat = '0'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'DON'
+          Width = 29
+          FieldName = 'DON'
+          DisplayFormat = '0'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'VRI'
+          Width = 29
+          FieldName = 'VRI'
+          DisplayFormat = '0'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'ZAT'
+          Width = 29
+          FieldName = 'ZAT'
+          DisplayFormat = '0'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Orientation = toHorizontal
+          Title.Caption = 'ZON'
+          Width = 29
+          FieldName = 'ZON'
+          DisplayFormat = '0'
+          EditButtons = <>
+          Filter.DropDownRows = 0
+          Filter.EmptyValue = '(Empty)'
+          Filter.NotEmptyValue = '(Not empty)'
+          Filter.AllValue = '(All values)'
+          Filter.EmptyFont.Style = [fsItalic]
+          Filter.ItemIndex = -1
+          Footers = <>
+        end>
+      KeyStrokes = <      
+        item
+          Command = rxgcShowFindDlg
+          ShortCut = 16454
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowColumnsDlg
+          ShortCut = 16471
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowFilterDlg
+          ShortCut = 16468
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowSortDlg
+          ShortCut = 16467
+          Enabled = True
+        end      
+        item
+          Command = rxgcShowQuickFilter
+          ShortCut = 16465
+          Enabled = True
+        end      
+        item
+          Command = rxgcHideQuickFilter
+          ShortCut = 16456
+          Enabled = True
+        end      
+        item
+          Command = rxgcSelectAll
+          ShortCut = 16449
+          Enabled = True
+        end      
+        item
+          Command = rxgcDeSelectAll
+          ShortCut = 16429
+          Enabled = True
+        end      
+        item
+          Command = rxgcInvertSelection
+          ShortCut = 16426
+          Enabled = True
+        end      
+        item
+          Command = rxgcOptimizeColumnsWidth
+          ShortCut = 16427
+          Enabled = True
+        end      
+        item
+          Command = rxgcCopyCellValue
+          ShortCut = 16451
+          Enabled = True
+        end>
+      FooterOptions.DrawFullLine = False
+      SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+      SearchOptions.FromStart = False
+      OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+      Align = alClient
+      Color = clWindow
+      DrawFullLine = False
+      FocusColor = clRed
+      SelectedColor = clHighlight
+      GridLineStyle = psSolid
+      DataSource = DM.feestdagendatasource
+      Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      TabOrder = 0
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 170
+    Top = 0
+    Width = 565
+    Align = alTop
+    Caption = 'Panel3'
+    ClientHeight = 170
+    ClientWidth = 565
+    TabOrder = 2
+    object Panel4: TPanel
+      Left = 1
+      Height = 134
+      Top = 1
+      Width = 563
+      Align = alClient
+      Caption = 'Panel4'
+      ClientHeight = 134
+      ClientWidth = 563
+      TabOrder = 0
+      object RxDBGrid2: TRxDBGrid
+        Left = 1
+        Height = 132
+        Top = 1
+        Width = 561
+        AfterQuickSearch = RxDBGrid2AfterQuickSearch
+        ColumnDefValues.BlobText = '(blob)'
+        TitleButtons = False
+        AutoSort = True
+        KeyStrokes = <        
+          item
+            Command = rxgcShowFindDlg
+            ShortCut = 16454
+            Enabled = True
+          end        
+          item
+            Command = rxgcShowColumnsDlg
+            ShortCut = 16471
+            Enabled = True
+          end        
+          item
+            Command = rxgcShowFilterDlg
+            ShortCut = 16468
+            Enabled = True
+          end        
+          item
+            Command = rxgcShowSortDlg
+            ShortCut = 16467
+            Enabled = True
+          end        
+          item
+            Command = rxgcShowQuickFilter
+            ShortCut = 16465
+            Enabled = True
+          end        
+          item
+            Command = rxgcHideQuickFilter
+            ShortCut = 16456
+            Enabled = True
+          end        
+          item
+            Command = rxgcSelectAll
+            ShortCut = 16449
+            Enabled = True
+          end        
+          item
+            Command = rxgcDeSelectAll
+            ShortCut = 16429
+            Enabled = True
+          end        
+          item
+            Command = rxgcInvertSelection
+            ShortCut = 16426
+            Enabled = True
+          end        
+          item
+            Command = rxgcOptimizeColumnsWidth
+            ShortCut = 16427
+            Enabled = True
+          end        
+          item
+            Command = rxgcCopyCellValue
+            ShortCut = 16451
+            Enabled = True
+          end>
+        FooterOptions.DrawFullLine = False
+        SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+        SearchOptions.FromStart = False
+        OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+        Align = alClient
+        Color = clWindow
+        DrawFullLine = False
+        FocusColor = clRed
+        SelectedColor = clHighlight
+        GridLineStyle = psSolid
+        DataSource = DM.Afdelingsdatasource
+        Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+        TabOrder = 0
+      end
+    end
+    object Panel5: TPanel
+      Left = 1
+      Height = 34
+      Top = 135
+      Width = 563
+      Align = alBottom
+      Caption = 'Panel5'
+      ClientHeight = 34
+      ClientWidth = 563
+      TabOrder = 1
+      object haalopknop: TButton
+        Left = 8
+        Height = 25
+        Top = 1
+        Width = 75
+        Caption = 'haalopknop'
+        OnClick = haalopknopClick
+        TabOrder = 0
+      end
+      object ToggleBox1: TToggleBox
+        Left = 88
+        Height = 25
+        Top = 0
+        Width = 75
+        Caption = 'ToggleBox1'
+        TabOrder = 1
+      end
+      object Edit1: TEdit
+        Left = 168
+        Height = 25
+        Top = 1
+        Width = 88
+        AutoSelect = False
+        OnChange = Edit1Change
+        TabOrder = 2
+        Text = 'YYYYWW'
+        TextHint = 'JAARWEEK VAN DE VROEGERE PERIODE'
+      end
+      object Edit2: TEdit
+        Left = 256
+        Height = 25
+        Top = 0
+        Width = 256
+        OnChange = Edit2Change
+        TabOrder = 3
+        Text = '~'
+      end
+    end
+  end
+  object export: TRxDBGridExportSpreadSheet
+    RxDBGrid = RxDBGrid1
+    Caption = 'Export to speadsheet'
+    FileName = 'testspreadsheet.xls'
+    PageName = 'omzethistorie'
+    Options = [ressExportTitle, ressExportColors, ressExportFormula, ressOverwriteExisting, ressColSpanning, ressExportGroupData]
+    OpenAfterExport = True
+    left = 74
+    top = 518
+  end
+  object SelectDirectoryDialog1: TSelectDirectoryDialog
+    left = 528
+    top = 136
+  end
+end
