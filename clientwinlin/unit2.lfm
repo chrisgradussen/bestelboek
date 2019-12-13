@@ -12,7 +12,6 @@ object DM: TDM
       'AutoEncodeStrings='
     )
     TransactIsolationLevel = tiReadCommitted
-    Connected = True
     DesignConnection = True
     BeforeConnect = ZConnectionBeforeConnect
     AfterConnect = ZConnectionAfterConnect
@@ -2176,7 +2175,6 @@ object DM: TDM
   end
   object Afdelingstable: TZTable
     Connection = ZConnection
-    Active = True
     TableName = 'AFDELINGSNUMMER'
     left = 482
     top = 625
