@@ -239,6 +239,7 @@ end;
 procedure Thoofdmenu.HoofdmenuPropStorageRestoringProperties(Sender: TObject);
 begin
   tinipropstorage(sender).IniFileName:=getappconfigfile(false);
+  //showmessage(getappconfigfile(false));
 end;
 
 procedure Thoofdmenu.HoofdmenuPropStorageSaveProperties(Sender: TObject);

@@ -458,7 +458,6 @@ object Feestdagenform: TFeestdagenform
     FileName = 'testspreadsheet.xls'
     PageName = 'omzethistorie'
     Options = [ressExportTitle, ressExportColors, ressExportFormula, ressOverwriteExisting, ressColSpanning, ressExportGroupData]
-    OpenAfterExport = True
     left = 74
     top = 518
   end

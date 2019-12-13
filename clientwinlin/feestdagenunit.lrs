@@ -139,7 +139,6 @@ LazarusResources.Add('TFeestdagenform','FORMDATA',[
   +'aption'#6#20'Export to speadsheet'#8'FileName'#6#19'testspreadsheet.xls'#8
   +'PageName'#6#13'omzethistorie'#7'Options'#11#15'ressExportTitle'#16'ressExpo'
   +'rtColors'#17'ressExportFormula'#21'ressOverwriteExisting'#15'ressColSpannin'
-  +'g'#19'ressExportGroupData'#0#15'OpenAfterExport'#9#4'left'#2'J'#3'top'#3#6#2
-  +#0#0#22'TSelectDirectoryDialog'#22'SelectDirectoryDialog1'#4'left'#3#16#2#3
-  +'top'#3#136#0#0#0#0
+  +'g'#19'ressExportGroupData'#0#4'left'#2'J'#3'top'#3#6#2#0#0#22'TSelectDirect'
+  +'oryDialog'#22'SelectDirectoryDialog1'#4'left'#3#16#2#3'top'#3#136#0#0#0#0
 ]);
