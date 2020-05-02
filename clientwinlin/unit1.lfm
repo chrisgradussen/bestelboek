@@ -1,11 +1,12 @@
 object hoofdmenu: Thoofdmenu
-  Left = 788
+  Left = 1187
   Height = 224
-  Top = 372
+  Top = 422
   Width = 319
   Caption = 'Bestelboek 1 Hoofdmenu'
-  ClientHeight = 201
+  ClientHeight = 199
   ClientWidth = 319
+  DesignTimePPI = 97
   Menu = HfdMenu
   OnActivate = FormActivate
   OnClose = FormClose
@@ -149,6 +150,15 @@ object hoofdmenu: Thoofdmenu
     OnClick = FeestdagenClick
     TabOrder = 14
   end
+  object Import_Button: TButton
+    Left = 104
+    Height = 25
+    Top = 106
+    Width = 90
+    Caption = 'Import'
+    OnClick = Import_ButtonClick
+    TabOrder = 15
+  end
   object HoofdmenuPropStorage: TIniPropStorage
     StoredValues = <>
     IniFileName = 'bestelboek.ini'
@@ -156,8 +166,8 @@ object hoofdmenu: Thoofdmenu
     OnSavingProperties = HoofdmenuPropStorageSavingProperties
     OnSaveProperties = HoofdmenuPropStorageSaveProperties
     OnRestoringProperties = HoofdmenuPropStorageRestoringProperties
-    left = 252
-    top = 48
+    left = 200
+    top = 40
   end
   object HfdMenu: TMainMenu
     left = 138
@@ -201,5 +211,16 @@ object hoofdmenu: Thoofdmenu
       Caption = '&Volgorde baklijst'
       OnClick = Menu_baklijstvolgordeClick
     end
+  end
+  object sWorkBook: TsWorkbookSource
+    AutoDetectFormat = False
+    FileFormat = sfUser
+    Options = []
+    left = 294
+    top = 35
+  end
+  object Omzetdialoog: TOpenDialog
+    left = 288
+    top = 104
   end
 end

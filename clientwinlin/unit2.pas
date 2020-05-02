@@ -143,6 +143,7 @@ type
     ZFeestdagenqueryZAT: TFloatField;
     ZFeestdagenqueryZON: TFloatField;
     ZMultiplierTablePERCENTAGE: TFloatField;
+    ZArtikelOmzetgegevensAdd: TZSQLProcessor;
     ZQuery1: TZQuery;
     ZQuery1CHARGE_1: TLongintField;
     ZQuery1CHARGE_2: TLongintField;
@@ -232,6 +233,8 @@ type
     procedure ZFeestdagenqueryZONChange(Sender: TField);
     procedure ZIBEventAlerter1EventAlert(Sender: TObject; EventName: string;
       EventCount: longint; var CancelAlerts: boolean);
+    procedure ZArtikelOmzetgegevensAddAfterExecute(Processor: TZSQLProcessor;
+      StatementIndex: Integer);
     procedure ZReclameQueryBeforeInsert(DataSet: TDataSet);
     procedure ZReclameQueryBeforePost(DataSet: TDataSet);
     procedure ZSBestelSchema_SBestelSchemaTableBeforePost(DataSet: TDataSet);
@@ -333,6 +336,12 @@ begin
    showmessage('minimized')
    else
      showmessage('really visible');
+end;
+
+procedure TDM.ZArtikelOmzetgegevensAddAfterExecute(Processor: TZSQLProcessor;
+  StatementIndex: Integer);
+begin
+
 end;
 
 procedure TDM.ZReclameQueryBeforeInsert(DataSet: TDataSet);

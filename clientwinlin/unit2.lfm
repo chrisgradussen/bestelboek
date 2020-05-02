@@ -1,13 +1,14 @@
 object DM: TDM
   OnCreate = DataModuleCreate
   OldCreateOrder = False
-  Height = 744
-  HorizontalOffset = 1135
+  Height = 752
+  HorizontalOffset = 1147
   VerticalOffset = 31
-  Width = 678
-  PPI = 96
+  Width = 685
+  PPI = 97
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
     Properties.Strings = (
       'AutoEncodeStrings='
     )
@@ -49,7 +50,7 @@ object DM: TDM
     TableName = 'SUBGROEP'
     IndexFieldNames = 'ID Asc'
     left = 40
-    top = 72
+    top = 73
   end
   object zDagenTable: TZTable
     Connection = ZConnection
@@ -58,7 +59,7 @@ object DM: TDM
     TableName = 'DAGEN'
     IndexFieldNames = 'ID Asc'
     left = 40
-    top = 104
+    top = 105
   end
   object ZGroepTable: TZTable
     Connection = ZConnection
@@ -67,7 +68,7 @@ object DM: TDM
     TableName = 'GROEP'
     IndexFieldNames = 'BESTELGROEP_ID Asc'
     left = 40
-    top = 136
+    top = 137
     object ZGroepTableLEVERANCIER_ID: TLongintField
       DisplayWidth = 10
       FieldKind = fkData
@@ -108,14 +109,14 @@ object DM: TDM
     AutoCalcFields = False
     TableName = 'SUBGROEP'
     left = 40
-    top = 168
+    top = 170
   end
   object ZGroep_LeverancierTable: TZTable
     Connection = ZConnection
     AutoCalcFields = False
     TableName = 'LEVERANCIER'
-    left = 72
-    top = 168
+    left = 73
+    top = 170
   end
   object ZGroep_BestelgroepTable: TZTable
     Connection = ZConnection
@@ -124,8 +125,8 @@ object DM: TDM
     ReadOnly = True
     TableName = 'BESTELGROEP'
     IndexFieldNames = 'ID Asc'
-    left = 104
-    top = 168
+    left = 105
+    top = 170
     object ZGroep_BestelgroepTableID: TLongintField
       DisplayWidth = 10
       FieldKind = fkData
@@ -145,8 +146,8 @@ object DM: TDM
       'select b.id,b.status,b.bestelgroep_id as groepnummer,z.naam,cast(b.besteldatum+b.besteltijd as timestamp)as besteltijd,cast(b.leverdatum+ b.levertijd as timestamp)as levertijd,cast(b.volgendeleverdatum+b.volgendelevertijd as timestamp)as volgendelevertijd from bestelschema b join bestelgroep z on b.bestelgroep_id = z.id where status = 30'
     )
     Params = <>
-    left = 208
-    top = 136
+    left = 210
+    top = 137
   end
   object ZbestellingQuery: TZReadOnlyQuery
     Connection = ZConnection
@@ -175,8 +176,8 @@ object DM: TDM
         Name = 'id'
         ParamType = ptUnknown
       end>
-    left = 104
-    top = 200
+    left = 105
+    top = 202
     ParamData = <    
       item
         DataType = ftUnknown
@@ -189,8 +190,8 @@ object DM: TDM
       'update bestelschema set status = 40 where id =:id'
     )
     UseSequenceFieldForRefreshSQL = False
-    left = 72
-    top = 200
+    left = 73
+    top = 202
     ParamData = <    
       item
         DataType = ftUnknown
@@ -205,8 +206,8 @@ object DM: TDM
     ReadOnly = True
     TableName = 'BESTELGROEP'
     IndexFieldNames = 'ID Asc'
-    left = 80
-    top = 232
+    left = 81
+    top = 234
   end
   object ZSBestelSchema_SBestelSchemaTable: TZTable
     Connection = ZConnection
@@ -218,19 +219,19 @@ object DM: TDM
     MasterSource = ZSBestelSchemaDataSource
     LinkedFields = 'BESTELGROEP_ID'
     IndexFieldNames = 'LEVERDAG Asc;LEVERTIJD Asc'
-    left = 272
-    top = 232
+    left = 275
+    top = 234
   end
   object ZSBestelSchemaDataSource: TDataSource
     DataSet = ZSBestelSchema_BestelgroepTable
-    left = 200
-    top = 232
+    left = 202
+    top = 234
   end
   object ZSequence_bestelschema_standaard_id: TZSequence
     Connection = ZConnection
     SequenceName = 'BESTELSCHEMA_STANDAARD_ID_GEN'
-    left = 384
-    top = 232
+    left = 388
+    top = 234
   end
   object ZBestelSchema_BestelgroepTable: TZTable
     Connection = ZConnection
@@ -242,14 +243,14 @@ object DM: TDM
     IndexFieldNames = 'ID Asc'
     Options = [doCalcDefaults, doSmartOpen]
     SequenceField = 'ID'
-    left = 56
-    top = 320
+    left = 57
+    top = 323
   end
   object ZSequence_bestelschema_id: TZSequence
     Connection = ZConnection
     SequenceName = 'BESTELSCHEMA_ID_GEN'
-    left = 392
-    top = 296
+    left = 396
+    top = 299
   end
   object ZBestelSchema_BestRegelQuery: TZQuery
     Connection = ZConnection
@@ -269,8 +270,8 @@ object DM: TDM
         ParamType = ptUnknown
       end>
     Options = [doCalcDefaults, doAlwaysDetailResync, doSmartOpen]
-    left = 184
-    top = 296
+    left = 186
+    top = 299
     ParamData = <    
       item
         DataType = ftUnknown
@@ -359,8 +360,8 @@ object DM: TDM
     )
     Registered = False
     OnEventAlert = ZIBEventAlerter1EventAlert
-    left = 576
-    top = 280
+    left = 582
+    top = 283
   end
   object DBPropStorage: TIniPropStorage
     StoredValues = <    
@@ -387,15 +388,15 @@ object DM: TDM
     IniFileName = 'bestelboek.ini'
     IniSection = 'db'
     OnRestoringProperties = DBPropStorageRestoringProperties
-    left = 184
+    left = 186
     top = 16
   end
   object ZArtikelTable: TZTable
     Connection = ZConnection
     AutoCalcFields = False
     TableName = 'ARTIKEL'
-    left = 488
-    top = 336
+    left = 493
+    top = 340
     object ZArtikelTableEANUPC: TLargeintField
       DisplayWidth = 10
       FieldKind = fkData
@@ -719,8 +720,8 @@ object DM: TDM
         Name = 'zoekstring'
         ParamType = ptUnknown
       end>
-    left = 584
-    top = 224
+    left = 590
+    top = 226
     ParamData = <    
       item
         DataType = ftUnknown
@@ -844,8 +845,8 @@ object DM: TDM
         Name = 'zoekstring'
         ParamType = ptUnknown
       end>
-    left = 584
-    top = 64
+    left = 590
+    top = 65
     ParamData = <    
       item
         DataType = ftUnknown
@@ -997,8 +998,8 @@ object DM: TDM
         ParamType = ptUnknown
       end>
     IndexFieldNames = 'BESTELDATUM Desc, BESTELTIJD Desc'
-    left = 72
-    top = 264
+    left = 73
+    top = 267
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1026,8 +1027,8 @@ object DM: TDM
         ParamType = ptUnknown
       end>
     IndexFieldNames = 'BESTELDATUM Desc, BESTELTIJD Desc'
-    left = 208
-    top = 416
+    left = 210
+    top = 420
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1054,7 +1055,7 @@ object DM: TDM
         ParamType = ptUnknown
       end>
     left = 40
-    top = 416
+    top = 420
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1079,8 +1080,8 @@ object DM: TDM
     )
     Connection = ZConnection
     Delimiter = ';'
-    left = 352
-    top = 416
+    left = 356
+    top = 420
   end
   object ZArtikelQuery: TZQuery
     Connection = ZConnection
@@ -1096,8 +1097,8 @@ object DM: TDM
         Name = 'eanupc'
         ParamType = ptUnknown
       end>
-    left = 144
-    top = 384
+    left = 146
+    top = 388
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1424,8 +1425,8 @@ object DM: TDM
         Name = 'eanupc'
         ParamType = ptUnknown
       end>
-    left = 264
-    top = 352
+    left = 267
+    top = 356
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1483,7 +1484,7 @@ object DM: TDM
     )
     Params = <>
     left = 40
-    top = 480
+    top = 485
     object ZBaklijstDagQueryLEVERDATUM: TDateField
       DisplayWidth = 10
       FieldKind = fkData
@@ -1508,8 +1509,8 @@ object DM: TDM
   object BaklijstDagDataSource: TDataSource
     DataSet = ZBaklijstDagQuery
     OnDataChange = BaklijstDagDataSourceDataChange
-    left = 200
-    top = 480
+    left = 202
+    top = 485
   end
   object ZBaklijstQuery: TZQuery
     Connection = ZConnection
@@ -1526,7 +1527,7 @@ object DM: TDM
         ParamType = ptUnknown
       end>
     left = 40
-    top = 544
+    top = 550
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1536,8 +1537,8 @@ object DM: TDM
   end
   object BaklijstDataSource: TDataSource
     DataSet = ZBaklijstQuery
-    left = 200
-    top = 544
+    left = 202
+    top = 550
   end
   object ZBaklijstGeschiedenisQuery: TZQuery
     Connection = ZConnection
@@ -1558,7 +1559,7 @@ object DM: TDM
         ParamType = ptUnknown
       end>
     left = 40
-    top = 616
+    top = 622
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1574,14 +1575,14 @@ object DM: TDM
   object BaklijstGeschiedenisDataSource: TDataSource
     DataSet = ZBaklijstGeschiedenisQuery
     OnDataChange = BaklijstGeschiedenisDataSourceDataChange
-    left = 200
-    top = 616
+    left = 202
+    top = 622
   end
   object BaklijstDagLookupDataSource: TDataSource
     DataSet = ZBaklijstDagLookupQuery
     OnDataChange = BaklijstDagLookupDataSourceDataChange
-    left = 448
-    top = 480
+    left = 453
+    top = 485
   end
   object ZBaklijstDagLookupQuery: TZReadOnlyQuery
     Connection = ZConnection
@@ -1589,8 +1590,8 @@ object DM: TDM
       'select * from bestelschema where bestelgroep_id =  171 and status = 2'
     )
     Params = <>
-    left = 336
-    top = 480
+    left = 340
+    top = 485
   end
   object ZBaklijstUpdateSQL: TZUpdateSQL
     InsertSQL.Strings = (
@@ -1599,8 +1600,8 @@ object DM: TDM
       'values (:bestelschema_id,:artikel_eanupc,:charge_1,:charge_2;Charge_3)'
     )
     UseSequenceFieldForRefreshSQL = False
-    left = 342
-    top = 538
+    left = 346
+    top = 544
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1632,8 +1633,8 @@ object DM: TDM
       'a.x_NAAM, 0 as charge_1, 1 as charge_2, 3 as charge_3 from bakeoff z join artikel a on z.ARTIKEL_EANUPC = a.EANUPC order by a.VOLGORDE'
     )
     Params = <>
-    left = 254
-    top = 672
+    left = 257
+    top = 679
     object ZQuery1PLU: TLargeintField
       DisplayWidth = 10
       FieldKind = fkData
@@ -1688,8 +1689,8 @@ object DM: TDM
   end
   object Datasource1: TDataSource
     DataSet = ZQuery1
-    left = 356
-    top = 680
+    left = 360
+    top = 687
   end
   object ZeanQuery: TZReadOnlyQuery
     Connection = ZConnection
@@ -1706,8 +1707,8 @@ object DM: TDM
         Name = 'eanupc'
         ParamType = ptUnknown
       end>
-    left = 580
-    top = 160
+    left = 586
+    top = 162
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1725,8 +1726,8 @@ object DM: TDM
     )
     Params = <>
     IndexFieldNames = 'VOLGORDE Asc'
-    left = 549
-    top = 385
+    left = 555
+    top = 389
   end
   object ZBaklijstVolgordeUpdateSql: TZUpdateSQL
     DeleteSQL.Strings = (
@@ -1739,8 +1740,8 @@ object DM: TDM
       'update or insert into bakeoff (artikel_eanupc, volgorde) values(:artikel_eanupc, :volgorde)'
     )
     UseSequenceFieldForRefreshSQL = False
-    left = 559
-    top = 451
+    left = 565
+    top = 456
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1756,7 +1757,7 @@ object DM: TDM
   object ZMultiplierTable: TZTable
     Connection = ZConnection
     TableName = 'MULTIPLIER'
-    left = 580
+    left = 586
     top = 8
     object ZMultiplierTablePERCENTAGE: TFloatField
       DisplayWidth = 10
@@ -1795,7 +1796,7 @@ object DM: TDM
         Name = 'eanupc'
         ParamType = ptUnknown
       end>
-    left = 424
+    left = 428
     top = 8
     ParamData = <    
       item
@@ -1828,8 +1829,8 @@ object DM: TDM
         Name = 'eanupcs'
         ParamType = ptUnknown
       end>
-    left = 424
-    top = 64
+    left = 428
+    top = 65
     ParamData = <    
       item
         DataType = ftString
@@ -2003,8 +2004,8 @@ object DM: TDM
         Name = 'datum'
         ParamType = ptUnknown
       end>
-    left = 448
-    top = 552
+    left = 453
+    top = 558
     ParamData = <    
       item
         DataType = ftUnknown
@@ -2150,14 +2151,14 @@ object DM: TDM
   end
   object ZBroodUitverkoopDataSoure: TDataSource
     DataSet = ZBroodUitverkoopQuery
-    left = 576
-    top = 544
+    left = 582
+    top = 550
   end
   object ZUpdateReclameSql: TZQuery
     Connection = ZConnection
     Params = <>
-    left = 441
-    top = 159
+    left = 446
+    top = 161
   end
   object ZGebruikersQuery: TZReadOnlyQuery
     Connection = ZConnection
@@ -2165,24 +2166,24 @@ object DM: TDM
       'select distinct luser from bestelling'
     )
     Params = <>
-    left = 184
-    top = 80
+    left = 186
+    top = 81
   end
   object feestdagendatasource: TDataSource
     DataSet = ZFeestdagenquery
-    left = 600
-    top = 672
+    left = 606
+    top = 679
   end
   object Afdelingstable: TZTable
     Connection = ZConnection
     TableName = 'AFDELINGSNUMMER'
-    left = 482
-    top = 625
+    left = 487
+    top = 632
   end
   object Afdelingsdatasource: TDataSource
     DataSet = Afdelingstable
-    left = 564
-    top = 626
+    left = 570
+    top = 633
   end
   object ZFeestdagenquery: TZReadOnlyQuery
     Connection = ZConnection
@@ -2203,8 +2204,8 @@ object DM: TDM
         Name = 'jaarweek'
         ParamType = ptUnknown
       end>
-    left = 462
-    top = 689
+    left = 467
+    top = 696
     ParamData = <    
       item
         DataType = ftUnknown
@@ -2362,5 +2363,37 @@ object DM: TDM
       MinValue = 0
       Precision = 2
     end
+  end
+  object ZArtikelOmzetgegevensAdd: TZSQLProcessor
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'transactie'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datum'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'ean'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'aantal'
+        ParamType = ptUnknown
+      end>
+    Script.Strings = (
+      '/*execute procedure omzetgegevens_update(:wag_id,:datum,:waarde)*/'
+      'execute procedure OMZET_UPDATE_R10(:transactie,:datum,:ean,:aantal,0,0)'
+    )
+    Connection = ZConnection
+    Delimiter = ';'
+    AfterExecute = ZArtikelOmzetgegevensAddAfterExecute
+    left = 120
+    top = 687
   end
 end

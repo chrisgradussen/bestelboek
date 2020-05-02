@@ -1,66 +1,71 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('Thoofdmenu','FORMDATA',[
-  'TPF0'#10'Thoofdmenu'#9'hoofdmenu'#4'Left'#3#20#3#6'Height'#3#224#0#3'Top'#3
-  +'t'#1#5'Width'#3'?'#1#7'Caption'#6#22'Bestelboek 1 Hoofdmenu'#12'ClientHeigh'
-  +'t'#3#201#0#11'ClientWidth'#3'?'#1#4'Menu'#7#7'HfdMenu'#10'OnActivate'#7#12
-  +'FormActivate'#7'OnClose'#7#9'FormClose'#12'OnCloseQuery'#7#14'FormCloseQuer'
-  +'y'#8'OnCreate'#7#10'FormCreate'#6'OnShow'#7#8'FormShow'#17'SessionPropertie'
-  +'s'#6'*Height;Left;Position;Top;Width;WindowState'#10'LCLVersion'#6#7'1.8.0.'
-  +'6'#0#7'TButton'#17'BestelgroepButton'#4'Left'#2#8#6'Height'#2#25#3'Top'#2#8
-  +#5'Width'#2'['#7'Caption'#6#11'Bestelgroep'#7'OnClick'#7#22'BestelgroepButto'
-  +'nClick'#8'TabOrder'#2#0#0#0#7'TButton'#17'LeverancierButton'#4'Left'#2#8#6
-  +'Height'#2#25#3'Top'#2'('#5'Width'#2'['#7'Caption'#6#11'Leverancier'#7'OnCli'
-  +'ck'#7#22'LeverancierButtonClick'#8'TabOrder'#2#1#0#0#7'TButton'#11'GroepBut'
-  +'ton'#4'Left'#2#8#6'Height'#2#25#3'Top'#2'H'#5'Width'#2'['#7'Caption'#6#5'Gr'
-  +'oep'#7'OnClick'#7#16'GroepButtonClick'#8'TabOrder'#2#2#0#0#7'TButton'#14'su'
-  +'bgroepbutton'#4'Left'#2#224#6'Height'#2#25#3'Top'#2#231#5'Width'#2'['#7'Cap'
-  +'tion'#6#8'Subgroep'#7'OnClick'#7#19'subgroepbuttonClick'#8'TabOrder'#2#3#0#0
-  +#7'TButton'#7'Button5'#4'Left'#2#8#6'Height'#2#25#3'Top'#3#136#0#5'Width'#2
-  +'['#7'Caption'#6#12'Bestelschema'#7'OnClick'#7#12'Button5Click'#8'TabOrder'#2
-  +#4#0#0#7'TButton'#7'Button6'#4'Left'#2#8#6'Height'#2#25#3'Top'#3#168#0#5'Wid'
-  +'th'#2'['#7'Caption'#6#14'S Bestelschema'#7'OnClick'#7#12'Button6Click'#8'Ta'
-  +'bOrder'#2#5#0#0#7'TButton'#7'Button7'#4'Left'#2'h'#6'Height'#2#25#3'Top'#2#8
-  +#5'Width'#2'['#7'Caption'#6#14'Artikelbestand'#7'OnClick'#7#12'Button7Click'
-  +#8'TabOrder'#2#6#0#0#7'TButton'#25'bestellingafdrukkenbutton'#4'Left'#2'h'#6
-  +'Height'#2#25#3'Top'#3#136#0#5'Width'#2'['#7'Caption'#6#18'Bestelling printe'
-  +'n'#7'OnClick'#7#30'bestellingafdrukkenbuttonClick'#8'TabOrder'#2#7#0#0#7'TB'
-  +'utton'#7'Button9'#4'Left'#3#200#0#6'Height'#2#25#3'Top'#2#8#5'Width'#2'['#7
-  +'Caption'#6#16'Omzet op artikel'#7'OnClick'#7#12'Button9Click'#8'TabOrder'#2
-  +#8#0#0#7'TButton'#11'DagenButton'#4'Left'#3#200#0#6'Height'#2#25#3'Top'#3#168
-  +#0#5'Width'#2'['#7'Caption'#6#5'Dagen'#7'OnClick'#7#16'DagenButtonClick'#8'T'
-  +'abOrder'#2#9#0#0#7'TButton'#14'ButtonBaklijst'#4'Left'#3#200#0#6'Height'#2
-  +#25#3'Top'#2'h'#5'Width'#2'X'#7'Caption'#6#9'&Baklijst'#7'OnClick'#7#19'Butt'
-  +'onBaklijstClick'#8'TabOrder'#2#10#0#0#7'TButton'#21'ButtonBroodUitverkoop'#4
-  +'Left'#3#200#0#6'Height'#2#25#3'Top'#3#136#0#5'Width'#2'['#7'Caption'#6#16'B'
-  +'rood&Uitverkoop'#7'OnClick'#7#26'ButtonBroodUitverkoopClick'#8'TabOrder'#2
-  +#11#0#0#7'TButton'#10'Aktielijst'#4'Left'#2'h'#6'Height'#2#25#3'Top'#3#168#0
-  +#5'Width'#2'['#7'Caption'#6#10'Aktielijst'#7'OnClick'#7#15'AktielijstClick'#8
-  +'TabOrder'#2#12#0#0#7'TButton'#14'ButtonUuromzet'#4'Left'#3#200#0#6'Height'#2
-  +'!'#3'Top'#2'@'#5'Width'#2'X'#7'Caption'#6#20'&Uuromzet op artikel'#7'OnClic'
-  +'k'#7#19'ButtonUuromzetClick'#8'TabOrder'#2#13#0#0#7'TButton'#10'Feestdagen'
-  +#4'Left'#2#8#6'Height'#2#25#3'Top'#2'h'#5'Width'#2'['#7'Caption'#6#10'Feestd'
-  +'agen'#7'OnClick'#7#15'FeestdagenClick'#8'TabOrder'#2#14#0#0#15'TIniPropStor'
-  +'age'#20'HoofdmenuPropStorage'#12'StoredValues'#14#0#11'IniFileName'#6#14'be'
-  +'stelboek.ini'#10'IniSection'#6#9'hoofdmenu'#18'OnSavingProperties'#7'$Hoofd'
-  +'menuPropStorageSavingProperties'#16'OnSaveProperties'#7'"HoofdmenuPropStora'
-  +'geSaveProperties'#21'OnRestoringProperties'#7'''HoofdmenuPropStorageRestori'
-  +'ngProperties'#4'left'#3#252#0#3'top'#2'0'#0#0#9'TMainMenu'#7'HfdMenu'#4'lef'
-  +'t'#3#138#0#3'top'#2'8'#0#9'TMenuItem'#14'Noodprocedures'#7'Caption'#6#14'No'
-  +'odprocedures'#7'OnClick'#7#19'NoodproceduresClick'#0#9'TMenuItem'#11'van40n'
-  +'aar50'#7'Caption'#6'8Bestellingen van Onderweg naar Geleverd (van 40 naar 5'
-  +'0)'#7'OnClick'#7#16'van40naar50Click'#0#0#9'TMenuItem'#11'van50naar40'#7'Ca'
-  +'ption'#6'8Bestellingen van Geleverd naar Onderweg( van 50 naar 40)'#7'OnCli'
-  +'ck'#7#16'van50naar40Click'#0#0#9'TMenuItem'#9'MenuItem1'#7'Caption'#6'7Best'
-  +'ellingen van Besteld naar Onderweg (van 30 naar 40)'#7'OnClick'#7#14'MenuIt'
-  +'em1Click'#0#0#9'TMenuItem'#11'Van40naar30'#7'Caption'#6'4Bestellen van Onde'
-  +'rweg naar Besteld (van 40 naar 30)'#7'OnClick'#7#16'Van40naar30Click'#0#0#9
-  +'TMenuItem'#11'van30naar10'#7'Caption'#6'8Bestellingen van Besteld naar Best'
-  +'ellen (van 30 naar 10)'#0#0#9'TMenuItem'#10'van10naar0'#7'Caption'#6'5Beste'
-  +'llingen van Bestellen naar Nieuw (van 10 naar 0)'#7'OnClick'#7#15'van10naar'
-  +'0Click'#0#0#9'TMenuItem'#9'MenuItem3'#7'Caption'#6#10'Gebruikers'#7'OnClick'
-  +#7#14'MenuItem3Click'#0#0#9'TMenuItem'#9'MenuItem2'#7'Caption'#6#20'Multipli'
-  +'er aanpassen'#7'OnClick'#7#14'MenuItem2Click'#0#0#0#9'TMenuItem'#21'Menu_ba'
-  +'klijstvolgorde'#7'Caption'#6#18'&Volgorde baklijst'#7'OnClick'#7#26'Menu_ba'
-  +'klijstvolgordeClick'#0#0#0#0
+  'TPF0'#10'Thoofdmenu'#9'hoofdmenu'#4'Left'#3#163#4#6'Height'#3#224#0#3'Top'#3
+  +#166#1#5'Width'#3'?'#1#7'Caption'#6#22'Bestelboek 1 Hoofdmenu'#12'ClientHeig'
+  +'ht'#3#199#0#11'ClientWidth'#3'?'#1#13'DesignTimePPI'#2'a'#4'Menu'#7#7'HfdMe'
+  +'nu'#10'OnActivate'#7#12'FormActivate'#7'OnClose'#7#9'FormClose'#12'OnCloseQ'
+  +'uery'#7#14'FormCloseQuery'#8'OnCreate'#7#10'FormCreate'#6'OnShow'#7#8'FormS'
+  +'how'#17'SessionProperties'#6'*Height;Left;Position;Top;Width;WindowState'#10
+  +'LCLVersion'#6#7'1.8.0.6'#0#7'TButton'#17'BestelgroepButton'#4'Left'#2#8#6'H'
+  +'eight'#2#25#3'Top'#2#8#5'Width'#2'['#7'Caption'#6#11'Bestelgroep'#7'OnClick'
+  +#7#22'BestelgroepButtonClick'#8'TabOrder'#2#0#0#0#7'TButton'#17'LeverancierB'
+  +'utton'#4'Left'#2#8#6'Height'#2#25#3'Top'#2'('#5'Width'#2'['#7'Caption'#6#11
+  +'Leverancier'#7'OnClick'#7#22'LeverancierButtonClick'#8'TabOrder'#2#1#0#0#7
+  +'TButton'#11'GroepButton'#4'Left'#2#8#6'Height'#2#25#3'Top'#2'H'#5'Width'#2
+  +'['#7'Caption'#6#5'Groep'#7'OnClick'#7#16'GroepButtonClick'#8'TabOrder'#2#2#0
+  +#0#7'TButton'#14'subgroepbutton'#4'Left'#2#224#6'Height'#2#25#3'Top'#2#231#5
+  +'Width'#2'['#7'Caption'#6#8'Subgroep'#7'OnClick'#7#19'subgroepbuttonClick'#8
+  +'TabOrder'#2#3#0#0#7'TButton'#7'Button5'#4'Left'#2#8#6'Height'#2#25#3'Top'#3
+  +#136#0#5'Width'#2'['#7'Caption'#6#12'Bestelschema'#7'OnClick'#7#12'Button5Cl'
+  +'ick'#8'TabOrder'#2#4#0#0#7'TButton'#7'Button6'#4'Left'#2#8#6'Height'#2#25#3
+  +'Top'#3#168#0#5'Width'#2'['#7'Caption'#6#14'S Bestelschema'#7'OnClick'#7#12
+  +'Button6Click'#8'TabOrder'#2#5#0#0#7'TButton'#7'Button7'#4'Left'#2'h'#6'Heig'
+  +'ht'#2#25#3'Top'#2#8#5'Width'#2'['#7'Caption'#6#14'Artikelbestand'#7'OnClick'
+  +#7#12'Button7Click'#8'TabOrder'#2#6#0#0#7'TButton'#25'bestellingafdrukkenbut'
+  +'ton'#4'Left'#2'h'#6'Height'#2#25#3'Top'#3#136#0#5'Width'#2'['#7'Caption'#6
+  +#18'Bestelling printen'#7'OnClick'#7#30'bestellingafdrukkenbuttonClick'#8'Ta'
+  +'bOrder'#2#7#0#0#7'TButton'#7'Button9'#4'Left'#3#200#0#6'Height'#2#25#3'Top'
+  +#2#8#5'Width'#2'['#7'Caption'#6#16'Omzet op artikel'#7'OnClick'#7#12'Button9'
+  +'Click'#8'TabOrder'#2#8#0#0#7'TButton'#11'DagenButton'#4'Left'#3#200#0#6'Hei'
+  +'ght'#2#25#3'Top'#3#168#0#5'Width'#2'['#7'Caption'#6#5'Dagen'#7'OnClick'#7#16
+  +'DagenButtonClick'#8'TabOrder'#2#9#0#0#7'TButton'#14'ButtonBaklijst'#4'Left'
+  +#3#200#0#6'Height'#2#25#3'Top'#2'h'#5'Width'#2'X'#7'Caption'#6#9'&Baklijst'#7
+  +'OnClick'#7#19'ButtonBaklijstClick'#8'TabOrder'#2#10#0#0#7'TButton'#21'Butto'
+  +'nBroodUitverkoop'#4'Left'#3#200#0#6'Height'#2#25#3'Top'#3#136#0#5'Width'#2
+  +'['#7'Caption'#6#16'Brood&Uitverkoop'#7'OnClick'#7#26'ButtonBroodUitverkoopC'
+  +'lick'#8'TabOrder'#2#11#0#0#7'TButton'#10'Aktielijst'#4'Left'#2'h'#6'Height'
+  +#2#25#3'Top'#3#168#0#5'Width'#2'['#7'Caption'#6#10'Aktielijst'#7'OnClick'#7
+  +#15'AktielijstClick'#8'TabOrder'#2#12#0#0#7'TButton'#14'ButtonUuromzet'#4'Le'
+  +'ft'#3#200#0#6'Height'#2'!'#3'Top'#2'@'#5'Width'#2'X'#7'Caption'#6#20'&Uurom'
+  +'zet op artikel'#7'OnClick'#7#19'ButtonUuromzetClick'#8'TabOrder'#2#13#0#0#7
+  +'TButton'#10'Feestdagen'#4'Left'#2#8#6'Height'#2#25#3'Top'#2'h'#5'Width'#2'['
+  +#7'Caption'#6#10'Feestdagen'#7'OnClick'#7#15'FeestdagenClick'#8'TabOrder'#2
+  +#14#0#0#7'TButton'#13'Import_Button'#4'Left'#2'h'#6'Height'#2#25#3'Top'#2'j'
+  +#5'Width'#2'Z'#7'Caption'#6#6'Import'#7'OnClick'#7#18'Import_ButtonClick'#8
+  +'TabOrder'#2#15#0#0#15'TIniPropStorage'#20'HoofdmenuPropStorage'#12'StoredVa'
+  +'lues'#14#0#11'IniFileName'#6#14'bestelboek.ini'#10'IniSection'#6#9'hoofdmen'
+  +'u'#18'OnSavingProperties'#7'$HoofdmenuPropStorageSavingProperties'#16'OnSav'
+  +'eProperties'#7'"HoofdmenuPropStorageSaveProperties'#21'OnRestoringPropertie'
+  +'s'#7'''HoofdmenuPropStorageRestoringProperties'#4'left'#3#200#0#3'top'#2'('
+  +#0#0#9'TMainMenu'#7'HfdMenu'#4'left'#3#138#0#3'top'#2'8'#0#9'TMenuItem'#14'N'
+  +'oodprocedures'#7'Caption'#6#14'Noodprocedures'#7'OnClick'#7#19'Noodprocedur'
+  +'esClick'#0#9'TMenuItem'#11'van40naar50'#7'Caption'#6'8Bestellingen van Onde'
+  +'rweg naar Geleverd (van 40 naar 50)'#7'OnClick'#7#16'van40naar50Click'#0#0#9
+  +'TMenuItem'#11'van50naar40'#7'Caption'#6'8Bestellingen van Geleverd naar Ond'
+  +'erweg( van 50 naar 40)'#7'OnClick'#7#16'van50naar40Click'#0#0#9'TMenuItem'#9
+  +'MenuItem1'#7'Caption'#6'7Bestellingen van Besteld naar Onderweg (van 30 naa'
+  +'r 40)'#7'OnClick'#7#14'MenuItem1Click'#0#0#9'TMenuItem'#11'Van40naar30'#7'C'
+  +'aption'#6'4Bestellen van Onderweg naar Besteld (van 40 naar 30)'#7'OnClick'
+  +#7#16'Van40naar30Click'#0#0#9'TMenuItem'#11'van30naar10'#7'Caption'#6'8Beste'
+  +'llingen van Besteld naar Bestellen (van 30 naar 10)'#0#0#9'TMenuItem'#10'va'
+  +'n10naar0'#7'Caption'#6'5Bestellingen van Bestellen naar Nieuw (van 10 naar '
+  +'0)'#7'OnClick'#7#15'van10naar0Click'#0#0#9'TMenuItem'#9'MenuItem3'#7'Captio'
+  +'n'#6#10'Gebruikers'#7'OnClick'#7#14'MenuItem3Click'#0#0#9'TMenuItem'#9'Menu'
+  +'Item2'#7'Caption'#6#20'Multiplier aanpassen'#7'OnClick'#7#14'MenuItem2Click'
+  +#0#0#0#9'TMenuItem'#21'Menu_baklijstvolgorde'#7'Caption'#6#18'&Volgorde bakl'
+  +'ijst'#7'OnClick'#7#26'Menu_baklijstvolgordeClick'#0#0#0#16'TsWorkbookSource'
+  ,#9'sWorkBook'#16'AutoDetectFormat'#8#10'FileFormat'#7#6'sfUser'#7'Options'#11
+  +#0#4'left'#3'&'#1#3'top'#2'#'#0#0#11'TOpenDialog'#12'Omzetdialoog'#4'left'#3
+  +' '#1#3'top'#2'h'#0#0#0
 ]);
