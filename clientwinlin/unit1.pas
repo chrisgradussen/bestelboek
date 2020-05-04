@@ -313,13 +313,15 @@ begin
     inc(i);
   end;}
   //omzetgegevens toevoegen
-  i := 3;
-  while assigned(Sworkbook.worksheet.findcell(i,0)) do
-  begin
-    if  (pos('Totaal' ,sWorkbook.worksheet.findcell(i,0)^.UTF8StringValue)= 1) then
+  try
+    dm.zconnection.AutoCommit:= false;
+    i := 3;
+    while assigned(Sworkbook.worksheet.findcell(i,0)) do
     begin
-      break;
-    end;
+      if  (pos('Totaal' ,sWorkbook.worksheet.findcell(i,0)^.UTF8StringValue)= 1) then
+      begin
+        break;
+      end;
    { for y := 2 to 7 do
     begin
       if  (y = 2) or (y = 3) or (y =4) or (y = 7) then
@@ -332,21 +334,21 @@ begin
         end;
       end;
     end; }
-    tijdstr := copy(SWorkbook.worksheet.findcell(i,3)^.UTF8StringValue,9,5)  ;
-    datumtijdstr := datetimetostr(SWorkbook.worksheet.findcell(i,4)^.DateTimeValue);
-    datumtijdstr := concat(datumtijdstr,' ',tijdstr);
-    datumtijd := strtodatetime(datumtijdstr);
-    dm.ZArtikelOmzetgegevensAdd.ParamByName('transactie').AsInteger := datetimetounix(datumtijd);
-    dm.ZArtikelOmzetgegevensAdd.ParamByName('datum').asdatetime := datumtijd;
-    dm.ZArtikelOmzetgegevensAdd.ParamByName('ean').Asfloat:= (Sworkbook.worksheet.findcell(i,2)^.NumberValue);
-    dm.ZArtikelOmzetgegevensAdd.ParamByName('aantal').AsFloat:= SWorkBook.worksheet.findcell(i,7)^.NumberValue;
+       tijdstr := copy(SWorkbook.worksheet.findcell(i,3)^.UTF8StringValue,9,5)  ;
+       datumtijdstr := concat(datetimetostr(SWorkbook.worksheet.findcell(i,4)^.DateTimeValue),' ',tijdstr);
+   //    datumtijd := strtodatetime(datumtijdstr);
+       dm.ZArtikelOmzetgegevensAdd.ParamByName('transactie').AsInteger := datetimetounix(datumtijd);
+       dm.ZArtikelOmzetgegevensAdd.ParamByName('datum').asdatetime := datumtijd;
+       dm.ZArtikelOmzetgegevensAdd.ParamByName('ean').Asfloat:= (Sworkbook.worksheet.findcell(i,2)^.NumberValue);
+       dm.ZArtikelOmzetgegevensAdd.ParamByName('aantal').AsFloat:= SWorkBook.worksheet.findcell(i,7)^.NumberValue;
 //    showmessage(dm.zArtikelomzetgegevensadd.parambyname('datum').AsString + '   '  +dm.zArtikelomzetgegevensadd.parambyname('ean').AsString + '  '  + dm.zArtikelomzetgegevensadd.parambyname('aantal').asstring);
-    dm.zconnection.AutoCommit:= false;
-    dm.ZArtikelOmzetgegevensAdd.Execute;
+       dm.ZArtikelOmzetgegevensAdd.Execute;
+       inc(i);
+    end;
+    //if i = 5 then exit;
+  finally
     dm.ZArtikelOmzetgegevensAdd.Connection.Commit;
     dm.ZConnection.AutoCommit:= true;
-    inc(i);
-    //if i = 5 then exit;
   end;
 end;
 
