@@ -100,7 +100,7 @@
       <Unit0>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="4"/>
         <CursorPos X="20" Y="19"/>
         <UsageCount Value="201"/>
@@ -113,7 +113,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="331"/>
         <CursorPos Y="347"/>
         <UsageCount Value="201"/>
@@ -126,7 +125,7 @@
         <ComponentName Value="DM"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="341"/>
         <CursorPos X="3" Y="344"/>
         <UsageCount Value="200"/>
@@ -236,7 +235,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit11"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <TopLine Value="187"/>
         <CursorPos X="66" Y="201"/>
         <UsageCount Value="200"/>
@@ -313,10 +312,13 @@
         <ComponentName Value="Baklijstvolgordeform"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
         <TopLine Value="26"/>
         <CursorPos X="21" Y="47"/>
         <UsageCount Value="365"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit18>
       <Unit19>
         <Filename Value="multiplierunit.pas"/>
@@ -396,7 +398,7 @@
         <ComponentName Value="Feestdagenform"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="74"/>
         <CursorPos X="34" Y="79"/>
         <UsageCount Value="62"/>
