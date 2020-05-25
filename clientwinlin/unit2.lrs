@@ -2,21 +2,21 @@
 
 LazarusResources.Add('TDM','FORMDATA',[
   'TPF0'#3'TDM'#2'DM'#8'OnCreate'#7#16'DataModuleCreate'#14'OldCreateOrder'#8#6
-  +'Height'#3#248#2#16'HorizontalOffset'#3#162#2#14'VerticalOffset'#2#31#5'Widt'
-  +'h'#3#180#2#3'PPI'#2'b'#0#12'TZConnection'#11'ZConnection'#16'ControlsCodePa'
-  +'ge'#7#8'cCP_UTF8'#17'AutoEncodeStrings'#8#18'Properties.Strings'#1#6#18'Aut'
-  +'oEncodeStrings='#0#22'TransactIsolationLevel'#7#15'tiReadCommitted'#16'Desi'
-  +'gnConnection'#9#13'BeforeConnect'#7#24'ZConnectionBeforeConnect'#12'AfterCo'
-  +'nnect'#7#23'ZConnectionAfterConnect'#8'HostName'#6#9'localhost'#4'Port'#2#0
-  +#8'Database'#6#23'bestelhulp1_eilandplein'#4'User'#6#6'sysdba'#8'Password'#6
-  +#9'masterkey'#8'Protocol'#6#12'firebird-2.5'#4'left'#2#8#3'top'#2#8#0#0#7'TZ'
-  +'Table'#17'ZBestelgroepTable'#10'Connection'#7#11'ZConnection'#12'SortedFiel'
-  +'ds'#6#2'ID'#14'AutoCalcFields'#8#9'TableName'#6#11'BESTELGROEP'#15'IndexFie'
-  +'ldNames'#6#6'ID Asc'#4'left'#2'('#3'top'#2#8#0#0#7'TZTable'#17'ZLeverancier'
-  +'Table'#10'Connection'#7#11'ZConnection'#12'SortedFields'#6#2'ID'#14'AutoCal'
-  +'cFields'#8#9'TableName'#6#11'LEVERANCIER'#15'IndexFieldNames'#6#6'ID Asc'#4
-  +'left'#2'('#3'top'#2'('#0#0#7'TZTable'#14'zSubgroepTable'#10'Connection'#7#11
-  +'ZConnection'#12'SortedFields'#6#2'ID'#14'AutoCalcFields'#8#9'TableName'#6#8
+  +'Height'#3#248#2#16'HorizontalOffset'#3'T'#4#14'VerticalOffset'#2'*'#5'Width'
+  +#3#180#2#3'PPI'#2'b'#0#12'TZConnection'#11'ZConnection'#16'ControlsCodePage'
+  +#7#8'cCP_UTF8'#17'AutoEncodeStrings'#8#18'Properties.Strings'#1#6#18'AutoEnc'
+  +'odeStrings='#0#22'TransactIsolationLevel'#7#15'tiReadCommitted'#16'DesignCo'
+  +'nnection'#9#13'BeforeConnect'#7#24'ZConnectionBeforeConnect'#12'AfterConnec'
+  +'t'#7#23'ZConnectionAfterConnect'#8'HostName'#6#9'localhost'#4'Port'#2#0#8'D'
+  +'atabase'#6#23'bestelhulp1_eilandplein'#4'User'#6#6'sysdba'#8'Password'#6#9
+  +'masterkey'#8'Protocol'#6#12'firebird-2.5'#4'left'#2#8#3'top'#2#8#0#0#7'TZTa'
+  +'ble'#17'ZBestelgroepTable'#10'Connection'#7#11'ZConnection'#12'SortedFields'
+  +#6#2'ID'#14'AutoCalcFields'#8#9'TableName'#6#11'BESTELGROEP'#15'IndexFieldNa'
+  +'mes'#6#6'ID Asc'#4'left'#2'('#3'top'#2#8#0#0#7'TZTable'#17'ZLeverancierTabl'
+  +'e'#10'Connection'#7#11'ZConnection'#12'SortedFields'#6#2'ID'#14'AutoCalcFie'
+  +'lds'#8#9'TableName'#6#11'LEVERANCIER'#15'IndexFieldNames'#6#6'ID Asc'#4'lef'
+  +'t'#2'('#3'top'#2'('#0#0#7'TZTable'#14'zSubgroepTable'#10'Connection'#7#11'Z'
+  +'Connection'#12'SortedFields'#6#2'ID'#14'AutoCalcFields'#8#9'TableName'#6#8
   +'SUBGROEP'#15'IndexFieldNames'#6#6'ID Asc'#4'left'#2'('#3'top'#2'J'#0#0#7'TZ'
   +'Table'#11'zDagenTable'#10'Connection'#7#11'ZConnection'#12'SortedFields'#6#2
   +'ID'#14'AutoCalcFields'#8#9'TableName'#6#5'DAGEN'#15'IndexFieldNames'#6#6'ID'

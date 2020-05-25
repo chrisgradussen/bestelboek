@@ -336,16 +336,16 @@ begin
     end; }
        tijdstr := copy(SWorkbook.worksheet.findcell(i,3)^.UTF8StringValue,9,5)  ;
        datumtijdstr := concat(datetimetostr(SWorkbook.worksheet.findcell(i,4)^.DateTimeValue),' ',tijdstr);
-   //    datumtijd := strtodatetime(datumtijdstr);
+       datumtijd := strtodatetime(datumtijdstr);
        dm.ZArtikelOmzetgegevensAdd.ParamByName('transactie').AsInteger := datetimetounix(datumtijd);
        dm.ZArtikelOmzetgegevensAdd.ParamByName('datum').asdatetime := datumtijd;
        dm.ZArtikelOmzetgegevensAdd.ParamByName('ean').Asfloat:= (Sworkbook.worksheet.findcell(i,2)^.NumberValue);
        dm.ZArtikelOmzetgegevensAdd.ParamByName('aantal').AsFloat:= SWorkBook.worksheet.findcell(i,7)^.NumberValue;
-//    showmessage(dm.zArtikelomzetgegevensadd.parambyname('datum').AsString + '   '  +dm.zArtikelomzetgegevensadd.parambyname('ean').AsString + '  '  + dm.zArtikelomzetgegevensadd.parambyname('aantal').asstring);
+  //     showmessage(inttostr(dm.ZArtikelOmzetgegevensAdd.ParamByName('transactie').asinteger)+ '   ' + datetimetostr(dm.zArtikelomzetgegevensadd.parambyname('datum').AsTime) + '   '  +dm.zArtikelomzetgegevensadd.parambyname('ean').AsString + '  '  + dm.zArtikelomzetgegevensadd.parambyname('aantal').asstring);
        dm.ZArtikelOmzetgegevensAdd.Execute;
        inc(i);
     end;
-    //if i = 5 then exit;
+ //   if i = 100 then exit;
   finally
     dm.ZArtikelOmzetgegevensAdd.Connection.Commit;
     dm.ZConnection.AutoCommit:= true;

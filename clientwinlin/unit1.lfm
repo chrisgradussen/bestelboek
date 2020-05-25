@@ -6,7 +6,7 @@ object hoofdmenu: Thoofdmenu
   Caption = 'Bestelboek 1 Hoofdmenu'
   ClientHeight = 199
   ClientWidth = 319
-  DesignTimePPI = 97
+  DesignTimePPI = 98
   Menu = HfdMenu
   OnActivate = FormActivate
   OnClose = FormClose
