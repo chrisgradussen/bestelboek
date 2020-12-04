@@ -339,13 +339,14 @@ begin
        datumtijd := strtodatetime(datumtijdstr);
        dm.ZArtikelOmzetgegevensAdd.ParamByName('transactie').AsInteger := datetimetounix(datumtijd);
        dm.ZArtikelOmzetgegevensAdd.ParamByName('datum').asdatetime := datumtijd;
-       dm.ZArtikelOmzetgegevensAdd.ParamByName('ean').Asfloat:= (Sworkbook.worksheet.findcell(i,2)^.NumberValue);
+     //  showmessage(Sworkbook.worksheet.findcell(i,2)^.UTF8StringValue);
+       dm.ZArtikelOmzetgegevensAdd.ParamByName('ean').Asfloat:= strtofloat(Sworkbook.worksheet.findcell(i,2)^.UTF8StringValue);
        dm.ZArtikelOmzetgegevensAdd.ParamByName('aantal').AsFloat:= SWorkBook.worksheet.findcell(i,7)^.NumberValue;
   //     showmessage(inttostr(dm.ZArtikelOmzetgegevensAdd.ParamByName('transactie').asinteger)+ '   ' + datetimetostr(dm.zArtikelomzetgegevensadd.parambyname('datum').AsTime) + '   '  +dm.zArtikelomzetgegevensadd.parambyname('ean').AsString + '  '  + dm.zArtikelomzetgegevensadd.parambyname('aantal').asstring);
        dm.ZArtikelOmzetgegevensAdd.Execute;
        inc(i);
     end;
- //   if i = 100 then exit;
+   if i = 100 then exit;
   finally
     dm.ZArtikelOmzetgegevensAdd.Connection.Commit;
     dm.ZConnection.AutoCommit:= true;
@@ -366,7 +367,8 @@ var
 
   begin
   try
-    sWorkbook.LoadFromSpreadsheetFile(Filename, sfExcelXML);
+    sWorkbook.LoadFromSpreadsheetFile(Filename);
+  {  sWorkbook.LoadFromSpreadsheetFile(Filename, sfExcelXML);
   except
     try
       sWorkbook.LoadFromSpreadsheetFile(Filename, sfOOXML);
@@ -381,14 +383,23 @@ var
           exit;
         end;
       end;
-    end;
+    end;}
+    except
+       showmessage('niets kunnen laden');
   end;
   zoekstring := '' ;
+//      showmessage(sworkbook.Worksheet.FindCell(0,0)^.UTF8StringValue);
   if assigned(sworkbook.Worksheet.FindCell(0,0)) then
   begin
+ //   showmessage(sworkbook.Worksheet.FindCell(0,0)^.UTF8StringValue);
     zoekstring :=  sworkbook.Worksheet.FindCell(0,0)^.UTF8StringValue;
   end;
   if (pos('OPE1010 - Vestiging Omzet totaal->Datum->Uur->EAN',zoekstring)  = 1) then
+  begin
+    leesartikelomzetopdatum;
+    exit;
+  end;
+  if (pos('OPE1010 - Omzet totaal->Datum->Uur->EAN',zoekstring)  = 1) then
   begin
     leesartikelomzetopdatum;
     exit;
