@@ -157,6 +157,7 @@ type
     ZGebruikersQuery: TZReadOnlyQuery;
     Afdelingstable: TZTable;
     ZFeestdagenquery: TZReadOnlyQuery;
+    ZSQLArtikelUpdate: TZSQLProcessor;
     ZUpdateReclameSql: TZQuery;
     ZReclameQuery: TZQuery;
     ZReclameQueryARTIKEL_EANUPC: TLargeintField;

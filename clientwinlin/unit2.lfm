@@ -1,14 +1,13 @@
 object DM: TDM
   OnCreate = DataModuleCreate
   OldCreateOrder = False
-  Height = 760
-  HorizontalOffset = 1108
-  VerticalOffset = 42
-  Width = 692
-  PPI = 98
+  Height = 744
+  HorizontalOffset = 1085
+  VerticalOffset = 41
+  Width = 678
   object ZConnection: TZConnection
     ControlsCodePage = cCP_UTF8
-    AutoEncodeStrings = False
+    AutoEncodeStrings = True
     Properties.Strings = (
       'AutoEncodeStrings='
     )
@@ -22,8 +21,8 @@ object DM: TDM
     User = 'sysdba'
     Password = 'masterkey'
     Protocol = 'firebird-2.5'
-    left = 8
-    top = 8
+    Left = 8
+    Top = 8
   end
   object ZBestelgroepTable: TZTable
     Connection = ZConnection
@@ -31,8 +30,8 @@ object DM: TDM
     AutoCalcFields = False
     TableName = 'BESTELGROEP'
     IndexFieldNames = 'ID Asc'
-    left = 40
-    top = 8
+    Left = 39
+    Top = 8
   end
   object ZLeverancierTable: TZTable
     Connection = ZConnection
@@ -40,8 +39,8 @@ object DM: TDM
     AutoCalcFields = False
     TableName = 'LEVERANCIER'
     IndexFieldNames = 'ID Asc'
-    left = 40
-    top = 40
+    Left = 39
+    Top = 39
   end
   object zSubgroepTable: TZTable
     Connection = ZConnection
@@ -49,8 +48,8 @@ object DM: TDM
     AutoCalcFields = False
     TableName = 'SUBGROEP'
     IndexFieldNames = 'ID Asc'
-    left = 40
-    top = 74
+    Left = 39
+    Top = 72
   end
   object zDagenTable: TZTable
     Connection = ZConnection
@@ -58,8 +57,8 @@ object DM: TDM
     AutoCalcFields = False
     TableName = 'DAGEN'
     IndexFieldNames = 'ID Asc'
-    left = 40
-    top = 106
+    Left = 39
+    Top = 104
   end
   object ZGroepTable: TZTable
     Connection = ZConnection
@@ -67,8 +66,8 @@ object DM: TDM
     AutoCalcFields = False
     TableName = 'GROEP'
     IndexFieldNames = 'BESTELGROEP_ID Asc'
-    left = 40
-    top = 138
+    Left = 39
+    Top = 135
     object ZGroepTableLEVERANCIER_ID: TLongintField
       DisplayWidth = 10
       FieldKind = fkData
@@ -108,15 +107,15 @@ object DM: TDM
     Connection = ZConnection
     AutoCalcFields = False
     TableName = 'SUBGROEP'
-    left = 40
-    top = 172
+    Left = 39
+    Top = 168
   end
   object ZGroep_LeverancierTable: TZTable
     Connection = ZConnection
     AutoCalcFields = False
     TableName = 'LEVERANCIER'
-    left = 74
-    top = 172
+    Left = 72
+    Top = 168
   end
   object ZGroep_BestelgroepTable: TZTable
     Connection = ZConnection
@@ -125,8 +124,8 @@ object DM: TDM
     ReadOnly = True
     TableName = 'BESTELGROEP'
     IndexFieldNames = 'ID Asc'
-    left = 106
-    top = 172
+    Left = 104
+    Top = 168
     object ZGroep_BestelgroepTableID: TLongintField
       DisplayWidth = 10
       FieldKind = fkData
@@ -146,8 +145,8 @@ object DM: TDM
       'select b.id,b.status,b.bestelgroep_id as groepnummer,z.naam,cast(b.besteldatum+b.besteltijd as timestamp)as besteltijd,cast(b.leverdatum+ b.levertijd as timestamp)as levertijd,cast(b.volgendeleverdatum+b.volgendelevertijd as timestamp)as volgendelevertijd from bestelschema b join bestelgroep z on b.bestelgroep_id = z.id where status = 30'
     )
     Params = <>
-    left = 212
-    top = 138
+    Left = 208
+    Top = 135
   end
   object ZbestellingQuery: TZReadOnlyQuery
     Connection = ZConnection
@@ -176,8 +175,8 @@ object DM: TDM
         Name = 'id'
         ParamType = ptUnknown
       end>
-    left = 106
-    top = 204
+    Left = 104
+    Top = 200
     ParamData = <    
       item
         DataType = ftUnknown
@@ -190,8 +189,8 @@ object DM: TDM
       'update bestelschema set status = 40 where id =:id'
     )
     UseSequenceFieldForRefreshSQL = False
-    left = 74
-    top = 204
+    Left = 72
+    Top = 200
     ParamData = <    
       item
         DataType = ftUnknown
@@ -206,8 +205,8 @@ object DM: TDM
     ReadOnly = True
     TableName = 'BESTELGROEP'
     IndexFieldNames = 'ID Asc'
-    left = 82
-    top = 236
+    Left = 80
+    Top = 231
   end
   object ZSBestelSchema_SBestelSchemaTable: TZTable
     Connection = ZConnection
@@ -219,19 +218,19 @@ object DM: TDM
     MasterSource = ZSBestelSchemaDataSource
     LinkedFields = 'BESTELGROEP_ID'
     IndexFieldNames = 'LEVERDAG Asc;LEVERTIJD Asc'
-    left = 278
-    top = 236
+    Left = 272
+    Top = 231
   end
   object ZSBestelSchemaDataSource: TDataSource
     DataSet = ZSBestelSchema_BestelgroepTable
-    left = 204
-    top = 236
+    Left = 200
+    Top = 231
   end
   object ZSequence_bestelschema_standaard_id: TZSequence
     Connection = ZConnection
     SequenceName = 'BESTELSCHEMA_STANDAARD_ID_GEN'
-    left = 392
-    top = 236
+    Left = 384
+    Top = 231
   end
   object ZBestelSchema_BestelgroepTable: TZTable
     Connection = ZConnection
@@ -243,14 +242,14 @@ object DM: TDM
     IndexFieldNames = 'ID Asc'
     Options = [doCalcDefaults, doSmartOpen]
     SequenceField = 'ID'
-    left = 58
-    top = 326
+    Left = 57
+    Top = 319
   end
   object ZSequence_bestelschema_id: TZSequence
     Connection = ZConnection
     SequenceName = 'BESTELSCHEMA_ID_GEN'
-    left = 400
-    top = 302
+    Left = 392
+    Top = 296
   end
   object ZBestelSchema_BestRegelQuery: TZQuery
     Connection = ZConnection
@@ -270,8 +269,8 @@ object DM: TDM
         ParamType = ptUnknown
       end>
     Options = [doCalcDefaults, doAlwaysDetailResync, doSmartOpen]
-    left = 188
-    top = 302
+    Left = 184
+    Top = 296
     ParamData = <    
       item
         DataType = ftUnknown
@@ -297,8 +296,6 @@ object DM: TDM
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = False
       Required = True
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZBestelSchema_BestRegelQueryAANTAL: TFloatField
@@ -311,8 +308,6 @@ object DM: TDM
       ReadOnly = False
       Required = True
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZBestelSchema_BestRegelQueryADVIES_AANTAL: TFloatField
@@ -325,8 +320,6 @@ object DM: TDM
       ReadOnly = False
       Required = True
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZBestelSchema_BestRegelQueryNAAM: TStringField
@@ -360,8 +353,8 @@ object DM: TDM
     )
     Registered = False
     OnEventAlert = ZIBEventAlerter1EventAlert
-    left = 588
-    top = 286
+    Left = 576
+    Top = 280
   end
   object DBPropStorage: TIniPropStorage
     StoredValues = <    
@@ -388,15 +381,15 @@ object DM: TDM
     IniFileName = 'bestelboek.ini'
     IniSection = 'db'
     OnRestoringProperties = DBPropStorageRestoringProperties
-    left = 188
-    top = 16
+    Left = 184
+    Top = 16
   end
   object ZArtikelTable: TZTable
     Connection = ZConnection
     AutoCalcFields = False
     TableName = 'ARTIKEL'
-    left = 498
-    top = 344
+    Left = 488
+    Top = 337
     object ZArtikelTableEANUPC: TLargeintField
       DisplayWidth = 10
       FieldKind = fkData
@@ -522,8 +515,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '##,##0.000'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelTableX_VERKOOPPRIJS: TFloatField
@@ -536,8 +527,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '##,##0.00'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelTableX_INHOUD: TFloatField
@@ -551,8 +540,6 @@ object DM: TDM
       Required = False
       OnSetText = ZArtikelTableX_INHOUDSetText
       DisplayFormat = '##,##0.0000'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelTableX_EENHEID: TStringField
@@ -576,8 +563,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '##,##0.0000'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelTableL_BESTELINHOUD: TFloatField
@@ -590,8 +575,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '##,##0.0000'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelTableX_BESTELEENHEID: TStringField
@@ -648,8 +631,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '##,##0.0000'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelTableMINIMALEVOORRAAD: TFloatField
@@ -662,8 +643,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '##,##0.0000'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelTableVOLGORDE: TFloatField
@@ -676,8 +655,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '##,##0.0000'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelTableX_WIJZIGINGSDATUM: TDateTimeField
@@ -720,8 +697,8 @@ object DM: TDM
         Name = 'zoekstring'
         ParamType = ptUnknown
       end>
-    left = 596
-    top = 228
+    Left = 584
+    Top = 223
     ParamData = <    
       item
         DataType = ftUnknown
@@ -780,8 +757,6 @@ object DM: TDM
       ReadOnly = False
       Required = True
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZZoekArtikelQueryEENHEID: TStringField
@@ -805,8 +780,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZZoekArtikelQueryBESTELEENHEID: TStringField
@@ -845,8 +818,8 @@ object DM: TDM
         Name = 'zoekstring'
         ParamType = ptUnknown
       end>
-    left = 596
-    top = 66
+    Left = 584
+    Top = 65
     ParamData = <    
       item
         DataType = ftUnknown
@@ -896,8 +869,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelOmschrijvingEENHEID: TStringField
@@ -921,8 +892,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '##0.0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelOmschrijvingBESTELEENHEID: TStringField
@@ -946,8 +915,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '##0.00'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelOmschrijvingMARGE: TFloatField
@@ -959,8 +926,6 @@ object DM: TDM
       ProviderFlags = [pfInUpdate, pfInWhere]
       ReadOnly = True
       Required = False
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelOmschrijvingVOORRAAD: TFloatField
@@ -973,8 +938,6 @@ object DM: TDM
       ReadOnly = False
       Required = True
       DisplayFormat = '########0.00'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
   end
@@ -998,8 +961,8 @@ object DM: TDM
         ParamType = ptUnknown
       end>
     IndexFieldNames = 'BESTELDATUM Desc, BESTELTIJD Desc'
-    left = 74
-    top = 270
+    Left = 72
+    Top = 264
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1027,8 +990,8 @@ object DM: TDM
         ParamType = ptUnknown
       end>
     IndexFieldNames = 'BESTELDATUM Desc, BESTELTIJD Desc'
-    left = 212
-    top = 424
+    Left = 208
+    Top = 415
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1054,8 +1017,8 @@ object DM: TDM
         Name = 'status'
         ParamType = ptUnknown
       end>
-    left = 40
-    top = 424
+    Left = 39
+    Top = 415
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1080,8 +1043,8 @@ object DM: TDM
     )
     Connection = ZConnection
     Delimiter = ';'
-    left = 360
-    top = 424
+    Left = 353
+    Top = 415
   end
   object ZArtikelQuery: TZQuery
     Connection = ZConnection
@@ -1097,8 +1060,8 @@ object DM: TDM
         Name = 'eanupc'
         ParamType = ptUnknown
       end>
-    left = 148
-    top = 392
+    Left = 145
+    Top = 384
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1116,8 +1079,6 @@ object DM: TDM
       Required = False
       DisplayFormat = '##0.00'
       EditFormat = '##0.00'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelQueryEANUPC: TLargeintField
@@ -1246,8 +1207,6 @@ object DM: TDM
       Required = False
       DisplayFormat = '##0.00'
       EditFormat = '##0.00'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelQueryX_INHOUD: TFloatField
@@ -1260,8 +1219,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '##0.000'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelQueryX_EENHEID: TStringField
@@ -1285,8 +1242,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '##0.000'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelQueryL_BESTELINHOUD: TFloatField
@@ -1299,8 +1254,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '##0.000'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelQueryX_BESTELEENHEID: TStringField
@@ -1357,8 +1310,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '##0.000'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelQueryMINIMALEVOORRAAD: TFloatField
@@ -1371,8 +1322,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '##0.000'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelQueryVOLGORDE: TFloatField
@@ -1385,8 +1334,6 @@ object DM: TDM
       ReadOnly = False
       Required = False
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelQueryX_WIJZIGINGSDATUM: TDateTimeField
@@ -1425,8 +1372,8 @@ object DM: TDM
         Name = 'eanupc'
         ParamType = ptUnknown
       end>
-    left = 270
-    top = 360
+    Left = 264
+    Top = 353
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1483,8 +1430,8 @@ object DM: TDM
       'select * from bestelschema where bestelgroep_id =  171 and status = 2'
     )
     Params = <>
-    left = 40
-    top = 490
+    Left = 39
+    Top = 480
     object ZBaklijstDagQueryLEVERDATUM: TDateField
       DisplayWidth = 10
       FieldKind = fkData
@@ -1509,8 +1456,8 @@ object DM: TDM
   object BaklijstDagDataSource: TDataSource
     DataSet = ZBaklijstDagQuery
     OnDataChange = BaklijstDagDataSourceDataChange
-    left = 204
-    top = 490
+    Left = 200
+    Top = 480
   end
   object ZBaklijstQuery: TZQuery
     Connection = ZConnection
@@ -1526,8 +1473,8 @@ object DM: TDM
         Name = 'datum'
         ParamType = ptUnknown
       end>
-    left = 40
-    top = 556
+    Left = 39
+    Top = 545
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1537,8 +1484,8 @@ object DM: TDM
   end
   object BaklijstDataSource: TDataSource
     DataSet = ZBaklijstQuery
-    left = 204
-    top = 556
+    Left = 200
+    Top = 545
   end
   object ZBaklijstGeschiedenisQuery: TZQuery
     Connection = ZConnection
@@ -1558,8 +1505,8 @@ object DM: TDM
         Name = 'plu'
         ParamType = ptUnknown
       end>
-    left = 40
-    top = 628
+    Left = 39
+    Top = 615
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1575,14 +1522,14 @@ object DM: TDM
   object BaklijstGeschiedenisDataSource: TDataSource
     DataSet = ZBaklijstGeschiedenisQuery
     OnDataChange = BaklijstGeschiedenisDataSourceDataChange
-    left = 204
-    top = 628
+    Left = 200
+    Top = 615
   end
   object BaklijstDagLookupDataSource: TDataSource
     DataSet = ZBaklijstDagLookupQuery
     OnDataChange = BaklijstDagLookupDataSourceDataChange
-    left = 458
-    top = 490
+    Left = 449
+    Top = 480
   end
   object ZBaklijstDagLookupQuery: TZReadOnlyQuery
     Connection = ZConnection
@@ -1590,8 +1537,8 @@ object DM: TDM
       'select * from bestelschema where bestelgroep_id =  171 and status = 2'
     )
     Params = <>
-    left = 344
-    top = 490
+    Left = 337
+    Top = 480
   end
   object ZBaklijstUpdateSQL: TZUpdateSQL
     InsertSQL.Strings = (
@@ -1600,8 +1547,8 @@ object DM: TDM
       'values (:bestelschema_id,:artikel_eanupc,:charge_1,:charge_2;Charge_3)'
     )
     UseSequenceFieldForRefreshSQL = False
-    left = 350
-    top = 550
+    Left = 343
+    Top = 539
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1633,8 +1580,8 @@ object DM: TDM
       'a.x_NAAM, 0 as charge_1, 1 as charge_2, 3 as charge_3 from bakeoff z join artikel a on z.ARTIKEL_EANUPC = a.EANUPC order by a.VOLGORDE'
     )
     Params = <>
-    left = 260
-    top = 686
+    Left = 255
+    Top = 672
     object ZQuery1PLU: TLargeintField
       DisplayWidth = 10
       FieldKind = fkData
@@ -1689,8 +1636,8 @@ object DM: TDM
   end
   object Datasource1: TDataSource
     DataSet = ZQuery1
-    left = 364
-    top = 694
+    Left = 357
+    Top = 680
   end
   object ZeanQuery: TZReadOnlyQuery
     Connection = ZConnection
@@ -1707,8 +1654,8 @@ object DM: TDM
         Name = 'eanupc'
         ParamType = ptUnknown
       end>
-    left = 592
-    top = 164
+    Left = 580
+    Top = 161
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1727,8 +1674,8 @@ object DM: TDM
     Params = <>
     IndexFieldNames = 'VOLGORDE Asc'
     WhereMode = wmWhereAll
-    left = 561
-    top = 393
+    Left = 550
+    Top = 385
   end
   object ZBaklijstVolgordeUpdateSql: TZUpdateSQL
     DeleteSQL.Strings = (
@@ -1741,8 +1688,8 @@ object DM: TDM
       'update or insert into bakeoff (artikel_eanupc, volgorde) values(:artikel_eanupc, :volgorde)'
     )
     UseSequenceFieldForRefreshSQL = False
-    left = 571
-    top = 461
+    Left = 559
+    Top = 452
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1758,8 +1705,8 @@ object DM: TDM
   object ZMultiplierTable: TZTable
     Connection = ZConnection
     TableName = 'MULTIPLIER'
-    left = 592
-    top = 8
+    Left = 580
+    Top = 8
     object ZMultiplierTablePERCENTAGE: TFloatField
       DisplayWidth = 10
       FieldKind = fkData
@@ -1771,8 +1718,6 @@ object DM: TDM
       Required = True
       DisplayFormat = '#0'
       EditFormat = '#0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
   end
@@ -1797,8 +1742,8 @@ object DM: TDM
         Name = 'eanupc'
         ParamType = ptUnknown
       end>
-    left = 432
-    top = 8
+    Left = 423
+    Top = 8
     ParamData = <    
       item
         DataType = ftUnknown
@@ -1830,8 +1775,8 @@ object DM: TDM
         Name = 'eanupcs'
         ParamType = ptUnknown
       end>
-    left = 432
-    top = 66
+    Left = 423
+    Top = 65
     ParamData = <    
       item
         DataType = ftString
@@ -1858,8 +1803,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelOmzetQueryMAA: TFloatField
@@ -1872,8 +1815,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelOmzetQueryDIN: TFloatField
@@ -1886,8 +1827,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelOmzetQueryWOE: TFloatField
@@ -1900,8 +1839,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelOmzetQueryDON: TFloatField
@@ -1914,8 +1851,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelOmzetQueryVRI: TFloatField
@@ -1928,8 +1863,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelOmzetQueryZAT: TFloatField
@@ -1942,8 +1875,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelOmzetQueryZON: TFloatField
@@ -1956,8 +1887,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0.#'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZArtikelOmzetQueryOMSCHRIJVING: TStringField
@@ -2005,8 +1934,8 @@ object DM: TDM
         Name = 'datum'
         ParamType = ptUnknown
       end>
-    left = 458
-    top = 564
+    Left = 449
+    Top = 552
     ParamData = <    
       item
         DataType = ftUnknown
@@ -2033,8 +1962,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZBroodUitverkoopQueryTIENUUR: TFloatField
@@ -2047,8 +1974,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZBroodUitverkoopQueryTWAALFUUR: TFloatField
@@ -2061,8 +1986,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZBroodUitverkoopQueryTWEEUUR: TFloatField
@@ -2075,8 +1998,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZBroodUitverkoopQueryDRIEUUR: TFloatField
@@ -2089,8 +2010,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZBroodUitverkoopQueryVIERUUR: TFloatField
@@ -2103,8 +2022,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZBroodUitverkoopQueryVIJFUUR: TFloatField
@@ -2117,8 +2034,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZBroodUitverkoopQueryZESUUR: TFloatField
@@ -2131,8 +2046,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZBroodUitverkoopQueryZEVENUUR: TFloatField
@@ -2145,21 +2058,19 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
   end
   object ZBroodUitverkoopDataSoure: TDataSource
     DataSet = ZBroodUitverkoopQuery
-    left = 588
-    top = 556
+    Left = 576
+    Top = 545
   end
   object ZUpdateReclameSql: TZQuery
     Connection = ZConnection
     Params = <>
-    left = 451
-    top = 163
+    Left = 442
+    Top = 160
   end
   object ZGebruikersQuery: TZReadOnlyQuery
     Connection = ZConnection
@@ -2167,24 +2078,24 @@ object DM: TDM
       'select distinct luser from bestelling'
     )
     Params = <>
-    left = 188
-    top = 82
+    Left = 184
+    Top = 80
   end
   object feestdagendatasource: TDataSource
     DataSet = ZFeestdagenquery
-    left = 612
-    top = 686
+    Left = 600
+    Top = 672
   end
   object Afdelingstable: TZTable
     Connection = ZConnection
     TableName = 'AFDELINGSNUMMER'
-    left = 492
-    top = 639
+    Left = 482
+    Top = 626
   end
   object Afdelingsdatasource: TDataSource
     DataSet = Afdelingstable
-    left = 576
-    top = 640
+    Left = 564
+    Top = 627
   end
   object ZFeestdagenquery: TZReadOnlyQuery
     Connection = ZConnection
@@ -2205,8 +2116,8 @@ object DM: TDM
         Name = 'jaarweek'
         ParamType = ptUnknown
       end>
-    left = 472
-    top = 703
+    Left = 462
+    Top = 689
     ParamData = <    
       item
         DataType = ftUnknown
@@ -2261,8 +2172,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZFeestdagenqueryMAA: TFloatField
@@ -2275,8 +2184,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZFeestdagenqueryDIN: TFloatField
@@ -2289,8 +2196,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZFeestdagenqueryWOE: TFloatField
@@ -2303,8 +2208,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZFeestdagenqueryDON: TFloatField
@@ -2317,8 +2220,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZFeestdagenqueryVRI: TFloatField
@@ -2331,8 +2232,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZFeestdagenqueryZAT: TFloatField
@@ -2345,8 +2244,6 @@ object DM: TDM
       ReadOnly = True
       Required = False
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
     object ZFeestdagenqueryZON: TFloatField
@@ -2360,8 +2257,6 @@ object DM: TDM
       Required = False
       OnChange = ZFeestdagenqueryZONChange
       DisplayFormat = '0'
-      MaxValue = 0
-      MinValue = 0
       Precision = 2
     end
   end
@@ -2394,7 +2289,47 @@ object DM: TDM
     Connection = ZConnection
     Delimiter = ';'
     AfterExecute = ZArtikelOmzetgegevensAddAfterExecute
-    left = 121
-    top = 694
+    Left = 119
+    Top = 680
+  end
+  object ZSQLArtikelUpdate: TZSQLProcessor
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ean'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'Presentatiegroep'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'naam'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'VERKOOPPRIJS'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'artikelnummer'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'datum'
+        ParamType = ptUnknown
+      end>
+    Script.Strings = (
+      'EXECUTE PROCEDURE ARTIKEL_UPDATE (:ean, ''1'',:Presentatiegroep, '''', :naam,:naam, ''1'',''1'', :VERKOOPPRIJS, ''1'' , ''ST'', ''1'', ''ST'', :artikelnummer, :datum, :datum);'
+    )
+    Connection = ZConnection
+    Delimiter = ';'
+    Left = 95
+    Top = 8
   end
 end

@@ -85,6 +85,7 @@ type
     procedure van50naar40Click(Sender: TObject);
     procedure leesartikelomzetopdatum;
     procedure leesartikelomzetopdatumzondertijd;
+    procedure leesOmzettotaalDatumEANArtikelpresentatiegroep;
     procedure leesR10Data(Filename : TFilename);
   private
     { private declarations }
@@ -445,7 +446,114 @@ begin
   end;
 end;
 
+procedure Thoofdmenu.leesOmzettotaalDatumEANArtikelpresentatiegroep;
+var
+   datumstr        : string;
+   mindatum        : tdatetime;
+   maxdatum        : tdatetime;
+   wagnummer       : string;
+   wagomschrijving : string;
+   wagomzet        : array[1..7] of string;
+   i,y             : integer;
+   omzetgroep      : string;
+   l_decimalseparator : char;
+   datumstring     : string;
+   tijdstr         : string;
+   datumtijdstr    : string;
+   datumtijd       : TDateTime;
+   omzetingeld, aantal     : double;
+begin
+  // eerst alle oude datums verwijderen
+  i := 3;
+{  mindatum := 0;
+  maxdatum := 0;
+  while assigned(somzetgrid.worksheet.findcell(i,0)) do
+  begin
+    if  (pos('Totaal' ,somzetgrid.worksheet.findcell(i,0)^.UTF8StringValue)= 1) then
+    begin
+      if ((mindatum <> 0) and (maxdatum <> 0)) then
+      begin
+        //data verwijderen....
+       // showmessage ('mindatum : ' + datetimetostr(mindatum) + ' maxdatum : ' +datetimetostr(maxdatum));
+        dm.ZOmzetgegevensDelete.ParamByName('mindatum').AsDate:= mindatum;
+        dm.ZOmzetgegevensDelete.ParamByName('maxdatum').AsDate:= maxdatum;
+        dm.ZOmzetgegevensDelete.Execute;
+        dm.ZOmzetgegevensDelete.Connection.Commit;
 
+      end;
+      break;
+    end;
+    if ((mindatum = 0) and (maxdatum = 0)) then
+    begin
+      mindatum := somzetgrid.worksheet.findcell(i,2)^.DateTimeValue;
+      maxdatum :=somzetgrid.worksheet.findcell(i,2)^.DateTimeValue;
+    end
+    else
+    begin
+      if somzetgrid.worksheet.findcell(i,2)^.DateTimeValue  < mindatum then
+        mindatum := somzetgrid.worksheet.findcell(i,2)^.DateTimeValue;
+      if somzetgrid.worksheet.findcell(i,2)^.DateTimeValue > maxdatum then
+        maxdatum := somzetgrid.worksheet.findcell(i,2)^.DateTimeValue;
+    end;
+    inc(i);
+  end;}
+  //omzetgegevens toevoegen
+  try
+    dm.zconnection.AutoCommit:= false;
+    i := 3;
+    while assigned(Sworkbook.worksheet.findcell(i,0)) do
+    begin
+      if  (pos('Totaal' ,sWorkbook.worksheet.findcell(i,0)^.UTF8StringValue)= 1) then
+      begin
+        break;
+      end;
+   { for y := 2 to 7 do
+    begin
+      if  (y = 2) or (y = 3) or (y =4) or (y = 7) then
+      begin
+        showmessage(inttostr(y) + '  '  + sWorkbook.worksheet.findcell(i,y)^.UTF8StringValue);
+        case  sWorkbook.worksheet.findcell(i,y)^.ContentType of
+           cctnumber : showmessage(' number' );
+           cctUTF8String  : showmessage(' string');
+           cctDateTime : showmessage('datetime');
+        end;
+      end;
+    end; }
+       tijdstr := '11:59';//copy(SWorkbook.worksheet.findcell(i,5)^.UTF8StringValue,9,5)  ;
+       datumtijdstr := concat(datetimetostr(SWorkbook.worksheet.findcell(i,7)^.DateTimeValue),' ',tijdstr);
+       datumtijd := strtodatetime(datumtijdstr);
+       dm.ZArtikelOmzetgegevensAdd.ParamByName('transactie').AsInteger := datetimetounix(datumtijd);
+       dm.ZArtikelOmzetgegevensAdd.ParamByName('datum').asdatetime := datumtijd;
+     //  showmessage(Sworkbook.worksheet.findcell(i,2)^.UTF8StringValue);
+       dm.ZArtikelOmzetgegevensAdd.ParamByName('ean').Asfloat:= strtofloat(Sworkbook.worksheet.findcell(i,6)^.UTF8StringValue);
+       dm.ZArtikelOmzetgegevensAdd.ParamByName('aantal').AsFloat:= SWorkBook.worksheet.findcell(i,10)^.NumberValue;
+  //     showmessage(inttostr(dm.ZArtikelOmzetgegevensAdd.ParamByName('transactie').asinteger)+ '   ' + datetimetostr(dm.zArtikelomzetgegevensadd.parambyname('datum').AsTime) + '   '  +dm.zArtikelomzetgegevensadd.parambyname('ean').AsString + '  '  + dm.zArtikelomzetgegevensadd.parambyname('aantal').asstring);
+       dm.ZArtikelOmzetgegevensAdd.Execute;
+       dm.ZSQLArtikelUpdate.ParamByName('ean').Asfloat:= strtofloat(Sworkbook.worksheet.findcell(i,6)^.UTF8StringValue);
+       dm.ZSQLArtikelUpdate.ParamByName('presentatiegroep').Asinteger:= strtoint(Sworkbook.worksheet.findcell(i,2)^.UTF8StringValue);
+       dm.ZSQLArtikelUpdate.ParamByName('naam').Asstring:= (Sworkbook.worksheet.findcell(i,5)^.UTF8StringValue);
+       omzetingeld :=   SWorkBook.worksheet.findcell(i,8)^.NumberValue;
+       aantal :=   SWorkBook.worksheet.findcell(i,10)^.NumberValue;
+       if aantal <> 0 then
+       dm.ZSQLArtikelUpdate.ParamByName('verkoopprijs').Asfloat:= omzetingeld/aantal
+         else
+       dm.ZSQLArtikelUpdate.ParamByName('verkoopprijs').Asfloat:= aantal;
+       dm.ZSQLArtikelUpdate.ParamByName('artikelnummer').Asstring:= (Sworkbook.worksheet.findcell(i,4)^.UTF8StringValue);
+       dm.ZSQLArtikelUpdate.ParamByName('datum').asdatetime := datumtijd;
+       if aantal <> 0 then
+         dm.zSQLartikelupdate.execute;
+       inc(i);
+        //volgende regel disablen om testen uit te zetten
+      // if i = 5 then exit;
+    end;
+
+  finally
+    dm.ZArtikelOmzetgegevensAdd.Connection.Commit;
+    dm.zSQLartikelupdate.connection.commit;
+    dm.ZConnection.AutoCommit:= true;
+
+  end;
+end;
 
 procedure Thoofdmenu.Import_ButtonClick(Sender: TObject);
 begin
@@ -498,11 +606,18 @@ var
     leesartikelomzetopdatum;
     exit;
   end;
+  if (pos('OPE1010 - Omzet totaal->Datum->EAN->Artikel->Presentatiegroep',zoekstring)  = 1) then
+  begin
+    leesOmzettotaalDatumEANArtikelpresentatiegroep;
+    exit;
+  end;
   if (pos('OPE1010 - Omzet totaal->Datum->EAN',zoekstring)  = 1) then
   begin
     leesartikelomzetopdatumzondertijd;
     exit;
   end;
+
+
 end;
 
 procedure Thoofdmenu.MenuItem1Click(Sender: TObject);
