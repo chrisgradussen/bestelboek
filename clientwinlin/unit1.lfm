@@ -1,11 +1,11 @@
 object hoofdmenu: Thoofdmenu
-  Left = 788
-  Height = 224
-  Top = 372
-  Width = 319
+  Left = 1187
+  Height = 219
+  Top = 422
+  Width = 312
   Caption = 'Bestelboek 1 Hoofdmenu'
-  ClientHeight = 201
-  ClientWidth = 319
+  ClientHeight = 195
+  ClientWidth = 312
   Menu = HfdMenu
   OnActivate = FormActivate
   OnClose = FormClose
@@ -13,141 +13,166 @@ object hoofdmenu: Thoofdmenu
   OnCreate = FormCreate
   OnShow = FormShow
   SessionProperties = 'Height;Left;Position;Top;Width;WindowState'
-  LCLVersion = '1.8.0.6'
+  LCLVersion = '2.0.10.0'
   object BestelgroepButton: TButton
     Left = 8
-    Height = 25
+    Height = 24
     Top = 8
-    Width = 91
+    Width = 89
     Caption = 'Bestelgroep'
     OnClick = BestelgroepButtonClick
+    ParentFont = False
     TabOrder = 0
   end
   object LeverancierButton: TButton
     Left = 8
-    Height = 25
-    Top = 40
-    Width = 91
+    Height = 24
+    Top = 39
+    Width = 89
     Caption = 'Leverancier'
     OnClick = LeverancierButtonClick
+    ParentFont = False
     TabOrder = 1
   end
   object GroepButton: TButton
     Left = 8
-    Height = 25
-    Top = 72
-    Width = 91
+    Height = 24
+    Top = 71
+    Width = 89
     Caption = 'Groep'
     OnClick = GroepButtonClick
+    ParentFont = False
     TabOrder = 2
   end
   object subgroepbutton: TButton
-    Left = -32
-    Height = 25
-    Top = -25
-    Width = 91
+    Left = -31
+    Height = 24
+    Top = -24
+    Width = 89
     Caption = 'Subgroep'
     OnClick = subgroepbuttonClick
+    ParentFont = False
     TabOrder = 3
   end
   object Button5: TButton
     Left = 8
-    Height = 25
-    Top = 136
-    Width = 91
+    Height = 24
+    Top = 133
+    Width = 89
     Caption = 'Bestelschema'
     OnClick = Button5Click
+    ParentFont = False
     TabOrder = 4
   end
   object Button6: TButton
     Left = 8
-    Height = 25
-    Top = 168
-    Width = 91
+    Height = 24
+    Top = 165
+    Width = 89
     Caption = 'S Bestelschema'
     OnClick = Button6Click
+    ParentFont = False
     TabOrder = 5
   end
   object Button7: TButton
-    Left = 104
-    Height = 25
+    Left = 102
+    Height = 24
     Top = 8
-    Width = 91
+    Width = 89
     Caption = 'Artikelbestand'
     OnClick = Button7Click
+    ParentFont = False
     TabOrder = 6
   end
   object bestellingafdrukkenbutton: TButton
-    Left = 104
-    Height = 25
-    Top = 136
-    Width = 91
+    Left = 102
+    Height = 24
+    Top = 133
+    Width = 89
     Caption = 'Bestelling printen'
     OnClick = bestellingafdrukkenbuttonClick
+    ParentFont = False
     TabOrder = 7
   end
   object Button9: TButton
-    Left = 200
-    Height = 25
+    Left = 196
+    Height = 24
     Top = 8
-    Width = 91
+    Width = 89
     Caption = 'Omzet op artikel'
     OnClick = Button9Click
+    ParentFont = False
     TabOrder = 8
   end
   object DagenButton: TButton
-    Left = 200
-    Height = 25
-    Top = 168
-    Width = 91
+    Left = 196
+    Height = 24
+    Top = 165
+    Width = 89
     Caption = 'Dagen'
     OnClick = DagenButtonClick
+    ParentFont = False
     TabOrder = 9
   end
   object ButtonBaklijst: TButton
-    Left = 200
-    Height = 25
-    Top = 104
-    Width = 88
+    Left = 196
+    Height = 24
+    Top = 102
+    Width = 86
     Caption = '&Baklijst'
     OnClick = ButtonBaklijstClick
+    ParentFont = False
     TabOrder = 10
   end
   object ButtonBroodUitverkoop: TButton
-    Left = 200
-    Height = 25
-    Top = 136
-    Width = 91
+    Left = 196
+    Height = 24
+    Top = 133
+    Width = 89
     Caption = 'Brood&Uitverkoop'
     OnClick = ButtonBroodUitverkoopClick
+    ParentFont = False
     TabOrder = 11
   end
   object Aktielijst: TButton
-    Left = 104
-    Height = 25
-    Top = 168
-    Width = 91
+    Left = 102
+    Height = 24
+    Top = 165
+    Width = 89
     Caption = 'Aktielijst'
     OnClick = AktielijstClick
+    ParentFont = False
     TabOrder = 12
   end
   object ButtonUuromzet: TButton
-    Left = 200
-    Height = 33
-    Top = 64
-    Width = 88
+    Left = 196
+    Height = 32
+    Top = 63
+    Width = 86
     Caption = '&Uuromzet op artikel'
     OnClick = ButtonUuromzetClick
+    ParentFont = False
     TabOrder = 13
   end
   object Feestdagen: TButton
     Left = 8
-    Height = 25
-    Top = 104
-    Width = 91
+    Height = 24
+    Top = 102
+    Width = 89
     Caption = 'Feestdagen'
     OnClick = FeestdagenClick
+    ParentFont = False
     TabOrder = 14
+  end
+  object Import_Button: TButton
+    Left = 102
+    Height = 24
+    Top = 104
+    Width = 88
+    Caption = 'Import'
+    OnClick = Import_ButtonClick
+    ParentFont = False
+    TabOrder = 15
   end
   object HoofdmenuPropStorage: TIniPropStorage
     StoredValues = <>
@@ -156,12 +181,12 @@ object hoofdmenu: Thoofdmenu
     OnSavingProperties = HoofdmenuPropStorageSavingProperties
     OnSaveProperties = HoofdmenuPropStorageSaveProperties
     OnRestoringProperties = HoofdmenuPropStorageRestoringProperties
-    left = 252
-    top = 48
+    Left = 196
+    Top = 39
   end
   object HfdMenu: TMainMenu
-    left = 138
-    top = 56
+    Left = 135
+    Top = 55
     object Noodprocedures: TMenuItem
       Caption = 'Noodprocedures'
       OnClick = NoodproceduresClick
@@ -201,5 +226,16 @@ object hoofdmenu: Thoofdmenu
       Caption = '&Volgorde baklijst'
       OnClick = Menu_baklijstvolgordeClick
     end
+  end
+  object sWorkBook: TsWorkbookSource
+    AutoDetectFormat = False
+    FileFormat = sfUser
+    Options = []
+    Left = 288
+    Top = 34
+  end
+  object Omzetdialoog: TOpenDialog
+    Left = 282
+    Top = 102
   end
 end

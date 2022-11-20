@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="10"/>
+    <Version Value="11"/>
     <PathDelim Value="\"/>
     <General>
       <Flags>
@@ -14,7 +14,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
-      <BuildNr Value="10"/>
+      <BuildNr Value="12"/>
     </VersionInfo>
     <BuildModes Count="2" Active="Release">
       <Item1 Name="Debug" Default="True"/>
@@ -59,47 +59,50 @@
     </BuildModes>
     <PublishOptions>
       <Version Value="2"/>
-      <IgnoreBinaries Value="False"/>
-      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
-      <ExcludeFileFilter Value="*.(bak|ppu|ppw|o|so);*~;backup"/>
     </PublishOptions>
     <RunParams>
-      <local>
-        <FormatVersion Value="1"/>
-        <LaunchingApplication PathPlusParams="\usr\X11R6\bin\xterm -T 'Lazarus Run Output' -e $(LazarusDir)\tools\runwait.sh $(TargetCmdLine)"/>
-      </local>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default">
+          <local>
+            <LaunchingApplication PathPlusParams="\usr\X11R6\bin\xterm -T 'Lazarus Run Output' -e $(LazarusDir)\tools\runwait.sh $(TargetCmdLine)"/>
+          </local>
+        </Mode0>
+      </Modes>
     </RunParams>
-    <RequiredPackages Count="6">
+    <RequiredPackages Count="7">
       <Item1>
-        <PackageName Value="rxdbgrid_export_spreadsheet"/>
+        <PackageName Value="laz_fpspreadsheet_visual"/>
       </Item1>
       <Item2>
-        <PackageName Value="lazreport"/>
-        <MinVersion Minor="9" Release="5" Valid="True"/>
+        <PackageName Value="rxdbgrid_export_spreadsheet"/>
       </Item2>
       <Item3>
-        <PackageName Value="rxnew"/>
-        <MinVersion Major="1" Minor="1" Release="5" Build="98" Valid="True"/>
+        <PackageName Value="lazreport"/>
+        <MinVersion Minor="9" Release="5" Valid="True"/>
       </Item3>
       <Item4>
-        <PackageName Value="FCL"/>
-        <MinVersion Major="1" Valid="True"/>
+        <PackageName Value="rxnew"/>
+        <MinVersion Major="1" Minor="1" Release="5" Build="98" Valid="True"/>
       </Item4>
       <Item5>
-        <PackageName Value="zcomponent"/>
-        <MinVersion Major="6" Minor="6" Release="3" Valid="True"/>
+        <PackageName Value="FCL"/>
+        <MinVersion Major="1" Valid="True"/>
       </Item5>
       <Item6>
-        <PackageName Value="LCL"/>
+        <PackageName Value="zcomponent"/>
+        <MinVersion Major="6" Minor="6" Release="3" Valid="True"/>
       </Item6>
+      <Item7>
+        <PackageName Value="LCL"/>
+      </Item7>
     </RequiredPackages>
-    <Units Count="28">
+    <Units Count="36">
       <Unit0>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
         <TopLine Value="4"/>
-        <CursorPos X="20" Y="19"/>
+        <CursorPos X="85" Y="15"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -110,7 +113,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
-        <CursorPos X="118" Y="11"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="520"/>
+        <CursorPos X="9" Y="547"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -121,9 +127,9 @@
         <ComponentName Value="DM"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="320"/>
-        <CursorPos X="3" Y="322"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="342"/>
+        <CursorPos X="46" Y="352"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -299,7 +305,7 @@
         <UnitName Value="RTTICtrls"/>
         <TopLine Value="4082"/>
         <CursorPos Y="4096"/>
-        <UsageCount Value="336"/>
+        <UsageCount Value="333"/>
       </Unit17>
       <Unit18>
         <Filename Value="baklijstvolgordeunit.pas"/>
@@ -309,7 +315,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="26"/>
-        <CursorPos X="21" Y="47"/>
+        <CursorPos X="67" Y="39"/>
         <UsageCount Value="365"/>
       </Unit18>
       <Unit19>
@@ -338,7 +344,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <CursorPos X="15" Y="5"/>
-        <UsageCount Value="201"/>
+        <UsageCount Value="198"/>
       </Unit21>
       <Unit22>
         <Filename Value="aktielijstunit.pas"/>
@@ -360,21 +366,21 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="28"/>
         <CursorPos X="20" Y="43"/>
-        <UsageCount Value="96"/>
+        <UsageCount Value="140"/>
       </Unit23>
       <Unit24>
         <Filename Value="C:\lazarus\components\onlinepackagemanager\Rx\rxtools\rxdateutil.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="88"/>
         <CursorPos X="25" Y="116"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="2"/>
       </Unit24>
       <Unit25>
         <Filename Value="C:\lazarus\components\zeosdbo-7.2.4-stable\src\component\ZAbstractConnection.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="855"/>
         <CursorPos Y="878"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="5"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit25>
       <Unit26>
@@ -382,7 +388,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="229"/>
         <CursorPos Y="245"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="5"/>
       </Unit26>
       <Unit27>
         <Filename Value="feestdagenunit.pas"/>
@@ -390,135 +396,191 @@
         <ComponentName Value="Feestdagenform"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="74"/>
-        <CursorPos X="9" Y="88"/>
-        <UsageCount Value="46"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <CursorPos X="34" Y="79"/>
+        <UsageCount Value="90"/>
       </Unit27>
+      <Unit28>
+        <Filename Value="..\..\..\..\..\usr\share\lazarus\1.8.0\components\lazutils\laz2_dom.pas"/>
+        <UnitName Value="Laz2_DOM"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1170"/>
+        <CursorPos Y="1183"/>
+        <UsageCount Value="20"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="..\..\..\..\..\usr\share\lazarus\2.0.10\components\lazutils\laz2_xmlread.pas"/>
+        <UnitName Value="laz2_XMLRead"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="911"/>
+        <CursorPos Y="928"/>
+        <UsageCount Value="10"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="..\..\..\.lazarus\onlinepackagemanager\packages\fpspreadsheet\source\common\fpsxmlcommon.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="315"/>
+        <CursorPos Y="334"/>
+        <UsageCount Value="10"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="..\..\..\.lazarus\onlinepackagemanager\packages\fpspreadsheet\source\common\xlsxml.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1560"/>
+        <CursorPos Y="1577"/>
+        <UsageCount Value="10"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="..\..\..\.lazarus\onlinepackagemanager\packages\fpspreadsheet\source\common\fpsreaderwriter.pas"/>
+        <UnitName Value="fpsReaderWriter"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="519"/>
+        <CursorPos Y="536"/>
+        <UsageCount Value="10"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="..\..\..\.lazarus\onlinepackagemanager\packages\fpspreadsheet\source\common\fpspreadsheet.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="8870"/>
+        <CursorPos Y="8893"/>
+        <UsageCount Value="10"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="..\..\..\.lazarus\onlinepackagemanager\packages\fpspreadsheet\source\visual\fpspreadsheetctrls.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1206"/>
+        <CursorPos Y="1222"/>
+        <UsageCount Value="10"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="..\..\..\..\..\usr\share\lazarus\2.0.10\lazarus-ccr\components\rx\version\2.1\rxapputils.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="100"/>
+        <CursorPos X="8" Y="116"/>
+        <UsageCount Value="10"/>
+      </Unit35>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="293" Column="3" TopLine="291"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="535" Column="102" TopLine="509"/>
       </Position1>
       <Position2>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="30" Column="44" TopLine="30"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="531" TopLine="509"/>
       </Position2>
       <Position3>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="50" Column="4" TopLine="29"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="516" Column="150" TopLine="509"/>
       </Position3>
       <Position4>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="9" Column="57"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="531" TopLine="509"/>
       </Position4>
       <Position5>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="52" Column="38" TopLine="36"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="532" TopLine="509"/>
       </Position5>
       <Position6>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="54" Column="38" TopLine="38"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="533" TopLine="509"/>
       </Position6>
       <Position7>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="61" Column="38" TopLine="40"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="534" TopLine="509"/>
       </Position7>
       <Position8>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="54" Column="7" TopLine="46"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="535" TopLine="510"/>
       </Position8>
       <Position9>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="64" Column="9" TopLine="47"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="536" TopLine="511"/>
       </Position9>
       <Position10>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="57" TopLine="53"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="537" TopLine="512"/>
       </Position10>
       <Position11>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="294" Column="3" TopLine="292"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="544" TopLine="529"/>
       </Position11>
       <Position12>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="295" Column="3" TopLine="293"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="531" TopLine="525"/>
       </Position12>
       <Position13>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="296" Column="3" TopLine="294"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="532" TopLine="525"/>
       </Position13>
       <Position14>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="297" Column="3" TopLine="295"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="533" TopLine="525"/>
       </Position14>
       <Position15>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="298" Column="3" TopLine="296"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="534" TopLine="525"/>
       </Position15>
       <Position16>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="299" Column="3" TopLine="297"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="535" TopLine="525"/>
       </Position16>
       <Position17>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="300" Column="3" TopLine="298"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="536" TopLine="525"/>
       </Position17>
       <Position18>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="301" Column="3" TopLine="299"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="537" TopLine="525"/>
       </Position18>
       <Position19>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="302" Column="3" TopLine="300"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="539" TopLine="525"/>
       </Position19>
       <Position20>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="303" Column="3" TopLine="301"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="503" TopLine="488"/>
       </Position20>
       <Position21>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="304" Column="3" TopLine="302"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="536" TopLine="528"/>
       </Position21>
       <Position22>
-        <Filename Value="unit2.pas"/>
-        <Caret Line="306" Column="3" TopLine="304"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="540" TopLine="528"/>
       </Position22>
       <Position23>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="63" Column="54" TopLine="41"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="464" Column="29" TopLine="449"/>
       </Position23>
       <Position24>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="83" Column="115" TopLine="56"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="540" Column="81" TopLine="519"/>
       </Position24>
       <Position25>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="87" Column="53" TopLine="63"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="538" Column="144" TopLine="524"/>
       </Position25>
       <Position26>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="88" Column="53" TopLine="64"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="536" Column="6" TopLine="524"/>
       </Position26>
       <Position27>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="89" Column="53" TopLine="65"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="542" Column="7" TopLine="524"/>
       </Position27>
       <Position28>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="96" Column="53" TopLine="72"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="539" Column="114" TopLine="524"/>
       </Position28>
       <Position29>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="62" Column="3" TopLine="60"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="535" TopLine="525"/>
       </Position29>
       <Position30>
-        <Filename Value="feestdagenunit.pas"/>
-        <Caret Line="96" TopLine="70"/>
+        <Filename Value="unit1.pas"/>
+        <Caret Line="538" Column="6" TopLine="520"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
@@ -564,7 +626,7 @@
         <InitialEnabled Value="False"/>
       </Item1>
     </BreakPoints>
-    <Watches Count="3">
+    <Watches Count="8">
       <Item2 ClassAutoCast="True">
         <Expression Value="zconnection.hostname"/>
         <DisplayStyle Value="wdfStructure"/>
@@ -572,6 +634,21 @@
       <Item3 ClassAutoCast="True">
         <Expression Value="zconnection.Database"/>
       </Item3>
+      <Item4>
+        <Expression Value="zoekstring"/>
+      </Item4>
+      <Item5>
+        <Expression Value="sworkbook.Worksheet.FindCell(0,0)^.UTF8StringValue;"/>
+      </Item5>
+      <Item6>
+        <Expression Value="workbooksource.worksheet.findcell(1,14)^.UTF8StringValue[0]"/>
+      </Item6>
+      <Item7>
+        <Expression Value="Sworkbook.worksheet.findcell(i,10)^.UTF8StringValue"/>
+      </Item7>
+      <Item8>
+        <Expression Value="dm.ZSQLArtikelUpdate.ParamByName('ean').Asfloat"/>
+      </Item8>
     </Watches>
     <Exceptions Count="2">
       <Item1>
