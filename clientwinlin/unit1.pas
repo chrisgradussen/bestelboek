@@ -503,8 +503,11 @@ begin
     i := 3;
     while assigned(Sworkbook.worksheet.findcell(i,0)) do
     begin
+      import_button.Caption:= inttostr(i);
+      application.ProcessMessages;
       if  (pos('Totaal' ,sWorkbook.worksheet.findcell(i,0)^.UTF8StringValue)= 1) then
       begin
+        import_button.caption := 'Import' ;
         break;
       end;
    { for y := 2 to 7 do
