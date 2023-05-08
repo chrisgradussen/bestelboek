@@ -616,7 +616,6 @@ var
     leesartikelomzetopdatum;
     exit;
   end;
-
   if (pos('OPE1010 - Omzet totaal->Artikel->Datum->Beheersafdeling->Presentatiegroep',zoekstring)  = 1) then
   begin
     leesartikelomzetartikelDatumBeheersafdelingpresentatiegroep;
