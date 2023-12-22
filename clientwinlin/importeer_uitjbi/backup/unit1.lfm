@@ -1,0 +1,196 @@
+object Form1: TForm1
+  Left = 397
+  Height = 756
+  Top = 173
+  Width = 775
+  Caption = 'Form1'
+  ClientHeight = 756
+  ClientWidth = 775
+  LCLVersion = '2.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 756
+    Top = 0
+    Width = 775
+    Align = alClient
+    Caption = 'Panel1'
+    ClientHeight = 756
+    ClientWidth = 775
+    TabOrder = 0
+    object Panel2: TPanel
+      Left = 672
+      Height = 754
+      Top = 1
+      Width = 102
+      Align = alRight
+      Caption = 'Panel2'
+      ClientHeight = 754
+      ClientWidth = 102
+      TabOrder = 0
+      OnClick = Panel2Click
+      object Button1: TButton
+        Left = 8
+        Height = 25
+        Top = 8
+        Width = 86
+        Caption = '&Importeer'
+        OnClick = Button1Click
+        TabOrder = 0
+      end
+      object ToggleBox1: TToggleBox
+        Left = 8
+        Height = 25
+        Top = 40
+        Width = 88
+        Caption = 'eilandplein'
+        OnClick = ToggleBox1Click
+        TabOrder = 1
+      end
+      object Button2: TButton
+        Left = 8
+        Height = 25
+        Top = 72
+        Width = 86
+        Caption = 'start'
+        OnClick = Button2Click
+        TabOrder = 2
+      end
+    end
+    object Panel3: TPanel
+      Left = 1
+      Height = 754
+      Top = 1
+      Width = 671
+      Align = alClient
+      Caption = 'Panel3'
+      ClientHeight = 754
+      ClientWidth = 671
+      TabOrder = 1
+      object sWorksheetGrid1: TsWorksheetGrid
+        Left = 1
+        Height = 456
+        Top = 1
+        Width = 669
+        FrozenCols = 0
+        FrozenRows = 0
+        PageBreakPen.Color = clBlue
+        PageBreakPen.Style = psDash
+        ReadFormulas = False
+        WorkbookSource = sWorkbookSource1
+        Align = alClient
+        AutoAdvance = aaDown
+        ColCount = 26
+        DefaultColWidth = 64
+        DefaultRowHeight = 22
+        ParentBiDiMode = False
+        RowCount = 139309
+        TabOrder = 0
+      end
+      object Memo1: TMemo
+        Left = 1
+        Height = 296
+        Top = 457
+        Width = 669
+        Align = alBottom
+        Lines.Strings = (
+          'Memo1'
+        )
+        TabOrder = 1
+      end
+    end
+  end
+  object sWorkbookSource1: TsWorkbookSource
+    FileFormat = sfExcel2
+    FileName = 'C:\Users\chris\Downloads\eilandplein_2023012OPE1010 - Omzet totaal-_Artikel-_Beheersafdeling-_Winkelassortimentsgroep-_Presentatiegroep-_Datum.xlsx'
+    Options = []
+    Left = 704
+    Top = 303
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    DesignConnection = True
+    HostName = '92.68.125.29'
+    Port = 0
+    Database = 'nieuw_bestelhulp1_eilandplein'
+    User = 'sysdba'
+    Password = 'masterkey'
+    Protocol = 'firebirdd-2.0'
+    LibraryLocation = 'C:\Program Files\Firebird\Firebird_2_5\bin\fbclient.dll'
+    Left = 710
+    Top = 389
+  end
+  object ZStoredProc1: TZStoredProc
+    Connection = ZConnection1
+    Params = <    
+      item
+        DataType = ftLargeint
+        Name = 'LTRANSACTIE'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftDateTime
+        Name = 'LDATUMTIJD'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftLargeint
+        Name = 'LEANUPC'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftFloat
+        Name = 'LAANTAL'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftSmallint
+        Name = 'LFLAG'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftFloat
+        Name = 'LPRIJS'
+        ParamType = ptInput
+      end>
+    StoredProcName = 'OMZET_UPDATE_R10'
+    Left = 712
+    Top = 627
+    ParamData = <    
+      item
+        DataType = ftLargeint
+        Name = 'LTRANSACTIE'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftDateTime
+        Name = 'LDATUMTIJD'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftLargeint
+        Name = 'LEANUPC'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftFloat
+        Name = 'LAANTAL'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftSmallint
+        Name = 'LFLAG'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftFloat
+        Name = 'LPRIJS'
+        ParamType = ptInput
+      end>
+  end
+end
