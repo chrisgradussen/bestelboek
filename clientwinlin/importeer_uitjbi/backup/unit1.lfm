@@ -82,7 +82,6 @@ object Form1: TForm1
         ColCount = 26
         DefaultColWidth = 64
         DefaultRowHeight = 22
-        ParentBiDiMode = False
         RowCount = 139309
         TabOrder = 0
       end
@@ -100,8 +99,7 @@ object Form1: TForm1
     end
   end
   object sWorkbookSource1: TsWorkbookSource
-    FileFormat = sfExcel2
-    FileName = 'C:\Users\chris\Downloads\eilandplein_2023012OPE1010 - Omzet totaal-_Artikel-_Beheersafdeling-_Winkelassortimentsgroep-_Presentatiegroep-_Datum.xlsx'
+    FileFormat = sfUser
     Options = []
     Left = 704
     Top = 303
@@ -115,7 +113,7 @@ object Form1: TForm1
     )
     Connected = True
     DesignConnection = True
-    HostName = '92.68.125.29'
+    HostName = '172.16.1.7'
     Port = 0
     Database = 'nieuw_bestelhulp1_eilandplein'
     User = 'sysdba'
@@ -192,5 +190,9 @@ object Form1: TForm1
         Name = 'LPRIJS'
         ParamType = ptInput
       end>
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 709
+    Top = 158
   end
 end

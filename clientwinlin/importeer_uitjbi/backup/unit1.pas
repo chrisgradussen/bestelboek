@@ -18,6 +18,7 @@ type
     Button1: TButton;
     Button2: TButton;
     Memo1: TMemo;
+    OpenDialog1: TOpenDialog;
     Panel1: TPanel;
     Panel2: TPanel;
     Panel3: TPanel;
@@ -48,7 +49,11 @@ implementation
 procedure TForm1.Button1Click(Sender: TObject);
 
 begin
-
+  if opendialog1.Execute then
+  begin
+     sworkbooksource1.FileName:= opendialog1.filename;
+   //  sworkbooksource.Active := true;
+  end;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -58,7 +63,7 @@ var
   cell: PCell;
   s,ean,datum,aantal, transactie : string;
   starttijd, eindtijd : tdatetime;
-  eancolumn, datumcolumn, aantalcolumn, Beheersafdelingcolumn, Presentatiegroepcolumn,artikelnummercolumn,artikelnaamcolumn : integer;
+  eancolumn, datumcolumn, aantalcolumn, Winkelassortimentsgroepcolumn, Beheersafdelingcolumn, Presentatiegroepcolumn,artikelnummercolumn,artikelnaamcolumn : integer;
 begin
   eancolumn := -1;
   datumcolumn := -1;
@@ -67,9 +72,10 @@ begin
   artikelnummercolumn := -1;
   artikelnaamcolumn := -1;
   Presentatiegroepcolumn := -1;
+  Winkelassortimentsgroepcolumn := -1;
   starttijd := now();
 
-  interval := 1000;
+  interval := 1;
   memo1.clear;
 
   myworksheet := sworkbooksource1.Worksheet;
@@ -102,6 +108,10 @@ begin
                 begin memo1.append('Presentatiegroep = '+ inttostr(col));
                    Presentatiegroepcolumn := col;
                 end;
+                 'Winkelassortimentsgroep' :
+                begin memo1.append('Winkelassortimentsgroep = '+ inttostr(col));
+                   Winkelassortimentsgroepcolumn := col;
+                end;
                 'Beheersafdeling' :
                 begin memo1.append('Beheersafdeling = '+ inttostr(col));
                    Beheersafdelingcolumn := col;
@@ -126,7 +136,7 @@ begin
   end;
   ///omzetten inlezen geen beheerafdeling/presentatiegroep
   ///wel datum,ean en aantal
-  if ((aantalcolumn <> -1) and (eancolumn <> -1) and (datumcolumn <> -1) and (beheersafdelingcolumn = -1) and (Presentatiegroepcolumn = -1)) then
+  if ((aantalcolumn <> -1) and (eancolumn <> -1) and (datumcolumn <> -1) and (winkelassortimentsgroepcolumn = -1) and (beheersafdelingcolumn = -1) and (Presentatiegroepcolumn = -1)) then
   begin
     showmessage('bestand geschikt om omzetten in te lezen');
     memo1.Append('starttijd : ' + datetimetostr(starttijd));
@@ -174,6 +184,9 @@ begin
          memo1.append(inttostr(row) + 'regels van '+  inttostr(MyWorksheet.GetLastRowIndex) + ' verwerkt');
          s := 'execute procedure OMZET_UPDATE_R10('+ transactie + ','''+ datum + ''','+ ean + ', '+ aantal +',0,0);';
          memo1.append(s);
+          memo1.Append('eindtijd : ' + datetimetostr(eindtijd));
+          memo1.Append('tijdverschil is : '+inttostr(datetimetounixtime(eindtijd-starttijd)));
+
       end;
       //  if row = 10 then break;
   end;

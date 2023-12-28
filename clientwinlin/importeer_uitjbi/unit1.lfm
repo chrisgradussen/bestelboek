@@ -111,7 +111,6 @@ object Form1: TForm1
       'AutoEncodeStrings=True'
       'controls_cp=CP_UTF8'
     )
-    Connected = True
     DesignConnection = True
     HostName = '92.68.125.29'
     Port = 0
